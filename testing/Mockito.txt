@@ -1,0 +1,39 @@
+ _________
+/ Mockito \____________________________________________________________________________________________________________
+
+imports: 
+	import static org.mockito.Mockito.* to make life easier.
+
+Mocking objects:
+	- mock(ClassName.class) creates a mock object of the specified class
+	- verify() allows for checking that a given method of a mocked object was called
+		- e.g. (after the the method has been called as part of another method) verify(objectName).method(param);
+		- can also check number of times called as optional second parameter: 
+			- verify(objectName, never())...
+			- verify(objectName, times(x))...
+	
+Matching:
+	- method parameters (such as in when or verify()) match based on equals() by default. Alternatively, can use
+	  argument matchers:
+		- anyInt(), anyObject(), any(Class)...
+		- contains() -- checks for collections containing a matching argument
+		- eq() checks for equality
+			* must use eq() for equality if any of the arguments use matchers
+		- isA(Class) checks for class membership
+		- extend the ArgumentMatcher class and use with argThat()
+	
+Mocking Behavior:
+	- when() allows specification of response from a mocked method
+		- thenReturn allows specification of return value
+			- e.g. when(objName.methodCall(parameter)).thenReturn(returnVal)
+		- thenAnswer (aliased to then) allows specification of a method to be called, via implementation of the Answer
+		  interface
+			- e.g.:	when(objName.methodCall(parameter)).thenAnswer(new Answer<ReturnType>() {
+						public ReturnType answer(InvocationOnMock invocation) {
+							Object[] args = invocation.getArguments();
+							Object mock = invocation.getMock();
+							return returnValue;
+						}
+					});
+Some Other Helpful Tips/techniques:
+	- java.util.Arrays.asList(obj 1, obj 2, obj 3...) returns a list generated from the specified objects

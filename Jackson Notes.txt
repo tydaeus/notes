@@ -1,0 +1,39 @@
+ _______________
+/ Jackson Notes \_______________________________________________________________________________________________________
+
+Mapping JSON to Java via Jackson (2.3.2)
+
+jars:
+	jackson-annotations
+	jackson-core
+	jackson-databind
+	
+Data Binding is used to convert JSON to and from POJOs
+	Simple: converting to and from Maps, Lists, Strings, Numbers, Booleans, and nulls
+	Full: converting to and from bean types (+ simple)
+
+Simple Mapping:
+	Creating a Mapper:
+		ObjectMapper mapper = new ObjectMapper();
+	JSON -> POJO with mapper
+		Bean bean = mapper.readValue(jsonInFile, bean.class);
+	POJO -> JSON with mapper (POJO should be Serializable? -- not required, suggested by tutorial)
+		mapper.writeValue(jsonOutFile, bean);
+	JSON -> Map with mapper
+		Map<String, Object> map = mapper.readValue(jsonInFile, Map.class);
+	Map -> JSON with mapper
+		mapper.writeValue(jsonOutFile, map);
+
+Java types used by Jackson for simple type binding (JSON->Java):
+	object					->	LinkedHashMap<String, Object>
+	array					->	ArrayList<Object>
+	string					->	String
+	number (no fraction)	->	Integer, Long, or BigInteger (smallest applicable)
+	number (fraction)		->	Double (configurable to use BigDecimal)
+	true|false				->	Boolean
+	null					->	null
+
+Using Generics:
+	Map<String, User> result = mapper.readValue(src, new TypeReference<Map<String, User>>() { });
+	alternatively, use TypeFactory
+	

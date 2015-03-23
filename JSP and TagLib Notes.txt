@@ -1,0 +1,12 @@
+ ___________________________
+/ JSP and Tag Library Notes \___________________________________________________
+
+Useful JSTL core library tags:
+	<c:out value="${expression}" />
+
+	<c:forEach items="${itemList}" var="itemName">
+		<c:out value="${itemName.property1}"/><br />
+		<c:out value="${itemName.property2}"/>
+	</c:forEach>
+
+Useful Spring library tags:
