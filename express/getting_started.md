@@ -27,7 +27,13 @@ $ node ./bin/www
 For development purposes, consider using `nodemon` instead of `node`. `nodemon` will automatically restart the application after changes.
 
 ##Debugging
-The `DEBUG` system variable can be set to instruct express to display logging output.
+The `debug` module allows conditional display of log-style output.
+```js
+var debug = require('debug')('namespace');
+
+debug("prints formatted message", vars);
+```
+Set The `DEBUG` system variable to instruct express to display logging output.
 * `DEBUG=express:*` - display all express internal logs
 * `DEBUG=express:application` - display logs from application implementation
 * `DEBUG=appname` - display debug statements from app generated via `$ express appname`
