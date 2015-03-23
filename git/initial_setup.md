@@ -6,9 +6,9 @@ configure user settings; add --global to specify system-wide defaults
     - git config user.email <user email> // specify user's email address
 
 create a new repository on the command line
-    o touch README.md
+    - (optional) touch README.md
     - git init
-    o git add README.md
+    - (optional) git add README.md
     - git commit -m "first commit"
     - git remote add origin https://github.com/user/repo.git
     - git push -u origin master
