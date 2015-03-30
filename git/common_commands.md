@@ -18,8 +18,8 @@
 
 * git fetch -- retrieve changes from remote repo
       
-* git pull -- incorporate changes from remote repo into current branch (defaults
-to git fetch followed by git merge MERGE_HEAD)
+* git pull -- incorporate changes from remote repo into current branch 
+  (defaults to git fetch followed by git merge MERGE_HEAD)
 
 * git status -- shows what changes have been made since last commit, and which have been staged
 * `git diff --cached|--staged` shows the stanged changes against the HEAD
