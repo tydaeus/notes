@@ -1,0 +1,117 @@
+var ctr = module.controller( NAME, FACTORY_FUNCTION)
+// dependencies either:
+//		- implied by names of parameters declared for FACTORY_FUNCTION
+//		+ injected onto the resulting controller as $inject, 
+//		  must be array of strings ie:
+//				ctr.$inject = [ "dependency1", ..., "dependencyN" ]
+
+module.controller( NAME, [ dependencies..., FACTORY_FUNCTION] )
+// dependencies are all parameters of arguments[1] except for the last, which
+// is the factory function, must be strings
+
+inherited scope - children are passed a SHALLOW COPY of the parent's scope
+	- controllers
+	- ng-repeat
+	- ng-if?
+	- ng-include
+	
+isolate scope - children get fresh scope object except for manually passed
+parameters
+	- most directives (including user-defined directives)
+	
+directives:
+	scope object - defines how DOM element attributes are bound as properties
+	to the scope of the directive:
+		3 kinds of bindings:
+			'@' - string - scope attribute is a string that changes as the
+				  DOM element attribute changes; {{ expr }} will be interpreted
+				  and converted to a string
+			'&' - one-way (getter) - scope attribute is a method that will
+				  return the value of the expression in the DOM element;
+			'=' - two-way - scope attribute is bound directly to the result of the
+			      expression -- e.g. if expression is object, scope attribute is
+				  same object
+		
+$scope.$watch(varName{String}, listener{function(newVal, oldVal)}); 
+// watches the named expresion and calls the listener when it changes
+
+$scope.$apply() will tell angular to look for changes and apply them 
+
+$timeout - angular service, use instead of setTimeout (same syntax), properly
+updates watched stuff while waiting (and after execution?);
+	- can be used to allow changes to be applied before a call, e.g.:
+		$timeout($scope.ngChange, 0); // allows changes to be applied prior to 
+									  // notification of those changes
+									  
+									  
+service - a singleton that's SHARED wherever it's been injected (can be object,
+can be function)
+	- multiple ways to declare, most general is the .factory method
+	(on the module)
+	
+resources allow convenient AJAX server communication, declare the resource to 
+determine its methods
+
+HTTP GET "class" actions: Resource.action([parameters], [success], [error])
+non-GET "class" actions: Resource.action([parameters], postData, [success], [error])
+	where parameters is a map of pathParams and requestParams (determined by defined path)
+	postData is a map of the values that are being sent (in Dave's code, this 
+	will generally be entityInstance.toJSON())
+	success is a function call back for success, param is the returned data 
+	(if any)
+	error is a function callback for error, param is the error
+	
+$scope.$broadcast(name{String}, value{Any}) -- passes a message to all children
+$scope.$listen(name{String}, listener{Function}) -- receives messages passed along the scope
+
+asynchronous data conventions:
+	- many angular provided functions with asynchronous return will have
+	  success and callback arguments, will also return empty objects that will
+	  be populated upon success; these objects will also have a $promise 
+	  property that is a $q promise object that can be monitored (see $q); may
+	  also have a $resolved boolean property
+	- Dave provided functions are a mess. Many return a promise, some return
+	  return an empty object with a promise property and maybe also a resolved
+	  property, Dave thinks he's eliminated
+	  the ones that only have a variable that must be watched
+	  
+$q is a very nice service for handling asynchronous stuff, good to learn:
+	- $q.defer() creates a deferral object (e.g. var deferred = $q.defer())
+		- deferred.promise is the promise object for it, useful for returns
+		- deferred.resolve(result{Any}) passes the result to the promise
+		- deferred.reject(error{Any}) passes an error to the promise
+		- promise.then(success{function}, error{function}) registers async
+	      notification of the resolution/rejections
+	- $q.all(promises{Array<Promise>|Map<Promise>}) returns a single promise
+	  that is resolved when all the promises in the collection are resolve; the
+	  success param is an array or map of all the success results of the
+	  component promises
+	- $q.when(thing{Any|Promise}): always returns a promise. If thing is a 
+	  Promise, returns it as is, otherwise the returned promise resolves to 
+	  thing -- great for if you aren't sure if you'll be receiving a promise
+	  or an empty object that is populated later
+	  
+validation:
+	angular has a lot of built-in validation niceties
+	angular attribute directives can be used to define validation rules:
+		- required
+		- ng-min-length
+		- ng-max-length
+		- ng-pattern (regex based validation)
+	angular auto-applies css classes (coder must define appearances):
+		- valid ("ng-valid"): control passes validation
+		- invalid ("ng-invalid"): control fails validation
+		- pristine ("ng-pristine"): control hasn't been modified
+		- dirty ("ng-dirty"): control has been modified
+		
+	Additional features are available if the controls are part of a form. Sadly,
+	because of the non-conventional nature of the form and issues with 
+	configuration, Dave hasn't bound anything into a form.
+		can check an element's state by using special variables (auto-attached 
+		to the bound object):
+			- $dirty - control has been changed
+			- $invalid
+
+can retrieve a given service for testing in console by asking the injector for it:
+	angular.element(document.body).injector().get('serviceName')
+	// need to retrieve element that angular is attached to, not necessarily body

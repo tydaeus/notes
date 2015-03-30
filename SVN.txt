@@ -1,0 +1,35 @@
+ ___________
+/ SVN Notes \___________________________________________________________________________________________________________
+
+(SVN using subclipse)
+
+To create a new branch:
+	1. Open SVN Repository Perspective
+	2. Right click in the desired location and select new -> new remote folder
+	3. Create the new folder
+	4. Right click the original branch(/trunk) and select Branch/Tag...
+	5. Specify the URL for the new folder (you may want to copy-paste this somewhere for safekeeping; browse is slow)
+	6. Click ok
+
+To switch to a different branch:
+	1. create the new branch if necessary
+	2. return to normal project view (Web/Java EE etc)
+	3. in project/enterprise explorer, right click on the folder you want to switch branches, select Team -> 
+	   Switch to Another Branch/Tag
+	4. browse or select the URL of the branch you want to switch to
+	
+To update your current branch to reflect changes to the trunk (or other branch):
+	1. right click your branch
+	2. select team -> merge
+	3. under "from" branch specify the current branch; select head unless a different revision is required
+	4. under "to" specify the branch being merged with; select head unless a different revision is required
+	5. After merging, click "Synchronize with Repository" to manually resolve any issues (there will be issues)
+		- the current branch's version of files will be displayed as the repository version
+		- the results of the merge will be displayed as the current version
+		- use revert (sometimes will need to choose twice) to undo changes made by the merge, or manually select which
+		  to remove and which to keep.
+	6. Commit to save the changes or revert to return to the version of your branch that's in the repository
+	
+To merge current branch to trunk
+	1. update current branch to reflect trunk changes (as above)
+	2. then, update the trunk to reflect the branch (as above)

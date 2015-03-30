@@ -1,0 +1,8 @@
+ _________
+/ Acrobat \_____________________________________________________________________________________________________________
+
+To remove PDF/A (Archive) Status:
+	- From blank, choose create form from multiple files
+	- add just the file being altered
+	- do not select "Portfolio"
+	- Click Ok
