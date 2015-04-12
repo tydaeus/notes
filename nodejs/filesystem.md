@@ -18,3 +18,15 @@ var files = fs.readdirSync(dirPath);
 
 ```
 
+
+### Getting information about a file
+
+```js
+fs.stat(path, function callback(err, stats) {
+    stats.isFile();
+    stats.isDirectory();    
+});
+
+```
+
+fsStat.statSync is the synchronous version.
