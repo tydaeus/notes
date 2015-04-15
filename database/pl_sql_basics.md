@@ -24,6 +24,8 @@ declare
 begin
     /* ... semi-colon separated statements */
 end;
+/   -- PL/SQL statements can contain ';', so '/' or 'RUN' must be used after
+    -- they have been completely entered.
 ```
 
 ### Cursors
@@ -42,4 +44,5 @@ begin
     end loop;
 
 end;
+/
 ```
