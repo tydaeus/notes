@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2015-03-24 22:45:35">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Automatically created by the system</description>
+<inserted/>
+<name>angular</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>2915433c8c0331007f44dd3536f9c86f</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-03-24 22:45:35</sys_created_on>
+<sys_id>6fa5c33c8c0331007f44dd3536f9c84c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-03-24 22:45:35</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_9d27c70e6da231007f4467a12972448c</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description/&gt;&lt;global&gt;false&lt;/global&gt;&lt;name&gt;service.sn-glideAjax&lt;/name&gt;&lt;script&gt;&lt;![CDATA[angular.module('sn.glideAjax', []);
+angular.module('sn.glideAjax').service('GlideAjax', function($rootScope) {
+	var glideAjax = window.GlideAjax;
+	glideAjax.prototype.getJSON = function(callback) {
+		this.getXMLAnswer(function(answer) {
+			var answerJSON = JSON.parse(answer);
+			callback(answerJSON);
+			$rootScope.$apply();
+		});
+	};
+		
+	return glideAjax;
+});]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-03-03 23:33:16&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;9d27c70e6da231007f4467a12972448c&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;service.sn-glideAjax&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_9d27c70e6da231007f4467a12972448c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-03-03 23:57:42&lt;/sys_updated_on&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="angular">6fa5c33c8c0331007f44dd3536f9c84c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-03-24 22:45:35</sys_created_on>
+<sys_id>23a5c33c8c0331007f44dd3536f9c84d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-03-24 22:45:35</sys_updated_on>
+<table/>
+<target_name>service.sn-glideAjax</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_a11fe8126de231007f4467a129724408</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description/&gt;&lt;global&gt;false&lt;/global&gt;&lt;name&gt;service.uiMacroTemplate&lt;/name&gt;&lt;script&gt;&lt;![CDATA[angular.module('sn.uiMacro', []);
+angular.module('sn.uiMacro').service('uiMacroTemplate', function() {
+	return function(templateName) {
+		return 'AJAXJellyRunner.do?template=' + templateName;	
+	}
+});]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-03-04 07:11:52&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;a11fe8126de231007f4467a129724408&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;service.uiMacroTemplate&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_a11fe8126de231007f4467a129724408&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-03-04 07:20:05&lt;/sys_updated_on&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="angular">6fa5c33c8c0331007f44dd3536f9c84c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-03-24 22:45:35</sys_created_on>
+<sys_id>63a5c33c8c0331007f44dd3536f9c84d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-03-24 22:45:35</sys_updated_on>
+<table/>
+<target_name>service.uiMacroTemplate</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_7c6aa3eec0a801661201fd1851650d00</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="INSERT_OR_UPDATE"><choices>Deny Access=deny,Allow Access=allow</choices><description>Security manager default behavior in the absence of any ACLs on a table</description><ignore_cache>false</ignore_cache><is_private>true</is_private><name>glide.sm.default_mode</name><read_roles/><suffix/><sys_class_name>sys_properties</sys_class_name><sys_created_by>myla.jordan</sys_created_by><sys_created_on>2011-04-22 08:55:12</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>7c6aa3eec0a801661201fd1851650d00</sys_id><sys_mod_count>3</sys_mod_count><sys_name>glide.sm.default_mode</sys_name><sys_package display_value="High Security Settings" source="com.glide.high_security">242c0dc0101231007f4491c3095028e7</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_7c6aa3eec0a801661201fd1851650d00</sys_update_name><sys_updated_by>system</sys_updated_by><sys_updated_on>2014-10-18 02:28:06</sys_updated_on><type>choicelist</type><value>deny</value><write_roles/></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=7c6aa3eec0a801661201fd1851650d00"/></record_update>]]></payload>
+<remote_update_set display_value="angular">6fa5c33c8c0331007f44dd3536f9c84c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-03-24 22:45:35</sys_created_on>
+<sys_id>afa5c33c8c0331007f44dd3536f9c84c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-03-24 22:45:35</sys_updated_on>
+<table/>
+<target_name>glide.sm.default_mode</target_name>
+<type>System Property</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_page_88ab0c016d2231007f4467a12972440c</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script/&gt;&lt;description/&gt;&lt;endpoint/&gt;&lt;html&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
+
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;todoapp&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-02-28 07:20:07&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;88ab0c016d2231007f4467a12972440c&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;todoapp&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_88ab0c016d2231007f4467a12972440c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-02-28 07:20:07&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="angular">6fa5c33c8c0331007f44dd3536f9c84c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-03-24 22:45:35</sys_created_on>
+<sys_id>efa5c33c8c0331007f44dd3536f9c84c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-03-24 22:45:35</sys_updated_on>
+<table/>
+<target_name>todoapp</target_name>
+<type>UI Page</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
