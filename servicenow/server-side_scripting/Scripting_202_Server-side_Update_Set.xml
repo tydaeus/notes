@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2015-04-15 20:36:23">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>script202</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>f397f7336d1331007f443f31bcc0d9cb</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>f51b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>incident_9c573169c611228700193229fff72400</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="incident"><incident action="INSERT_OR_UPDATE"><active>true</active><activity_due>2015-04-06 13:34:36</activity_due><approval/><approval_history/><approval_set/><assigned_to display_value="Charlie Whitherspoon">46b87022a9fe198101a78787e40d7547</assigned_to><assignment_group display_value="Service Desk" name="Service Desk">d625dccec0a8016700a222a0f7900d06</assignment_group><business_duration>1970-01-22 21:46:21</business_duration><business_stc>1892781</business_stc><calendar_duration>1970-04-02 20:46:21</calendar_duration><calendar_stc>7937181</calendar_stc><caller_id display_value="Carol Coughlin">46c1293aa9fe1981000dc753e75ebeee</caller_id><category>network</category><caused_by/><child_incidents/><close_code>Closed/Resolved by Caller</close_code><close_notes>Closed before close notes were made mandatory</close_notes><closed_at>2014-11-29 23:10:06</closed_at><closed_by display_value="Don Goodliffe">9ee1b13dc6112271007f9d0efdb69cd0</closed_by><cmdb_ci display_value="MailServerUS">b0c4030ac0a800090152e7a4564ca36c</cmdb_ci><comments/><comments_and_work_notes/><company display_value="ACME North America">31bea3d53790200044e0bfc8bcbe5dec</company><contact_type>email</contact_type><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description>User can't access email on mail.company.com.</description><due_date/><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact>1</impact><incident_state>2</incident_state><knowledge>false</knowledge><location display_value="211 W 56th St, New York NY">25ab9f690a0a0bb3001c5fec1d0d7bcb</location><made_sla>false</made_sla><notify>1</notify><number>INC0000001</number><opened_at>2014-11-28 23:09:51</opened_at><opened_by display_value="Joe Employee">681ccaf9c0a8016400b98a06818d57c7</opened_by><order/><parent/><parent_incident/><priority>1</priority><problem_id></problem_id><reassignment_count>1</reassignment_count><rejection_goto/><reopen_count>1</reopen_count><resolved_at>2015-02-28 19:56:12</resolved_at><resolved_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</resolved_by><rfc/><severity>1</severity><short_description>Can't read email</short_description><sla_due/><state>2</state><subcategory/><sys_class_name>incident</sys_class_name><sys_created_by>pat</sys_created_by><sys_created_on>2013-06-29 18:24:13</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>9c573169c611228700193229fff72400</sys_id><sys_mod_count>31</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 11:34:36</sys_updated_on><time_worked/><upon_approval/><upon_reject/><urgency>1</urgency><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></incident></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>311b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>INC0000001</target_name>
+<type>Incident</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_896e19db378f3100fd08549543990e9a</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access/&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;incident&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;message/&gt;&lt;name&gt;Active Change Requests&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[var gr = new GlideRecord("change_request");
+gr.addQuery("parent", current.sys_id);
+gr.query();
+
+gs.addInfoMessage(current.number + " has " + gr.getRowCount() + " Change Requests associated with it.");]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;andy.venables&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-04-01 09:39:33&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;896e19db378f3100fd08549543990e9a&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Active Change Requests&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_896e19db378f3100fd08549543990e9a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-04-06 11:05:44&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=896e19db378f3100fd08549543990e9a"/&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>351b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table>incident</table>
+<target_name>Active Change Requests</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>change_request_8799385b0a0a2c3e14c041a7f5414266</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="change_request"><change_request action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>approved</approval><approval_history/><approval_set/><assigned_to display_value="Don Goodliffe">9ee1b13dc6112271007f9d0efdb69cd0</assigned_to><assignment_group/><backout_plan/><business_duration/><cab_date/><cab_recommendation/><calendar_duration/><category>Other</category><change_plan/><close_notes/><closed_at/><closed_by/><cmdb_ci display_value="Java Application Server FLX">82992eb60ad337024fbb6d06a866c636</cmdb_ci><comments/><comments_and_work_notes/><company/><conflict_status>Conflict</conflict_status><contact_type>phone</contact_type><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description/><due_date/><end_date>2015-04-24 15:00:00</end_date><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact>3</impact><implementation_plan/><justification/><knowledge>false</knowledge><location/><made_sla>true</made_sla><number>CHG0000010</number><opened_at>2016-02-16 09:52:34</opened_at><opened_by display_value="">felix.bait</opened_by><order/><outside_maintenance_schedule>true</outside_maintenance_schedule><parent display_value="INC0000001">9c573169c611228700193229fff72400</parent><phase>requested</phase><phase_state>open</phase_state><priority>4</priority><production_system>false</production_system><reason/><reassignment_count/><rejection_goto/><requested_by display_value="Beth Anglin">46d44a23a9fe19810012d100cca80666</requested_by><requested_by_date/><review_comments/><review_date/><review_status>3</review_status><risk>3</risk><scope>3</scope><short_description>Java Application Server change</short_description><sla_due/><start_date>2015-04-24 10:00:00</start_date><state>1</state><sys_class_name>change_request</sys_class_name><sys_created_by>felix.bait</sys_created_by><sys_created_on>2016-02-16 09:55:23</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>8799385b0a0a2c3e14c041a7f5414266</sys_id><sys_mod_count>5</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-15 20:35:47</sys_updated_on><test_plan/><time_worked/><type>Comprehensive</type><upon_approval>proceed</upon_approval><upon_reject>cancel</upon_reject><urgency>3</urgency><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></change_request></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>391b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>CHG0000010</target_name>
+<type>Change Request</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_section_cd17598ac61122890083062454697a87</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="cd17598ac61122890083062454697a87" sys_domain="global" table="core_company" version="3" view="customer"><sys_ui_element action="INSERT_OR_UPDATE"><element>name</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>d5338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>phone</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>19338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>fax_phone</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>59338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>customer</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>99338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>stock_symbol</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>d9338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>stock_price</element><position>5</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>1d338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>6</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>5d338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>street</element><position>7</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>9d338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>city</element><position>8</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>dd338812b91331007f445f0e65ec461d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>state</element><position>9</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>11338812b91331007f445f0e65ec461e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>zip</element><position>10</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>51338812b91331007f445f0e65ec461e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>u_critical_account</element><position>11</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>91338812b91331007f445f0e65ec461e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.end_split</element><position>12</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>d1338812b91331007f445f0e65ec461e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type>.end_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>notes</element><position>13</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:29</sys_created_on><sys_id>15338812b91331007f445f0e65ec461e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="ac3e1721f11331007f447199c835c39d">cd17598ac61122890083062454697a87</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>core_company</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>glide.maint</sys_created_by><sys_created_on>2005-10-07 21:58:11</sys_created_on><sys_customer_update>false</sys_customer_update><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>cd17598ac61122890083062454697a87</sys_id><sys_mod_count>6</sys_mod_count><sys_name>core_company</sys_name><sys_overrides/><sys_package display_value="System (glidesoft)" source="glidesoft">54fdd321f11331007f447199c835c333</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_ui_section_cd17598ac61122890083062454697a87</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:29</sys_updated_on><sys_user/><title>true</title><view display_value="Customer" name="customer">ac3e1721f11331007f447199c835c39d</view><view_name>customer</view_name></sys_ui_section></sys_ui_section></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>391b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table>core_company</table>
+<target_name>Company</target_name>
+<type>Form Layout</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view>customer</view>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>change_task_e4c5f741250331007f44deef22086e95</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="change_task"><change_task action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>not requested</approval><approval_history/><approval_set/><assigned_to display_value="Beth Anglin">46d44a23a9fe19810012d100cca80666</assigned_to><assignment_group/><business_duration/><calendar_duration/><change_request display_value="CHG0000013">87ae5e900a0a2c3e263e8304e727c646</change_request><close_notes/><closed_at/><closed_by/><cmdb_ci/><comments/><comments_and_work_notes/><company/><contact_type>phone</contact_type><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description/><due_date/><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact>3</impact><knowledge>false</knowledge><location/><made_sla>true</made_sla><number>CTASK0010002</number><opened_at>2015-03-25 20:54:06</opened_at><opened_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</opened_by><order/><parent display_value="CHG0000013">87ae5e900a0a2c3e263e8304e727c646</parent><priority>4</priority><reassignment_count>0</reassignment_count><rejection_goto/><short_description/><sla_due/><state>1</state><sys_class_name>change_task</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-03-25 20:54:13</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>e4c5f741250331007f44deef22086e95</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-03-25 20:56:49</sys_updated_on><time_worked/><upon_approval>proceed</upon_approval><upon_reject>cancel</upon_reject><urgency>3</urgency><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></change_task></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>3d1b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>CTASK0010002</target_name>
+<type>Change Task</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>problem_d7296d02c0a801670085e737da016e70</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="problem"><problem action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>not requested</approval><approval_history/><approval_set/><assigned_to display_value="David Loo">5137153cc611227c000bbd1bd8cd2007</assigned_to><assignment_group/><business_duration/><calendar_duration/><close_notes/><closed_at/><closed_by/><cmdb_ci display_value="SAP Enterprise Services">26da329f0a0a0bb400f69d8159bc753d</cmdb_ci><comments/><comments_and_work_notes/><company/><contact_type>phone</contact_type><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description>Several hours ago we experienced a flood of incidents related to various SAP applications.  It has been determined that there is an outage of unknown origin.  We are performing root cause analysis.</description><due_date/><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact>3</impact><knowledge>false</knowledge><known_error>false</known_error><location/><made_sla>true</made_sla><number>PRB0000011</number><opened_at>2015-02-28 04:58:15</opened_at><opened_by display_value="Carol Coughlin">46c1293aa9fe1981000dc753e75ebeee</opened_by><order/><parent/><priority>1</priority><problem_state>1</problem_state><reassignment_count/><rejection_goto/><related_incidents/><rfc/><short_description>Unknown source of SAP outage</short_description><sla_due/><state>1</state><sys_class_name>problem</sys_class_name><sys_created_by>itil</sys_created_by><sys_created_on>2015-02-28 04:58:15</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>d7296d02c0a801670085e737da016e70</sys_id><sys_mod_count>4</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:56</sys_updated_on><time_worked/><upon_approval>proceed</upon_approval><upon_reject>cancel</upon_reject><urgency>3</urgency><user_input/><variables/><watch_list/><wf_activity/><work_around/><work_end/><work_notes/><work_notes_list/><work_start/></problem></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>711b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>PRB0000011</target_name>
+<type>Problem</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_d3d6fb41250331007f44deef22086e99</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;change_request&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;true&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;message/&gt;&lt;name&gt;Count Change Tasks by Assignee&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[function onDisplay(current, g_scratchpad) {
+	//This function will be automatically called when this rule is processed.
+	
+	var changeTaskAssignees = [current.assigned_to + ""];
+	var changeTasks = new GlideRecord("change_task");
+	changeTasks.addQuery("change_request", current.sys_id);
+	changeTasks.query();
+	
+	while(changeTasks.next()) {
+		changeTaskAssignees.push(changeTasks.assigned_to);
+	}
+	
+	var otherTasksForUser = new GlideAggregate("change_task");
+	otherTasksForUser.addQuery("assigned_to", changeTaskAssignees);
+	otherTasksForUser.groupBy("assigned_to");
+	otherTasksForUser.addAggregate("COUNT");
+	otherTasksForUser.query();
+	
+	while(otherTasksForUser.next()) {
+		gs.addInfoMessage(otherTasksForUser.getDisplayValue("assigned_to") + " has " + otherTasksForUser.getAggregate("COUNT") + " Change Tasks assigned.")
+	}
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-03-25 21:00:54&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;d3d6fb41250331007f44deef22086e99&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Count Change Tasks by Assignee&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_d3d6fb41250331007f44deef22086e99&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-03-26 08:55:40&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before_display&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=d3d6fb41250331007f44deef22086e99"/&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>751b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table>change_request</table>
+<target_name>Count Change Tasks by Assignee</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>change_request_9d457fbac6112287007379b57c6b2e60</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="change_request"><change_request action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>rejected</approval><approval_history/><approval_set/><assigned_to display_value="ITIL User">681b365ec0a80164000fb0b05854a0cd</assigned_to><assignment_group/><backout_plan/><business_duration/><cab_date/><cab_recommendation/><calendar_duration/><category>Other</category><change_plan/><close_notes/><closed_at/><closed_by/><cmdb_ci/><comments/><comments_and_work_notes/><company/><conflict_status/><contact_type/><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description>The new VP of R&amp;D is thinking of switching the engineers over to Linux desktops and wants to know what it'd take on our end to support them, what it would cost to install them, and how fast the whole thing could happen.</description><due_date/><end_date>2015-04-10 03:00:00</end_date><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact/><implementation_plan/><justification/><knowledge>false</knowledge><location/><made_sla>false</made_sla><number>CHG0000007</number><opened_at>2013-02-15 22:44:30</opened_at><opened_by display_value="ITIL User">681b365ec0a80164000fb0b05854a0cd</opened_by><order/><outside_maintenance_schedule>false</outside_maintenance_schedule><parent display_value="INC0000001">9c573169c611228700193229fff72400</parent><phase>-1</phase><phase_state/><priority>5</priority><production_system>false</production_system><reason/><reassignment_count/><rejection_goto/><requested_by/><requested_by_date/><review_comments/><review_date/><review_status>-1</review_status><risk>3</risk><scope>-1</scope><short_description>R&amp;D wants to know what it'd cost to switch them over to Linux desktops</short_description><sla_due/><start_date>2015-04-09 23:00:00</start_date><state>1</state><sys_class_name>change_request</sys_class_name><sys_created_by>pat</sys_created_by><sys_created_on>2013-02-15 22:44:30</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>9d457fbac6112287007379b57c6b2e60</sys_id><sys_mod_count>12</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-15 20:35:47</sys_updated_on><test_plan/><time_worked/><type/><upon_approval/><upon_reject/><urgency/><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></change_request></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>791b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>CHG0000007</target_name>
+<type>Change Request</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_46c1293aa9fe1981000dc753e75ebeee</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_user"><sys_user action="INSERT_OR_UPDATE"><accumulated_roles>START,admin,itil_admin,END</accumulated_roles><active>true</active><building/><calendar_integration/><city/><company display_value="ACME Americas">98c37b193790200044e0bfc8bcbe5dbe</company><cost_center display_value="Sales">7fb1cc99c0a80a6d30c04574d14c0acf</cost_center><country/><date_format/><default_perspective/><department display_value="Sales">221db0edc611228401760aec06c9d929</department><edu_status/><email>carol.coughlin@example.com</email><employee_number/><failed_attempts/><first_name>Carol</first_name><gender/><home_phone/><internal_integration_user>false</internal_integration_user><introduction/><last_login/><last_login_device/><last_login_time/><last_name>Coughlin</last_name><last_password/><ldap_server/><location display_value="211 W 56th St, New York NY">25ab9f690a0a0bb3001c5fec1d0d7bcb</location><locked_out>false</locked_out><manager/><middle_name/><mobile_phone/><name>Carol Coughlin</name><notification>1</notification><password_needs_reset>false</password_needs_reset><phone/><photo/><preferred_language/><roles>admin,itil_admin</roles><schedule/><source/><state/><street/><sys_class_name>sys_user</sys_class_name><sys_created_by>system</sys_created_by><sys_created_on>2006-02-07 23:03:17</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>46c1293aa9fe1981000dc753e75ebeee</sys_id><sys_mod_count>14</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:05:33</sys_updated_on><time_format/><time_zone/><title/><user_name>carol.coughlin</user_name><user_password>$s$KQNeLHnNdQHqHU4vU7k+7ygpuuUZzqa2SIXEkiORhnU=$2vpqDbHwre96B1k/syMPsIJMaZn3GvKcVplXWHKWNOU=</user_password><vip>false</vip><web_service_access_only>false</web_service_access_only><zip/></sys_user></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>791b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>Carol Coughlin</target_name>
+<type>User</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>change_task_f7c5f741250331007f44deef22086e86</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="change_task"><change_task action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>not requested</approval><approval_history/><approval_set/><assigned_to display_value="Don Goodliffe">9ee1b13dc6112271007f9d0efdb69cd0</assigned_to><assignment_group/><business_duration/><calendar_duration/><change_request display_value="CHG0000013">87ae5e900a0a2c3e263e8304e727c646</change_request><close_notes/><closed_at/><closed_by/><cmdb_ci/><comments/><comments_and_work_notes/><company/><contact_type>phone</contact_type><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description/><due_date/><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact>3</impact><knowledge>false</knowledge><location/><made_sla>true</made_sla><number>CTASK0010003</number><opened_at>2015-03-25 20:54:19</opened_at><opened_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</opened_by><order/><parent display_value="CHG0000013">87ae5e900a0a2c3e263e8304e727c646</parent><priority>4</priority><reassignment_count>0</reassignment_count><rejection_goto/><short_description/><sla_due/><state>1</state><sys_class_name>change_task</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-03-25 20:54:24</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>f7c5f741250331007f44deef22086e86</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-03-25 20:56:53</sys_updated_on><time_worked/><upon_approval>proceed</upon_approval><upon_reject>cancel</upon_reject><urgency>3</urgency><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></change_task></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>7d1b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>CTASK0010003</target_name>
+<type>Change Task</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_dictionary_core_company_u_critical_account</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_dictionary action="INSERT_OR_UPDATE" element="u_critical_account" table="core_company"><active>true</active><array>false</array><attributes/><audit>false</audit><calculation/><choice>0</choice><choice_field/><choice_table/><column_label>Critical Account</column_label><comments/><create_roles/><default_value/><defaultsort/><delete_roles/><dependent/><dependent_on_field/><display>false</display><dynamic_creation>false</dynamic_creation><dynamic_creation_script/><dynamic_default_value/><dynamic_ref_qual/><element>u_critical_account</element><element_reference>false</element_reference><foreign_database/><internal_type display_value="">boolean</internal_type><mandatory>false</mandatory><max_length>40</max_length><name>core_company</name><next_element/><primary>false</primary><read_only>false</read_only><read_roles/><reference/><reference_cascade_rule/><reference_floats>false</reference_floats><reference_key/><reference_qual/><reference_qual_condition/><reference_type/><sizeclass/><spell_check>false</spell_check><sys_class_name>sys_dictionary</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-10 10:42:28</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>c9338812b91331007f445f0e65ec461b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Critical Account</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_dictionary_core_company_u_critical_account</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-10 10:42:28</sys_updated_on><table_reference>false</table_reference><text_index>false</text_index><unique>false</unique><use_dependent_field>false</use_dependent_field><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><virtual>false</virtual><widget/><write_roles/><xml_view>false</xml_view></sys_dictionary></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>b11b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table>core_company</table>
+<target_name>Company.Critical Account</target_name>
+<type>Dictionary</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_section_5134502bc611227c019dbdc4d7e32319</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="5134502bc611227c019dbdc4d7e32319" sys_domain="global" table="sys_user" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>user_name</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>719eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>first_name</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>b19eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>last_name</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>f19eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>title</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>359eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>company</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>759eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>department</element><position>5</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>b59eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>user_password</element><position>6</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>f59eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>password_needs_reset</element><position>7</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>399eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>locked_out</element><position>8</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>799eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>active</element><position>9</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>b99eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>web_service_access_only</element><position>10</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>f99eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>internal_integration_user</element><position>11</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>3d9eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>12</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>7d9eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>email</element><position>13</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>bd9eeb7c251b31007f44deef22086ef2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>notification</element><position>14</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>759e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>calendar_integration</element><position>15</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>b59e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>time_zone</element><position>16</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>f59e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>date_format</element><position>17</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>399e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>phone</element><position>18</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>799e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>mobile_phone</element><position>19</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>b99e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>photo</element><position>20</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>f99e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.end_split</element><position>21</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:00</sys_created_on><sys_id>3d9e2f7c251b31007f44deef22086e6f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><type>.end_split</type></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>sys_user</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>GUEST</sys_created_by><sys_created_on>2004-05-02 00:00:00</sys_created_on><sys_customer_update>false</sys_customer_update><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>5134502bc611227c019dbdc4d7e32319</sys_id><sys_mod_count>5</sys_mod_count><sys_name>sys_user</sys_name><sys_overrides/><sys_package display_value="Non Interactive Sessions" source="com.glide.security.non_interactive_users">0a4347552c2231007f44bed3c6b7e740</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_ui_section_5134502bc611227c019dbdc4d7e32319</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:00</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>b51b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table>sys_user</table>
+<target_name>User</target_name>
+<type>Form Layout</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>change_request_e8f816d5c0a801640131b8101100744c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="change_request"><change_request action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>not requested</approval><approval_history/><approval_set/><assigned_to display_value="ITIL User">681b365ec0a80164000fb0b05854a0cd</assigned_to><assignment_group/><backout_plan/><business_duration/><cab_date/><cab_recommendation/><calendar_duration/><category>Software</category><change_plan/><close_notes/><closed_at/><closed_by/><cmdb_ci/><comments/><comments_and_work_notes/><company/><conflict_status/><contact_type/><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description/><due_date/><end_date>2015-04-01 13:00:00</end_date><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact/><implementation_plan/><justification/><knowledge>false</knowledge><location/><made_sla>false</made_sla><number>CHG0000004</number><opened_at>2013-03-02 15:31:06</opened_at><opened_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</opened_by><order/><outside_maintenance_schedule>false</outside_maintenance_schedule><parent display_value="INC0000001">9c573169c611228700193229fff72400</parent><phase>-1</phase><phase_state/><priority>5</priority><production_system>false</production_system><reason/><reassignment_count/><rejection_goto/><requested_by/><requested_by_date>2014-07-17 00:00:00</requested_by_date><review_comments/><review_date/><review_status>-1</review_status><risk>3</risk><scope>-1</scope><short_description>Upgrade to Oracle 11i</short_description><sla_due/><start_date>2015-04-01 07:00:00</start_date><state>1</state><sys_class_name>change_request</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2013-03-02 15:31:06</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>e8f816d5c0a801640131b8101100744c</sys_id><sys_mod_count>6</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-15 20:35:48</sys_updated_on><test_plan/><time_worked/><type/><upon_approval/><upon_reject/><urgency/><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></change_request></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>b91b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>CHG0000004</target_name>
+<type>Change Request</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_5b7c200d0a640069006b3845b5d0fa7c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_user"><sys_user action="INSERT_OR_UPDATE"><accumulated_roles>START,admin,END</accumulated_roles><active>true</active><building/><calendar_integration>1</calendar_integration><city/><company display_value="ACME Americas">98c37b193790200044e0bfc8bcbe5dbe</company><cost_center display_value="Engineering">d9d07bddc0a80a647cf932056ed24652</cost_center><country/><date_format/><default_perspective/><department display_value="Development">221f3db5c6112284009f4becd3039cc9</department><edu_status>faculty</edu_status><email>jerrod.bennett@example.com</email><employee_number/><failed_attempts/><first_name>Jerrod</first_name><gender/><home_phone/><internal_integration_user>false</internal_integration_user><introduction/><last_login/><last_login_device/><last_login_time/><last_name>Bennett</last_name><last_password/><ldap_server/><location display_value="12305 Dennery Road, San Diego, CA">f90afd120a0a0b9100c6c302ba9bd056</location><locked_out>false</locked_out><manager/><middle_name/><mobile_phone/><name>Jerrod Bennett</name><notification>2</notification><password_needs_reset>false</password_needs_reset><phone/><photo/><preferred_language/><roles>admin</roles><schedule/><source/><state/><street/><sys_class_name>sys_user</sys_class_name><sys_created_by>glide.maint</sys_created_by><sys_created_on>2007-08-12 19:12:18</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>5b7c200d0a640069006b3845b5d0fa7c</sys_id><sys_mod_count>12</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:21:11</sys_updated_on><time_format/><time_zone>US/Pacific</time_zone><title>Developer</title><user_name>jerrod.bennett</user_name><user_password>$s$JNDKJ4jmm0ZVaYz6IaNpdzWDuCYcouxPh+f5dT7n2U8=$5oTxOdE7CY+kJW6xL1ZW7bBTfAPLuP6ORaGhk8/MphA=</user_password><vip>true</vip><web_service_access_only>false</web_service_access_only><zip/></sys_user></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>b91b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>Jerrod Bennett</target_name>
+<type>User</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>core_company_98c37b193790200044e0bfc8bcbe5dbe</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="core_company"><core_company action="INSERT_OR_UPDATE"><apple_icon/><banner_image/><banner_text/><city/><contact/><country>USA</country><customer>true</customer><discount/><fax_phone/><fiscal_year/><lat_long_error/><latitude/><longitude/><manufacturer>false</manufacturer><market_cap>0.00</market_cap><name>ACME Americas</name><notes/><num_employees/><parent display_value="ACME Corporation">e7c1f3d53790200044e0bfc8bcbe5deb</parent><phone/><primary>false</primary><profits>0.00</profits><publicly_traded>false</publicly_traded><rank_tier/><revenue_per_year>0.00</revenue_per_year><state/><stock_price/><stock_symbol/><street/><sys_created_by>admin</sys_created_by><sys_created_on>2012-02-19 17:35:39</sys_created_on><sys_id>98c37b193790200044e0bfc8bcbe5dbe</sys_id><sys_mod_count>4</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:05:14</sys_updated_on><theme/><u_critical_account>false</u_critical_account><vendor>false</vendor><vendor_manager/><vendor_type/><website/><zip/></core_company></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>bd1b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>ACME Americas</target_name>
+<type>Company</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_05dd999f378f3100fd08549543990e26</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access/&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;problem&lt;/collection&gt;&lt;condition&gt;!current.work_notes.nil()&lt;/condition&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;message/&gt;&lt;name&gt;Copy Work Note To Related Incidents&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[var gr = new GlideRecord("incident");
+gr.addQuery("problem_id", current.sys_id);
+gr.query();
+
+while(gr.next()) {    
+   gs.addInfoMessage("Copying Work Note to " + gr.getDisplayValue()); 
+   gr.comments = current.work_notes;    
+   gr.update();
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;andy.venables&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-04-01 09:37:40&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;05dd999f378f3100fd08549543990e26&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Copy Work Note To Related Incidents&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_05dd999f378f3100fd08549543990e26&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-04-06 11:05:44&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=05dd999f378f3100fd08549543990e26"/&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>f11b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table>problem</table>
+<target_name>Copy Work Note To Related Incidents</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_section_96811dd2c0a80164003dcf03c8867582</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="96811dd2c0a80164003dcf03c8867582" sys_domain="global" table="core_company" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>name</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>fbae2f7c251b31007f44deef22086eb8</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>phone</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>3fae2f7c251b31007f44deef22086eb8</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>fax_phone</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>7fae2f7c251b31007f44deef22086eb8</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>manufacturer</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>bfae2f7c251b31007f44deef22086eb8</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>vendor</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>ffae2f7c251b31007f44deef22086eb8</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>stock_symbol</element><position>5</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>33ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>stock_price</element><position>6</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>73ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>7</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>b3ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>street</element><position>8</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>f3ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>city</element><position>9</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>37ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>state</element><position>10</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>77ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>zip</element><position>11</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>b7ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>u_critical_account</element><position>12</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>f7ae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.end_split</element><position>13</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>3bae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type>.end_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>notes</element><position>14</position><sys_created_by>admin</sys_created_by><sys_created_on>2015-04-06 12:00:24</sys_created_on><sys_id>7bae2f7c251b31007f44deef22086eb9</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="core_company" sys_domain="global" view="Default view">96811dd2c0a80164003dcf03c8867582</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>core_company</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2004-08-25 15:12:17</sys_created_on><sys_customer_update>false</sys_customer_update><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>96811dd2c0a80164003dcf03c8867582</sys_id><sys_mod_count>4</sys_mod_count><sys_name>core_company</sys_name><sys_overrides/><sys_package display_value="System (glidesoft)" source="glidesoft">cda9f2112c2231007f44bed3c6b7e732</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_ui_section_96811dd2c0a80164003dcf03c8867582</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 12:00:24</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>f51b37736d1331007f443f31bcc0d9c8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table>core_company</table>
+<target_name>Company</target_name>
+<type>Form Layout</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>change_task_a4b5f741250331007f44deef22086e7c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="change_task"><change_task action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>not requested</approval><approval_history/><approval_set/><assigned_to display_value="Bow Ruggeri">f298d2d2c611227b0106c6be7f154bc8</assigned_to><assignment_group/><business_duration/><calendar_duration/><change_request display_value="CHG0000013">87ae5e900a0a2c3e263e8304e727c646</change_request><close_notes/><closed_at/><closed_by/><cmdb_ci/><comments/><comments_and_work_notes/><company/><contact_type>phone</contact_type><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description/><due_date/><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact>3</impact><knowledge>false</knowledge><location/><made_sla>true</made_sla><number>CTASK0010001</number><opened_at>2015-03-25 20:53:50</opened_at><opened_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</opened_by><order/><parent display_value="CHG0000013">87ae5e900a0a2c3e263e8304e727c646</parent><priority>4</priority><reassignment_count>0</reassignment_count><rejection_goto/><short_description/><sla_due/><state>1</state><sys_class_name>change_task</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-03-25 20:53:56</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>a4b5f741250331007f44deef22086e7c</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-03-25 20:56:42</sys_updated_on><time_worked/><upon_approval>proceed</upon_approval><upon_reject>cancel</upon_reject><urgency>3</urgency><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></change_task></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>f91b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>CTASK0010001</target_name>
+<type>Change Task</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>incident_471eb058a9fe198100f89592e1ea93d3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="incident"><incident action="INSERT_OR_UPDATE"><active>true</active><activity_due/><approval>not requested</approval><approval_history/><approval_set/><assigned_to/><assignment_group display_value="Hardware" name="Hardware">8a5055c9c61122780043563ef53438e3</assignment_group><business_duration/><business_stc/><calendar_duration/><calendar_stc/><caller_id display_value="Bow Ruggeri">f298d2d2c611227b0106c6be7f154bc8</caller_id><category>hardware</category><caused_by/><child_incidents/><close_code/><close_notes/><closed_at/><closed_by/><cmdb_ci/><comments/><comments_and_work_notes/><company display_value="ACME North America">31bea3d53790200044e0bfc8bcbe5dec</company><contact_type>phone</contact_type><correlation_display/><correlation_id/><delivery_plan/><delivery_task/><description/><due_date/><escalation>0</escalation><expected_start/><follow_up/><group_list/><impact>1</impact><incident_state>2</incident_state><knowledge>false</knowledge><location/><made_sla>false</made_sla><notify>1</notify><number>INC0000041</number><opened_at>2014-12-01 00:44:53</opened_at><opened_by display_value="Bow Ruggeri">f298d2d2c611227b0106c6be7f154bc8</opened_by><order/><parent/><parent_incident/><priority>3</priority><problem_id/><reassignment_count>3</reassignment_count><rejection_goto/><reopen_count/><resolved_at/><resolved_by/><rfc/><severity>3</severity><short_description>My desk phone does not work</short_description><sla_due/><state>2</state><subcategory/><sys_class_name>incident</sys_class_name><sys_created_by>bow</sys_created_by><sys_created_on>2014-12-01 00:45:27</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>471eb058a9fe198100f89592e1ea93d3</sys_id><sys_mod_count>19</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-04-06 16:08:01</sys_updated_on><time_worked/><upon_approval/><upon_reject/><urgency>3</urgency><user_input/><variables/><watch_list/><wf_activity/><work_end/><work_notes/><work_notes_list/><work_start/></incident></record_update>]]></payload>
+<remote_update_set display_value="script202">f51b37736d1331007f443f31bcc0d9c7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2015-04-15 20:36:23</sys_created_on>
+<sys_id>fd1b37736d1331007f443f31bcc0d9c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2015-04-15 20:36:23</sys_updated_on>
+<table/>
+<target_name>INC0000041</target_name>
+<type>Incident</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
