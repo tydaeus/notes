@@ -73,3 +73,62 @@
     - functionality same as trad'l update sets
 * not forced to use only Team Development
 
+## Additional Team Development Features
+
+#### Exclusion Policy & Ignoring Changes
+* in a non-prod instance, may have configurations that should never be pushed
+    - can ignore a change
+    - can create an exclusion policy
+
+##### Ignoring a change
+* mark a local change as ignored and it will not push
+* good for one-off changes
+
+##### Exclusion Policy
+* a query specs which records to exclude
+* can specify whether exclusion applies to pushes, pulls, or both
+    - can only spec table if pull involved
+
+#### Code Review
+* optional feature to provide code review checkpoint before pushes consumed by parent
+* enabled on parent
+* reviewers can accept or reject
+    - submitters can cancel pushes that are awaiting code review
+* all pushes and pulls blocked while code reviews are pending 
+* allows dev team to monitor what is being pushed
+
+#### Comparing Peer Instances
+* 2 peer instances can be compared, and local changes cna be applied from one to the other without pushing
+    - define peer instances as remote instance
+    - team development > team dashboard > compare to...
+        + select remote instance
+    - creates instance coparison record with related lists of local changes
+* can be useful in reviewing changes other teams are making and identifying potential future collisions
+
+## Best Practices
+
+* understand technical deps between releases
+    - partition work across teams and child instances to minimize collisions
+* use team dev on the DEV portion of stack and update sets in higher environments
+* ensure releases are identified before dev work begins, and that order of releases established when there are overlapping customizations
+    - this drives who pushes to DEV first, and which children should pull
+    - needs to be made with input from dev team (they know what will be customized)
+* for multiple developer releases, nominate a developer to manage aspects of update set lifecycle
+    - creates, pushes, and merges
+    - communicates current update set to rest of team
+    - reviews update sets and commmunicate pushes
+    - documents deployment process
+        + order of applying update sets, execution, and data to load
+* when possible, favor shorter release cycles
+    - reduces quantity of in-flight work, ensuring better match betw prod and dev
+    - simplifies work associated with re-cloning dev stack
+* always review updates in update set before transferring
+    - look for updates associated with other dev efforts and updates associated with testing
+    - watch for sys properties and integration end-points changes
+        + e.g. sys_property change that directs email to test acct
+    - move updates to scrap update set rather than deleting update
+* limit who has admin on development stack -- use impersonation
+    - ensures unintended customizations not made by non-developers
+* limit direct customizations in DEV HUB -- be judicious
+    - can be convenient way to provide change for all children, but can disruptive
+        + you cannot verify feature before it's consumed by children
