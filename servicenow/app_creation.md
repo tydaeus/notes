@@ -1,7 +1,5 @@
 #ServiceNow Application Creation
 
-instance: https://k15appcredevsheb001.lab.service-now.com/
-
 * Define process
     - Business Problem
     - Outcomes
