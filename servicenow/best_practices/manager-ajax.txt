@@ -1,0 +1,13 @@
+var ga = new GlideAjax('CumulusAjax');
+	
+ga.addParam('sysparm_name', 'getManager');
+ga.addParam('sysparm_user_id', g_form.getValue('assigned_to'));
+ga.getXML(parseManager);
+
+function parseManager(response) {
+
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	var token = answer.split(':');
+
+	g_form.setValue('assigned_to_mgr', token[0], token[1]);
+}
