@@ -1,0 +1,17 @@
+var UserUtilsAjax = Class.create();
+UserUtilsAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    getManager: function()
+	{
+		var userID = this.getParameter('sysparm_userID');
+		var user = new GlideRecord('sys_user');
+		if(user.get(userID))
+		{
+			return user.manager;
+		}
+		else
+		{
+			return -1;
+		}
+	},
+    type: 'UserUtilsAjax'
+});

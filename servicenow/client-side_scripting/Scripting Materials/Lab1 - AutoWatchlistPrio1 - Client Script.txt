@@ -1,0 +1,25 @@
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+   //dont continue if new priority is not 1 or there is no caller provided
+	if(newValue != 1 || g_form.getValue('caller_id') == '') {
+		return;
+	}
+	
+	var ga = new GlideAjax('UserUtilsAjax');
+	ga.addParam('sysparm_name', 'getManager');
+	ga.addParam('sysparm_userID', g_form.getValue('caller_id'));
+	ga.getXML(getManagerParse);
+}
+
+function getManagerParse(response){
+ var managerID = response.responseXML.documentElement.getAttribute('answer');
+
+	if(managerID == -1 || managerID == ''){
+		jslog('Error retrieving callers manager');
+	}else{
+		g_form.setValue('watch_list', managerID);
+		g_form.addInfoMessage("Caller's manager added to watchlist due to critical priority");
+	}
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2014-04-14 16:32:14">
+<sys_ui_policy action="INSERT_OR_UPDATE">
+<active>true</active>
+<conditions table="incident">impact=1^ORimpact=2^EQ<item field="impact" endquery="false" or="false" newquery="false" value="1" goto="false" operator="="/>
+<item field="impact" endquery="false" or="true" newquery="false" value="2" goto="false" operator="="/>
+<item field="" endquery="true" or="false" newquery="false" value="" goto="false" operator=""/>
+</conditions>
+<description/>
+<global>true</global>
+<inherit>false</inherit>
+<model_id/>
+<model_table/>
+<on_load>true</on_load>
+<order>200</order>
+<reverse_if_false>true</reverse_if_false>
+<run_scripts>true</run_scripts>
+<script_false><![CDATA[function onCondition() {
+	if (g_user.hasRole('itil')) {
+		try{
+			var incState = g_form.getValue('state');
+			g_form.clearsOptions('state');
+			g_form.addOption('state', 1, 'New', 0);
+			g_form.addOption('state', 2, 'Active', 1);
+			g_form.addOption('state', 3, 'Awaiting Problem', 2);
+			g_form.addOption('state', 4, 'Awaiting User Info', 3);
+			g_form.addOption('state', 5, 'Awaiting Evidence', 4);
+			g_form.addOption('state', 6, 'Dismissed', 5);
+			g_form.addOption('state', 7, 'Resolved', 7);
+			g_form.addOption('state', 8, 'Closed', 8);
+			g_form.setValue('state', state);
+		}
+		catch(err){
+			jslog("Debug>>><your initials> - Error occured: " + err);
+		}
+	}
+}]]></script_false>
+<script_true><![CDATA[function onCondition() {
+	
+	var incState = g_form.getValue('State');
+	jslog("Debug>>><your initials>: State value =  " + incState);
+	
+	
+	if (g_user.hasRole('itil')) {
+		g_form.addInfoMessage("User " + g_usr.userName + " has role 'itil'");
+		g_form.removeOption('state', '3');
+		g_form.removeOption('state', '4');
+		g_form.removeOption('state', '5')
+	}
+	
+	
+}
+]]></script_true>
+<set_values/>
+<short_description>Debug Client Scripting</short_description>
+<sys_class_name>sys_ui_policy</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2014-03-13 11:13:51</sys_created_on>
+<sys_domain>global</sys_domain>
+<sys_id>2e21d033ef13110029f70fa0f822569b</sys_id>
+<sys_mod_count>21</sys_mod_count>
+<sys_overrides display_value=""/>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2014-04-14 16:31:58</sys_updated_on>
+<table>incident</table>
+<ui_type>0</ui_type>
+<view display_value=""/>
+</sys_ui_policy>
+</unload>
