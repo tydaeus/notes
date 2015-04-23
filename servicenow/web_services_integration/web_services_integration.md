@@ -11,7 +11,7 @@
 * No real transform capabilities
 * Third party must understand and comply with ServiceNow scheme
 
-## Import Set WEb Service APIs
+## Import Set Web Service APIs
 * data flows through staging table
 * only need to create staging records - system determines correct operation
 * access controls
@@ -19,7 +19,7 @@
 * coalescing capabilities
 * third party can send data in own schema and format
 
-## SOAP WEb Service APIs
+## SOAP Web Service APIs
 * WSDL follows format:
     - /incident.do?WSDL
     - /u_my_custom_table.do?WSDL
@@ -105,7 +105,7 @@
 * can blank out fields
 * automatically determine if CREATE or UPDATE
 
-## WEb Service Import Sets
+## Web Service Import Sets
 * transform results returned to third party
     - import action that took place
     - table where record ended up
