@@ -1,1 +1,0 @@
-window.open('/' + g_list.getListName() + '.do?sys_id=' + g_sysId);

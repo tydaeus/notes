@@ -1,4 +1,0 @@
-function onCondition() {
-	g_form.setValue('priority', 1);
-	g_form.addInfoMessage('This is a critical change against a Business Service. Priority was set to Critical!');
-}
