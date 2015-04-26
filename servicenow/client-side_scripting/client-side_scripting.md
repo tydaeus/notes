@@ -35,4 +35,4 @@
 * current.canWrite() can be used to check write access -- no point in running certain actions if the user has no write access
 * client-side UI actions still have their conditions evaluated on the server side
 * `g_user` is available client side to provide some of the options from `gs` (which is server-side)
-* use UI Policies instead of client scripts where applicable
+* use UI Policies instead of client scripts where applicable - UI policies are more likely to continue functioning with future ServiceNow upgrades
