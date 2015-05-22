@@ -7,6 +7,10 @@
 ###Referencing Parameters
 Parameters passed to the java mapper interface method can be referenced within the mapper xml via `#{paramName}` if the parameter within the method is annotated `@Param("paramName")`. The `#{}` operator auto-generates PreparedStatements and sets values safely. To directly inject an unmodified value into the SQL, use the `${}` operator &ndash; this is *unsafe*.
 
+A single parameter can be passed without the `@Param` annotation; this parameter is referenced as `_parameter`.
+
+**Note:** Regardless of whether passing multiple or single parameter, it appears that auto-generated statements null-check with `<if test="_parameter != null" >`. This may be in error?
+
 ###Convenience Tags
 These tags make it easier to write mapper xml
 
