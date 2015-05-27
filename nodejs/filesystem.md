@@ -29,4 +29,59 @@ fs.stat(path, function callback(err, stats) {
 
 ```
 
-fsStat.statSync is the synchronous version.
+fs.statSync is the synchronous version.
+
+### Reading data from a file
+
+```js
+fs.readFile(filePath, [options], callback);
+// filePath is a string representing the path to the file
+// encoding is one of "ascii", "utf8", or "base64"
+// callback is called once contents are ready, with signature (err, data)
+```
+* `filePath` string representing path to file
+* `options` Object
+    - `encoding` String | Null (default = null)
+        + if not specified / null, raw buffer is returned
+        + can be used in place of options object
+    - `flag` String (default = "r")
+* `callback` Function (err, data);
+
+`fs.readFileSync(filename[, options])` provides the synchronous equivalent, returning the file's contents.
+
+### Writing data to a file
+
+`fs.writeFile(filename, data[, options], callback)`
+* `filename` String representing path to file
+* `data` String | Buffer
+* `options` Object
+    - `encoding` String | Null default = "utf8"
+    - `Mode` Number default = 438 (Octal 0666)
+    - `flag` String default = "w"
+* `callback` Function (err)
+
+`fs.writeFileSync(filename, data[, options])` provides synchronous equivlant, no return.
+
+### Deleting Files
+
+* `fs.rmdir(dirname, callback)` or `fs.rmdirSync(dirname)` can be used to delete an empty directory
+* `fs.unlink(filename, callback)` or `fs.unlinkSync(filename)` can be used to delete a file
+
+```javascript
+    // deletes a directory and all contents within
+    function rmdirRecursive(dir) {
+        var contents = fs.readdirSync(dir);
+
+        contents.forEach(function (item) {
+            var stats = fs.statSync(dir + "/" + item);
+
+            if (stats.isDirectory()) {
+                rmdirRecursive(dir + "/" + item);
+            } else {
+                fs.unlinkSync(dir + "/" + item);
+            }
+        });
+
+        fs.rmdirSync(dir);
+    }
+```
