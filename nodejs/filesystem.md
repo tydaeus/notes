@@ -68,20 +68,21 @@ fs.readFile(filePath, [options], callback);
 * `fs.unlink(filename, callback)` or `fs.unlinkSync(filename)` can be used to delete a file
 
 ```javascript
-    // deletes a directory and all contents within
-    function rmdirRecursive(dir) {
-        var contents = fs.readdirSync(dir);
+    // deletes a file and all contents within if directory
+    function rmRecursive(file) {
 
-        contents.forEach(function (item) {
-            var stats = fs.statSync(dir + "/" + item);
+        if (fs.statSync(file).isDirectory()) {
 
-            if (stats.isDirectory()) {
-                rmdirRecursive(dir + "/" + item);
-            } else {
-                fs.unlinkSync(dir + "/" + item);
-            }
-        });
+            var contents = fs.readdirSync(file);
 
-        fs.rmdirSync(dir);
+            contents.forEach(function (item) {
+                rmRecursive(file + "/" + item);
+            });
+
+            fs.rmdirSync(file);
+
+        } else {
+            fs.unlinkSync(file);
+        }
     }
 ```
