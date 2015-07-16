@@ -52,7 +52,7 @@ app.use('/', routes);
 app.use('/users', users);
 ```
 
-To simplify things further, the route designation can be moved from app.js to a separate file, such as index.js
+To simplify things further, the route designation can be moved from app.js to a separate file, such as routes/index.js
 
 ```js
 /**
@@ -82,6 +82,8 @@ router.get('/', ctrl.index);
 
 module.exports = router;
 ```
+
+If desired, this can be further simplified by adding logic to index.js to find and use all routes in the routes directory.
 
 #####Page Rendering
 Use the response object's render method to designate the template to be rendered to fulfill the request.
