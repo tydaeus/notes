@@ -55,7 +55,8 @@ dependencies {
 }
 ```
 
-Dependencies are downloaded to the user folder by default. This can be reconfigured with the `GRADLE_USER_HOME` environment variable, `gradle.user.home` system property, or `--gradle-user-home` command line parameter.
+Dependencies are downloaded to `"$USER_HOME"/.gradle` subdirectory by default. This can be reconfigured with the `GRADLE_USER_HOME` environment variable, `gradle.user.home` system property, or `--gradle-user-home` command line parameter.
+
 ## Properties
 
 List properties with `gradle properties`; this includes the properties added by plugins and their default values.
@@ -106,3 +107,11 @@ task wrapper(type: Wrapper) {
 Running this task will generate scripts 'gradlew' and 'gradlew.bat' which should be checked into version control, and can then be used in place of the gradle command to perform gradle tasks (they will download the named version of gradle to achieve this).
 
 The wrapper can be configured to use a specific (e.g. enterprise) repository via the `distributionUrl` property, and to place its downloaded gradle version in a specific location via the `distributionPath` property (relative to GRADLE_HOME).
+
+## The Gradle Daemon
+The gradle daemon lurks in the background, waiting to improve build speed. Good for development environments, bad for build servers (Jenkins).
+
+Enable/disable temporarily with `--daemon`/`--no-daemon`. Enable for environment by either adding `-Dorg.gradle.daemon=true` to `GRADLE_OPTS`, or adding `org.gradle.daemon=true` to the `"$GRADLE_USER_HOME"/gradle.properties
+
+## Continuous Build
+Use `-t` or `--continuous` along with one or more task invocations to cause gradle to remain running and auto-repeat the tasks when changes are detected. E.g. `gradle -t test` . This feature is currently "in incubation" and may cause issues, especially on Macs.
