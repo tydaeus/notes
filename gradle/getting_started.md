@@ -115,3 +115,9 @@ Enable/disable temporarily with `--daemon`/`--no-daemon`. Enable for environment
 
 ## Continuous Build
 Use `-t` or `--continuous` along with one or more task invocations to cause gradle to remain running and auto-repeat the tasks when changes are detected. E.g. `gradle -t test` . This feature is currently "in incubation" and may cause issues, especially on Macs.
+
+## Running the built program
+
+```
+$java -cp build/classes/main package.Main
+```
