@@ -2,7 +2,9 @@
 
 Reflection allows java to retrieve information about classes, objects, and members during runtime. Reflection incurs some overhead, and should be used only when necessary.
 
-## Getting Class objects
+Unlike introspection, reflection allows for viewing and manipulating normally restricted (e.g. private) members.
+
+## Getting Class Objects
 
 Retrieving a Class object is the entry point to reflection. There are several ways to do this, depending on what information is currently available.
 
@@ -12,13 +14,13 @@ Retrieving a Class object is the entry point to reflection. There are several wa
 * `Class.getName(String className)` retrieves the class object for a fully qualified class name, or for an array type using syntax described in the `Class.getName` documenation
 * `WrapperClass.TYPE` retrieves the class of the wrapped primitive for a wrapper type, e.g. `Double.TYPE`
 
-## Getting More info About Classes
+### Getting Class Relationship Info from Classes
 
 * `class.getSuperclass()`
 * `class.getClasses()` retrieves all *public* member classes, interfaces, and enums declared within the class, including inherited members
 * `class.getDeclaredClasses()` retrieves all member classes, interfaces, and enums *declared* within the class, including private members
 
-## Retrieving parent class from members
+### Retrieving Parent Class from Members
 * `class.getDeclaringClass()`
 * `field.getDeclaringClass()`
 * `method.getDeclaringClass()`
