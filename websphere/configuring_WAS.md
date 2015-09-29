@@ -1,5 +1,9 @@
 #Configuring Websphere
 
+## Ports
+Under Server, server types, websphere application servers, click the server name, then click on **ports* on the right, under the heading "Communications".
+
+## Variables
 ###Java Environment Variables
 Java environment variables are set at the time the JVM starts, and can be read via:
 ```java
@@ -11,7 +15,7 @@ or in Spring Expression Language(SpEL):
 String propertyValueHolder;
 ```
 
-######Via Admin Console
+######Setting Java Environment Variables Via Admin Console
 1. Nav to `Servers > Server Types > WebSphere application servers`
 2. Select the server being configured
 3. Nav to `Server Infrastructure > Java and Process Management > Process definition`
