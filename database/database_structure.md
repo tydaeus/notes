@@ -15,8 +15,25 @@ The names of structural tables begin with a prefix indicating the scope covered 
 * **indexes** stores the definition for indexes
 * **tables** stores the definition for the tables
 * **tab_cols** stores the definition of table columns
+* **triggers** stores definition of triggers
+* **sequences** stores definition of sequences
+* **dependencies** stores definition of dependencies *used by triggers*
 
 So, for example, `user_tab_cols` would contain the definition of the columns belonging to tables owned by the current user/schema.
+
+Retrieve all data about the triggered sequences on a user's tables via:
+```SQL
+select tabs.table_name,
+  trigs.trigger_name,
+  seqs.sequence_name
+from user_tables tabs
+join user_triggers trigs
+  on trigs.table_name = tabs.table_name
+join user_dependencies deps
+  on deps.name = trigs.trigger_name
+join user_sequences seqs
+  on seqs.sequence_name = deps.referenced_name;
+```
 
 ## DML v. DDL
 * **Database Definition Language** is used to *define* the *structure* of the database. This includes CREATE, DROP, ALTER, MODIFY, etc. statements. DDL is committed immediately, and thus cannot be rolled back. To execute DDL within PL/SQL, you must use the `execute immediate` statement.
