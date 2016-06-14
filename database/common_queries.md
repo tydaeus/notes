@@ -26,7 +26,7 @@ to_date('January 15, 1989, 11:00 A.M.', 'Month dd, YYYY, HH:MI A.M.')
 * `MM` - Month in numeric form (e.g. '11')
 
 ### Oracle `sysdate`
-Oracle provides the sysdate special value for retrieving the current date. This date can then be manipulated to create statements relative to the current date.
+Oracle provides the sysdate special value for retrieving the current date/time. This date can then be manipulated to create statements relative to the current date.
 
 #### Manipulating days
 Syntactic sugar is provided so that adding or subtracting a number from sysdate will change it by that many days.
