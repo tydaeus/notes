@@ -19,6 +19,7 @@ In Oracle, the `to_date` function is used to convert from string to date. This t
 
 ```SQL
 to_date('January 15, 1989, 11:00 A.M.', 'Month dd, YYYY, HH:MI A.M.')
+to_date('01/15/1989', 'MM/dd/YYYY')
 ```
 
 #### Format Values

@@ -1,8 +1,0 @@
- _______
-/ JUnit \_______________________________________________________________________________________________________________
-
-Assertions compare values to expectations:
-	- assertEquals(expectedValue, actualValueVar)
-	- assertNull
-	- assertNotNull
-	- assertSame(expectedCollection, actualCollectionVar)

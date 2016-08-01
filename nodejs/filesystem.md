@@ -28,7 +28,7 @@ fs.stat(path, function callback(err, stats) {
 });
 
 ```
-
+Note that `stat` results in a 
 fs.statSync is the synchronous version.
 
 ### Reading data from a file
@@ -86,3 +86,6 @@ fs.readFile(filePath, [options], callback);
         }
     }
 ```
+
+### Creating a Directory
+`fs.mkdir(path, [mode], callback)`
