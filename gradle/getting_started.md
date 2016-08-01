@@ -1,8 +1,14 @@
 # Getting Started with Gradle
 
-Download gradle, unzip, place in an appropriate location, and add the bin/ dir to your path. Should be good to go. You may also want to set GRADLE_HOME to be the parent directory of your gradle.
+Download Gradle, unzip, place in an appropriate location, and add the bin/ dir to your path. Should be good to go. You may also want to set GRADLE_HOME to be the parent directory of your Gradle install.
 
-Standard build configuration file is `build.gradle`.
+The default (implicit) build configuration file name is `build.gradle`.
+
+The `init` command can be used to auto-generate a simple build.gradle file. By default this is inferred from the project structure, but it can be specified using the `--type` option
+```sh
+gradle init --type=basic
+```
+
 
 ## Commandline Commands
 
@@ -34,6 +40,10 @@ apply plugin: 'java'
 
 Plugin functionality is inheritable and idempotent, i.e. using the 'war' plugin means the 'java' plugin is not necessary, but applying 'java' on top of 'war' does not result in doubling application of the 'java' plugin.
 
+Common gradle plugins:
+* java
+* war
+
 ## Repositories
 
 Repositories allow you to retrieve dependencies, publish artifacts, or both.
@@ -58,10 +68,11 @@ dependencies {
 Dependencies are downloaded to `"$USER_HOME"/.gradle` subdirectory by default. This can be reconfigured with the `GRADLE_USER_HOME` environment variable, `gradle.user.home` system property, or `--gradle-user-home` command line parameter.
 
 ## Properties
+Properties are used to configure the build.
 
 List properties with `gradle properties`; this includes the properties added by plugins and their default values.
 
-Set standard properties via declaration
+Set standard properties via declaration:
 ```java
 sourceCompatibility = 1.5
 version = '1.0'
@@ -95,7 +106,7 @@ Configurations are used to group settings. For example, compile is used for comp
 
 ## Tasks
 
-## Gradle Wrapper
+### Gradle Wrapper
 The gradle wrapper allows auto-bundling of the gradle runtime with a project so that the project can be ported to other environments and gradle will automatically be downloaded and configured as necessary.
 
 ```java
@@ -121,3 +132,15 @@ Use `-t` or `--continuous` along with one or more task invocations to cause grad
 ```
 $java -cp build/classes/main package.Main
 ```
+
+## Troubleshooting build
+
+### println
+
+Use the `println` function to prin to the console output:
+```groovy
+task taskName {
+    println 'some text output'
+}
+```
+
