@@ -1,4 +1,4 @@
-#PL/SQL Basics
+# PL/SQL Basics
 
 PL/SQL allows programmatic execution of SQL code.
 
@@ -28,8 +28,48 @@ end;
     -- they have been completely entered.
 ```
 
-### Cursors
+### Variables
 
+#### Declaration
+Variables must be declared in the declaration block before they can be used:
+```SQL
+declare
+    /* variableName variableType ; */
+    myInt int;
+    myString varchar2(20);
+
+```
+
+#### Assignment
+Assign to a variable from a select statement with the `select into` statement:
+```SQL
+    select count(*) into myInt from TABLE_NAME where /* where clause */;
+    select
+      count(*), max(COLUMN_NAME) into myInt, myOtherVar
+    from TABLE_NAME where /* where clause */;
+```
+
+#### Referencing
+Access the variable within a PL/SQL statement just by using its name:
+```SQL
+    if myInt < 5 then
+    /* ... */
+```
+
+### Conditionals
+
+#### If/Then/Else/Elsif
+```SQL
+    if /* condition */ then
+        /* statements */
+    elsif /* condition */ then
+        /* statements */
+    else
+        /* statements */
+    end if;
+```
+
+### Cursors
 Cursors allow you to specify a query result that can subsequently be iterated through.
 
 ```SQL
