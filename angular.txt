@@ -114,8 +114,12 @@ validation:
 
 can retrieve a given service for testing in console by asking the injector for it:
 	angular.element(document.body).injector().get('serviceName')
-	// need to retrieve element that angular is attached to, not necessarily body
+	// need to retrieve element that angular is attached to (ng-app element), not necessarily body
 	// recommend some form of consistent id for this element, e.g. angular-app-container
+
+	// find the ng-app element
+	angular.element("[ng-app]").injector().get('serviceName')
+
 
 setting attribute ng-strict-di=true on the same element that contains the ng-app attribute tells angular to use explicit injection, same as if minified code (since angular 1.3.0)
 	<div ng-app="appName" ng-strict-di="true" id="angular-app-container">
