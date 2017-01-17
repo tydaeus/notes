@@ -12,6 +12,12 @@ The names of structural tables begin with a prefix indicating the scope covered 
 * **dba**-prefixed tables store data about all tables in the database
 
 #### Structure Tables
+* **constraints** stores the definition of constraints
+    - constraint types:
+        + R - Referential Key (foreign key)
+        + U - Unique key
+        + P - Primary key
+        + C - Check constraint
 * **indexes** stores the definition for indexes
 * **tables** stores the definition for the tables
 * **tab_cols** stores the definition of table columns
