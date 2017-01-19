@@ -23,14 +23,37 @@ declare
 -------------------------------------------------------------------------------
 begin
     /* ... semi-colon separated statements */
+exception
+    /* ... exception handling code */
 end;
 /   -- PL/SQL statements can contain ';', so '/' or 'RUN' must be used after
     -- they have been completely entered.
 ```
 
-### Variables
+## Nested Blocks
+PL/SQL execution blocks can be nested inside each other. Child blocks have access to variables declared in their parent block scope, but parent blocks do not have access variables declared in their children's scopes.
+```SQL
+declare
+    /* parent declaration */
+begin
+    /* parent statements */
+    declare -- start of child block
+        /* child declaration */
+    begin
+        /* child statements */
+    exception
+        /* child exception handling */
+    end; -- end of child block
+    /* more parent statements */
+exception
+    /* parent exception handling */
+end;
+/
+```
 
-#### Declaration
+## Variables
+
+### Declaration
 Variables must be declared in the declaration block before they can be used:
 ```SQL
 declare
@@ -40,7 +63,7 @@ declare
 
 ```
 
-#### Assignment
+### Assignment
 Assign to a variable from a select statement with the `select into` statement:
 ```SQL
     select count(*) into myInt from TABLE_NAME where /* where clause */;
@@ -49,16 +72,16 @@ Assign to a variable from a select statement with the `select into` statement:
     from TABLE_NAME where /* where clause */;
 ```
 
-#### Referencing
+### Referencing
 Access the variable within a PL/SQL statement just by using its name:
 ```SQL
     if myInt < 5 then
     /* ... */
 ```
 
-### Conditionals
+## Conditionals
 
-#### If/Then/Else/Elsif
+### If/Then/Else/Elsif
 ```SQL
     if /* condition */ then
         /* statements */
@@ -69,7 +92,7 @@ Access the variable within a PL/SQL statement just by using its name:
     end if;
 ```
 
-### Cursors
+## Cursors
 Cursors allow you to specify a query result that can subsequently be iterated through.
 
 ```SQL
@@ -87,6 +110,6 @@ end;
 /
 ```
 
-### Text Output
+## Text Output
 
 Use `dbms_output.put_line('text here')` to trigger text output. Depending on client, you may also need to enable the display of this output. SQLDeveloper requires the DBMS Output view to be displayed and a connection to be created between this view and the database. Use `||` for concatenation, and the `to_char()` function to convert non-string data to printable format.
