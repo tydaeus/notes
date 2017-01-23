@@ -19,11 +19,12 @@ The names of structural tables begin with a prefix indicating the scope covered 
         + P - Primary key
         + C - Check constraint
 * **indexes** stores the definition for indexes
+  + **ind_columns** index to column mapping 
 * **tables** stores the definition for the tables
-* **tab_cols** stores the definition of table columns
+  + **tab_cols** stores the definition of table columns
 * **triggers** stores definition of triggers
+  + **dependencies** stores definition of dependencies *used by triggers*
 * **sequences** stores definition of sequences
-* **dependencies** stores definition of dependencies *used by triggers*
 
 So, for example, `user_tab_cols` would contain the definition of the columns belonging to tables owned by the current user/schema.
 

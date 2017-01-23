@@ -64,6 +64,12 @@ declare
 ```
 
 ### Assignment
+
+Assign to a variable from a literal or another variable:
+```SQL
+    variable_name := value;
+```
+
 Assign to a variable from a select statement with the `select into` statement:
 ```SQL
     select count(*) into myInt from TABLE_NAME where /* where clause */;

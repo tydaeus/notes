@@ -15,6 +15,8 @@ select ID "Item ID" from SCHEMA.TABLE;
 ### to_number
 The `to_number` function converts a non-numeric type to a numeric type. This can be useful for ensuring that strings are sorted as numbers, among other things.
 
+### to_char
+The `to_char` function converts a non-string type to a string type.
 
 ## Select Duplicates
 To select duplicates by field content, use a group by clause containing the desired field(s).
