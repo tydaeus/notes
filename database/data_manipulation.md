@@ -18,6 +18,8 @@ select ID "Item ID" from SCHEMA.TABLE;
 ### String Functions
 
 * `length` returns the length of a string
+* `upper` converts a string to all uppercase
+* `lower` converts a string to all lowercase
 
 ## Casting Values
 
