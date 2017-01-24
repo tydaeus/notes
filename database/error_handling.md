@@ -71,7 +71,11 @@ Use the `raise` operation to raise a named exception:
 ```
 Note that unless the named exception has been associated with a number via `exception_init`, no SQLCODE or SQLERRM information can be retrieved from it.
 
-Use the `raise_application_error` function as part of a stored procedure or function to specify a custom error number and message that will be available to callers' handlers.
+Use the `raise_application_error` function as part of a stored procedure or function to specify a custom error number and message that will be available to callers' handlers. Note that error number should be in -20000..-20999.
+
+```SQL
+raise_application_error(-20001, 'Something bad happened. Let me tell you about it.');
+```
 
 ### Re-Raising Exceptions
 Using `raise` within an exception block will re-raise the exception so the parent block can handle it:
