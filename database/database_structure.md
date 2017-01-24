@@ -18,6 +18,7 @@ The names of structural tables begin with a prefix indicating the scope covered 
         + U - Unique key
         + P - Primary key
         + C - Check constraint
+  + **cons_columns** constraint to column mapping
 * **indexes** stores the definition for indexes
   + **ind_columns** index to column mapping 
 * **tables** stores the definition for the tables
