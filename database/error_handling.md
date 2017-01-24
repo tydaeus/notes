@@ -34,7 +34,16 @@ end;
 Within the `exception` section, you can use special functions to retrieve information about the caught exception:
 
 * `SQLCODE` retrieves the error code
-* `SQLERRM` retrieves the associated error message
+* `SQLERRM` retrieves the associated error message; note that this includes the SQLCODE for Oracle standard messages
+
+### Reasonable Default
+Here's a reasonable default way to handle exceptions, if output and continuation is desired:
+``` SQL
+exception
+    when OTHERS then
+        dbms_output.put_line('ERROR: failed to do something');
+        dbms_output.put_line('  ' || SQLERRM);
+```
 
 ## Declaring Exceptions
 Declare a variable of type exception;
@@ -42,7 +51,7 @@ Declare a variable of type exception;
 declare
     MY_EXCEPTION exception;
     ...
-exceptions
+exception
     when MY_EXCEPTION
         -- do something
 end;
