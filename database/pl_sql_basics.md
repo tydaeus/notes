@@ -118,4 +118,9 @@ end;
 
 ## Text Output
 
-Use `dbms_output.put_line('text here')` to trigger text output. Depending on client, you may also need to enable the display of this output. SQLDeveloper requires the DBMS Output view to be displayed and a connection to be created between this view and the database. Use `||` for concatenation, and the `to_char()` function to convert non-string data to printable format.
+Use `dbms_output.put_line('text here')` to trigger text output. Depending on client, you may also need to enable the display of this output. 
+
+For SQLDeveloper, either:
+
+*  display the DBMS Output view and create a connection between this view and the database.
+*  turn on serveroutput via `set serveroutput on` before the script
