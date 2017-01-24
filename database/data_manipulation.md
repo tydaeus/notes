@@ -32,6 +32,9 @@ The `to_char` function converts a non-string type to a string type.
 ## Dates
 To work with date fields, you may need to be able to generate date values, since coercion of string to date can be unreliable.
 
+### `CURRENT_TIMESTAMP`
+Global pseudo-variable `CURRENT_TIMESTAMP` represents the current timestamp.
+
 ### Oracle `to_date`
 In Oracle, the `to_date` function is used to convert from string to date. This takes the form of `to_date(dateString, formatString)`, where dateString contains the string to be converted to a date, and formatString contains the string defining the format to use in conversion.
 
