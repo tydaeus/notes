@@ -57,6 +57,15 @@ Scopes can be further nested via additional setlocal/endlocal pairings.
 
 Running within a local scope has additional benefits, such as easily allowing directory changes internally without changing the current working directory for the user or other scripts.
 
+Note that local scope is available only for scripts, not for commandline usage.
+
+###### Delayed Expansion
+Calling `setlocal enabledelayedexpansion` causes variables to be expanded at execution time instead of at parse time.
+
+Wihout delayed expansion, variables get replaced by their values only once, *before* commands are executed.
+
+Delayed expansion enables using `!` instead of `%` for specifying latest possible expansion.
+
 ##### exporting from local scope
 
 Combine endlocal with variable set command to provide a variable to the outer scope.
@@ -76,6 +85,7 @@ Parameters can get processed into alternate forms via the `~` operator with spec
 
 Common processing (using argument 1 as our sample var):
 
+* `%~1` removes any surrounding quotes
 * `%~d1` provides the drive letter only (e.g. `C:`)
 * `%~p1` provides the path only, including trailing `\`
 * `%~dp1` provides the drive letter and path. Useful for figuring out the path to the script currently running
