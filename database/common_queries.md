@@ -12,5 +12,10 @@ select FIELD_1, FIELD_2, count(*) from SCHEMA_NAME.TABLE_NAME
 ;
 ```
 
+## Get BLOB Size
+To get the byte size of a blob field, use the length function:
 
+```sql
+select length(BLOB_COLUMN) from TABLE_NAME;
+```
 
