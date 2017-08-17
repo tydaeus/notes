@@ -3,8 +3,37 @@
 Misc notes about windows scripting with .cmd/.bat files.
 Use https://ss64.com for a real reference; this is just a cheat sheet.
 
-## @Echo
-@Echo controls whether all script commands get printed to the console. In general, it's best to begin scripts with `@ECHO off`, except during debugging.
+## Comments
+Comments are supported in batch scripting, but only poorly. **Never** use `%` or any control characters in a comment -- the parser will attempt to parse the comment as a command.
+
+### The `REM` command
+The `rem` command indicates a remark, to be ignored by the parser. However, this command does adversely impact readability, and has some performance issues due to the parser still reading the entire line.
+
+### Labels as Comments
+By convention, labels starting with an additional colon are also used as comments. Processing time for this can be significantly faster than for `rem` comments.
+
+```cmd
+:: this is used as a comment
+```
+
+Labels as comments cannot be used within parens (`(`, `)`) used for flow control; use `rem` in these cases.
+
+### Plaintext as Comments
+Include a goto that skips past a block, then use that block as a comment.
+
+```cmd
+goto :endOfComments
+Here are some comments.
+
+:endOfComments
+
+## Verbosity
+
+### `@` Operator
+The `@` operator, prefixed to a command, results in this command not being displayed as it is executed
+
+### `Echo` toggle
+The statement `Echo off` will turn off command display until `Echo on` is invoked. This is customarily written as `@Echo off` to prevent the toggle operation from getting displayed. In general, it's best to begin scripts with `@ECHO off`, except during debugging.
 
 ## Escaping
 
@@ -91,6 +120,16 @@ Common processing (using argument 1 as our sample var):
 * `%~dp1` provides the drive letter and path. Useful for figuring out the path to the script currently running
 * `%~f1` provides the fully qualified path name
 * `%~$PATH:1` searches PATH and expands %1 to the fully qualified name of the first match
+
+### Variable Replacement
+Command scripting includes a built-in command to perform simple replacement operations on a variable.
+
+```cmd
+%variable:StrToFind=NewStr%
+:: replaces instances of "StrToFind" with "NewStr"
+```
+
+Note that to replace a variable string or replace with a variable string, you will need to enableDelayedExpansion and use the `!` operator as well as the `%` operator.
 
 ## Script Completion
 
