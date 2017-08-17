@@ -1,4 +1,9 @@
+# Common Git Commands
+
+## Setup
 * `git init` initializes git on the current or specified dir (prereq to others)
+
+## Saving Changes
 
 * `git add` stages files for the next commit, e.g.:
     - `git add file.ext` stages file.ext
@@ -8,6 +13,8 @@
 * `git commit` saves to local repo
     - `git commit -m "<message>"` records <message> as commit message
     
+## Pushing Changes to Repo
+
 * `git remote` manipulate the location of named remote source, e.g:
     - `git remote add origin <url>` adds remote location at <url> with name 
       "origin"
@@ -17,10 +24,14 @@
       flag specifies that upstream references should be updated with successful
       changes and thus this version should be used by subsequent pulls)
 
+## Retrieving Changes from Repo
+
 * `git fetch` retrieve changes from remote repo
       
 * `git pull` incorporate changes from remote repo into current branch 
   (defaults to git fetch followed by git merge MERGE_HEAD)
+
+## Detecting Changes
 
 * `git status` shows what changes have been made since last commit, and which have been staged
 * `git diff --cached|--staged` shows the staged changes against the HEAD
