@@ -1,4 +1,4 @@
-#Paginated Queries in Oracle
+# Paginated Queries in Oracle
 
 By narrowing queries, user can select a more manageable amount of data.
 
