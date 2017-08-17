@@ -1,5 +1,9 @@
 # Common Git Commands
 
+## access help (html formatted)
+
+* `git --help`, or `git <cmd> --help`
+
 ## Setup
 * `git init` initializes git on the current or specified dir (prereq to others)
 * `git clone` retrieves a copy of the specified repo for you to work on (creates the containing folder)
