@@ -5,6 +5,9 @@
 To achieve the equivalent of a cmd script `pause` statement, use
 
 ```C#
-Console.WriteLine("Press any key to continue...");
-Console.ReadKey();
+static void pause()
+{
+    Console.WriteLine("Press any key to continue...");
+    Console.ReadKey();
+}
 ```
