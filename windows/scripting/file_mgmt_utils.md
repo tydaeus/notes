@@ -3,6 +3,22 @@ The windows command line file management utilities are a fragmented and confusin
 
 ## Copying Files
 
+### Copy
+`copy` provides basic file copying utility. It is a very primitive tool, so `xcopy` or `robocopy` may be preferrable. However, there are some operations that can be performed most easily with `copy`.
+
+#### Updating Modified Time (Touch)
+`copy` can be used to update the modified time of a given file, by writing the file over itself.
+
+In current working directory:
+```cmd
+copy /b FILENAME+
+```
+
+In another directory:
+```cmd
+copy /b PATH\FILENAME+,, PATH\
+```
+
 ### XCopy
 `xcopy` copies files and/or directory trees, providing more options than `copy`. `xcopy` has been **deprecated** after Vista/Windows 2008, so use `robocopy` instead, if available.
 
