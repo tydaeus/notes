@@ -26,6 +26,7 @@ goto :endOfComments
 Here are some comments.
 
 :endOfComments
+```
 
 ## Verbosity
 
@@ -117,7 +118,7 @@ Common processing (using argument 1 as our sample var):
 * `%~1` removes any surrounding quotes
 * `%~d1` provides the drive letter only (e.g. `C:`)
 * `%~p1` provides the path only, including trailing `\`
-* `%~dp1` provides the drive letter and path. Useful for figuring out the path to the script currently running
+* `%~dp1` provides the drive letter and path. Use `%~dp0` for figuring out the path to the script currently running
 * `%~f1` provides the fully qualified path name
 * `%~$PATH:1` searches PATH and expands %1 to the fully qualified name of the first match
 
