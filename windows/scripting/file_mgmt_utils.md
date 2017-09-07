@@ -33,7 +33,7 @@ xcopy src dest
 * `/-Y` - prompt before overwriting (default)
 * `/Q` - quiet mode (do not display file names while copying)
 
-#### File Type Sepcification
+#### File Type Specification
 By default, `xcopy` prompts the user to specify whether files are regular files or directories. Pipe `echo` with 'D' or 'F' to specify ahead of time.
 
 ```cmd
