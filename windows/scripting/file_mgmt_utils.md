@@ -14,7 +14,7 @@ xcopy src dest
 
 * `/E` - copy folders and subfolders, including empty folders
 * `/Y` - do not prompt before overwriting
-* `/-Y` - prompt before overwriting
+* `/-Y` - prompt before overwriting (default)
 * `/Q` - quiet mode (do not display file names while copying)
 
 #### File Type Sepcification
