@@ -37,7 +37,18 @@ xcopy src dest
 By default, `xcopy` prompts the user to specify whether files are regular files or directories. Pipe `echo` with 'D' or 'F' to specify ahead of time.
 
 ```cmd
-echo F | xcopy src.txt dest.txt
+:: copy named file to specified destination path and name
+echo F | xcopy src.txt destpath\dest.txt
+
+```
+
+Pipe output to `nul` to hide the prompt-response verbiage (`> nul`).
+
+#### Common Usages
+
+```
+:: copy named dir to specified destination path and name (overwrite, don't list files, don't display prompt-response)
+echo D | xcopy /E /Y /Q srcdir destdir > nul
 ```
 
 ## Directories
@@ -56,6 +67,7 @@ The `rd` command removes a directory. Without options, this will require confirm
 
 ### Typical Usage
 ```cmd
-rd /S /SQ mydir
+:: remove mydir and its contents
+rd /S /Q mydir
 ```
 
