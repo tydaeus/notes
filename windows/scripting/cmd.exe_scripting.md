@@ -44,7 +44,9 @@ The `^` (caret) escape character can be used to escape special characters, inclu
 ### "" escaping
 `"` (double quotes) can be used within a value to preserve spaces, and must be used to wrap filenames that have spaces within them.
 
-## Variables
+<h2 id="variables">Variables</h2>
+
+Note that in cmd scripting, variables are handled somewhat differently from [parameters](#parameters).
 
 ### Accessing
 Enclose a variable within `%` to retrieve its value, e.g. `%X%`.
@@ -77,6 +79,13 @@ echo "%X%"
 >foo & bar
 ```
 
+#### Setting a Var Based on Command Output
+There is no cmd equivalent to the Linux backtick operator. However, you can use `for`'s command output processing option to 
+
+```cmd
+for /F "delims=" %%A in ('COMMAND') do set VARNAME=%%A
+```
+
 ### Scope
 Variables are global within their command prompt session by default. Within the command prompt, system level variables are initialized from the system environment at the start of execution.
 
@@ -105,7 +114,10 @@ Example cribbed shamelessly from ss64:
 ENDLOCAL & SET _return1=%_item%& SET _return2=%_price%
 ```
 
-### Parameters
+<h3 id="parameters">Parameters</h3>
+
+Note that parameters in command scripting are processed differently from [variables](#variables).
+
 Parameters passed on the command line, or passed along to a subroutine, are accessible on special variables `%1`-`%9`. `%*` refers to all arguments (up to argument 255), but only 1-9 are directly accessible by number.
 
 Parameter `%0` contains the full path file name of the script/program being invoked
