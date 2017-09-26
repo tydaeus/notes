@@ -54,7 +54,7 @@ echo D | xcopy /E /Y /Q srcdir destdir > nul
 ## Directories
 
 ## `md` - Make Directory
-The `md` command creates a new directory.
+The `md` command creates a new directory. Intermediate directories will also be created if necessary.
 
 ## `rd` - Remove Directory
 The `rd` command removes a directory. Without options, this will require confirmation, and will not remove non-empty directories.
