@@ -3,6 +3,14 @@
 Misc notes about windows scripting with .cmd/.bat files.
 Use https://ss64.com for a real reference; this is just a cheat sheet.
 
+## Output
+Use `echo` to output to the console.
+
+Redirect stdout to stderr on echo to output to stderr:
+```cmd
+echo ERR: Something bad happened! 1>&2
+```
+
 ## Comments
 Comments are supported in batch scripting, but only poorly. **Never** use `%` or any control characters in a comment -- the parser will attempt to parse the comment as a command.
 
