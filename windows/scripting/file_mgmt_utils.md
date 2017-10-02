@@ -1,12 +1,14 @@
 # Windows Command-line File Management Utilities
 The windows command line file management utilities are a fragmented and confusing ecosystem.
 
-## Copying Files
+## Files
 
-### Copy
+### Copying Files
+
+#### Copy
 `copy` provides basic file copying utility. It is a very primitive tool, so `xcopy` or `robocopy` may be preferrable. However, there are some operations that can be performed most easily with `copy`.
 
-#### Updating Modified Time (Touch)
+##### Updating Modified Time (Touch)
 `copy` can be used to update the modified time of a given file, by writing the file over itself.
 
 In current working directory:
@@ -14,26 +16,26 @@ In current working directory:
 copy /b FILENAME+
 ```
 
-In another directory:
+In another directory (this does not work in XP):
 ```cmd
 copy /b PATH\FILENAME+,, PATH\
 ```
 
-### XCopy
+#### XCopy
 `xcopy` copies files and/or directory trees, providing more options than `copy`. `xcopy` has been **deprecated** after Vista/Windows 2008, so use `robocopy` instead, if available.
 
 ```cmd
 xcopy src dest
 ```
 
-#### Common Flags
+##### Common Flags
 
 * `/E` - copy folders and subfolders, including empty folders
 * `/Y` - do not prompt before overwriting
 * `/-Y` - prompt before overwriting (default)
 * `/Q` - quiet mode (do not display file names while copying)
 
-#### File Type Specification
+##### File Type Specification
 By default, `xcopy` prompts the user to specify whether files are regular files or directories. Pipe `echo` with 'D' or 'F' to specify ahead of time.
 
 ```cmd
@@ -44,11 +46,25 @@ echo F | xcopy src.txt destpath\dest.txt
 
 Pipe output to `nul` to hide the prompt-response verbiage (`> nul`).
 
-#### Common Usages
+##### Common Usages
 
 ```
 :: copy named dir to specified destination path and name (overwrite, don't list files, don't display prompt-response)
 echo D | xcopy /E /Y /Q srcdir destdir > nul
+```
+
+### Deleting Files
+Use `del` to delete a file or list of files. Note that if you specify a directory, its contents will be deleted but the directory itself will not be.
+
+#### Common Flags
+
+* `/Q` - Do not prompt for confirmation
+* `/F` - Force deletion of read-only files
+
+#### Common Usage
+
+```
+del /Q FILENAME
 ```
 
 ## Directories
