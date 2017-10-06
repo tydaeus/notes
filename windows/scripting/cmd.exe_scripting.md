@@ -142,6 +142,11 @@ Common processing (using argument 1 as our sample var):
 * `%~f1` provides the fully qualified path name
 * `%~$PATH:1` searches PATH and expands %1 to the fully qualified name of the first match
 
+##### Limitations
+**WARNING**: Most parameter extension only works to correctly retrieve all file info if the file's fully qualified path was provided, or the file is in the CWD. If this is not the case, parameter extension will behave as if the file is in CWD but has no information.
+
+For example, if foo.cmd is in PATH but not in CWD, calling foo.cmd and then referencing `%~dp0` within foo will return CWD\foo.cmd, even though foo.cmd is not in the CWD.
+
 ### Variable Replacement
 Command scripting includes a built-in command to perform simple replacement operations on a variable.
 
