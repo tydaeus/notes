@@ -1,11 +1,11 @@
-#Getting Started with Express
+# Getting Started with Express
 
-####Prereqs
+#### Prereqs
 * node.js
 * npm
 * express-generator module should be installed globally via `$ npm install express-generator -g`
 
-##Initial Setup
+## Initial Setup
 To start express project setup, navigate to the desired root folder and execute the `express` command. Common options:
 * `--css less|stylus` add Less or Stylus CSS pre-processing to project
 * `--ejs` use EJS HTML template engine (instead of Jade default)
@@ -19,14 +19,14 @@ These dependencies will be installed once `npm install` has been run.
 $ express myapp --css less
 ```
 
-##Running the Application
+## Running the Application
 After creating the application, run
 ```sh
 $ node ./bin/www
 ```
 For development purposes, consider using `nodemon` instead of `node`. `nodemon` will automatically restart the application after changes.
 
-##Debugging
+## Debugging
 The `debug` module allows conditional display of log-style output.
 ```js
 var debug = require('debug')('namespace');
