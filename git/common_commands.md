@@ -43,3 +43,20 @@
 
 * `git status` shows what changes have been made since last commit, and which have been staged
 * `git diff --cached|--staged` shows the staged changes against the HEAD
+
+## Reverting Changes
+
+### git checkout (most common)
+Use `git checkout -- FILE` to replace FILE with the latest version from HEAD.
+
+### git reset
+`git reset` allows you to remove commits from the current branch. Recommended for use on private branches only.
+
+For example, `git reset HEAD FILEPATH` will remove any commits to FILEPATH that are not part of HEAD. Note that this does not modify the file, just what changes to the file have been committed.
+
+### git revert
+Note that `git revert` cannot be restricted to a single file; it operates on the entire tree.
+
+
+
+
