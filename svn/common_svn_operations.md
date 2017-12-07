@@ -2,4 +2,12 @@
 
 ## Searching the Log
 
-In SVN 1.8+, you can search the log of commits via `svn log -v [REPO URL] --search [SEARCH TERM]`.
+```
+svn log [-v] [-r REVISION] [REPO_ _URL] --search [SEARCH_TERM]
+
+# revision can be specified by rev#, name, or a date; can be a range
+
+svn log -r 1729:HEAD
+svn log -r {2001-12-04}:{2002-02-17}
+svn log -r 1729:{2002-02-17}
+```
