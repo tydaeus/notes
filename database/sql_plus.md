@@ -1,7 +1,12 @@
-#Using SQL*PLus
+# Using SQL*PLus
 
 ## Connecting
 Connect via `sqlplus username{/password}@(hostname.network|tnsname)`. You will be prompted for your password if you use the format without the password.
+
+## Passwords
+
+### Changing Your Own Password
+Use the `password` command from the sqlplus console to change your own password. You will be prompted for your old password and the new one.
 
 ## Running Scripts
 
