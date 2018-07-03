@@ -1,11 +1,17 @@
 # Git Initial Setup
 
 ## Configure User Settings
-By default these will be specified for the current repo. Add `--global` to specify system-wide defaults.
+By default these will be specified for the current repo. Add `--global` to specify user-wide defaults.
+
+User settings are stored in the user's home folder as `.gitconfig`.
 
 * `git config user.name <user name>` - specify user's given name
 * `git config user.email <user email>` - specify user's email address
 * `git remote add origin <remote url>` - specify default repo location. If a github url, will be formatted as https://github.com/user-name/repo-name .
+
+### Proxies
+* `git config http.proxy=http://proxy.domain.com:PORT`
+* `git config https.proxy=https://proxy.domain.com:PORT`
 
 ## Create a New Repository on the Command Line
 
