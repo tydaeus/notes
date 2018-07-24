@@ -40,6 +40,12 @@ To install the command-line utility: `npm install -g markdown`.
 
 To use the command-line utility: `md2html MyMarkdown.md > MyHtml.html`.
 
+### markdown css
+After converting markdown, you may also want to apply styling beyond the default html styling.
+
+#### github-markdown-css
+The styling used for markdown on github can be added using the [github-markdown-css package](https://github.com/sindresorhus/github-markdown-css). This can also be retrieved from a CDN using a link provided by [CDNJS](https://cdnjs.com/libraries/github-markdown-css).
+
 ## Writing Markdown Documents
 You can learn markdown syntax from http://daringfireball.net/projects/markdown/syntax.
 Markdown can be written in plaintext, but it is easier if you use a markdown-aware editor. Some markdown-aware editing option(s) are listed below.
