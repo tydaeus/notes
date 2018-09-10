@@ -10,7 +10,9 @@
 ```
 
 ### Prefix
-The prefix determines where globabl modules get installed. This should not be within the node program folder, so updating node will not overwrite modules. Prefix defaults to a location within the user's home folder.
+The prefix determines where global modules get installed. This should not be within the node program folder, so updating node will not overwrite modules. Prefix defaults to a location within the user's home folder.
 ```bash
     > npm config set prefix "C:\[location]"
 ```
+
+**Recommended**: add this location to your `PATH` so that global modules can be used directly from the command line.
