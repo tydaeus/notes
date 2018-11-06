@@ -101,7 +101,7 @@ Enter search string into search bar, select time period, and click the magnifyin
 
 Past searches can be viewed and re-run using the Search History tool.
 
-Commands that create statistics and visualizations are called `transforming` commands. These are commands that transform event data into data tables. 
+Commands that create statistics and visualizations are called `transforming` commands. These are commands that transform event data into data tables.
 
 ### Wildcards
 
@@ -127,6 +127,13 @@ Field names are case sensitive, values are not.
 * `>`, `>=`, `<`, `<=` - numerical comparison
 
 Wildcards, boolean operators, and  parentheses can also be used when searching fields.
+
+### Extracting New Fields
+If a field you are interested in is not captured, use the `Extract New Fields` link displayed at the bottom of the `fields` sidebar.
+
+This tool allows you to select a sample event, then use sample fields from it to generate field extraction rules in either regex or separator format. **Warning**: generated regex is likely to be positional, rather than based on text values. Be sure to verify that wildcards and specific text are used as appropriate.
+
+After you have designated fields for extraction, these fields can be edited in future via `Settings > Fields > Field extractions`
 
 ## Best Practices
 ### In Search
@@ -329,7 +336,7 @@ Inputs can be added to the dashboard, then referenced via any inline searches on
 ## Pivot and Datasets
 
 ### Pivot
-Pivot allows users to design reports in a user-friendly manor, without needing to formulate a search string.
+Pivot allows users to design reports in a user-friendly manner, without needing to formulate a search string.
 
 `Data Models` - knowledge objects that provide the data structure that drives Pivots. Created by Admin and Power users. Data model is a framework, and pivot provide an interface into the data. Data models are made up of `Datasets`.
 
@@ -404,14 +411,14 @@ Use the `lookup` command to access the defined lookup. `|lookup LOOKUPNAME LOOKU
 All fields except the input field will be returned as output fields by default; use the `OUTPUT` clause to choose which fields the lookup returns. This will overwrite existing fields of the same name, so you can use the `as` option to rename the output fields. E.g. `|lookup LOOKUPNAME LOOKUPFIELDNAME as DATAFIELDNAME, OUTPUT LOOKUPFIELDNAME as "Lookup Field Alias", LOOKUPFIELDNAME2 as "Lookup Field Alias 2"`. Use `OUTPUTNEW` instead to prevent overwriting existing fields.
 
 ### Automatic Lookup
-Settings > Lookups > Add New Automatic Lookup
-Select app
-specify name
-specify lookup table
-choose what to apply the lookup to
-specify lookup input field(s)
-specify lookup output field(s)
-Select whether to overwrite existing fields.
+1. Settings > Lookups > Add New Automatic Lookup
+2. Select app
+3. specify name
+4. specify lookup table
+5. choose what to apply the lookup to
+6. specify lookup input field(s)
+7. specify lookup output field(s)
+8. Select whether to overwrite existing fields.
 
 Now searches against the specified sourcetype will automatically apply the lookup.
 
