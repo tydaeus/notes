@@ -37,11 +37,6 @@ Cmdlets are the powershell command functions. About cmdlets:
 * Use `Get-Help -Name Cmdlet-Name -Full` to get full help on the named cmdlet.
 * use `Update-Help` to fetch the latest help files
 
-## Comments
-Use `#` for comment lines.
-
-Use `<#` and `#>` for block comments.
-
 ## Objects
 Unlike traditional scripting shells, powershell outputs .Net objects, not plaintext. Objects are underlying types from .Net, but you can create objects using C# or the PSObject type.
 
