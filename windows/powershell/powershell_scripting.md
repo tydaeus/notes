@@ -71,5 +71,18 @@ To write user output data, use one of the `Write` cmdlets:
 * `Write-Warning` writes warning-level data, which will be displayed unless non-default parameter or preference is set.
 * `Write-Error` writes error-level data, which will be displayed along with trace data, unless non-default parameter or preference is set
 
+*Note*: PowerShell is stupid, and `Write-Error` does not write to stderr as visible from outside of PowerShell.
+
 ### Outputting Variables
 To output a variable as a string (e.g. via write-method), direct references can be included within the quotes. E.g. `"Value of X is $x"` will output the value of x in place of $x. However, to reference the properties of a variable, the variable reference statement must be enclosed in `$()`, e.g. `"Value of obj.x is $($obj.x)"`.
+
+## Error Checking/Handling
+
+### `$error`
+When errors occur, they are stored in the `$error` variable. This array is populated in LIFO order, so the most recent error is stored in `$error[0]`. The size of this array is limited by `$MaximumErrorCount`, causing it to act like a buffer.
+
+### `$?`
+`$?` holds a boolean that indicates whether the last command succeeded. This will be `$True` if the last command succeeded, `$False` if it exited with a non-zero code or due to an uncaught `throw` statement.
+
+### `$LastExitCode`
+`$LastExitCode` holds the exit code from the last command. Note that exiting due to an uncaught `throw` statement does not result in a non-zero status.
