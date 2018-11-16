@@ -1,5 +1,8 @@
 # Common PowerShell Tasks
 
+## Using .NET Libraries
+You can use static methods from .NET libraries by referencing their FullName in  brackets and adding the method name after double colons: `[System.IO.Path]::GetExension("Filename.ext")`.
+
 ## Read a File
 
 ### Line-by-Line: `Get-Content`
