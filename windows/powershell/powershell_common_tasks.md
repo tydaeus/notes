@@ -13,6 +13,7 @@ Use `[System.IO.File]::ReadLines($filePath)` to access .Net's `File.ReadLines` f
 ### XML Parsing
 Retrieve an xml file via `[xml]$xmlFile = Get-Content $xmlFilePath`. "Dot-Walk" on the object to retrieve the contents of all tags of a specified nesting and type. E.g. `$xmlFile.xml.TagLev1.TagLev2` will retrieve the contents of all TagLev2 tags that are contained within TagLev1 tags which are contained within an xml tag. Note that not all xml files use the `xml` tag as a base-level tag.
 
+**Warning**: a "null" object will be returned for each instance of the parent tag that does not contain the desired child tag (e.g. for each `TagLev1` tag that doesn't contain a `TagLev2`).
 
 ## Get Contents of a Directory
 `Get-ChildItem $dirPath`. Use the `-Recurse` parameter for recursive traversal, and the `-Force` parameter to include hidden and system files.
@@ -63,3 +64,6 @@ Use the `Test-Path` cmdlet to inspect file structures. Use `Get-Help Test-Path` 
 
 ### Check if Path is File
 `Test-Path -Path $fullPath -PathType leaf`
+
+## Send an Email
+Use the `Send-MailMessage` cmdlet to send an email: `Send-MailMessage -From $fromAddress -To $toAddress -CC $ccAddress -Subject $Subject -Body $Body -SmtpServer $SMTPServer - port $SMTPPort -Attachments $Attachment`. You may wish to add the `-UseSsl` parameter to ensure SSL encryption, and setting `-Credential (Get-Credential)` will ensure credentials are prompted for.
