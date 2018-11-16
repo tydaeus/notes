@@ -94,3 +94,5 @@ $obj = [PSCustomObject]@{
 ```
 
 Properties can be added subsequently via the `Add-Member` cmdlet: `$obj | Add-Member -MemberType NoteProperty -Name name -Value "foo"`.
+
+For more info, [gngrninja](https://www.gngrninja.com/script-ninja/2016/6/18/powershell-getting-started-part-12-creating-custom-objects) provides a variety of ways to define a PowerShell custom object.
