@@ -73,3 +73,26 @@ Use the `Test-Path` cmdlet to inspect file structures. Use `Get-Help Test-Path` 
 
 ## Send an Email
 Use the `Send-MailMessage` cmdlet to send an email: `Send-MailMessage -From $fromAddress -To $toAddress -CC $ccAddress -Subject $Subject -Body $Body -SmtpServer $SMTPServer - port $SMTPPort -Attachments $Attachment`. You may wish to add the `-UseSsl` parameter to ensure SSL encryption, and setting `-Credential (Get-Credential)` will ensure credentials are prompted for.
+
+## Schedule a Task
+PowerShell provides cmdlets that allow you to automate/script some of the functionality of the Windows Task Scheduler. Because of the complexity of the commands involved, it can help to build up the parameters as variables first.
+
+The following template is derived from https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/13/use-powershell-to-create-scheduled-tasks/.
+
+```
+# the action to be scheduled; executes PowerShell and specifies the command as part of its arguments
+$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument '-NoProfile -WindowStyle Hidden -command "& {psScriptBlock}"'
+
+# script execution variant
+$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -WorkingDirectory 'C:\ScriptDir' -Argument '-NoProfile -WindowStyle Hidden -command ".\scriptName.ps1"'
+
+
+# triggering condition used to actually schedule the task
+$trigger = New-ScheduledTaskTrigger -Daily -At 9am
+
+# actually register the action and trigger
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Description "My task that does stuff"
+```
+
+### Get Info About Scheduled Task
+`Get-ScheduledTask $taskName | Get-ScheduledTaskInfo` where `$taskName` is a string containing the value of -TaskName used during scheduling.
