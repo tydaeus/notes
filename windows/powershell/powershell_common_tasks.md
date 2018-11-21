@@ -1,14 +1,17 @@
 # Common PowerShell Tasks
 
+## Get Script Directory
+In PowerShell 3.0+, automatic variable `$PSScriptRoot` will contain the dir of the current script.
+
 ## Using .NET Libraries
 You can use static methods from .NET libraries by referencing their FullName in  brackets and adding the method name after double colons: `[System.IO.Path]::GetExension("Filename.ext")`.
 
 ## Read a File
 
 ### Line-by-Line: `Get-Content`
-Use `Get-Content $filePath` to retrieve a file's content line by line. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines.
+Use `Get-Content $filePath` to retrieve a file's content as a collection of lines. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines.
 
-`Get-Content` has known performance issues on large files.
+`Get-Content` has known performance issues on large files, because it must read through the entire file before returning.
 
 ### Line-by-Line: `System.IO.File::ReadLines`
 Use `[System.IO.File]::ReadLines($filePath)` to access .Net's `File.ReadLines` function to retrieve a file's content line by line. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines.
