@@ -96,3 +96,42 @@ $obj = [PSCustomObject]@{
 Properties can be added subsequently via the `Add-Member` cmdlet: `$obj | Add-Member -MemberType NoteProperty -Name name -Value "foo"`.
 
 For more info, [gngrninja](https://www.gngrninja.com/script-ninja/2016/6/18/powershell-getting-started-part-12-creating-custom-objects) provides a variety of ways to define a PowerShell custom object.
+
+## Custom Classes
+Courtesy of https://4sysops.com/archives/powershell-classes-part-1-objects/.
+
+Declare a class using the `Class` command:
+
+```
+Class Foo {
+    [type]$PropName = $DefaultValue
+    #Note: no comma-separation between properties, must be line/semicolon separated
+    #...
+}
+```
+
+Instantiate with either `$instance = [Foo]::new()` or `$instance = New-Object Foo`.
+
+Access a property using the `.` operator: `$instance.PropName`. Note that the `$` symbol gets dropped from the property name.
+
+### Property Modifiers
+
+#### `hidden`
+Declare a property with the `hidden` modifier to prevent it from displaying in the PowerShell console by default. Use `Get-Member`'s  `-Force` parameter to display hidden properties.
+
+```
+Class Foo {
+    hidden [type] $PropName = $DefaultValue
+}
+```
+
+#### `static`
+`Static` properties have a value at the class-level, instead of the instance level.
+
+```
+Class Foo {
+    static [type] $StaticProp = $DefaultValue
+}
+```
+
+Access `static` properties using the `::` operator on the class `[Foo]::StaticProp` or an object `$instance::StaticProp`.
