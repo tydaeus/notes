@@ -152,3 +152,8 @@ Use the `$this` variable to reference the calling instance.
 Use the `static` modifier to declare a method as static to the class.
 
 PowerShell methods can be overloaded by declaring additional methods of the same name, with a different signature.
+
+### Constructors
+Constructors are declared similar to methods, with no return type and their name being the same as the class name.
+
+Use `[className]::new(params)` to invoke the constructor with the specified params.
