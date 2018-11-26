@@ -16,6 +16,9 @@ Set-Variable varName -option Constant -value $Value
 
 ```
 
+## Get Type of Variable
+Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`.
+
 ## Read a File
 
 ### Line-by-Line: `Get-Content`
