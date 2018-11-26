@@ -19,6 +19,17 @@ Set-Variable varName -option Constant -value $Value
 ## Get Type of Variable
 Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`.
 
+## Join Collection
+Use the `-Join` operator to join a collection.
+
+```powershell
+# join with no delimiter
+-Join $myArr
+
+# join with newline as delimiter
+$myArr -Join "`n"
+```
+
 ## Read a File
 
 ### Line-by-Line: `Get-Content`
