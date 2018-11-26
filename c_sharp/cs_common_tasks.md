@@ -9,3 +9,12 @@
 6. Confirm
 7. Wait for installation to complete
 8. Ensure that `packages.config` gets committed to version control
+
+## Working with JSON
+Install `Json.NET`, which is in package `Newtonsoft.Json`.
+
+### Convert to JSON
+Use `JsonConvert.SerializeObject(object, Formatting.Indented)` to convert an object or collection thereof to a JSON string.
+
+### Convert from JSON
+Use `JsonConvert.DeserializeObject<Type>(jsonString)` to convert from a JSON string to the desired type.
