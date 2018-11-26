@@ -45,6 +45,14 @@ Retrieve an xml file via `[xml]$xmlFile = Get-Content $xmlFilePath`. "Dot-Walk" 
 
 **Warning**: a "null" object will be returned for each instance of the parent tag that does not contain the desired child tag (e.g. for each `TagLev1` tag that doesn't contain a `TagLev2`).
 
+### Reading JSON
+Use `ConvertFrom-Json` to convert a string into an object, similar to `JSON.Parse`. Note that this works only with a string, not a string array, so you'll need to `-Join` the string[] if reading from a file.
+
+All together:
+```powershell
+$resultObject = (Get-Content $filePath) -Join "`n" | ConvertFrom-Json
+```
+
 ## Get Contents of a Directory
 `Get-ChildItem $dirPath`. Use the `-Recurse` parameter for recursive traversal, and the `-Force` parameter to include hidden and system files.
 
