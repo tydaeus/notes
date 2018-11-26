@@ -14,7 +14,7 @@ Strongly typed: `[int[]]$arr = 1, 2, 3, 5, 8`.
 
 Multi-dimensional array:
 
-```
+```powershell
 $arr = @(
     (1,3,5)
     (2,4,6)
@@ -24,7 +24,7 @@ $arr = @(
 ### Add values
 Append to an array using `+=`. `$arr += 8`. Note that PowerShell (stupidly, IMHO) uses immutably sized arrays. For large arrays, consider using a .Net ArrayList instead:
 
-```
+```powershell
 $list = New-Object System.Collections.ArrayList
 $list.Add(5)
 ```
@@ -49,7 +49,7 @@ Loop through elements: `foreach ($elem in $arr) { $elem }`.
 ### Comparisons
 Comparison operators function as a filter, returning all matching values.
 
-```
+```powershell
 @(1, 2, 3, 4, 5) -gt 3
 4
 5
@@ -64,7 +64,7 @@ Create a hashtable: `[hashtable]$ht = @{}`.
 Add values: `$ht.Add('PropertyName', $propertyValue)`.
 
 Combine declaration with adding values, and use implicit typing:
-```
+```powershell
 $ht = @{
     name = "foo"
     value = 5
@@ -74,7 +74,7 @@ Note that semicolons can be used in place of newlines.
 
 By default, a hashtable won't preserve the order properties were added in. An ordered hashtable can be created in PowerShell 3.0+ by using the `[ordered]` adapter before the assignment:
 
-```
+```powershell
 $ht = [ordered]@{
     name = "foo"
     value = 5
@@ -86,7 +86,7 @@ Access values via `$ht.name`, or `$ht.values` for the list of values.
 ## Custom Objects
 In PowerShell 3.0+, the `[PSCustomObject]` type adapter is the easiest way to quickly create an object:
 
-```
+```powershell
 $obj = [PSCustomObject]@{
     name = "foo"
     value = 5
@@ -102,7 +102,7 @@ Courtesy of https://4sysops.com/archives/powershell-classes-part-1-objects/.
 
 Declare a class using the `Class` command:
 
-```
+```powershell
 Class Foo {
     [type]$PropName = $DefaultValue
     #Note: no comma-separation between properties, must be line/semicolon separated
@@ -119,7 +119,7 @@ Access a property using the `.` operator: `$instance.PropName`. Note that the `$
 #### `hidden`
 Declare a property with the `hidden` modifier to prevent it from displaying in the PowerShell console by default. Use `Get-Member`'s  `-Force` parameter to display hidden properties.
 
-```
+```powershell
 Class Foo {
     hidden [type] $PropName = $DefaultValue
 }
@@ -128,10 +128,27 @@ Class Foo {
 #### `static`
 `Static` properties have a value at the class-level, instead of the instance level.
 
-```
+```powershell
 Class Foo {
     static [type] $StaticProp = $DefaultValue
 }
 ```
 
 Access `static` properties using the `::` operator on the class `[Foo]::StaticProp` or an object `$instance::StaticProp`.
+
+### Methods
+Declare a method on a class using:
+
+```powershell
+#...
+    [ReturnType]MethodName([Type]Parameter1, [Type]Parameter2) {
+        #...
+    }
+#...
+```
+
+Use the `$this` variable to reference the calling instance.
+
+Use the `static` modifier to declare a method as static to the class.
+
+PowerShell methods can be overloaded by declaring additional methods of the same name, with a different signature.
