@@ -6,6 +6,16 @@ In PowerShell 3.0+, automatic variable `$PSScriptRoot` will contain the dir of t
 ## Using .NET Libraries
 You can use static methods from .NET libraries by referencing their FullName in  brackets and adding the method name after double colons: `[System.IO.Path]::GetExension("Filename.ext")`.
 
+## Set Constant
+``` powershell
+# ReadOnly can be removed via Remove-Variable with the -Force parameter set
+Set-Variable varName -option ReadOnly -value $Value
+
+# Constant cannot be removed
+Set-Variable varName -option Constant -value $Value
+
+```
+
 ## Read a File
 
 ### Line-by-Line: `Get-Content`
