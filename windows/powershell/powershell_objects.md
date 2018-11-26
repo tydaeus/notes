@@ -156,4 +156,4 @@ PowerShell methods can be overloaded by declaring additional methods of the same
 ### Constructors
 Constructors are declared similar to methods, with no return type and their name being the same as the class name.
 
-Use `[ClassName]::new(params)` or `New-Object ClassName params` to invoke the constructor with the specified params.
+Use `[ClassName]::new(params)` or `New-Object ClassName params` to invoke the constructor with the specified params. Parenthetical invocation appears to work better for multiple arguments.
