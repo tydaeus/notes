@@ -113,3 +113,6 @@ $dialogType = 0x0
 $wshell = New-Object -ComObject Wscript.Shell
 $buttonClicked = $wshell.Popup("Body Text",$nSecondsToWait,"Title",$dialogType)
 ```
+
+## Working with Dates
+Cast a string to a date via `[dateTime]"2018/11/23"`. A variety of formats are automatically recognized.
