@@ -18,6 +18,9 @@ Set-Variable varName -option Constant -value $Value
 
 ```
 
+## Output to Null
+Because any output from a line that isn't explicitly passed to a null-output command or stored in a variable is treated as an output from your script, you will probably wish to write your output to null sometimes. To do this, pipe to `Out-Null`.
+
 ## Get Type of Variable
 Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`.
 
