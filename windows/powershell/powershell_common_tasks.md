@@ -30,6 +30,23 @@ Use the `-Join` operator to join a collection.
 $myArr -Join "`n"
 ```
 
+## Write a File
+
+### Redirection
+Redirection can be used to write to files: `$myString > $filePath`. Note, however, that this encodes the file as UTF-16 by default.
+
+Redirection can also be used to append to files: `$myString >> $filePath`.
+
+### Out-File
+The `Out-File` cmdlet allows writing to files with some options. `$myString | Out-File $MyPath`.
+
+This can be used to change encoding to UTF-8: `$myString | Out-File -Encoding "UTF8" $MyPath`. However, the Byte-Order Mark (`ï»¿`) will be written as the first several characters, which may result in incompatibility.
+
+### `File::WriteAllLines`
+Use .NET's `File` class static `WriteAllLines` method: `[System.IO.File]::WriteAllLines($MyPath, $MyString)`. In PowerShell 4.0+, this will default to UTF 8 with no Byte-Order Mark.
+
+In PowerShell 3.0, use `[System.IO.File]::WriteAllLines($MyPath, $MyString, [System.Text.UTF8Encoding]::new($False))` to explcitly indicate UTF-8 with no BOM.
+
 ## Read a File
 
 ### Line-by-Line: `Get-Content`
