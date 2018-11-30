@@ -78,7 +78,9 @@ $resultObject = (Get-Content $filePath) -Join "`n" | ConvertFrom-Json
 ```
 
 ### Writing JSON
-Use `ConvertTo-Json` to convert an object into JSON, similar to `JSON.Stringify`. Note, however, that unlike `JSON.Stringify`, `ConvertTo-Json` adds some metadata.
+Use `ConvertTo-Json` to convert an object into JSON, similar to `JSON.Stringify`.
+
+*Note*: this cmdlet behaves differently on arrays in PowerShell 5 (and possibly other versions) depending on whether input is piped or passed as an argument. `$myArr | ConvertTo-Json` behaves as one would expect, while `ConvertTo-Json $myArr` will output json for an object whose `values` property is the array.
 
 ## Get Contents of a Directory
 `Get-ChildItem $dirPath`. Use the `-Recurse` parameter for recursive traversal, and the `-Force` parameter to include hidden and system files.
@@ -175,3 +177,18 @@ $buttonClicked = $wshell.Popup("Body Text",$nSecondsToWait,"Title",$dialogType)
 
 ## Working with Dates
 Cast a string to a date via `[dateTime]"2018/11/23"`. A variety of formats are automatically recognized.
+
+## Self-Launching PowerShell Script
+For "security" reasons, PowerShell scripts cannot be launched by double-clicking them. This is easily bypassed however, by embedding the PowerShell script inside a `.cmd` script that tells PowerShell to run it.
+
+Start the `.cmd` script with this snippet:
+``` cmd
+<# : batch script
+@echo off
+setLocal
+powershell -executionpolicy remotesigned -Command "Invoke-Expression $([System.IO.File]::ReadAllText('%~dpf0'))"
+set ERRCODE=%ERRORLEVEL%
+exit /b %ERRCODE%
+#>
+# PowerShell script begins here
+```
