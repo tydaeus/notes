@@ -1,7 +1,7 @@
 # Common PowerShell Tasks
 
 ## Get Script Directory
-In PowerShell 3.0+, automatic variable `$PSScriptRoot` will contain the dir of the current script. Note that this variable is populated *only* while running a script.
+In PowerShell 3.0+, automatic variable `$PSScriptRoot` will contain the dir of the current script. Note that this variable is populated *only* while running a script, and may also remain unpopulated under certain other conditions (e.g. invoking a script by reading its contents). If this variable is not populated, it will default to null, which will result in `C:\` acting as its value.
 
 ## Using .NET Libraries
 You can use static methods from .NET libraries by referencing their FullName in  brackets and adding the method name after double colons: `[System.IO.Path]::GetExension("Filename.ext")`.
