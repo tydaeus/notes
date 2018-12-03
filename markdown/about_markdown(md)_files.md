@@ -33,12 +33,12 @@ It is possible, but slightly difficult, to read Markdown as plaintext. However, 
 ## Converting Markdown to HTML
 Many Markdown converters exist that will convert markdown to html for easier reading.
 
-### markdown npm package
-The `markdown` npm package provides nodejs functionality for converting Markdown to html, and can also provide a command-line utility to perform the conversion.
+### commonmark npm package
+The `commonmark` npm package provides nodejs functionality for converting Markdown to html, and can also provide a command-line utility to perform the conversion.
 
-To install the command-line utility: `npm install -g markdown`.
+To install the command-line utility: `npm install -g commonmark`.
 
-To use the command-line utility: `md2html MyMarkdown.md > MyHtml.html`.
+To use the command-line utility: `commonmark MyMarkdown.md > MyHtml.html`.
 
 ### markdown css
 After converting markdown, you may also want to apply styling beyond the default html styling.
