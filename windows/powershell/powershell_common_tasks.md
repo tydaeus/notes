@@ -186,9 +186,12 @@ Start the `.cmd` script with this snippet:
 <# : batch script
 @echo off
 setLocal
-powershell -executionpolicy remotesigned -Command "Invoke-Expression $([System.IO.File]::ReadAllText('%~dpf0'))"
+powershell -executionpolicy remotesigned -Command "Invoke-Expression $($ScriptHome = '%~dp0'; [System.IO.File]::ReadAllText('%~dpf0'))"
 set ERRCODE=%ERRORLEVEL%
 exit /b %ERRCODE%
 #>
 # PowerShell script begins here
+
+# Manually populate $PSScriptRoot, due to batch bootstrap limitations
+$PSScriptRoot = $ScriptHome
 ```
