@@ -17,6 +17,16 @@ Set-Variable varName -option ReadOnly -value $Value
 Set-Variable varName -option Constant -value $Value
 
 ```
+## File System Operations
+
+### Copy Files
+Copy 1 file: `Copy-Item $SourcePath -Destination $DestinationPath`
+
+### Delete Files
+Delete all files in dir: `Remove-Item $TargetDir -Force -Recurse`
+
+### Unzip File
+In PowerShell 5+: `Expand-Archive $SourcePath -DestinationPath $DestinationPath`. If `-DestinationPath` is omitted, will extract to PWD.
 
 ## Output to Null
 Because any output from a line that isn't explicitly passed to a null-output command or stored in a variable is treated as an output from your script, you will probably wish to write your output to null sometimes. To do this, pipe to `Out-Null`.
