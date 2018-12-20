@@ -78,6 +78,9 @@ To output a variable as a string (e.g. via write-method), direct references can 
 
 ## Error Checking/Handling
 
+### ErrorActionPreference
+Set `$ErrorActionPreference = "Stop"` to automatically exit after the first error encountered. Note that this does not cause non-script commands that resulted in an error to exit.
+
 ### `$error`
 When errors occur, they are stored in the `$error` variable. This array is populated in LIFO order, so the most recent error is stored in `$error[0]`. The size of this array is limited by `$MaximumErrorCount`, causing it to act like a buffer.
 
