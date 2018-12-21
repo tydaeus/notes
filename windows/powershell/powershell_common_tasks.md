@@ -50,6 +50,11 @@ $myArr -Join "`n"
 
 ## Write a File
 
+### Encoding
+For Microsoft-known reasons, PowerShell output and redirection default to UTF-16 encoding with a Byte-Order Mark. This can be problematic.
+
+This default can be changed by setting `$PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'`. In PowerShell 3.0+, this modifies behavior of Out-File only. In PowerShell 5.1+, this also modifies the behavior of the redirect operators.
+
 ### Redirection
 Redirection can be used to write to files: `$myString > $filePath`. Note, however, that this encodes the file as UTF-16 by default.
 
@@ -63,7 +68,7 @@ This can be used to change encoding to UTF-8: `$myString | Out-File -Encoding "U
 ### `File::WriteAllLines`
 Use .NET's `File` class static `WriteAllLines` method: `[System.IO.File]::WriteAllLines($MyPath, $MyString)`. In PowerShell 4.0+, this will default to UTF 8 with no Byte-Order Mark.
 
-In PowerShell 3.0, use `[System.IO.File]::WriteAllLines($MyPath, $MyString, [System.Text.UTF8Encoding]::new($False))` to explcitly indicate UTF-8 with no BOM.
+In PowerShell 3.0, use `[System.IO.File]::WriteAllLines($MyPath, $MyString, [System.Text.UTF8Encoding]::new($False))` to explicitly indicate UTF-8 with no BOM.
 
 ## Read a File
 
