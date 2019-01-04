@@ -53,6 +53,13 @@ Useful `Parameter` attribute arguments:
 
 * `Mandatory=$true` - sets this parameter to be mandatory
 
+### Switch Parameters
+Switch parameters act as boolean, defaulting to false if the parameter isn't provided and changed to true if it is.
+
+Declare: `[switch] $MySwitch`
+
+Use: `.\My-Script.ps1 -MySwitch`
+
 ## Outputting Data
 Any data item that appears on a line on its own is considered part of the output data. E.g. lines
 
