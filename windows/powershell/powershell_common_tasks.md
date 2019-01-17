@@ -102,7 +102,12 @@ Use `ConvertTo-Json` to convert an object into JSON, similar to `JSON.Stringify`
 
 ```powershell
 # workaround for ConvertTo-Json issue with array conversion
-Remove-TypeData System.Array
+try {
+    Remove-TypeData System.Array
+}
+catch {
+    # do nothing if System.Array TypeData has already been removed
+}
 ```
 
 
