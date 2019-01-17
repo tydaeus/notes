@@ -98,7 +98,14 @@ $resultObject = (Get-Content $filePath) -Join "`n" | ConvertFrom-Json
 ### Writing JSON
 Use `ConvertTo-Json` to convert an object into JSON, similar to `JSON.Stringify`.
 
-*Note*: this cmdlet behaves differently on arrays in PowerShell 5 (and possibly other versions) depending on whether input is piped or passed as an argument. `$myArr | ConvertTo-Json` behaves as one would expect, while `ConvertTo-Json $myArr` will output json for an object whose `values` property is the array.
+*Note*: this cmdlet has known inconsistencies with array conversion, due to the way arrays get passed through the object pipeline; this results in arrays sometimes getting converted into an object with `count` and `values` properties, rather than into a JSON array. To prevent this, use the following in your script prior to performing the conversion:
+
+```powershell
+# workaround for ConvertTo-Json issue with array conversion
+Remove-TypeData System.Array
+```
+
+
 
 ## Get Contents of a Directory
 `Get-ChildItem $dirPath`. Use the `-Recurse` parameter for recursive traversal, and the `-Force` parameter to include hidden and system files.
