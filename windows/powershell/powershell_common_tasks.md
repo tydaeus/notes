@@ -175,6 +175,8 @@ The following template is derived from https://blogs.technet.microsoft.com/heysc
 $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument '-NoProfile -WindowStyle Hidden -command "& {psScriptBlock}"'
 
 # script execution variant
+# recommend using this for all but the simplest actions, and will be easier if the script
+# requires no parameters
 $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -WorkingDirectory 'C:\ScriptDir' -Argument '-NoProfile -WindowStyle Hidden -command ".\scriptName.ps1"'
 
 
@@ -182,6 +184,8 @@ $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -WorkingDirectory 'C
 $trigger = New-ScheduledTaskTrigger -Daily -At 9am
 
 # actually register the action and trigger
+# add param `-User "System"` to run as system, which allows the task to run with no-one
+# logged in
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Description "My task that does stuff"
 ```
 
