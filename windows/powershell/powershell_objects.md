@@ -97,6 +97,13 @@ Properties can be added subsequently via the `Add-Member` cmdlet: `$obj | Add-Me
 
 For more info, [gngrninja](https://www.gngrninja.com/script-ninja/2016/6/18/powershell-getting-started-part-12-creating-custom-objects) provides a variety of ways to define a PowerShell custom object.
 
+### Adding Properties
+Pipe a custom object into the `Add-Member` cmdlet to add a property to it, e.g:
+
+```powershell
+$obj | Add-Member -Name "propertyName" -Type NoteProperty -Value "propertyValue"
+```
+
 ## Custom Classes
 Courtesy of https://4sysops.com/archives/powershell-classes-part-1-objects/.
 
