@@ -3,6 +3,8 @@
 ## Checking PowerShell Version
 Use `$PSVersionTable.PSVersion` to check the version of PowerShell currently running. PowerShell 1.0 does not have this variable.
 
+A `#Require` statement can be added to enforce minimum PowerShell version for the script, e.g. `#Requires -Version 5.0`. This must be the first item on a line, but can appear on any line.
+
 ## Get Script Directory
 In PowerShell 3.0+, automatic variable `$PSScriptRoot` will contain the dir of the current script. Note that this variable is populated *only* while running a script, and may also remain unpopulated under certain other conditions (e.g. invoking a script by reading its contents). If this variable is not populated, it will default to null, which will result in `C:\` acting as its value.
 
@@ -10,6 +12,8 @@ In PowerShell 3.0+, automatic variable `$PSScriptRoot` will contain the dir of t
 You can use static methods from .NET libraries by referencing their FullName in  brackets and adding the method name after double colons: `[System.IO.Path]::GetExension("Filename.ext")`.
 
 Note that `System` can be dropped from the FullName: `[IO.Path]::GetExension("Filename.ext")`.
+
+In PowerShell 5.0+, the `using` statement is available to allow C#-like easy access to namespaces. E.g. `using namespace Long.NameSpace.Example.Name`.
 
 ## Set Constant
 ``` powershell
