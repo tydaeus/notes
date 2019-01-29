@@ -18,6 +18,6 @@ By name: `Add-Type -Assembly My.AssemblyName`. This typically works with MS-prov
 By location: `Add-Type -Path C:\path\to\My.AssemblyName.dll`
 
 ### `System.Reflection.Assembly`
-By name: `[System.Reflection.Assembly]::LoadWithPartialName('My.AssemblyName')`. This typically works well for 3rd-party libraries that have been added to the GAC.
+By name: `[System.Reflection.Assembly]::LoadWithPartialName('My.AssemblyName')`. This typically works well for 3rd-party libraries that have been added to the GAC. Note that this method is deprecated, but I am unaware of a similarly succinct replacement.
 
 By full path: `[System.Reflection.Assembly]::LoadFile('C:\path\to\My.AssemblyName.dll')`.
