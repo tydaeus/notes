@@ -1,6 +1,22 @@
 # Scripting with PowerShell
 Similar to other scripting languages, the primary functionality of a PowerShell script is a command, or series of commands. However, there are some definite differences.
 
+## Terminology
+A PowerShell script is referred to as a "Function", not be confused with the functions defined within it using the `function` keyword. *Sigh*.
+
+A PowerShell utility written by Microsoft or others in a .NET programming language is referred to as a "cmdlet".
+
+###  Advanced Functions
+Functions that either have the `[cmdletbinding()]` attribute before the param block (which must be present but can be empty), or that include at least one parameter with the `[parameter]` attribute, are *Advanced*. Advanced functions:
+
+* gain the "common parameters" for use by cmdlets they call
+* can modify how their parameters are handled via the `[parameter]` attribute
+* get the `$PSCmdlet` variable injected for access to information about themselves
+    - `$PSCmdlet.MyInvocation.BoundParameters` is a dictionary that contains the values of the bound parameters; use the `.isPresent` property to check if switch parameters were provided
+
+For example, the `Write-Information` cmdlet by default will perform the `SilentlyContinue` action, displaying nothing. In a non-"Advanced" function, the only way to alter this is via the `$informationPreference` variable. In an "Advanced" function, if the function is called with parameter `-InformationAction Continue`, all `Write-Information` calls within the function will display output unless the parameter is provided specifically for that call.
+
+
 ## Comments
 Use `#` for comment lines.
 
@@ -74,11 +90,13 @@ To write user output data, use one of the `Write` cmdlets:
 
 * `Write-Host` writes general-purpose console output, and includes `foregroundcolor` and `backgroundcolor` parameters to allow styling. This is the primary output channel prior to PowerShell 3.0.
 * `Write-Debug` writes debug-level data, which will only be displayed if the `-Debug` (equiv. `-Debug $True`), or the `$debugPreference` pref variable is set to something other than its default `"SilentlyContinue"`, e.g. via `$debugPreference="Continue"`
-* `Write-Info` writes info-level data, which will only be displayed if the `-InformationAction` parameter is set to a non-default value (e.g. `Continue`), or the `$informationPreference` variable is set to a non-default value.
+* `Write-Information` writes info-level data, which will only be displayed if the `-InformationAction` parameter is set to a non-default value (e.g. `Continue`), or the `$informationPreference` variable is set to a non-default value.
 * `Write-Warning` writes warning-level data, which will be displayed unless non-default parameter or preference is set.
 * `Write-Error` writes error-level data, which will be displayed along with trace data, unless non-default parameter or preference is set
 
 *Note*: PowerShell is stupid, and `Write-Error` does not write to stderr as visible from outside of PowerShell.
+
+*Note*: See above section on "Advanced" functions for how to allow parameters passed to the script to propagate to these commands.
 
 ### Outputting Variables
 To output a variable as a string (e.g. via write-method), direct references can be included within the quotes. E.g. `"Value of X is $x"` will output the value of x in place of $x. However, to reference the properties of a variable, the variable reference statement must be enclosed in `$()`, e.g. `"Value of obj.x is $($obj.x)"`.
