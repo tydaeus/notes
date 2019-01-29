@@ -88,6 +88,9 @@ Will result in output: `"A" 1`.
 
 The `Write-Output` command has the same effect.
 
+### Output to Null
+Because any output from a line that isn't explicitly passed to a null-output command or stored in a variable is treated as an output from your script, you will probably wish to write your output to null sometimes. To do this, pipe to `Out-Null`.
+
 ### User Feedback Output
 To write user feedback output data, use one of the `Write` cmdlets:
 
