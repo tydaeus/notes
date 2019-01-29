@@ -86,7 +86,10 @@ Any data item that appears on a line on its own is considered part of the output
 
 Will result in output: `"A" 1`.
 
-To write user output data, use one of the `Write` cmdlets:
+The `Write-Output` command has the same effect.
+
+### User Feedback Output
+To write user feedback output data, use one of the `Write` cmdlets:
 
 * `Write-Host` writes general-purpose console output, and includes `foregroundcolor` and `backgroundcolor` parameters to allow styling. This is the primary output channel prior to PowerShell 3.0.
 * `Write-Debug` writes debug-level data, which will only be displayed if the `-Debug` (equiv. `-Debug $True`), or the `$debugPreference` pref variable is set to something other than its default `"SilentlyContinue"`, e.g. via `$debugPreference="Continue"`
