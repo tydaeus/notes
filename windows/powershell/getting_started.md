@@ -87,6 +87,8 @@ Run `Enable-PSRemoting` to enable remoting on the machine you want to connect to
 ### Using a PowerShell Session
 Use `Enter-PSSession -ComputerName "HOSTNAME"` to start a PowerShell session on HOSTNAME. You now have a command-prompt that can be used to run PowerShell commands.
 
+Use `Exit-PSSession` to exit the PSSession when done.
+
 ### Using `Invoke-Command`
 Use `Invoke-Command` to run a specified command on one or more target hosts. `Invoke-Command -ComputerName HOST1,HOST2 -ScriptBlock {Cmdlet-Name -Param1 Arg1}`. Use the `PSComputerName` property to differentiate between outputs for the different hosts.
 
