@@ -42,10 +42,14 @@ You should provide documentation viewable through Get-Help as part of your scrip
 ```
 
 ## Arguments
-A script/function can reference the arguments passed to it via the $`Args` array. Use bracket notation (e.g. `$Args[0]`) to reference a single argument.
+A script/function can reference the arguments passed to it via the `$Args` array. Use bracket notation (e.g. `$Args[0]`) to reference a single argument.
 
 ### Named Parameters
-A script/function can define a named set of parameters. Define named parameters that your script/function can accept by name by using a param statement before any non-comment content. Parameter definitions must be comma-separated, and ignore whitespace:
+A script/function can define a named set of parameters. Define named parameters that your script/function can accept by name by using a param statement before any non-comment content.
+
+A hashtable of named parameters passed into a script/function can be accessed using `$PSBoundParameters`; the `$Args` variable will no longer be populated.
+
+Parameter definitions must be comma-separated, and ignore whitespace:
 
 ```
 param(
