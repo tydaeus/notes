@@ -83,6 +83,9 @@ $ht = [ordered]@{
 
 Access values via `$ht.name`, or `$ht.values` for the list of values.
 
+### "Splatting" a Hashtable
+Referencing a hashtable variable with the `@` operator will convert it into a PowerShell parameter string.
+
 ## Custom Objects
 In PowerShell 3.0+, the `[PSCustomObject]` type adapter is the easiest way to quickly create an object:
 
