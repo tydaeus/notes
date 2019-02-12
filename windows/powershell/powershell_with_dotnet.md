@@ -15,7 +15,10 @@ Additional .Net libraries must be requested explicitly using the `Add-Type` cmdl
 ### Add-Type
 By name: `Add-Type -Assembly My.AssemblyName`. This typically works with MS-provided .Net libraries.
 
-By location: `Add-Type -Path C:\path\to\My.AssemblyName.dll`
+By location: `Add-Type -Path C:\path\to\My.AssemblyName.dll`. This can also be used to add source code files.
+
+#### Add-Type for Source Code
+Using `Add-Type -TypeDefinition $SourceCode` allows you to specify C# source code within `$SourceCode` and create a PowerShell-accessible type from it. (recommend using a here-string to populate `$SourceCode`)
 
 ### `System.Reflection.Assembly`
 By name: `[System.Reflection.Assembly]::LoadWithPartialName('My.AssemblyName')`. This typically works well for 3rd-party libraries that have been added to the GAC. Note that this method is deprecated, but I am unaware of a similarly succinct replacement.
