@@ -25,8 +25,17 @@ $arr = @(
 Append to an array using `+=`. `$arr += 8`. Note that PowerShell (stupidly, IMHO) uses immutably sized arrays. For large arrays, consider using a .Net ArrayList instead:
 
 ```powershell
+# create using New-Object:
 $list = New-Object System.Collections.ArrayList
-$list.Add(5)
+
+# create using new method:
+$list = [System.Collections.ArrayList]::new()
+
+# Add via the add method; note that ArrayList returns the index of the added element, so we should probably pipe it to Out-Null to prevent using it as an output
+$list.Add(5) | Out-Null
+
+# Add via the += operator:
+$list += 6
 ```
 
 ### Retrieve Items
