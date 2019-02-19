@@ -40,6 +40,21 @@ Use the .Net class `System.IO.Path` static methods to work with paths. Common op
 * `GetFileName`
 * `GetFullPath`
 
+### Check on Files at Path
+Use the `Test-Path` cmdlet to inspect file structures. Use `Get-Help Test-Path` for full help.
+
+#### Check if Path Exists
+`Test-Path -Path $fullPath`
+
+#### Check if Path is Valid
+`Test-Path -Path $fullPath -IsValid`
+
+#### Check if Path is Dir
+`Test-Path -Path $fullPath -PathType Container`
+
+#### Check if Path is File
+`Test-Path -Path $fullPath -PathType leaf`
+
 
 ## Get Type of Variable
 Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`.
@@ -154,20 +169,6 @@ function GetFiles($path = $pwd)
 
 See the original answer for a more elaborate solution that supports piping.
 
-## Check on Files at Path
-Use the `Test-Path` cmdlet to inspect file structures. Use `Get-Help Test-Path` for full help.
-
-### Check if Path Exists
-`Test-Path -Path $fullPath`
-
-### Check if Path is Valid
-`Test-Path -Path $fullPath -IsValid`
-
-### Check if Path is Dir
-`Test-Path -Path $fullPath -PathType Container`
-
-### Check if Path is File
-`Test-Path -Path $fullPath -PathType leaf`
 
 ## Send an Email
 Use the `Send-MailMessage` cmdlet to send an email: `Send-MailMessage -From $fromAddress -To $toAddress -CC $ccAddress -Subject $Subject -Body $Body -SmtpServer $SMTPServer - port $SMTPPort -Attachments $Attachment`. You may wish to add the `-UseSsl` parameter to ensure SSL encryption, and setting `-Credential (Get-Credential)` will ensure credentials are prompted for.
