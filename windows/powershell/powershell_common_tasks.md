@@ -28,6 +28,19 @@ Delete all files in dir: `Remove-Item $TargetDir -Force -Recurse`
 ### Unzip File
 In PowerShell 5+: `Expand-Archive $SourcePath -DestinationPath $DestinationPath`. If `-DestinationPath` is omitted, will extract to PWD.
 
+### Make Dir
+The `md` alias is probably the quicker way to create a dir, but you'll probably want to pipe its output to null if using in a script: `md $DirPath | Out-Null`. Use the `-Force` switch param if you want to create a dir that may already exist.
+
+### Manipulate Paths
+Use the .Net class `System.IO.Path` static methods to work with paths. Common operations:
+
+* `Combine` - Combine up to four strings, or an array, into a path, more safely than basic string concatenation
+* `GetDirectoryName`
+* `GetExtension`
+* `GetFileName`
+* `GetFullPath`
+
+
 ## Get Type of Variable
 Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`.
 
