@@ -91,7 +91,9 @@ $ht = [ordered]@{
 }
 ```
 
-Access values via `$ht.name`, or `$ht.values` for the list of values.
+Access values via `$ht.name`, or `$ht.values` for the list of values. Use `$ht.keys` to get a list of the keys present in the HashTable.
+
+Note that the `foreach` loop does not include direct support for HashTables, so you'll probably want to iterate through the keys, or use the `GetEnumerator` method.
 
 ### "Splatting" a Hashtable
 Referencing a hashtable variable with the `@` operator will convert it into a PowerShell parameter string.
