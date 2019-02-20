@@ -73,6 +73,13 @@ Useful `Parameter` attribute arguments:
 
 * `Mandatory=$true` - sets this parameter to be mandatory
 
+### ValidateSet
+Use the `ValidateSet` parameter attribute to restrict potential values of a parameter:
+
+```PowerShell
+[ValidateSet("Val1", "Val2", "Val3")][string]$myParam
+```
+
 ### Switch Parameters
 Switch parameters act as boolean, defaulting to false if the parameter isn't provided and changed to true if it is.
 
