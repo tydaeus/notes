@@ -12,6 +12,8 @@ svn log -r {2001-12-04}:{2002-02-17}
 svn log -r 1729:{2002-02-17}
 ```
 
+Add the `--verbose` switch for more data, included names of changed files.
+
 ## Get Info About a Branch
 
 ```
