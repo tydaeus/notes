@@ -55,6 +55,8 @@ Use the `Test-Path` cmdlet to inspect file structures. Use `Get-Help Test-Path` 
 #### Check if Path is File
 `Test-Path -Path $fullPath -PathType leaf`
 
+## Pass Function Call
+Use `Get-Item "function:$FunctionName"` to get a reference to the function named in `$FunctionName`. Access its script block to invoke it via `(Get-Item "function:$FunctionName").ScriptBlock.Invoke($argArr)`.
 
 ## Get Type of Variable
 Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`.
