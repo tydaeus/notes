@@ -24,7 +24,9 @@ $trigger = New-ScheduledTaskTrigger -Daily -At 9am
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Description "My task that does stuff"
 ```
 
-## Get Info About Scheduled Task
+## Get Info About Scheduled Tasks
+List all scheduled tasks: `Get-ScheduledTask`
+
 Get info about a named scheduled task: `Get-ScheduledTask $taskName | Get-ScheduledTaskInfo` where `$taskName` is a string containing the value of -TaskName used during scheduling.
 
 ## Unregister a Scheduled Task
