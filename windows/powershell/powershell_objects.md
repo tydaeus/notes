@@ -12,6 +12,8 @@ Assign a range: `$arr = (1..4)`.
 
 Strongly typed: `[int[]]$arr = 1, 2, 3, 5, 8`.
 
+Specific size: `$arr = New-Object int[] $size` or `$arr = [int[]]::new($size)`
+
 Multi-dimensional array:
 
 ```powershell
