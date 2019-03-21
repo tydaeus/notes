@@ -31,5 +31,5 @@ catch (Exception)
 ## Read From File
 
 ```cs
-string.Join("\n", File.ReadLines(JsonInputPath));
+string.Join("\n", File.ReadLines(inputPath));
 ```
