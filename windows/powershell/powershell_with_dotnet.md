@@ -6,6 +6,11 @@
 ### The `using` Statement
 In PowerShell 5.0+, the `using` statement is available to allow C#-like easy referencing to namespaces. E.g. `using namespace Long.NameSpace.Example.Name`.
 
+## Common Challenges
+
+### File Paths
+When running .NET functions/methods, PowerShell's PWD does not get provided to .NET. The active user's home directory is used as PWD instead. This means scripts must convert relative paths to their full form before providing them as parameters to .NET.
+
 
 ## Adding Types
 Everything under the .Net `System` namespace is generally available within PowerShell without any additional effort.
