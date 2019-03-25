@@ -73,6 +73,29 @@ Useful `Parameter` attribute arguments:
 
 * `Mandatory=$true` - sets this parameter to be mandatory
 
+#### Multiple Parameter Sets
+Sometimes a script function will need to support different combinations of parameters. For this reason, the `parameter` attribute also supports the `ParameterSetName` property.
+
+```PowerShell
+param(
+    # if this parameter is detected, we're using ParamSetA
+    [parameter(Mandatory=$True, ParameterSetName="ParamSetA")]
+    [string]
+    $Param1A,
+
+    # if this parameter is detected, we're using ParamSetB
+    [parameter(Mandatory=$True, ParameterSetName="ParamSetB")]
+    [string]
+    $Param1B,
+
+    # this parameter can be provided as part of either ParamSetA or ParamSetB
+    [parameter(Mandatory=$True, ParameterSetName="ParamSetA")]
+    [parameter(Mandatory=$True, ParameterSetName="ParamSetB")]
+    [string]
+    $Param2AB
+)
+```
+
 ### ValidateSet
 Use the `ValidateSet` parameter attribute to restrict potential values of a parameter:
 
