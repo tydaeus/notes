@@ -156,3 +156,23 @@ Note that this very much the *last command*, so it should be checked immediately
 
 ### `$LastExitCode`
 `$LastExitCode` holds the exit code from the last command. Note that exiting due to an uncaught `throw` statement does not result in a non-zero status.
+
+## ScriptBlocks
+Script blocks allow you to encapsulate short scripting statements for passing as a parameter.
+
+### Defining ScriptBlocks
+Define a ScriptBlock by enclosing a list of statements in braces: `{<statement list>}`.
+
+If the ScriptBlock needs to accept parameters, these must be defined by using a `param()` statement as the first statement:
+
+```PowerShell
+{
+    param($a, $b)
+    return $a + $b
+}
+```
+
+### Invoking ScriptBlocks
+Invoke a ScriptBlock by using the `Invoke-Command` cmdlet: `Invoke-Command -ScriptBlock $ScriptBlock -ArgumentList $Param1, $Param2...`.
+
+More simply, use the `call` operator: `&$ScriptBlock $Param1 $Param2`.
