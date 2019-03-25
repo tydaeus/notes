@@ -8,6 +8,7 @@ User settings are stored in the user's home folder as `.gitconfig`.
 * `git config user.name <user name>` - specify user's given name
 * `git config user.email <user email>` - specify user's email address
     - **Important** - to prevent your email address from leaking, ensure that the "Keep my email address private" checkbox is checked in your github settings. Once you've done this, you will need to configure git to use your Github noreply address instead of your actual email address (mine is `5482721+tydaeus@users.noreply.github.com`), before you make any commits. For more info, see https://stackoverflow.com/a/44099011/2939139.
+      - if you update an existing install in this way, you'll also need to use `git commit --amend --reset-author` on all repos that have unpushed commits predating the email address change, so that those commits are also associated with the noreply email.
 * `git remote add origin <remote url>` - specify default repo location. If a github url, will be formatted as https://github.com/user-name/repo-name .
 
 ### Proxies
