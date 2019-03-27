@@ -176,3 +176,19 @@ If the ScriptBlock needs to accept parameters, these must be defined by using a 
 Invoke a ScriptBlock by using the `Invoke-Command` cmdlet: `Invoke-Command -ScriptBlock $ScriptBlock -ArgumentList $Param1, $Param2...`.
 
 More simply, use the `call` operator: `&$ScriptBlock $Param1 $Param2`.
+
+## String Declaration and Interpolation
+Strings can be declared using either single or double-quotes; this controls their behavior.
+
+### Single-Quotes - Literal Strings
+Strings declared with single-quotes will not undergo any variable interpolation: `$myString = 'The name of the variable is $myVar'`
+
+### Double-Quotes - Interpolated Strings
+Strings declared with double-quotes will interpolate any variables within them: `$myString = "Value of myVar: $myVar"`.
+
+Use `$()` to interpolate an expression, such as referencing a variable property or function: `$myString = "myVar.Value: $($myVar.Value)"`.
+
+Use `${}` to escape a variable name to resolve any ambiguity: `$myString = "Prefix${Value}Suffix"`
+
+### Multiline Strings - "Here-string"
+You can declare a multi-line string by wrapping it in either `@""@` or `@''@`; interpolation will be performed if enclosed with `@""@`. In either case, the closing `"@` must be the first character in the line. Note that quotation marks can be used inside either form.
