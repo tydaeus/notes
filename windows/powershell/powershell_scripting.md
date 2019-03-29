@@ -150,6 +150,9 @@ Will result in output: `"A" 1`.
 
 The `Write-Output` command has the same effect.
 
+### The `return` Command
+Using the `return` command will both output the specified value and act as an end of execution for the current function or script.
+
 ### Output to Null
 Because any output from a line that isn't explicitly passed to a null-output command or stored in a variable is treated as an output from your script, you will probably wish to write your output to null sometimes. To do this, pipe to `Out-Null`.
 
