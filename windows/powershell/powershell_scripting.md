@@ -137,6 +137,24 @@ param(
 )
 ```
 
+#### `Begin`, `Process`, and `End`
+To process pipeline input, `Begin`, `Process`, and `End` blocks should be populated to define behavior.
+
+```PowerShell
+Begin {
+    # this block runs once at the start, use for variable init, etc.
+}
+
+Process {
+    ForEach($inputItem in $pipedInput) {
+        # do stuff on the input
+    }
+}
+
+End {
+    # this block runs once at the end, use for cleanup etc.
+}
+```
 
 ## Outputting Data
 Any data item that appears on a line on its own is considered part of the output data. E.g. lines
