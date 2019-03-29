@@ -110,6 +110,34 @@ Declare: `[switch] $MySwitch`
 
 Use: `.\My-Script.ps1 -MySwitch`
 
+### Pipeline Input Parameters
+
+#### `ValueFromPipeline`
+If a parameter has the `ValueFromPipeline` parameter attribute set to true, its value will be populated with a series of objects from pipeline intput. Use a ForEach loop to process the piped input.
+
+This will be processed via the `Begin`, `Process`, and `End` blocks discussed below.
+
+```PowerShell
+param(
+    [parameter(Mandatory = $True, ValueFromPipeline = $True)]
+    $pipedInput
+)
+```
+
+#### `ValueFromPipelineByPropertyName`
+If a parameter has the `ValueFromPipelineByPropertyName` parameter attribute set to true, its value will be populated with a series of property values stripped from the pipeline input objects based on their names; e.g. if the parameter's name is `$Name`, the series of `$Name` property values will be piped in.
+
+This series of properties will be processed via the `Begin`, `Process`, and `End` blocks discussed below.
+
+```PowerShell
+param(
+    [parameter(Mandatory = $True, ValueFromPipelineByPropertyName = $True)]
+    [string[]]
+    $Name
+)
+```
+
+
 ## Outputting Data
 Any data item that appears on a line on its own is considered part of the output data. E.g. lines
 
