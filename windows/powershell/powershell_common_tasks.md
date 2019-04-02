@@ -49,7 +49,7 @@ The `md` alias is probably the quicker way to create a dir, but you'll probably 
 * `-LeafBase` returns the base of the leaf (file name without extension)
 * `-NoQualifier` omit the qualifier (the drive letter)
 
-Add the `-Resolve` parameter to get the resolved path (resolving relative or wildcarded path to absolute equivalent).
+Add the `-Resolve` parameter to get the resolved path (resolving relative or wildcarded path to absolute equivalent). Most common usage of this is `Split-Path $Path -Parent -Resolve`, which gives the absolute path of the containing folder.
 
 #### `System.IO.Path`
 You can also use the .Net class `System.IO.Path` static methods to work with paths. Common operations:
