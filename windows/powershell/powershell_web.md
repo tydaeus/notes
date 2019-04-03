@@ -12,3 +12,8 @@ Common Parameters:
 Use `[uri]::EscapeDataString($QueryString)` to sanitize the query portion of a URI.
 
 Use `[uri]::EscapeUriString($UriString)` to sanitize an entire URI.
+
+## Supporting Web Protocols
+`[System.Net.ServicePointManager]::SecurityProtocol` is a list of `[System.Net.SecurityProtocolType]` enums that determines what protocols are available for .NET (including Invoke-WebRequest and other PowerShell cmdlets).
+
+E.g. to set support to TLS1.2 only, use: `[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12`
