@@ -28,3 +28,11 @@ svn info https://repo/wherever/project/trunk -r HEAD --show-item last-changed-re
 ```
 svn list https://repo/wherever/project/trunk/folder
 ```
+
+## Check if a Path Exists
+
+```
+svn ls https://repo/wherever/project/trunk/folder --depth empty
+```
+
+Exit code will be 0 if the directory exists, nonzero if not.
