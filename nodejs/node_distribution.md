@@ -2,7 +2,7 @@
 If you want to bundle a node app into an executable file, you can use one of several node utilities. A decent guide for using the `pkg` utility is at https://dev.to/jochemstoel/bundle-your-node-app-to-a-single-executable-for-windows-linux-and-osx-2c89; these notes summarize this process. See https://www.npmjs.com/package/pkg for documentation on `pkg`.
 
 ## Installation
-Install `pkg` globally via `npm install pkg -g`
+Install `pkg` globally via `npm -g install pkg`
 
 ## Invocation
 Run one of:
