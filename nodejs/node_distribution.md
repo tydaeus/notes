@@ -22,3 +22,11 @@ If assets are referenced within the context of `path.join(__dirname, 'path/to/as
 
 ### Asset Declaration
 If assets are not referenced as described under "Asset Detection", they must be declared within `package.json` as a string or array of strings under `pkg.assets`. `pkg` must also be invoked in one of the formats that utilizes `package.json` in order to include these assets.
+
+## Troubleshooting
+
+### `Error! This experimental syntax requires enabling one of the following parser plugin(s): 'decorators-legacy, decorators'`
+`pkg` relies on the `babel` parsing library, and assumes that all content within `node_modules` needs to be parsed. `.css` files (and possibly others) will generate errors as a result. Remove css from packages, reference it from other folders if needed.
+
+### Unable to Download Binaries When Running `pkg`
+`pkg` uses the `pkg-fetch` project to retrieve needed node binaries. Download the binaries you need from `https://github.com/zeit/pkg-fetch/releases` and place within the `.pkg-cache` folder (by default located within your user home folder, override by setting the `PKG_CACHE_PATH` environment variable.
