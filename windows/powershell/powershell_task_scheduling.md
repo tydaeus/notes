@@ -33,3 +33,6 @@ Get info about a named scheduled task: `Get-ScheduledTask $taskName | Get-Schedu
 
 ## Unregister a Scheduled Task
 Use `Unregister-ScheduledTask -TaskName $taskName` to unregister the named task.
+
+## Stop Running Instances
+Use `Stop-ScheduledTask -TaskName $taskName` to stop all running instances of a task, e.g. if a task instance has locked up
