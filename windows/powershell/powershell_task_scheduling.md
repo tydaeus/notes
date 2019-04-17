@@ -25,6 +25,8 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Des
 ```
 
 ## Get Info About Scheduled Tasks
+Run `taskschd.msc` for the GUI interface, or see below for PowerShell options.
+
 List all scheduled tasks: `Get-ScheduledTask`
 
 Get info about a named scheduled task: `Get-ScheduledTask $taskName | Get-ScheduledTaskInfo` where `$taskName` is a string containing the value of -TaskName used during scheduling.
