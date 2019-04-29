@@ -140,6 +140,8 @@ param(
 #### `Begin`, `Process`, and `End`
 To process pipeline input, `Begin`, `Process`, and `End` blocks should be populated to define behavior.
 
+**WARNING**: if  `Process` block is specified, any code specified outside `Begin`, `Process`, or `End` will result in error "Cannot evaluate parameter 'Name' because its argument is specified as a script block and there is no input. A script block cannot be evaluated without input."
+
 ```PowerShell
 Begin {
     # this block runs once at the start, use for variable init, etc.
