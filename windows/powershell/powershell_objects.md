@@ -26,7 +26,8 @@ $arr = @(
 ### Add values
 Append to an array using `+=`. `$arr += 8`. Note that PowerShell (stupidly, IMHO) uses immutably sized arrays, so you will be creating a new array containing all previous elements plus the new one. This can also result in referencing issues.
 
-For large arrays, consider using a .Net ArrayList instead:
+#### Using ArrayLists
+For large mutable arrays, consider using a .Net ArrayList instead:
 
 ```powershell
 # create using New-Object:
