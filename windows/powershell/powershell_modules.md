@@ -12,7 +12,9 @@ Import-Module "C:\myModules\myModule"
 Import-Module myModule
 
 # Add a location to $env:PSModulePath to simplify imports:
-$env:PSModulePath = $env:PSModulePath + ';C:\myModules'
+if (-not $env:PSModulePath.Contains('C:\myModules')) {
+    $env:PSModulePath += ';C:\myModules'
+}
 ```
 
 See https://docs.microsoft.com/en-us/powershell/developer/module/importing-a-powershell-module for more information.
