@@ -1,5 +1,5 @@
 # INVEST in User Stories
-(adapted from DZONE article)
+(adapted from https://dzone.com/articles/invest-user-stories)
 
 ## Independent
 Independency between stories is fundamental for being able to prioritize, add and remove stories from a release or an iteration plan as single units. Stories should be atomic, so that can be started and finished in isolation from other ones (like a database transaction).
