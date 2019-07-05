@@ -6,10 +6,12 @@ Install `pkg` globally via `npm -g install pkg`
 
 ## Invocation
 Run one of:
-    - `pkg {PATH}/main.js` - main.js will be used as the entry point on invocation.
-        - **Recommended**: ensure the `bin` property in `package.json` also references your entry point
-    - `pkg {PATH}/package.json` - property `bin` defined within `package.json` will be used to determine entry point
-    - `pkg {PATH}` - `package.json` on `{PATH}` will be used as per the above invocation
+
+- `pkg {PATH}/main.js` - main.js will be used as the entry point on invocation.
+    - **Recommended**: ensure the `bin` property in `package.json` also references your entry point
+- `pkg {PATH}/package.json` - property `bin` defined within `package.json` will be used to determine entry point
+- `pkg {PATH}` - `package.json` on `{PATH}` will be used as per the above invocation
+    - *Warning*: `pkg` will not work properly if there's a trailing slash on the path
 
 ## Output Targetting
 By default executables will be created for linux, macos, and windows, targeting the current architecture and node version. Use `-t host` to target only the running platform, architecture, and node version.
