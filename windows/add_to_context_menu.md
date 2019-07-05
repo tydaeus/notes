@@ -13,6 +13,11 @@ The final key will look something like `HKEY_CLASSES_ROOT\{fileTypeConfig}\shell
 
 *Note*: unlike listed in guide, it appears that backslashes do not need to be doubled. However, the command path and the %1 parameter should probably be quoted if there's any chance of spaces being present.
 
+*Note*: if multiple files are selected when the context menu option is selected, the command will be invoked once for each selected file, with that file as `%1`.
+
+### SystemFileAssociations
+Some registry file types don't appear to allow new context items to be added to them. It appears that these files need to have the `shell/{menuCommand}/command` structure added to their extension as it is listed within `HKEY_CLASSES_ROOT\SystemFileAssociations\`.
+
 ### Shift Key - Extended
 To have a shortcut appear only on shift+right-click, define a string under value `Extended` within the created key.
 
@@ -24,8 +29,3 @@ Create the key structure under `HKEY_CLASSES_ROOT\DesktopBackground\shell` key i
 
 ### Dir Menu
 Create the key structure under `HKEY_CLASSES_ROOT\Directory\shell` to appear when right-clicking a directory, or under `HKEY_CLASSES_ROOT\Directory\Background\shell` to appear when right-clicking the directory background in explorer.
-
-
-Note: Some registry file types don't appear to allow new context items to be added to them. It appears that these files need to have the `shell/{CommandName}/command` structure added to their extension as it is listed within `HKEY_CLASSES_ROOT\SystemFileAssociations\`.
-
-Note: if multiple files are selected when the context menu option is selected, the command will be invoked once for each selected file, with that file as `%1`.
