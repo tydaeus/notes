@@ -28,4 +28,4 @@ Create the key structure under `HKEY_CLASSES_ROOT\*\shell` instead of under the 
 Create the key structure under `HKEY_CLASSES_ROOT\DesktopBackground\shell` key instead of the `{fileTypeConfig}` key for a shortcut that appears when right-clicking the desktop.
 
 ### Dir Menu
-Create the key structure under `HKEY_CLASSES_ROOT\Directory\shell` to appear when right-clicking a directory, or under `HKEY_CLASSES_ROOT\Directory\Background\shell` to appear when right-clicking the directory background in explorer.
+Create the key structure under `HKEY_CLASSES_ROOT\Directory\shell` to appear when right-clicking a directory. Add under `HKEY_CLASSES_ROOT\Directory\Background\shell` using `%V` instead of `%1` to appear when right-clicking the directory background in explorer.
