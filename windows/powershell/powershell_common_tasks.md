@@ -241,3 +241,19 @@ exit /b %ERRCODE%
 # Manually populate $PSScriptRoot, due to batch bootstrap limitations
 $PSScriptRoot = $ScriptHome
 ```
+
+## Progress Bar
+Use the `Write-Progress` cmdlet to display a progress bar.
+
+* `-Activity` - text title for bar; updated with every call
+* `-PercentComplete` - how full the bar should be, out of 100
+* `-Completed` - pass this switch to hide the bar; `-Activity` must be specified but will not be used
+* `-Id` - numeric identifier for bar; not necessary unless displaying multiple bars
+
+``` PowerShell
+$percentComplete = [Math]::Floor(($i / $totalThings) * 1000) / 10
+Write-Progress -Activity "Doing the thing: $percentComplete% Complete" -PercentComplete $percentComplete
+
+# after loop
+Write-Progress -Activity "Doing the thing: Complete" -Completed
+```
