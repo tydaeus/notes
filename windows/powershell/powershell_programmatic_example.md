@@ -27,3 +27,24 @@ foreach ($key in $parameterKeys) {
     }
 }
 ```
+
+
+``` PowerShell
+# Get a combined list of properties and note properties
+$properties = $object | Get-Member | Where { ($_.MemberType -eq 'NoteProperty') -or ($_.MemberType -eq 'Property') }
+
+# iterate through the property list
+foreach ($property in $properties) {
+    # get the property name and value
+    $propertyName = $property.Name
+    $propertyValue = $object.$propertyName
+
+    # allow separate handling of null-valued properties
+    if ($propertyValue -eq $Null) {
+        #...
+    }
+    # check type of property (won't work on null valued properties)
+    elseif ($propertyValue.GetType() -eq [Object[]]) {
+        #...
+    }
+```
