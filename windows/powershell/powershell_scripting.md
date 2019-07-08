@@ -73,6 +73,15 @@ Useful `Parameter` attribute arguments:
 
 * `Mandatory=$true` - sets this parameter to be mandatory
 
+Other useful attributes:
+
+* `[AllowNull()]` - allows a null value to be passed to a parameter
+* `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter
+* `[AllowEmptyString()]` - allows passing an empty string to a string parameter
+
+#### Parameter Typing and Coercion
+PowerShell will attempt to coerce explicitly typed parameters into appropriate type if they aren't passed as such. This results in interesting behaviors with nulls - a null string will be converted to empty, a null int will be converted to 0, etc.
+
 #### Multiple Parameter Sets
 Sometimes a script function will need to support different combinations of parameters. For this reason, the `parameter` attribute also supports the `ParameterSetName` property.
 
