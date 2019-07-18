@@ -17,6 +17,26 @@ Set-Variable varName -option ReadOnly -value $Value
 Set-Variable varName -option Constant -value $Value
 
 ```
+
+
+
+## Regex Matching
+
+### The `-match` Operator
+Use the `-match` operator to check whether a string(s) matches a regex. E.g. `$str -match $regex` will return a boolean indicating whether the string contained in `$str` matches the regex contained in (string variable) `$regex`.
+
+If the first operand is a collection of strings, a collection of the matching strings will be returned.
+
+The `$Matches` automatic Hashtable variable will be populated with the first match for each regex grouping if `-match` returns true, if matching a single string. `$Matches` is not updated if matching a collection.
+
+The `-notmatch` operator performs the negation equivalent to `-not ($str -match $regex)`, and populates `$Matches` if matches were present.
+
+### Regex Type
+The `[regex]` object type can be used as an alternative to the `-match` operator. Use `[regex]::Matches($str, $regex)` to retrieve a collection of matches.
+
+
+
+
 ## File System Operations
 
 ### Copy Files
