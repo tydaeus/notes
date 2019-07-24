@@ -34,5 +34,19 @@ for /r %%i in (*) do (
 )
 ```
 
-### Using `for` to iterate through parameters
+### Using `for` to iterate file contents
 
+```cmd
+:: echo all lines in FILE
+for /F "eol=# tokens=* usebackq" %%A in (`type "%FILE%"`) do (
+    echo:%%A
+)
+```
+
+`eol` specifies end of line symbol. Default is `;`. specify as last parameter in quote group with no value if no eol symbol desired.
+
+`tokens` specifies how to split line up among variables. `*` results in entire line being captured as first variable.
+
+`usebackq` toggles quotation type used within parens such that backquotes specifies command invocation (other quote types specify other forms of interpretation).
+
+Note that the line can be used as-is within the body of the `for` loop, but may need to be escaped if you try to pass it to a function or script if special characters are included.
