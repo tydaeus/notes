@@ -79,6 +79,29 @@ Other useful attributes:
 * `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter
 * `[AllowEmptyString()]` - allows passing an empty string to a string parameter
 
+### Splatting Parameters
+Prefix a passed HashTable or Array variable with `@` instead of `$` to "splat" the contained values into multiple parameters.
+
+``` PowerShell
+# Array form specifies parameters by positional order:
+$params = @('a', 'b', 'c')
+# invoke Do-TheThing equivalent to Do-TheThing 'a' 'b' 'c'
+Do-TheThing @params
+
+# HashTable form explicitly names the parameters
+$params = @{
+    param1 = 'a'
+    param2 = 'b'
+    param3 = 'c'
+}
+# invoke Do-TheThing equivalent to Do-TheThing -param1 'a' -param2 'b' -param3 'c'
+Do-TheThing @params
+```
+
+Splat PSBoundParameters (`@PSBoundParameters`) to forward all passed parameters to the invoked function.
+
+See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-6 for full information.
+
 #### Parameter Typing and Coercion
 PowerShell will attempt to coerce explicitly typed parameters into appropriate type if they aren't passed as such. This results in interesting behaviors with nulls - a null string will be converted to empty, a null int will be converted to 0, etc.
 
