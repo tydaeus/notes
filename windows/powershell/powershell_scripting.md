@@ -142,6 +142,8 @@ Declare: `[switch] $MySwitch`
 
 Use: `.\My-Script.ps1 -MySwitch`
 
+
+
 ### Pipeline Input Parameters
 
 #### `ValueFromPipeline`
@@ -189,6 +191,8 @@ End {
     # this block runs once at the end, use for cleanup etc.
 }
 ```
+
+
 
 ## Outputting Data
 Any data item that appears on a line on its own is considered part of the output data. E.g. lines
