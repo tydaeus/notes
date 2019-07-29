@@ -37,7 +37,7 @@ If you attempt to run a 32-bit or partially 32-bit dll from a 64-bit PowerShell,
 Check if PowerShell is currently running in 64-bit mode via `[Environment]::Is64BitProcess`; this is a boolean that will be true if running as 64-bit.
 
 ### Executing 32-bit PowerShell
-The 32-bit version of PowerShell gets installed as `C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`. Note that this *is* the 32-bit version, despite being installed in SysWOW64, and *is not* necessary PowerShell 1.0, despite being installed in a v1.0 folder.
+The 32-bit version of PowerShell gets installed as `C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`. Note that this *is* the 32-bit version, despite being installed in SysWOW64, and *is not* necessarily PowerShell 1.0, despite being installed in a v1.0 folder.
 
 ### Starting a 32-bit Remote Session
 Use `Enter-PSSession -ComputerName $ComputerName -ConfigurationName Microsoft.PowerShell32` to start a 32-bit remote session on a 64-bit host. Note that this configuration name does not exist on 32-bit hosts.
