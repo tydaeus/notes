@@ -84,6 +84,12 @@ PowerShell can run commands on remote hosts using the WinRM Service.
 ### Enable Remoting
 Run `Enable-PSRemoting` to enable remoting on the machine you want to connect to. Answer `yes` to all prompts. Under Windows 7, enabling will fail if your NIC's location is set to Public. Switch to the Home or Work network location, or skip the network check via `Enable-PSRemoting -SkipNetworkProfileCheck`.
 
+You may also need to enable read and execute privileges:
+
+1. Open PowerShell as Administrator
+2. Execute command: `Set-PSSessionConfiguration -Name Microsoft.PowerShell -ShowSecurityDescriptorUI`
+3. Ensure the user (or their group) has `Read` and `Execute` permissions.
+
 ### Using a PowerShell Session
 Use `Enter-PSSession -ComputerName "HOSTNAME"` to start a PowerShell session on HOSTNAME. You now have a command-prompt that can be used to run PowerShell commands.
 
