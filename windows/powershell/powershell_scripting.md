@@ -264,6 +264,9 @@ Invoke a ScriptBlock by using the `Invoke-Command` cmdlet: `Invoke-Command -Scri
 
 More simply, use the `call` operator: `&$ScriptBlock $Param1 $Param2`.
 
+### Converting a Function to a ScriptBlock
+Convert an in-scope function to a scriptblock by using `${function:Function-Name}`, thereby allowing it to be passed.
+
 ## String Declaration and Interpolation
 Strings can be declared using either single or double-quotes; this controls their behavior.
 
