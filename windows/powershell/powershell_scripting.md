@@ -98,7 +98,28 @@ $params = @{
 Do-TheThing @params
 ```
 
-Splat PSBoundParameters (`@PSBoundParameters`) to forward all passed parameters to the invoked function.
+Splat `Args` (`@Args`) or `PSBoundParameters` (`@PSBoundParameters`) to forward all passed parameters to the invoked function.
+
+Note that only Arrays and HashTables can be splatted. Any other object must be converted to an Array or HashTable before it can be splatted; for a PsCustomObject the following function can be used:
+
+``` PowerShell
+function Convert-PsCustomObjectToHashTable {
+    param (
+        [Parameter(Mandatory=$True, ValueFromPipeline=$True)]
+        [PsCustomObject]
+        $obj
+    )
+
+    Process {
+        $result = @{}
+        $obj.psobject.properties | % {
+            $result[$_.Name] = $_.Value
+        }
+
+        return $result
+    }
+}
+```
 
 See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-6 for full information.
 
