@@ -149,6 +149,12 @@ param(
 )
 ```
 
+Note that all parameters must be in at least one parameter set.
+
+Specify which parameter set is used if multiple sets are applicable by specifying the `DefaultParameterSetName` cmdlet property in the CmdletBinding statement, e.g. `[CmdletBinding(DefaultParameterSetName='MyDefaultParameterSet')]`. Note that if no parameters are part of this set, this set will be in use when no parameters are passed.
+
+Check which parameter set was used via the `$PsCmdlet.ParameterSetName` variable.
+
 ### ValidateSet
 Use the `ValidateSet` parameter attribute to restrict potential values of a parameter:
 
