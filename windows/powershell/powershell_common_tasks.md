@@ -5,8 +5,12 @@ Use `$PSVersionTable.PSVersion` to check the version of PowerShell currently run
 
 A `#Require` statement can be added to enforce minimum PowerShell version for the script, e.g. `#Requires -Version 5.0`. This must be the first item on a line, but can appear on any line.
 
-## Get Script Directory
-In PowerShell 3.0+, automatic variable `$PSScriptRoot` will contain the dir of the current script. Note that this variable is populated *only* while running a script, and may also remain unpopulated under certain other conditions (e.g. invoking a script by reading its contents). If this variable is not populated, it will default to null, which will result in `C:\` acting as its value.
+## Get Information About Currently Running Script
+The following automatic variables are populated with information about the currently running script. Note that these variables are populated *only* while running a script, and may also remain unpopulated under certain other conditions (e.g. invoking a script by reading its contents). If these variables are not populated, they will default to null, which will result in `C:\` acting as path value.
+
+* `$PSScriptRoot` - full path to script directory
+* `$PSCommandPath` - full path to script
+
 
 ## Set Constant
 ``` powershell
