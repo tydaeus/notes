@@ -36,11 +36,6 @@ The `[regex]` object type can be used as an alternative to the `-match` operator
 
 
 
-## Deep Comparison
-The `Compare-Object` cmdlet compares two sets of objects and returns a collection of Difference objects indicating the differences.
-
-
-
 ## File System Operations
 
 ### Copy Files
