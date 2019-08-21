@@ -24,6 +24,9 @@ Set-Variable varName -option Constant -value $Value
 
 
 
+## Wait for a Specified Time
+Use the `Start-Sleep` command to cause the PowerShell session to sleep for a specified period, using either the `-Seconds` or `-Milliseconds` parameter, e.g. `Start-Sleep -Seconds 1.5`.
+
 ## Regex Matching
 
 ### The `-match` Operator
