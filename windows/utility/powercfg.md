@@ -1,16 +1,19 @@
 # PowerCfg
-`powercfg.exe` allows control of power plans from command-line/script interface. Most useful is the `/change` flag.
+`powercfg.exe` allows control of power plans from command-line/script interface.
+
+## `/change` option
+Use the `/change` option to modify power save settings.
 
 Specify one of the following:
 
-* monitor-timeout-ac
-* monitor-timeout-dc
-* disk-timeout-ac
-* disk-timeout-dc
-* standby-timeout-ac
-* standby-timeout-dc
-* hibernate-timeout-ac
-* hibernate-timeout-dc
+* `monitor-timeout-ac`
+* `monitor-timeout-dc`
+* `disk-timeout-ac`
+* `disk-timeout-dc`
+* `standby-timeout-ac`
+* `standby-timeout-dc`
+* `hibernate-timeout-ac`
+* `hibernate-timeout-dc`
 
 `AC` options control power when plugged in, `DC` while on battery power.
 
