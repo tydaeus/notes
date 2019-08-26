@@ -1,8 +1,8 @@
-# PowerCfg
-`powercfg.exe` allows control of power plans from command-line/script interface.
+# Power Configuration
+Many windows power configuration operations can be controlled via commandline/script.
 
-## `/change` option
-Use the `/change` option to modify power save settings.
+## `powercfg /change`
+Use `powercfg /change` to modify power save settings.
 
 Specify one of the following:
 
