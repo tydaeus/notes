@@ -20,3 +20,6 @@ Specify one of the following:
 E.g. `powercfg /change monitor-timeout-ac 5` will set the monitor to sleep after 5 minutes when plugged into the wall.
 
 See https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options#option_change for fuller documentation.
+
+## Disable hybrid sleep/hibernation
+Hybrid sleep/hibernation can potentially interfere with wakeup scripts. Use `powercfg -h off` to disable hybrid sleep if you experience issues with wakeup scripts.
