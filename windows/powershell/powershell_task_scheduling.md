@@ -19,8 +19,8 @@ $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -WorkingDirectory 'C
 $trigger = New-ScheduledTaskTrigger -Daily -At 9am
 
 # actually register the action and trigger
-# add param `-User "System"` to run as system, which allows the task to run with no-one logged in.
-# add param '-Settings (New-ScheduledTaskSettingsSet -WakeToRun)' to wake the computer for the task
+# add param `-User "System"` to run as system, which allows the task to run with no-one logged in. Note that this will prevent user-specific operations from performing, such as displaying dialog boxes.
+# add param `-Settings (New-ScheduledTaskSettingsSet -WakeToRun)` to wake the computer for the task
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Description "My task that does stuff"
 ```
 
