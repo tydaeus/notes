@@ -42,6 +42,8 @@ $list.Add(5) | Out-Null
 # Do NOT add via the += operator. This creates a new ArrayList and assigns it the original contents plus the new contents. This is inefficient and can result in reference issues.
 ```
 
+Returned ArrayLists are converted to fixed-size format unless the receiving variable is explicitly an ArrayList, e.g. `[System.Collections.ArrayList]$output = Do-SomethingThatReturnsAnArrayList`.
+
 ### Retrieve Items
 To return all elements, just reference the array name: `$arr`.
 
