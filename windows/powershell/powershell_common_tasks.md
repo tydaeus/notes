@@ -162,10 +162,24 @@ $buttonClicked = $wshell.Popup("Body Text",$nSecondsToWait,"Title",$dialogType)
 ## Working with Dates
 Cast a string to a date via `[dateTime]"2018/11/23"`. A variety of formats are automatically recognized.
 
-## Self-Launching PowerShell Script
-For "security" reasons, PowerShell scripts cannot be launched by double-clicking them. This is easily bypassed however, by embedding the PowerShell script inside a `.cmd` script that tells PowerShell to run it.
+## Running PowerShell from Cmd
+For "security" reasons, PowerShell scripts cannot be launched by double-clicking them. This can be easily bypassed, however, by launching PowerShell commands or scripts from a `.cmd` script.
 
-Start the `.cmd` script with this snippet:
+Run a script:
+```cmd
+powershell -executionpolicy remotesigned -File ".\MyPowerShellScript.ps1" <args>
+```
+Note that all text after `-File` will be interpreted as part of the filepath or parameters for the script. Passing `-` as the value for the parameter will result in reading `stdin` as the file.
+
+Run a command or series of commands as though typed at the PowerShell prompt:
+```cmd
+powershell -Command Do-Something -Param1 param1Value
+```
+Note that all text after `-Command` will be interpreted as part of the command.
+
+### Self-Launching PowerShell Script
+You can also embed a PowerShell script within a `.cmd` script by starting the `.cmd` script with the below snippet. Note, however, that because this relies on running the PowerShell script as a series of commands, some of the PowerShell automatic variables will not be automatically be populated.
+
 ``` cmd
 <# : batch script
 @echo off
