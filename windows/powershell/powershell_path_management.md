@@ -36,4 +36,5 @@ You can also use the .Net class `System.IO.Path` static methods to work with pat
 * `GetDirectoryName` - *Warning*: if provided a relative path parameter, this will resolve relative to the user's home folder instead of PWD
 * `GetExtension`
 * `GetFileName`
+* `GetFileNameWithoutExtension`
 * `GetFullPath` - *Warning*: if provided a relative path parameter, this will resolve relative to the user's home folder instead of PWD
