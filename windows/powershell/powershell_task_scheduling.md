@@ -5,7 +5,7 @@ PowerShell provides cmdlets that allow you to automate/script some of the functi
 
 The following template is derived from https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/13/use-powershell-to-create-scheduled-tasks/.
 
-```
+``` PowerShell
 # the action to be scheduled; executes PowerShell and specifies the command as part of its arguments
 $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument '-NoProfile -WindowStyle Hidden -command "& {psScriptBlock}"'
 
@@ -17,6 +17,9 @@ $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -WorkingDirectory 'C
 
 # triggering condition used to actually schedule the task
 $trigger = New-ScheduledTaskTrigger -Daily -At 9am
+
+# at log on variant (assuming we want it to happen at the current user's logon)
+$trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 
 # actually register the action and trigger
 # add param `-User "System"` to run as system, which allows the task to run with no-one logged in. Note that this will prevent user-specific operations from performing, such as displaying dialog boxes.
