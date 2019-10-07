@@ -88,7 +88,7 @@ echo "%X%"
 ```
 
 #### Setting a Var Based on Command Output
-There is no cmd equivalent to the Linux backtick operator. However, you can use `for`'s command output processing option to 
+There is no cmd equivalent to the Linux backtick operator. However, you can use `for`'s command output processing option to
 
 ```cmd
 for /F "delims=" %%A in ('COMMAND') do set VARNAME=%%A
@@ -172,7 +172,7 @@ This allows storing the current directory prior to changes, then returning to it
 `pushd` will also temporarily map the specified directory to an available drive letter if it is a network directory rather than a local drive. This is the main way to use a network dir as the current working directory. Note that some odd behaviors may occur.
 
 ## Error Checking
-The `ERRORLEVEL` variable is automatically populated with the exit code of the last executed command. Due to its shared nature, be sure to check or store it immediatebly, before it gets overwritten.
+The `ERRORLEVEL` variable is automatically populated with the exit code of the last executed command. Due to its shared nature, be sure to check or store it immediately, before it gets overwritten.
 
 By convention, ERRORLEVEL 0 indicates success, while any other value indicates an error occurred.
 
