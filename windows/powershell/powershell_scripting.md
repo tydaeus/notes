@@ -72,6 +72,7 @@ The `Parameter` attribute allows setting multiple arguments, in key-value format
 Useful `Parameter` attribute arguments:
 
 * `Mandatory=$true` - sets this parameter to be mandatory
+* `Position=0` - sets this parameter to correspond to first invocation argument
 
 Other useful attributes:
 
