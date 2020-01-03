@@ -73,6 +73,7 @@ Useful `Parameter` attribute arguments:
 
 * `Mandatory=$true` - sets this parameter to be mandatory
 * `Position=0` - sets this parameter to correspond to first invocation argument
+* `ValueFromRemainingArguments` (Optionally `ValueFromRemainingArguments=$True`) - sets this parameter to be populated by all parameter values that aren't assigned to other parameters
 
 Other useful attributes:
 
