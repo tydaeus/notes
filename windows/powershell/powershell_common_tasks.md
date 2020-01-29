@@ -51,6 +51,18 @@ Copy 1 file: `Copy-Item $SourcePath -Destination $DestinationPath`
 ### Delete Files
 Delete all files in dir: `Remove-Item $TargetDir -Force -Recurse`. Note that the recurse switch has issues, so you may be better off with `Get-ChildItem $TargetDir -Recurse | Remove-Item -Force -Recurse`.
 
+As a function:
+```PowerShell
+function Remove-ChildItems {
+    param(
+        $TargetDir
+    )
+
+    Get-ChildItem $TargetDir -Recurse | Remove-Item -Force -Recurse
+}
+```
+
+
 ### Unzip File
 In PowerShell 5+: `Expand-Archive $SourcePath -DestinationPath $DestinationPath`. If `-DestinationPath` is omitted, will extract to PWD.
 
