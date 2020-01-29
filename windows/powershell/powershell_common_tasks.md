@@ -48,6 +48,12 @@ The `[regex]` object type can be used as an alternative to the `-match` operator
 ### Copy Files
 Copy 1 file: `Copy-Item $SourcePath -Destination $DestinationPath`
 
+The BitsTransfer module provides network copying and feedback enhancements (e.g. an automatic progress bar). E.g.:
+
+```PowerShell
+Start-BitsTransfer -Source $sourceFile -Destination $targetFile -TransferType Download -Description "Copy $fileName" -DisplayName "Copy $fileName"
+```
+
 ### Delete Files
 Delete all files in dir: `Remove-Item $TargetDir -Force -Recurse`. Note that the recurse switch has issues, so you may be better off with `Get-ChildItem $TargetDir -Recurse | Remove-Item -Force -Recurse`.
 
