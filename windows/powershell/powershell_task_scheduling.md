@@ -27,6 +27,22 @@ $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Description "My task that does stuff"
 ```
 
+### Creating and Using Task Settings
+To further customize task behavior, you need to specify task settings using the `-Settings` parameter with a ScheduledTaskSettingsSet. The easiest way to do this is by creating a new ScheduledTaskSettingsSet object with `New-ScheduledTaskSettingsSet`, using that commandlet's parameters to specify the settings. E.g.:
+
+```PowerShell
+# create the settings
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable
+
+# register the task with the settings specified (assuming $action and $trigger have already been created)
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Description "My task that does stuff" -Settings $settings
+
+```
+**Recommended**: most tasks should probably have settings created with `-StartWhenAvailable` specified, otherwise high system activity may result in your task being skipped.
+
+
+
+
 ## Get Info About Scheduled Tasks
 Run `taskschd.msc` for the GUI interface, or see below for PowerShell options.
 
