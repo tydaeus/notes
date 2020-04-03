@@ -136,7 +136,7 @@ This tool allows you to select a sample event, then use sample fields from it to
 After you have designated fields for extraction, these fields can be edited in future via `Settings > Fields > Field extractions`
 
 #### Regex Capture Groups
-Splunk field extraction uses custom capture group operators `(?P<FIELDNAME>REGEX)` to indicate when a field is being captured for extraction. For example, given input `MyField:12345`, you'd capture the numeric value of `MyField` as `MyCapturedField` with regex: `MyField:(?P<MyCapturedField>\d+)`. 
+Splunk field extraction uses custom capture group operators `(?P<FIELDNAME>REGEX)` to indicate when a field is being captured for extraction. For example, given input `MyField:12345`, you'd capture the numeric value of `MyField` as `my_captured_field` with regex: `MyField:(?P<my_captured_field>\d+)`. 
 
 
 
