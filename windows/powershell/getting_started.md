@@ -110,6 +110,7 @@ $s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
 Invoke-Command -Session $s -ScriptBlock {Get-Culture}
 ```
 
+Successive ScriptBlocks invoked on the same session will run in the same scope, so they can share variables.
 
 
 ## Snapins
