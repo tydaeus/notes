@@ -98,6 +98,8 @@ Use `Exit-PSSession` to exit the PSSession when done.
 ### Using `Invoke-Command`
 Use `Invoke-Command` to run a specified command on one or more target hosts. `Invoke-Command -ComputerName HOST1,HOST2 -ScriptBlock {Cmdlet-Name -Param1 Arg1}`. Use the `PSComputerName` property to differentiate between outputs for the different hosts.
 
+Use the `$Using:` variable scope in order to reference locally created variables in the remote session. E.g. `$localValue = 5; Invoke-Command -ComputerName HOST1 -ScriptBlock {Cmdlet-Name -Param1 $Using:localValue}`
+
 Note that because objects need to be serialized and deserialized during transfer, most methods will no longer be available.
 
 ### Using a PowerShell Session within a script via `Invoke-Command`
