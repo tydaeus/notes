@@ -100,6 +100,18 @@ Use `Invoke-Command` to run a specified command on one or more target hosts. `In
 
 Note that because objects need to be serialized and deserialized during transfer, most methods will no longer be available.
 
+### Using a PowerShell Session within a script via `Invoke-Command`
+Store the session created by `New-PSSession` in a variable, then provided it as the `-Session` parameter to `Invoke-Command` in order to utilize a session within a script.
+
+E.g.:
+
+```PowerShell
+$s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
+Invoke-Command -Session $s -ScriptBlock {Get-Culture}
+```
+
+
+
 ## Snapins
 PowerShell snapins are compiled extensions to PowerShell, written via C# or another .NET language. Snapins are largely ignored in favor of modules.
 
