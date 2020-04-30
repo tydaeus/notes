@@ -19,7 +19,14 @@ use the `/log` or `/L` option followed immediately by log control characters, a 
 
 E.g. `msiexec /i myinstaller.msi /L*V C:\temp\myinstaller.log`.
 
+Sample log control characters:
+
+* `*V` - log everything + verbose
+* `p!` - log properties only
+
 In particular, the log output will include a list of the properties set and calculated by the installation process, e.g `Property(S): MYPROPERTY = My property value`. Public properties set in the GUI appear to get tracked as properties whose names are all uppercase, so you can use this information to determine what custom properties need to be set to convert from GUI to command-line installation.
+
+Commonly, you can look for the log line that starts with `Command Line`, and the `ADDLOCAL` property will capture user preferences.
 
 ## Setting Properties
 Set public install properties for installation from the command-line by specifying them after other parameters in `NAME=VALUE` format.
