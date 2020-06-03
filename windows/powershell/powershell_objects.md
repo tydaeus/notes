@@ -26,6 +26,13 @@ $arr = @(
 ### Add values
 Append to an array using `+=`. `$arr += 8`. Note that PowerShell (stupidly, IMHO) uses immutably sized arrays, so you will be creating a new array containing all previous elements plus the new one. This can also result in referencing issues.
 
+### Array-String Confusion and Single-Object coercion
+In addition to using the index (`[]`) operator to specify array index, PowerShell also allows using it to specify characters from a string, e.g. `'myString'[1]` is 'y'. On top of this, PowerShell's loose typing may result in a single-element string array being treated as a string unless you're very careful about using explicit variable typing/casting.
+
+Use the `.Count` property instead of the `.Length` property - `.Count` always indicates number of elements, while `.Length` will specify number of characters when used on a string.
+
+"Wrap" a variable you intend to reference as an array to ensure index is processed array style. E.g. `@($myVar)[0]` will always refer to the first element, not the first letter, regardless of whether `$myVar` is an array or a string.
+
 #### Using ArrayLists
 For large mutable arrays, consider using a .Net ArrayList instead:
 
