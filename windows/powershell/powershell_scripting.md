@@ -335,13 +335,19 @@ Use the `function` PSDrive if you need to access a function whose name is in a v
 This can be used to package a function for re-declaration in another scope, via:
 
 ```PowerShell
+<#
+.SYNOPSIS
+    Returns a string containing declaration and definition for a named function(s).
+#>
 function Get-PackagedFunction {
-    param([string]$functionName)
+    param([Parameter(Mandatory=$True, ValueFromPipeline=$True)][string]$FunctionName)
 
-    if (Test-Path "function:$functionName") {
-        return "function $functionName { $(Get-Content "function:$functionName") }"
-    } else {
-        throw { "No function named '$functionName' within scope."}
+    process {
+        if (Test-Path "function:$FunctionName") {
+            return "function $FunctionName { $(Get-Content "function:$FunctionName") }"
+        } else {
+            throw { "No function named '$FunctionName' within scope."}
+        }    
     }
 }
 ```
