@@ -308,7 +308,7 @@ Invoke a ScriptBlock by using the `Invoke-Command` cmdlet: `Invoke-Command -Scri
 More simply, use the `call` operator: `&$ScriptBlock $Param1 $Param2`.
 
 ### Converting a Function to a ScriptBlock
-Access an in-scope function's definition via `${function:Function-Name}`. This definition can then be passed in lieu of a ScriptBlock.
+Access an in-scope function's definition (without its name) via `${function:Function-Name}`. This definition can then be passed in lieu of a ScriptBlock.
 
 `[ScriptBlock]::Create()` can be used to create a ScriptBlock from an arbitrary string. You can use this in combination with function definitions to pass multiple function definitions into other scripts and then dot-source them into that scope, potentially allowing them to call each other, e.g. for using Invoke-Command on a remote computer.
 
@@ -330,6 +330,21 @@ Invoke-Command -ComputerName OTHERCOMPUTER -ScriptBlock {
 
 ```
 
+Use the `function` PSDrive if you need to access a function whose name is in a variable, e.g. `Get-Content "Function:$functionName"` will retrieve the definition of the function whose name is stored in `$functionName`.
+
+This can be used to package a function for re-declaration in another scope, via:
+
+```PowerShell
+function Get-PackagedFunction {
+    param([string]$functionName)
+
+    if (Test-Path "function:$functionName") {
+        return "function $functionName { $(Get-Content "function:$functionName") }"
+    } else {
+        throw { "No function named '$functionName' within scope."}
+    }
+}
+```
 
 
 ## String Declaration and Interpolation
