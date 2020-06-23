@@ -47,7 +47,7 @@ A script/function can reference the arguments passed to it via the `$Args` array
 ### Named Parameters - PSBoundParameters
 A script/function can define a named set of parameters. Define named parameters that your script/function can accept by name by using a param statement before any non-comment content.
 
-A hashtable of named parameters passed into a script/function can be accessed using `$PSBoundParameters`; the `$Args` variable will no longer be populated. `$PSBoundParameters.ContainsKey($paramName)` will return a boolean indicating whether parameter `$paramName` was specified.
+A hashtable of named parameters passed into a script/function can be accessed using `$PSBoundParameters`; the `$Args` variable will no longer be populated. `$PSBoundParameters.ContainsKey($paramName)` will return a boolean indicating whether parameter `$paramName` was specified. `$PSBoundParameters` captures only *explicitly* specified parameters, not those that retain their default value.
 
 Parameter definitions must be comma-separated, and ignore whitespace:
 
@@ -125,10 +125,37 @@ function Convert-PsCustomObjectToHashTable {
 
 See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-6 for full information.
 
-#### Parameter Typing and Coercion
+#### Converting All Parameters to Splatted Parameters
+If you desire to capture all of a function/script's input parameters for purposes of passing them along to another function/script, you'll need to iterate through them in a manner similar to the following:
+
+```PowerShell
+$outParameters = @{}
+
+$myName = Join-Path $PSScriptRoot $MyInvocation.MyCommand
+
+$myParameters = (Get-Command -Name $myName).Parameters
+
+foreach ($parameter in $myParameters) {
+    # $parameter
+    $parameter.Values.Name | ForEach-Object {
+        if (Test-Path "Variable:$_") {
+            "$_ tests true"
+            $value = Get-Content "Variable:$_"
+
+            if ($value) {
+                $outParameters[$_] = $value
+            }
+        }
+    }
+
+}
+```
+
+
+### Parameter Typing and Coercion
 PowerShell will attempt to coerce explicitly typed parameters into appropriate type if they aren't passed as such. This results in interesting behaviors with nulls - a null string will be converted to empty, a null int will be converted to 0, etc.
 
-#### Multiple Parameter Sets
+### Multiple Parameter Sets
 Sometimes a script function will need to support different combinations of parameters. For this reason, the `parameter` attribute also supports the `ParameterSetName` property.
 
 ```PowerShell
