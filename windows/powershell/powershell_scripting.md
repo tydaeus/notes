@@ -129,25 +129,14 @@ See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core
 If you desire to capture all of a function/script's input parameters for purposes of passing them along to another function/script, you'll need to iterate through them in a manner similar to the following:
 
 ```PowerShell
-$outParameters = @{}
+$parameters = @{}
 
-$myName = Join-Path $PSScriptRoot $MyInvocation.MyCommand
+foreach ($key in $MyInvocation.MyCommand.Parameters.Keys) {
+    $value = Get-Content "Variable:$key" -ErrorAction 'Ignore'
 
-$myParameters = (Get-Command -Name $myName).Parameters
-
-foreach ($parameter in $myParameters) {
-    # $parameter
-    $parameter.Values.Name | ForEach-Object {
-        if (Test-Path "Variable:$_") {
-            "$_ tests true"
-            $value = Get-Content "Variable:$_"
-
-            if ($value) {
-                $outParameters[$_] = $value
-            }
-        }
+    if ($value) {
+        $parameters[$key] = $value
     }
-
 }
 ```
 
