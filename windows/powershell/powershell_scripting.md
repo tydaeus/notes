@@ -132,7 +132,7 @@ If you desire to capture all of a function/script's input parameters for purpose
 $parameters = @{}
 
 foreach ($key in $MyInvocation.MyCommand.Parameters.Keys) {
-    $value = Get-Content "Variable:$key" -ErrorAction 'Ignore'
+    $value = Get-Item "Variable:$key" -ErrorAction 'Ignore'
 
     if ($value) {
         $outParameters[$key] = $value.Value
