@@ -135,7 +135,7 @@ foreach ($key in $MyInvocation.MyCommand.Parameters.Keys) {
     $value = Get-Content "Variable:$key" -ErrorAction 'Ignore'
 
     if ($value) {
-        $parameters[$key] = $value
+        $outParameters[$key] = $value.Value
     }
 }
 ```
