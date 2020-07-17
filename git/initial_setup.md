@@ -15,6 +15,13 @@ User settings are stored in the user's home folder as `.gitconfig`.
 * `git config http.proxy=http://proxy.domain.com:PORT`
 * `git config https.proxy=https://proxy.domain.com:PORT`
 
+### Custom GitHub Certificates on Windows
+If setting an older Git install up to connect to a Git repo that uses non-standard SSL certificates, you'll need to run `git config --global http.sslbackend schannel`.
+
+This is now the default setting for Git for Windows installs, but the default does not get updated during Git updates.
+
+
+
 ## Create a New Repository on the Command Line
 
 1. (optional) `touch README.md` - create the readme file
