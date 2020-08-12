@@ -38,6 +38,15 @@ The `$Matches` automatic Hashtable variable will be populated with the first mat
 
 The `-notmatch` operator performs the negation equivalent to `-not ($str -match $regex)`, and populates `$Matches` if matches were present.
 
+### The `-replace` Operator
+(notes based on https://vexx32.github.io/2019/03/20/PowerShell-Replace-Operator/)
+
+Use the `-replace` operator to perform regex substitution on a string; syntax is `<STRING> -replace <REGEX>,<REPLACEMENT>`. All places where `<STRING>` matches `<REGEX>` will be replaced with `<REPLACEMENT>`.
+
+`<REPLACEMENT>` can use standard regex numbered replacement groups, e.g. `'foo(1234,56789)' -replace '^.*\((\d+),.*$','$1'` results in `'1234'` (the whole string gets matched, but the first parenthetical group is the only piece kept in the replacement string). The `$0` replacement group represents the entire matched string. Be aware that the `$` must be escaped so that PowerShell doesn't attemt to interpret it as a variable reference.
+
+A name can be specified for a replacement group in format `?<Name>` at the beginning of the replacement sequence, e.g. `'foo(1234,56789)' -replace '^.*\((?<Number>\d+),.*$','${Number}'`. Note that the name must be wrapped in `{}` in the replacement string.
+
 ### Regex Type
 The `[regex]` object type can be used as an alternative to the `-match` operator. Use `[regex]::Matches($str, $regex)` to retrieve a collection of matches.
 
