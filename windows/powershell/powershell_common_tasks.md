@@ -41,6 +41,9 @@ The `-notmatch` operator performs the negation equivalent to `-not ($str -match 
 ### Regex Type
 The `[regex]` object type can be used as an alternative to the `-match` operator. Use `[regex]::Matches($str, $regex)` to retrieve a collection of matches.
 
+### `Regex.Escape` method
+Use the `Escape` static method to escape all regex characters in a string. `[Regex]::Escape($string)`.
+
 
 
 ## File System Operations
