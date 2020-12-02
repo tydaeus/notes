@@ -173,21 +173,6 @@ See the original answer for a more elaborate solution that supports piping.
 ## Send an Email
 Use the `Send-MailMessage` cmdlet to send an email: `Send-MailMessage -From $fromAddress -To $toAddress -CC $ccAddress -Subject $Subject -Body $Body -SmtpServer $SMTPServer - port $SMTPPort -Attachments $Attachment`. You may wish to add the `-UseSsl` parameter to ensure SSL encryption, and setting `-Credential (Get-Credential)` will ensure credentials are prompted for.
 
-## Display a Dialog Box
-
-### via Windows Script Host
-From https://blogs.technet.microsoft.com/heyscriptingguy/2014/04/04/powertip-use-powershell-to-display-pop-up-window/, API documented in https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/windows-scripting/x83z1d9f(v=vs.84).
-
-```
-# 0 causes box to display until an option is clicked
-$nSecondsToWait = 0
-
-# Only option is "Ok"
-$dialogType = 0x0
-
-$wshell = New-Object -ComObject Wscript.Shell
-$buttonClicked = $wshell.Popup("Body Text",$nSecondsToWait,"Title",$dialogType)
-```
 
 ## Working with Dates
 Cast a string to a date via `[dateTime]"2018/11/23"`. A variety of formats are automatically recognized.
