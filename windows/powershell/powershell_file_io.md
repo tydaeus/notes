@@ -1,5 +1,9 @@
 # PowerShell File IO
 
+Sources/References:
+
+* https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files/
+
 ## Write a File
 
 ### Encoding
@@ -20,7 +24,7 @@ This can be used to change encoding to UTF-8: `$myString | Out-File -Encoding "U
 ### Set-Content and Add-Content
 The `Set-Content` cmdlet replaces the content of one or more files with specified content, e.g. `Set-Content $Path $Value`.
 
-The `Add-Content` cmdlet appends content to one or more files.
+The `Add-Content` cmdlet appends content to one or more files. Note that this appears to provide little/no buffering, and so will operate very slowly if used repeatedly. Consider using .Net's `StreamWriter.WriteLine` method for better performance when writing large numbers of single lines.
 
 This appears to default to UTF8 encoding without a Byte-Order Mark.
 
@@ -28,6 +32,27 @@ This appears to default to UTF8 encoding without a Byte-Order Mark.
 Use .NET's `File` class static `WriteAllLines` method: `[System.IO.File]::WriteAllLines($MyPath, $MyString)`. In PowerShell 4.0+, this will default to UTF 8 with no Byte-Order Mark.
 
 In PowerShell 3.0, use `[System.IO.File]::WriteAllLines($MyPath, $MyString, [System.Text.UTF8Encoding]::new($False))` to explicitly indicate UTF-8 with no BOM.
+
+
+### `StreamWriter.WriteLine`
+Create a .Net `StreamWriter` and use its `WriteLine` method if you want to be able to write single lines repeatedly with reasonable performance (e.g. writing from the pipline or generating on the fly).
+
+```PowerShell
+try
+{
+    # Important: $outputFilePath must provide the absolute file path
+    $stream = [System.IO.StreamWriter]::new($outputFilePath)
+
+    while (<# generating lines #>) {
+        # generate $line
+        $stream.WriteLine( $line )
+    }
+}
+finally
+{
+    $stream.close()
+}
+```
 
 ## Read a File
 
