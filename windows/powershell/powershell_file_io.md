@@ -61,6 +61,8 @@ Use `Get-Content $filePath` to retrieve a file's content as a collection of line
 
 `Get-Content` has known performance issues on large files, because it must read through the entire file before returning.
 
+Use the `-Tail` param to read from the end.
+
 ### Line-by-Line: `System.IO.File::ReadLines`
 Use `[System.IO.File]::ReadLines($filePath)` to access .Net's `File.ReadLines` function to retrieve a file's content line by line. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines. *Note*: you will need to provide the full path to the file, because .Net calls don't operate from `$PWD`.
 
