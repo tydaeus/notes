@@ -71,3 +71,26 @@ foreach ($line in [System.IO.File]::ReadLines($filename)) {
     # do something with $line
 }
 ```
+
+### Line-by-Line:
+You can alternatively use .Net `fileReader.ReadLine` to read a file line by line more manually. This also allows for stopping at an arbitrary point.
+
+Example adapted from https://stackoverflow.com/a/4192419/2939139.
+
+``` PowerShell
+$reader = [System.IO.File]::OpenText($fullInputFilePath)
+try {
+
+    $line = $reader.ReadLine()
+
+    # ReadLine returns $Null when it reaches EOF
+    while ($line -ne $Null)
+        # process $line
+
+        $line = $reader.ReadLine()
+    }
+}
+finally {
+    $reader.Close()
+}
+```
