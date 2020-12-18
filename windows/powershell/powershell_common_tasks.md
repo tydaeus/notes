@@ -60,7 +60,9 @@ Use the `Escape` static method to escape all regex characters in a string. `[Reg
 ### Copy Files
 Copy 1 file: `Copy-Item $SourcePath -Destination $DestinationPath`
 
-The BitsTransfer module provides network copying and feedback enhancements (e.g. an automatic progress bar). E.g.:
+The BitsTransfer module provides network copying and feedback enhancements (e.g. an automatic progress bar). Note that this operation operates on a single file, so multiple file copy and directory structure copy have to be managed separately.
+
+To copy a single file:
 
 ```PowerShell
 Start-BitsTransfer -Source $sourceFile -Destination $targetFile -TransferType Download -Description "Copy $fileName" -DisplayName "Copy $fileName"
