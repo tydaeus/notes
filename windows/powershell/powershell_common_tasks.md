@@ -58,12 +58,15 @@ Use the `Escape` static method to escape all regex characters in a string. `[Reg
 ## File System Operations
 
 ### Copy Files
+
+#### `Copy-Item`
 Copy 1 file: `Copy-Item $SourcePath -Destination $DestinationPath`
 
 Copy a directory, recursively: `Copy-Item $SourcePath -Destination $DestinationPath -Recurse`
 
 Best Practice: Use the `-LiteralPath` param instead of the default `-Path` param to specify source if you don't intend to use PowerShell filename wildcards (`*[]`) in it.
 
+#### `Start-BitsTransfer`
 The BitsTransfer module provides network copying and feedback enhancements (e.g. an automatic progress bar). Note that this operation operates on a single file, so multiple file copy and directory structure copy have to be managed separately.
 
 To copy a single file:
@@ -71,6 +74,8 @@ To copy a single file:
 ```PowerShell
 Start-BitsTransfer -Source $sourceFile -Destination $targetFile -TransferType Download -Description "Copy $fileName" -DisplayName "Copy $fileName"
 ```
+
+
 
 ### Delete Files
 Delete all files in dir: `Remove-Item $TargetDir -Force -Recurse`. Note that the recurse switch has issues, so you may be better off with `Get-ChildItem $TargetDir -Recurse | Remove-Item -Force -Recurse`.
