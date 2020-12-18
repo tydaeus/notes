@@ -62,6 +62,8 @@ Copy 1 file: `Copy-Item $SourcePath -Destination $DestinationPath`
 
 Copy a directory, recursively: `Copy-Item $SourcePath -Destination $DestinationPath -Recurse`
 
+Best Practice: Use the `-LiteralPath` param instead of the default `-Path` param to specify source if you don't intend to use PowerShell filename wildcards (`*[]`) in it.
+
 The BitsTransfer module provides network copying and feedback enhancements (e.g. an automatic progress bar). Note that this operation operates on a single file, so multiple file copy and directory structure copy have to be managed separately.
 
 To copy a single file:
