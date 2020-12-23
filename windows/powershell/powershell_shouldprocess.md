@@ -8,12 +8,12 @@ The PowerShell `SupportsShouldProcess` standard function behavior provides stand
 The cmdlet/function must specify the `CmdletBinding(SupportsShouldProcess)` attribute at its start to indicate it supports `-WhatIf` and `-Confirm`. This designation adds the `-WhatIf` and `-Confirm` standard parameters to its syntax.
 
 
-## Using `PSCmdlet.ShouldProcess()`
+## Using `$PSCmdlet.ShouldProcess()`
 Check whether actual functionality should be performed using one of the following invocations:
 
-* `PSCmdlet.ShouldProcess($target)`
-* `PSCmdlet.ShouldProcess($target, $operation)`
-* `PSCmdlet.ShouldProcess($message, $target, $operation)`
+* `$PSCmdlet.ShouldProcess($target)`
+* `$PSCmdlet.ShouldProcess($target, $operation)`
+* `$PSCmdlet.ShouldProcess($message, $target, $operation)`
 
 `$target` should indicate what item is being targeted by the function (generally a file).
 
