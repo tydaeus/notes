@@ -21,6 +21,8 @@ Add the `-Resolve` parameter to get the resolved path (resolving relative or wil
 ### `Resolve-Path`
 The `Resolve-Path` cmdlet will attempt to resolve a path string and return a `PathInfo` object representing it. Use `(Resolve-Path $Path).Path` to access the path string.
 
+`Resolve-Path` throws an exception if no matching file is found, so it should be wrapped in Try-Catch if manual error-handling or further script processing is desired.
+
 ### `Test-Path`
 Use the `Test-Path` cmdlet to inspect file structures. Throws an exception if the path doesn't exist.
 
