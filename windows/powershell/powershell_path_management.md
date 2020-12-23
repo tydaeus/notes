@@ -21,7 +21,14 @@ Add the `-Resolve` parameter to get the resolved path (resolving relative or wil
 ### `Resolve-Path`
 The `Resolve-Path` cmdlet will attempt to resolve a path string and return a `PathInfo` object representing it. Use `(Resolve-Path $Path).Path` to access the path string.
 
-`Resolve-Path` throws an exception if no matching file is found, so it should be wrapped in Try-Catch if manual error-handling or further script processing is desired.
+`Resolve-Path` errors out by default if no matching file is found. Set `-ErrorAction` to `SilentlyContinue` if this is not desired. The error variable can be processed to retrieve what the path would resolve to if it existed (from https://stackoverflow.com/a/12605755/2939139):
+
+```PowerShell
+$FileName = Resolve-Path $FileName -ErrorAction SilentlyContinue -ErrorVariable _frperror
+    if (-not($FileName)) {
+        $FileName = $_frperror[0].TargetObject
+    }
+```
 
 ### `Test-Path`
 Use the `Test-Path` cmdlet to inspect file structures. Throws an exception if the path doesn't exist.
