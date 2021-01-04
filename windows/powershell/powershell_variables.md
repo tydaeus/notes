@@ -14,3 +14,15 @@ Variables are loosely typed. PowerShell coerces types based on the first variabl
 
 ### Get Type of Variable
 Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`. This operation is not null safe, so perform a null check first.
+
+
+
+## Using the PowerShell `Variable:` Provider
+
+The PowerShell `Variable` provider allows the built-in PowerShell cmdlets to treat variables in a manner similar to filesystem objects.
+
+### Getting a variable's value with `Get-Item`
+
+``` PowerShell
+ Get-Item "Variable:$VarName"
+```
