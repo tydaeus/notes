@@ -138,17 +138,7 @@ Modules must be in a location described by the `PSModulePath` environment variab
 ### Module Auto-Loading
 As of PowerShell 3, cmdlets can be used from an external module without being explicitly imported. If the module is on the PSModulePath, it will be imported automatically and the cmdlet will be run, just by invoking its name.
 
-## Variables
-Reference a variable's content using the `$` operator. Set a variable with `$VariableName="Variable Value"`.
 
-Delete a variable via `Remove-Item Variable:\VariableName`.
-
-A variable can hold objects or collections of objects. Note that the right-hand side gets fully evaluated prior to assignment. Calling a method directly on a variable holding a collection results in the method being called on all members of the collection, e.g. `$MyProcesses.Kill()` will kill all of MyProcesses. To access a single object, treate the variable as an array, e.g. `$MyProcesses[0]`.
-
-### Data Types
-Variables are loosely typed. PowerShell coerces types based on the first variable in an operation.
-
-`$a + $b` will add `a` and `b` if `a` contains a number, or concatenate them if `a` is a string. An error will be thrown if an invalid operation results.
 
 ## Input/Output
 Use the `Read-Host` cmdlet to get input from the user. E.g. `$MyVar = Read-Host -Prompt 'Enter value for myVar'`.

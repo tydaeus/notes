@@ -101,9 +101,6 @@ The `md` alias is probably the quicker way to create a dir, but you'll probably 
 ## Pass Function Call
 Use `Get-Item "function:$FunctionName"` to get a reference to the function named in `$FunctionName`. Access its script block to invoke it via `(Get-Item "function:$FunctionName").ScriptBlock.Invoke($argArr)`.
 
-## Get Type of Variable
-Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`. This operation is not null safe, so perform a null check first.
-
 ## Join Collection
 Use the `-Join` operator to join a collection.
 
