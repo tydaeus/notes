@@ -33,5 +33,6 @@ The PowerShell `Variable` provider allows the built-in PowerShell cmdlets to tre
 
 ``` PowerShell
 # delete variable MyVar
+# this will result in a PowerShell error if MyVar doesn't exist; Use -ErrorAction and -ErrorVariable to handle
 Remove-Item "Variable:VariableName"
 ```
