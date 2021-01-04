@@ -43,6 +43,7 @@ Remove-Item "Variable:VariableName"
 
 ``` PowerShell
 # set MY_ENV_VAR to "MyVal" for the current process
+# this has the same effect as $env:MY_ENV_VAR = 'MyVal'
 [Environment]::SetEnvironmentVariable("MY_ENV_VAR", "MyVal")
 [Environment]::SetEnvironmentVariable("MY_ENV_VAR", "MyVal", "Process")
 
