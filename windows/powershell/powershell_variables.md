@@ -24,5 +24,14 @@ The PowerShell `Variable` provider allows the built-in PowerShell cmdlets to tre
 ### Getting a variable's value with `Get-Item`
 
 ``` PowerShell
- Get-Item "Variable:$VarName"
+# retrieve variable MyVar
+# this will result in a PowerShell error if MyVar doesn't exist; Use -ErrorAction and -ErrorVariable to handle
+ Get-Item "Variable:MyVar"
+```
+
+### Deleting a Variable with `Remove-Item`
+
+``` PowerShell
+# delete variable MyVar
+Remove-Item "Variable:VariableName"
 ```
