@@ -36,3 +36,19 @@ The PowerShell `Variable` provider allows the built-in PowerShell cmdlets to tre
 # this will result in a PowerShell error if MyVar doesn't exist; Use -ErrorAction and -ErrorVariable to handle
 Remove-Item "Variable:VariableName"
 ```
+
+
+
+## Using .Net `Environment` to set an environment variable
+
+``` PowerShell
+# set MY_ENV_VAR to "MyVal" for the current process
+[Environment]::SetEnvironmentVariable("MY_ENV_VAR", "MyVal")
+[Environment]::SetEnvironmentVariable("MY_ENV_VAR", "MyVal", "Process")
+
+# set MY_ENV_VAR to "MyVal" for the current user (persists across sessions, change visible to new processes only)
+[Environment]::SetEnvironmentVariable("MY_ENV_VAR", "MyVal", "User")
+
+# set MY_ENV_VAR to "MyVal" for the current machine (persists across sessions, change visible to new processes only)
+[Environment]::SetEnvironmentVariable("MY_ENV_VAR", "MyVal", "Machine")
+```
