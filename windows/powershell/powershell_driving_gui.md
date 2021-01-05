@@ -1,6 +1,8 @@
 # Driving GUI Processes with PowerShell
 PowerShell can use .Net Windows API functions to allow it to interact with Windows GUI apps.
 
+**Beware**: these techniques rely on impersonating the active user and manipulating the GUI, so while they're being used any user interactions with the targeted GUI can result in unexpected behavior. This includes minimizing RDP session if running these commands on an RDP session, because RDP will stop rendering the GUI if minimized.
+
 ## Focusing on a Specified Window
 
 ``` PowerShell
