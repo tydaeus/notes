@@ -30,6 +30,14 @@ $windowHandle = $process.MainWindowHandle
 [Win32.NativeMethods]::SetForegroundWindow($windowHandle) | Out-Null
 ```
 
+## Sending Keypresses
+Use the `[System.Windows.Forms.SendKeys]::SendWait` function to send keypresses to a GUI application (including interactive terminal). E.g.:
+
+``` PowerShell
+[System.Windows.Forms.SendKeys]::SendWait('foo')
+```
+
+Note that special keys can also be sent, e.g. `SendWait('{ENTER}')`; see https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ff731008(v=technet.10)?redirectedfrom=MSDN for the full list.
 
 ###### Sources
 * https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/bringing-window-in-the-foreground
