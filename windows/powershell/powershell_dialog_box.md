@@ -1,5 +1,22 @@
 # Displaying Dialog Boxes from PowerShell
 
+## via `System.Windows.MessageBox`
+From https://mcpmag.com/articles/2016/06/09/display-gui-message-boxes-in-powershell.aspx, API documented in https://docs.microsoft.com/en-us/dotnet/api/system.windows.messagebox?view=net-5.0.
+System.Windows.MessageBox provides a relatively easy way to display standardized message dialogs.
+
+``` PowerShell
+# Prereq: add the PresentationFramework assembly to the PowerShell session
+Add-Type -AssemblyName PresentationFramework
+
+# Display a simple message requiring "Ok" to be clicked to continue.
+[System.Windows.MessageBox]::Show('Something happened.')
+
+# Display a message with title, the "Yes", "No", and "Cancel" buttons, and the error icon
+[System.Windows.MessageBox]::Show('Are you sure you want to do this?','Decide','YesNoCancel','Error')
+```
+
+The most robust invocation for typical PowerShell invocation would be `Show([string]Message, [string]Title, [System.Windows.MessageBoxButton]ButtonSet, [System.Windows.MessageBoxImage]Icon)`, with the return value in the form of a `[System.Windows.MessageBoxResult]`.
+
 ## via Windows Script Host
 From https://blogs.technet.microsoft.com/heyscriptingguy/2014/04/04/powertip-use-powershell-to-display-pop-up-window/, API documented in https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/windows-scripting/x83z1d9f(v=vs.84).
 
