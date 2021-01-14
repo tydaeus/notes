@@ -214,6 +214,6 @@ $myVar = [MyEnum]::myVal1
 #>myVal5
 
 # get the numeric value for an enum value
-[MyEnum]::myVal5._Value
+[MyEnum]::myVal5.value__
 #> 2
 ```
