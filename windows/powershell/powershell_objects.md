@@ -191,3 +191,29 @@ PowerShell methods can be overloaded by declaring additional methods of the same
 Constructors are declared similar to methods, with no return type and their name being the same as the class name.
 
 Use `[ClassName]::new(params)` or `New-Object ClassName params` to invoke the constructor with the specified params. Parenthetical invocation appears to work better for multiple arguments.
+
+
+
+## Enums
+PowerShell 5.0+ provides the ability to define basic enum types:
+
+``` PowerShell
+# declare the Enum
+Enum MyEnum {
+    myVal1 = 1
+    myVal5 = 2
+    # ...
+}
+
+# use the Enum
+$myVar = [MyEnum]::myVal1
+
+# list the names for the Enum
+[enum]::GetValues([MyEnum])
+#>myVal1
+#>myVal5
+
+# get the numeric value for an enum value
+[MyEnum]::myVal5._Value
+#> 2
+```
