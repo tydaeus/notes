@@ -64,47 +64,30 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $form1 = New-Object System.Windows.Forms.Form
-$button2 = New-Object System.Windows.Forms.Button
-$button1 = New-Object System.Windows.Forms.Button
+    $button2 = New-Object System.Windows.Forms.Button
+    $button1 = New-Object System.Windows.Forms.Button
 
-$System_Drawing_Size = New-Object System.Drawing.Size
-$System_Drawing_Size.Width = 256
-$System_Drawing_Size.Height = 44
-$form1.ClientSize = $System_Drawing_Size
-$form1.FormBorderStyle = 3
-$form1.TopMost = $True
-$form1.Text = "Your Choice"
-$form1.ControlBox = $False
-$form1.StartPosition = 1
+    $form1.ClientSize = [System.Drawing.Size]::new(256, 44)
+    $form1.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
+    $form1.TopMost = $True
+    $form1.Text = "Your Choice"
+    $form1.ControlBox = $False
+    $form1.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
 
-$System_Drawing_Size = New-Object System.Drawing.Size
-$System_Drawing_Size.Width = 75
-$System_Drawing_Size.Height = 23
-$button2.Size = $System_Drawing_Size
-$button2.UseVisualStyleBackColor = $True
-$button2.Text = "Don''t do it"
-$System_Drawing_Point = New-Object System.Drawing.Point
-$System_Drawing_Point.X = 174
-$System_Drawing_Point.Y = 12
-$button2.Location = $System_Drawing_Point
-$button2.DialogResult = 2
+    $button2.Size = [System.Drawing.Size]::new(75, 23)
+    $button2.UseVisualStyleBackColor = $True
+    $button2.Text = "Don't do it"
+    $button2.Location = [System.Drawing.Point]::new(174,12)
+    $button2.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
 
-$System_Drawing_Size = New-Object System.Drawing.Size
-$System_Drawing_Size.Width = 75
-$System_Drawing_Size.Height = 23
-$button1.Size = $System_Drawing_Size
-$button1.UseVisualStyleBackColor = $True
-$button1.Text = "Do it"
+    $button1.Size = [System.Drawing.Size]::new(75, 23)
+    $button1.UseVisualStyleBackColor = $True
+    $button1.Text = "Do it"
+    $button1.Location = [System.Drawing.Point]::new(92,12)
+    $button1.DialogResult = [System.Windows.Forms.DialogResult]::OK
 
-$System_Drawing_Point = New-Object System.Drawing.Point
-$System_Drawing_Point.X = 92
-$System_Drawing_Point.Y = 12
-$button1.Location = $System_Drawing_Point
-$button1.DataBindings.DefaultDataSourceUpdateMode = 0
-$button1.DialogResult = 1
+    $form1.Controls.Add($button2)
+    $form1.Controls.Add($button1)
 
-$form1.Controls.Add($button2)
-$form1.Controls.Add($button1)
-
-$form1.ShowDialog()
+    $form1.ShowDialog()
 ```
