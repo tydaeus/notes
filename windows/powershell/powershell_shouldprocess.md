@@ -43,9 +43,9 @@ If the `-Verbose` switch has been set, `ShouldProcess()` will print verbose outp
 
 
 ## Inheriting `-WhatIf` Behavior
-Commands are supposed to inherit `-WhatIf` behavior, but PowerShell doesn't apply this reliably. So, downstream commands should get invoked with parameter `-WhatIf:$WhatIfPreference` to ensure that the currently configured `-WhatIf` behavior propagates. 
+Commands are supposed to inherit `-WhatIf` behavior, but PowerShell doesn't apply this reliably. So, downstream commands should get invoked with parameter `-WhatIf:$WhatIfPreference` to ensure that the currently configured `-WhatIf` behavior propagates.
 
-
+If running a command that supports `-WhatIf` that you want performed even during `-WhatIf` operation (e.g. `Set-Variable`), invoke with parameter `-WhatIf:$False`.
 
 
 ## Inheriting `-Confirm` Behavior
