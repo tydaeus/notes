@@ -18,6 +18,11 @@ $workSheet = $workbook.Sheets.Item(1)
 $workSheet.Name
 ```
 
+```PowerShell
+# Access worksheet by name; throws System.Runtime.InteropServices.COMException indicating invalid index if no sheet found
+$workSheet = $workbook.Sheets($sheetName)
+```
+
 ## Locating Data
 
 ```PowerShell
