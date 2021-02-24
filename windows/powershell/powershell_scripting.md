@@ -221,15 +221,17 @@ To process pipeline input, `Begin`, `Process`, and `End` blocks should be popula
 
 **WARNING**: if  `Process` block is specified, any code specified outside `Begin`, `Process`, or `End` will result in error "Cannot evaluate parameter 'Name' because its argument is specified as a script block and there is no input. A script block cannot be evaluated without input."
 
+Once defined, the `Begin`, `Process`, and/or `End` blocks will be used to define your function's execution regardless of whether it has been called with pipeline input or not.
+
 ```PowerShell
 Begin {
     # this block runs once at the start, use for variable init, etc.
 }
 
 Process {
-    ForEach($inputItem in $pipedInput) {
-        # do stuff on the input
-    }
+    # do stuff on the input
+    # Process will run once for each item in the pipeline.
+    # Items can be referenced as $PSItem (aka $_) or as the pipeline parameter
 }
 
 End {
