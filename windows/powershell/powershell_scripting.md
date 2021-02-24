@@ -62,7 +62,7 @@ Parameters can be further qualified by adding parameter attributes. These appear
 
 ```
 param(
-    [parameter(Mandatory=$true)][string]$MyParam,
+    [parameter(Mandatory)][string]$MyParam,
     [alias("MP2")][string]$MyParam2
 )
 ```
@@ -71,9 +71,11 @@ The `Parameter` attribute allows setting multiple arguments, in key-value format
 
 Useful `Parameter` attribute arguments:
 
-* `Mandatory=$true` - sets this parameter to be mandatory
+* `Mandatory` - sets this parameter to be mandatory
 * `Position=0` - sets this parameter to correspond to first invocation argument
-* `ValueFromRemainingArguments` (Optionally `ValueFromRemainingArguments=$True`) - sets this parameter to be populated by all parameter values that aren't assigned to other parameters
+* `ValueFromRemainingArguments` - sets this parameter to be populated by all parameter values that aren't assigned to other parameters
+
+Note that boolean `Parameter` attribute arguments typically default to `$True` if specified and `$False` if not specified, so `[Parameter(Mandatory=$True)]` is equivalent to `[Parameter(Mandatory)]`, while `[Parameter(Mandatory=$False)]` is equivalent to not omitting the `Mandatory` argument entirely.
 
 Other useful attributes:
 
