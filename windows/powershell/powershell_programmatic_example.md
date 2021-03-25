@@ -52,8 +52,11 @@ foreach ($key in $parameterKeys) {
 
 
 ``` PowerShell
-# Get a combined list of properties and note properties
+# Get a combined list of properties and note properties -- this will be slow for PowerShell custom classes, but may be more robust
 $properties = $object | Get-Member | Where { ($_.MemberType -eq 'NoteProperty') -or ($_.MemberType -eq 'Property') }
+
+# Get a list of properties for a PowerShell or .Net class; this may not be equivalent to the above, but will be faster in many cases
+$properties = $object.GetType().GetProperties()
 
 # iterate through the property list
 foreach ($property in $properties) {
