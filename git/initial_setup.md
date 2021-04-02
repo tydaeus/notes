@@ -34,4 +34,14 @@ This is now the default setting for Git for Windows installs, but the default do
 ## Clone an Existing Repository
 Cloning provides a local copy of the specified repository.
 
-`git clone <repo url>`
+```
+git clone <repo url>
+```
+
+Clone a specific branch:
+
+```
+git clone --single-branch --branch <branch name> <repo url>
+```
+
+Note that if you omit `--single-branch`, the entire repo will be checked out and the specified branch will be activated.
