@@ -25,4 +25,4 @@ $log "$($Error[0].ScriptStackTrace)"
 Note that this very much the *last command*, so it should be checked immediately if desired. Even evaluating `$LastExitCode` can overwrite `$?`.
 
 ### `$LastExitCode`
-`$LastExitCode` holds the exit code from the last command. Note that exiting due to an uncaught `throw` statement does not result in a non-zero status.
+`$LastExitCode` holds the exit code from the last command. Note that exiting due to an uncaught `throw` statement does not result in a non-zero status. This variable does not automatically get set back to zero, so it may be necessary to do `$global:LastExitCode = 0` prior to running a command to ensure that it does not 
