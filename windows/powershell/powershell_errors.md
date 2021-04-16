@@ -26,3 +26,12 @@ Note that this very much the *last command*, so it should be checked immediately
 
 ### `$LastExitCode`
 `$LastExitCode` holds the exit code from the last command. Note that exiting due to an uncaught `throw` statement does not result in a non-zero status. This variable does not automatically get set back to zero, so it may be necessary to do `$global:LastExitCode = 0` prior to running a command to ensure that it does not 
+
+### Try/Catch/Finally
+PowerShell supports `try`, `catch`, and `finally` blocks similar to other languages. However, there are some interesting quirks.
+
+Only PowerShell scripts/cmdlets that exit by an exception bubbling will result in `catch` processing.
+
+Scripts/programs that exit with an error status instead of by throwing an exception will not be caught in the `catch` block, but the `finally` block will be run.
+
+Within the `catch` block, the exception can be accessed from the `$PSItem`/`$_` variable.
