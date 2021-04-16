@@ -268,7 +268,7 @@ To write user feedback output data, use one of the `Write` cmdlets:
     - Historical/Technical Notes:
         + This is the primary user feedback output channel prior to PowerShell 3.0
         + In PowerShell 5.0+, this is treated as a wrapper for `Write-Information` that always produces output unless `-InformationAction` is set to `Ignore` (or the channel is redirected to $Null).
-        + Opinions abound online about `Write-Host` being harmful due to its unredirectable behavior between 3.0 and 5.0, but its 5.0+ wrapper behavior 
+        + Opinions abound online about `Write-Host` being harmful due to its unredirectable behavior between 3.0 and 5.0, but its 5.0+ wrapper behavior addresses this
 * `Write-Debug` writes debug-level data, which will only be displayed if the `-Debug` (equiv. `-Debug $True`), or the `$debugPreference` pref variable is set to something other than its default `"SilentlyContinue"`, e.g. via `$debugPreference="Continue"`
 * `Write-Information` writes info-level data, which will only be displayed if the `-InformationAction` parameter is set to a non-default value (e.g. `Continue`), or the `$informationPreference` variable is set to a non-default value.
 * `Write-Warning` writes warning-level data, which will be displayed unless non-default parameter or preference is set.
