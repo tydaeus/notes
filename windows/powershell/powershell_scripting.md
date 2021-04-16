@@ -278,8 +278,8 @@ To write user feedback output data, use one of the `Write` cmdlets:
 
 *Note*: See above section on "Advanced" functions for how to allow parameters passed to the script to propagate to these commands.
 
-### Outputting Variables
-To output a variable as a string (e.g. via write-method), direct references can be included within the quotes. E.g. `"Value of X is $x"` will output the value of x in place of $x. However, to reference the properties of a variable, the variable reference statement must be enclosed in `$()`, e.g. `"Value of obj.x is $($obj.x)"`.
+### String Interpolation
+To include a variable within a string for output (e.g. via write-method), direct references can be included within a double-quoted string. E.g. `"Value of X is $x"` will output the value of x in place of $x. To access the properties of a variable or use any operators other than the `:` operator, the variable reference statement must be enclosed in `$()`, e.g. `"Value of obj.x is $($obj.x)"`; this allows insertion of any statement's string output.
 
 ## Error Checking/Handling
 
