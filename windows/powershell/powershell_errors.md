@@ -35,3 +35,22 @@ Only PowerShell scripts/cmdlets that exit by an exception bubbling will result i
 Scripts/programs that exit with an error status instead of by throwing an exception will not be caught in the `catch` block, but the `finally` block will be run.
 
 Within the `catch` block, the exception can be accessed from the `$PSItem`/`$_` variable.
+
+
+
+## Error Reporting
+There are multiple options for reporting errors from within a PowerShell script or function.
+
+### Throw
+Throwing an exception via the `throw` keyword is probably the best general-purpose option, because it allows the caller to catch it with a `catch` block or not.
+
+``` PowerShell
+throw "Something bad happened"
+```
+
+However, if the exception does bubble up to the command line, it will include detailed trouble-shooting information that may be undesirable.
+
+### Exit
+The `exit` keyword can be used to cause a script to exit prematurely; specifying a non-zero exit code indicates that this was due to an error.
+
+This should only be used within a script context (rather than a reusable function context) because it will exit the execution environment. Thus if a reusable function invokes `exit`, it will end the calling script or the PowerShell session that called it.
