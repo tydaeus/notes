@@ -61,10 +61,12 @@ Use `Get-Content $filePath` to retrieve a file's content as a collection of line
 
 `Get-Content` has known performance issues on large files, because it must read through the entire file before returning.
 
-Use the `-Tail` param to read from the end.
+Use the `-Tail` switch to read from the end.
+
+Use the `-Raw` switch to get the content as a single string (useful for reading multi-line formats such as JSON).
 
 ### Line-by-Line: `System.IO.File::ReadLines`
-Use `[System.IO.File]::ReadLines($filePath)` to access .Net's `File.ReadLines` function to retrieve a file's content line by line. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines. *Note*: you will need to provide the full path to the file, because .Net calls don't operate from `$PWD`.
+Use `[System.IO.File]::ReadLines($filePath)` to access .Net's `File.ReadLines` function to retrieve a file's content line by line, returning the lines as they're read. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines. *Note*: you will need to provide the full path to the file, because .Net calls don't operate from `$PWD`.
 
 Example courtesy of https://stackoverflow.com/a/12876884/2939139:
 
