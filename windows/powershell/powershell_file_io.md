@@ -61,6 +61,8 @@ finally
 ## Read a File
 
 ### Line-by-Line: `Get-Content`
+`Get-Content` is the best file reading option for **most general cases**.
+
 Use `Get-Content $filePath` to retrieve a file's content as a collection of lines. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines.
 
 `Get-Content` has known performance issues on large files, because it must read through the entire file before returning.
@@ -68,6 +70,8 @@ Use `Get-Content $filePath` to retrieve a file's content as a collection of line
 Use the `-Tail` switch to read from the end.
 
 Use the `-Raw` switch to get the content as a single string (useful for reading multi-line formats such as JSON).
+
+Note: `Get-Content` applies filesystem wildcarding to its `Path` parameter; use the `LiteralPath` parameter to avoid this.
 
 ### Line-by-Line: `System.IO.File::ReadLines`
 Use `[System.IO.File]::ReadLines($filePath)` to access .Net's `File.ReadLines` function to retrieve a file's content line by line, returning the lines as they're read. Pipe this into `ForEach-Object` or use in a `foreach` loop to iterate through the lines. *Note*: you will need to provide the full path to the file, because .Net calls don't operate from `$PWD`.
