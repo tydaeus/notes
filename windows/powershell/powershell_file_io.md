@@ -22,11 +22,15 @@ The `Out-File` cmdlet allows writing to files with some options. `$myString | Ou
 This can be used to change encoding to UTF-8: `$myString | Out-File -Encoding "UTF8" $MyPath`. However, the Byte-Order Mark (`ï»¿`) will be written as the first several characters, which may result in incompatibility.
 
 ### Set-Content and Add-Content
+These are probably the **best general-purpose** ways to modify a file.
+
 The `Set-Content` cmdlet replaces the content of one or more files with specified content, e.g. `Set-Content $Path $Value`.
 
 The `Add-Content` cmdlet appends content to one or more files. Note that this appears to provide little/no buffering, and so will operate very slowly if used repeatedly. Consider using .Net's `StreamWriter.WriteLine` method for better performance when writing large numbers of single lines.
 
 This appears to default to UTF8 encoding without a Byte-Order Mark.
+
+Note: These cmdlets apply filesystem wildcarding when interpreting their `Path` parameter; the `LiteralPath` parameter should be used if wildcard should be ignored.
 
 ### `File::WriteAllLines`
 Use .NET's `File` class static `WriteAllLines` method: `[System.IO.File]::WriteAllLines($MyPath, $MyString)`. In PowerShell 4.0+, this will default to UTF 8 with no Byte-Order Mark.
