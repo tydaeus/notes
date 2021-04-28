@@ -29,6 +29,12 @@ The PowerShell `Variable` provider allows the built-in PowerShell cmdlets to tre
  Get-Item "Variable:MyVar"
 ```
 
+Environment variables are under `Env:` instead of `Variable`:
+
+``` PowerShell
+Get-Item "Env:Path"
+```
+
 ### Deleting a Variable with `Remove-Item`
 
 ``` PowerShell
