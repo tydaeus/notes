@@ -96,7 +96,7 @@ try {
     $line = $reader.ReadLine()
 
     # ReadLine returns $Null when it reaches EOF
-    while ($line -ne $Null)
+    while ($line -ne $Null) {
         # process $line
 
         $line = $reader.ReadLine()
