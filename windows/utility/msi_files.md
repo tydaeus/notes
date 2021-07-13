@@ -41,3 +41,20 @@ msiexec /x myinstaller.msi /S /v/qn
 :: or
 myinstaller.msi /x /S /v/qn
 ```
+
+### Using Registered Uninstaller
+If a product was installed using a standard msi installer, the uninstaller will be registered with Windows to allow easy uninstall.
+
+Look up the product's `IdentifyingNumber` by using PowerShell: 
+
+``` PowerShell
+Get-WmiObject Win32_product -Filter "name = `"$ProductName`""
+```
+
+With variable `IdentifyingNumber` set to contain the IdentifyingNumber property discovered in the previous step, including its surrounding `{}`, use the following PowerShell command to uninstall:
+
+``` PowerShell
+Start-Process 'msiexec' "/qn /norestart /x $IdentifyingNumber" -Wait -NoNewWindow
+```
+
+Add the `-PassThru` param and assign to a variable if you want to check the exit status (recommended).
