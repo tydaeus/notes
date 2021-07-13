@@ -1,5 +1,5 @@
 # MSI Files
-Microsoft's `MsiExec.exe` command-line tool creates and manages `.msi` (Microsoft Installer) files.
+Microsoft's `MsiExec.exe` command-line tool creates and manages `.msi` (Microsoft Installer) files. Note that some vendors may bundle their installer as a `.exe` file, but in these cases most/all msi operations should be the same.
 
 Run `msiexec` without any parameters to get a dialog box listing msi command-line options.
 
