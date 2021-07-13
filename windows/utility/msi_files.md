@@ -32,3 +32,12 @@ Commonly, you can look for the log line that starts with `Command Line`, and the
 Set public install properties for installation from the command-line by specifying them after other parameters in `NAME=VALUE` format.
 
 E.g. `msiexec /i myinstaller.msi MYPROP=Value MYOTHERPROP="Value with spaces"`
+
+## Uninstalling
+Typically, the installer can be used to uninstall with the the `/x` option. Add the `/S /v/qn` options to perform a fully silent uninstall.
+
+``` cmd
+msiexec /x myinstaller.msi /S /v/qn
+:: or
+myinstaller.msi /x /S /v/qn
+```
