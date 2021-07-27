@@ -622,6 +622,43 @@ list(gen())
 A generator can be used to represent an infinite sequence. Be careful not to put an infinite list into a collection; some environments (such as Jupyter Notebook) may not be able to handle this at all gracefully.
 
 
+### Nested Functions and Closures in Python
+A function can be defined within another function in Python. Nested functions have closure -- they are able to access the variables of their parent function(s), and can be used to persist, access, and modify the parent statate after parent termination (and even after its deletion).
+
+#### Using Closure to Decorate Functions
+Closure can be used to apply the decorator design pattern to a function. Define a decorator function to accept a function as its input and then output a custom function that uses the passed function:
+
+``` Python
+def decorate(in_func):
+
+    def out_func(*in_args):
+        return f"| \t {in_func(*in_args)} \t |"
+
+    return out_func
+
+# manually decorate do_something:
+decorated_do_something = decorate(do_something)
+# invoke decorated version
+decorated_do_something(1, 2)
+# |     output 1 2       |
+```
+
+Prefix a function definition with `@decorator_name` annotation to define the new function as pre-decorated:
+``` Python
+@decorate
+def do_something(*args):
+    result = "output "
+    for arg in args:
+        result += f"{arg} "
+    
+    return result
+
+do_something(1, 2)
+# |     output 1 2       |
+
+
+
+
 ## `assert`
 An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not.
 
