@@ -657,7 +657,14 @@ do_something(1, 2)
 # |     output 1 2       |
 ```
 
+## `raise`
+The `raise` keyword is used in combination with an Error type to raise an error. E.g.:
 
+``` Python
+raise ValueError(f"Illegal value specified: {val}")
+```
+
+* `ValueError` - raised to indicate an illegal value was specified
 
 ## `assert`
 An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not.
