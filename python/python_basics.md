@@ -657,6 +657,12 @@ do_something(1, 2)
 # |     output 1 2       |
 ```
 
+Multiple decorators can be applied to a single function, with the decorators applied in the listed order (last decorator becomes the most nested before the def function). Decorator annotation allows simpler function composition, making it easy to add standardized code to multiple functions.
+
+Be aware that function signatures and invocations will need to be compatible throughout the composition chain.
+
+
+
 ## `raise`
 The `raise` keyword is used in combination with an Error type to raise an error. E.g.:
 
