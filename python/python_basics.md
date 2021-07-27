@@ -18,6 +18,8 @@ In addition to standard C-family operators, Python supports:
 * `//` - integer division
 * `**` - exponentiation
 
+Python does **not** support the increment (`++`) and decrement (`--`) operators.
+
 Python also overloads the following operators for string operations:
 
 * `+` - concatenation (string + string)
