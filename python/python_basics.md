@@ -595,6 +595,30 @@ Lambdas support keyword arguments, default values, `*` arguments, and `**` argum
 
 Lambdas can call functions.
 
+### Generator Functions
+A generator is a function that can be used to define an iterable sequence. Generator functions use the `yield` keyword, and return a generator object when executed.
+
+Each time `next()` is called on the generator object, the function's execution resumes after the last visited `yield` statement and proceeds to the next `yield` statement, whose value is used as the output of next.
+
+``` Python
+def gen():
+    yield 1
+    yield 2
+    yield 3
+    yield 4
+
+generator = gen()
+next(gen)
+# 1
+next(gen)
+# 2
+
+list(gen())
+[1, 2, 3, 4]
+```
+
+A generator can be used to represent an infinite sequence. Be careful not to put an infinite list into a collection; some environments (such as Jupyter Notebook) may not be able to handle this at all gracefully.
+
 
 ## `assert`
 An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not.
