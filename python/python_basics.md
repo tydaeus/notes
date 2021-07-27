@@ -655,7 +655,7 @@ def do_something(*args):
 
 do_something(1, 2)
 # |     output 1 2       |
-
+```
 
 
 
