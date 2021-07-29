@@ -20,7 +20,7 @@ In addition to standard C-family operators, Python supports:
 * `>>` - bitwise right shift, overloaded to also support redirection 
 * `<<` - bitwise left shift
 
-Python does **not** support the increment (`++`) and decrement (`--`) operators.
+Python does **not** support the increment (`++`) and decrement (`--`) operators; prefixing with them will do nothing, while suffixing results in a `SyntaxError`.
 
 Python also overloads the following operators for string operations:
 
