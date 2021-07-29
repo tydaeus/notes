@@ -17,6 +17,8 @@ In addition to standard C-family operators, Python supports:
 
 * `//` - integer division
 * `**` - exponentiation
+* `>>` - bitwise right shift, overloaded to also support redirection 
+* `<<` - bitwise left shift
 
 Python does **not** support the increment (`++`) and decrement (`--`) operators.
 
@@ -47,6 +49,7 @@ Python also overloads the following operators for string operations:
 * `print(<string Output>)` - outputs a string to the console
 * `input(<string Prompt>)` - displays `Prompt` as a prompt for input, returns the resulting input (as a string)
 * `min()`, `max()`, and `round()`
+* `map(func, iterable, ...)` - applies func to each element of iterable(s), and returns an iterable map object representing the result
 * `hex(num)` - returns string representation of `num` in hexadecimal
 * `oct(num)` - returns string representation of `num` in octal
 * `bin(num)` - returns string representation of `num` in binary
@@ -298,33 +301,20 @@ Note that duplicates can be specified at initialization, and will be discarded a
 
 Sets can only contain immutable elements (otherwise they couldn't ensure that elements are unique).
 
-`.add(element)` adds the specified element to the set (if not already present) -- no error if it is a duplicate.
-
-`len(set)` returns the number of elements.
-
-`max(set)` and `min(set)` can be used.
-
-`.discard(element)` removes the specified element if present, does not throw an Error if absent.
-
-`.remove(element)` removes the specified element if present, throws an Error if absent.
-
-`.clear()` empties the set.
-
-`.union(set...)` returns the union of the calling set with specified set(s).
-
-`.intersection(set)` returns the intersection set between the calling set and the specified set.
-
-`.difference(set)` returns elements in the calling set not present in the specified set.
-
-`.intersection_update(set)` populates the calling set with the intersection of the calling set and the specified set. `_update` variants also exist for intersection and difference.
-
-`.isdisjoint(set)` returns whether there are no elements in common between the sets.
-
-`.issubset(set)`
-
-`.issuperset(set)`
-
-`frozenset(my_setset)` returns an immutable version of `my_set`; this object is hashable so it can be used as a dictionary key
+* `.add(element)` adds the specified element to the set (if not already present) -- no error if it is a duplicate.
+* `len(set)` returns the number of elements.
+* `max(set)` and `min(set)` can be used.
+* `.discard(element)` removes the specified element if present, does not throw an Error if absent.
+* `.remove(element)` removes the specified element if present, throws an Error if absent.
+* `.clear()` empties the set.
+* `.union(set...)` returns the union of the calling set with specified set(s).
+* `.intersection(set)` returns the intersection set between the calling set and the specified set.
+* `.difference(set)` returns elements in the calling set not present in the specified set.
+* `.intersection_update(set)` populates the calling set with the intersection of the calling set and the specified set. `_update` variants also exist for intersection and difference.
+* `.isdisjoint(set)` returns whether there are no elements in common between the sets.
+* `.issubset(set)`
+* `.issuperset(set)`
+* `frozenset(my_setset)` returns an immutable version of `my_set`; this object is hashable so it can be used as a dictionary key
 
 ## Copying
 
