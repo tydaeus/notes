@@ -524,6 +524,27 @@ Parameters with default arguments must be defined after any parameters without d
 
 Default arguments are one of the mechanisms by which Python allows for overriding functions to allow a varying signature.
 
+##### Default Arguments and Reference Types
+**Warning**: default values only get initialized at time of `def`, so if you use a reference type instead of a value type, the reference type will retain any value from previous invocations.
+
+``` Python
+def addon(x, l = []):
+    l.append(x)
+    print(l)
+
+addon(1)
+# [1]
+addon(2)
+# [1, 2]
+addon(3, [])
+# [3]
+addon(4)
+# [1, 2, 4]
+```
+
+If this isn't intended, either use an immutable reference type, or default to `None` and then initialize the variable within the function.
+
+
 #### Variable-Length Arguments - `*args`
 Define a function parameter prefixed with an`*` to support accepting a variable number of arguments.
 
