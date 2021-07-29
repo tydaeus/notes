@@ -324,6 +324,8 @@ Sets can only contain immutable elements (otherwise they couldn't ensure that el
 
 `.issuperset(set)`
 
+`frozenset(my_setset)` returns an immutable version of `my_set`; this object is hashable so it can be used as a dictionary key
+
 ## Copying
 
 Use `import copy` to import the 'copy' library.
