@@ -22,10 +22,10 @@ In addition to standard C-family operators, Python supports:
 
 Python does **not** support the increment (`++`) and decrement (`--`) operators; prefixing with them will do nothing, while suffixing results in a `SyntaxError`.
 
-Python also overloads the following operators for string operations:
+Python also overloads the following operators:
 
-* `+` - concatenation (string + string)
-* `*` - repetition (string * integer)
+* `+` - concatenation (string + string => combined string), (list + list => combined list), (tuple + tuple => combined tuple)
+* `*` - repetition (string * integer), (list * integer), (tuple * integer)
 * comparison operators
 * `[]` - is parameter sensitive:
     - `str[index]` - returns the character at `index`
@@ -48,6 +48,7 @@ Python also overloads the following operators for string operations:
 * `type(<any Value>)` - returns the type of its argument
 * `print(<string Output>)` - outputs a string to the console
 * `help(identifier)` - returns any inline documentation provided on the identified object
+* `id(identifier)` - returns the unique identity int for the specified object
 * `input(<string Prompt>)` - displays `Prompt` as a prompt for input, returns the resulting input (as a string)
 * `min()`, `max()`, and `round()`
 * `map(func, iterable, ...)` - applies func to each element of iterable(s), and returns an iterable map object representing the result
@@ -215,7 +216,7 @@ Note that the number of variables must be equal to the number of elements in the
 
 
 ## Tuples
-Tuples are an ordred collection of items, initialized in `()`.
+Tuples are an ordred collection of items, initialized in `()`; to differentiate from other uses of `()`, there must be at least one `,`; e.g. `t = (1,)` initializes `t` as a tuple, while `t = (1)` initialize `t` as integer `1`.
 
 `+` is overloaded to combine tuples
 `*` is overloaded to repeat a tuple an integer number of times
