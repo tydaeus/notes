@@ -64,6 +64,7 @@ Python also overloads the following operators:
 
 ## Built-In Functions
 
+* `exec()` - executes code contained in a string or in an object output by the `compile()` function
 * `len(<string String>)` - returns the length of a string
 * `type(<any Value>)` - returns the type of its argument
 * `print(<string Output>)` - outputs a string to the console
