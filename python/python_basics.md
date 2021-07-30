@@ -12,6 +12,24 @@ Python identifier convention:
 * all-lowercase snake-case for user-defined identifiers, e.g. `my_var`, `is_in_usa()`
 * all-lowercase without a divider for built-in identifiers, e.g. `.startswith()`, `.endswith()` (built-in identifiers seem to prefer single-word when possible)
 
+## Data Types
+Python vars are flexibly typed. Primitive types are passed by value, while object types are passed by reference.
+
+Variables must be initialized before they are referenced.
+
+`None` represents the absence of a value.
+
+Use the `numpy` module to generate objects representing more specifically typed numbers.
+
+### Coercion
+Python performs some automatic type coercion when operating on variables of differing types.
+
+Numbers will not be coerced into strings and vice versa.
+
+Booleans will not be coerced into strings.
+
+Booleans will be coerced into numeric values (0 or 1) if used in an expression with numeric types.
+
 ## Operators
 In addition to standard C-family operators, Python supports:
 
