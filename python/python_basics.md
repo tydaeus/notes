@@ -47,6 +47,7 @@ Python also overloads the following operators for string operations:
 * `len(<string String>)` - returns the length of a string
 * `type(<any Value>)` - returns the type of its argument
 * `print(<string Output>)` - outputs a string to the console
+* `help(identifier)` - returns any inline documentation provided on the identified object
 * `input(<string Prompt>)` - displays `Prompt` as a prompt for input, returns the resulting input (as a string)
 * `min()`, `max()`, and `round()`
 * `map(func, iterable, ...)` - applies func to each element of iterable(s), and returns an iterable map object representing the result
@@ -468,7 +469,7 @@ Python functions support recursion, up to `sys.getrecursionlimit()` depth (`sys`
 
 Functions are represented as objects in Python. As such they can be assigned (by reference) to variables and passed around.
 
-The first string include before any code statement in a function body but not assigned to a variable will be treated as in-line documentation, accessible from the function's `__doc__` property. Multi-line (triple-quoted) strings are ideal for this purpose.
+The first string include before any code statement in a function body but not assigned to a variable will be treated as in-line documentation, accessible from the function's `__doc__` property or by calling `help()` on the function's identifier. Multi-line (triple-quoted) strings are ideal for this purpose.
 
 ``` Python
 def my_function():
