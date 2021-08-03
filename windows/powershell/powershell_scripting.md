@@ -303,6 +303,34 @@ Invoke a ScriptBlock by using the `Invoke-Command` cmdlet: `Invoke-Command -Scri
 
 More simply, use the `call` operator: `&$ScriptBlock $Param1 $Param2`.
 
+### Delayed-Binding ScriptBlocks
+A PowerShell function that defines a **typed pipeline (by value or by PropertyName)** parameter that is not of type `[scriptblock]` or `[object]` can implicitly accept delayed-binding scriptblock parameters which can thereby utilize the `$PSItem`/`$_` automatic variable. E.g.:
+
+``` PowerShell
+function Test-DelayedBinding {
+    param(
+        # this is our typed pipeline parameter
+        [Parameter(ValueFromPipeline, Mandatory)][string]$string,
+        # this is our scriptblock parameter
+        [Parameter(Position=0)][scriptblock]$sb
+    )
+
+    Process {
+        if (&$sb $string) {
+            Write-Output $string
+        }
+    }
+}
+
+>'foo', 'fi', 'foofoo', 'fib' | Test-DelayedBinding { return $_ -match 'foo' }
+'foo'
+'foofoo'
+```
+
+The delayed-binding scriptblock must used named parameters if any other parameters are desired; i.e. it cannot use `$args`.
+
+Only delayed-binding scriptblocks can utilize the `$PSItem`/`$_` automatic variable. 
+
 ### Converting a Function to a ScriptBlock
 Access an in-scope function's definition (without its name) via `${function:Function-Name}`. This definition can then be passed in lieu of a ScriptBlock.
 
