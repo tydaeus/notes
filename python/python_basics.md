@@ -46,6 +46,7 @@ Python also overloads the following operators:
 * `*` - repetition (string * integer), (list * integer), (tuple * integer)
 * `+=` - varies by types:
     * `list += iterable` concatenates the characters of the iterable individually onto the list; note that strings get treated as an iterable of characters for this purpose
+* `==` - performs deep equals on the built-in data types
 * comparison operators
 * `[]` - is parameter sensitive:
     - `str[index]` - returns the character at `index`
