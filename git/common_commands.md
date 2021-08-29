@@ -24,11 +24,11 @@
 ## Pushing Changes to Repo
 
 * `git remote` manipulate the location of named remote source, e.g:
-    - `git remote add origin <url>` adds remote location at <url> with name 
+    - `git remote add origin <url>` adds remote location at `<url>` with name 
       "origin"
       
 * `git push` sends code to remote location, e.g:
-    - `git push -u <remote> <branch>` updates <remote> version of <branch> (-u
+    - `git push -u <remote> <branch>` updates `<remote>` version of `<branch>` (-u
       flag specifies that upstream references should be updated with successful
       changes and thus this version should be used by subsequent pulls)
 
