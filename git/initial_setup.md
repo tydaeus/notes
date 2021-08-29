@@ -5,6 +5,7 @@ By default these will be specified for the current repo. Add `--global` to speci
 
 User settings are stored in the user's home folder as `.gitconfig`.
 
+* `git config --global init.defaultBranch <branch name>` - specify the name of the default branch  when creating a new repo (historically this was set to `master` if not specified; newer git installs default to `main`)
 * `git config user.name <user name>` - specify user's given name
 * `git config user.email <user email>` - specify user's email address
     - **Important** - to prevent your email address from leaking, ensure that the "Keep my email address private" checkbox is checked in your github settings. Once you've done this, you will need to configure git to use your Github noreply address instead of your actual email address (mine is `5482721+tydaeus@users.noreply.github.com`), before you make any commits. For more info, see https://stackoverflow.com/a/44099011/2939139.
