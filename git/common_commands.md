@@ -16,7 +16,7 @@
     - `git add . --all` stage everything within current directory, including deletions and moves (?)
 
 * `git commit` saves to local repo
-    - `git commit -m "<message>"` records <message> as commit message
+    - `git commit -m "<message>"` records `<message>` as commit message
 
 * `git reset` unstages all staged files
 * `git reset --hard` unstages all staged files **and** reverts any changes made. Does not delete newly created files.
