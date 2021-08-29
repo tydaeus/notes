@@ -59,4 +59,17 @@ Note that `git revert` cannot be restricted to a single file; it operates on the
 
 
 
+## Working with Branches
+(adapted from https://stackoverflow.com/a/6591218/2939139)
+
+Use `git branch` to list branches.
+
+### Renaming (Moving) Branches
+The `git branch -m` option renames (moves) branches.
+
+* rename current branch: `git branch -m <newname>`
+* rename a different branch: `git branch -m <oldname> <newname>`
+
+### Deleting Branches
+Delete a remote branch with `git push origin --delete <oldname>`.
 
