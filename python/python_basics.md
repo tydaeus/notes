@@ -6,7 +6,7 @@ Statements are assumed to be single-line unless obviously otherwise. Use `\` as 
 
 Use `;` to separate multiple statements on a single line.
 
-Block statements are delineated with `:` to begin the block, and indentation of successive lines to indicate continuation of the block. Python is **sensitive to the level of indentation**, so do not use arbitrary formatting.
+Block statements are delineated with a block statement keyword followed by `:` to begin the block, and indentation of successive lines to indicate continuation of the block. Python is **sensitive to the level of indentation**, so do not use arbitrary formatting.
 
 Python identifier convention:
 * all-lowercase snake-case for user-defined identifiers, e.g. `my_var`, `is_in_usa()`
