@@ -576,6 +576,7 @@ Python scoping / variable declaration has some quirks:
         global my_global
         # now assigning a value to my_global will modify the global variable instead of declaring a local variable
     ```
+    - Nested functions can use the `nonlocal` keyword to declare variables in their direct parent's scope
 
 ### Pass by Value vs Pass by Reference
 Primitive types are passed by value by default, while reference types are passed by reference by default.
