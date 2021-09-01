@@ -669,7 +669,7 @@ raise ValueError(f"Illegal value specified: {val}")
 * `ValueError` - raised to indicate an illegal value was specified
 
 ## `assert`
-An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not.
+An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not. Note that `assert` statements are removed by certain compiler optimization settings, so you'll need to either use `assert` statements for testing only or ensure that compilation doesn't remove them.
 
 
 ## Commonly Used Modules
