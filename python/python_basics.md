@@ -659,15 +659,6 @@ Be aware that function signatures and invocations will need to be compatible thr
 
 
 
-## `raise`
-The `raise` keyword is used in combination with an Error type to raise an error. E.g.:
-
-``` Python
-raise ValueError(f"Illegal value specified: {val}")
-```
-
-* `ValueError` - raised to indicate an illegal value was specified
-
 ## `assert`
 An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not. Note that `assert` statements are removed by certain compiler optimization settings, so you'll need to either use `assert` statements for testing only or ensure that compilation doesn't remove them.
 
