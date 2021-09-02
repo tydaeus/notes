@@ -6,7 +6,7 @@ The Pygame `sprite` module provides the `Sprite` class and several `Group` class
 A `Sprite` represents an in-game object, while `Group`s provide ways to organize these objects.
 
 ## `Sprite`
-Custom in-game objects should subclass `Sprite`, and their constructors should invoke the default `Sprite` constructor.
+Custom in-game objects typically subclass `Sprite`, with their constructors invoking the default `Sprite` constructor.
 
 `Sprite` built-in methods (call original version if overriden):
 * `add` - add the sprite to `Group`s
