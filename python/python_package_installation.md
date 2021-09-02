@@ -10,6 +10,8 @@ Install a package for the current user(e.g. Numpy):
 python -m pip install -U numpy --user
 ```
 
+On Windows, user-installed package files will install within `%localappdata%\programs\python\pythonXX\libs\site-packages` (where `pythonXX`) is the installed Python version.
+
 ### Install Packages from File
 Install from requirements.txt:
 
