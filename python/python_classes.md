@@ -23,7 +23,6 @@ class MyClass(parentClass):
         # Property accessors (see below) can be used to initialze internal values.
         self.val2 = 4
 
-        self
         # other statements
 
     # Optional string conversion method. Used to generate string representation for instances when they're referenced
