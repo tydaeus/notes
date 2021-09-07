@@ -26,6 +26,11 @@ class MyClass(parentClass):
         self
         # other statements
 
+    # Optional string conversion method. Used to generate string representation for instances when they're referenced
+    # in a context where string is expected (`print()`, `str()`, format strings).
+    def __str__(self):
+        return f'(x: {self.x}; y: {self.y}; val1: {self.val1}; val2: {self.val2})'
+
     # variables declared directly in the class statement get allocated once for the Class and once for each instance,
     # before the initializer is called.
     x = 5
