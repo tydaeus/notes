@@ -14,3 +14,10 @@ coords = Anon(x = 5, y = 8)
 coords.x
 # 5
 ```
+
+## Comparing Contents of Different Iterables
+Compare by converting both to `tuple`.
+
+```Python
+same = tuple(iter1) == tuple(iter2)
+```
