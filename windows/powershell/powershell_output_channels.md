@@ -20,6 +20,10 @@ Each stream other than Progress has a numeric identifier; only the numbered stre
 
 Each stream has different ways to write to it, and comes with its own quirks and caveats.
 
+Success is the stream used for output, and is the only stream that propagates through PowerShell piplines (unless other streams are redirected to success).
+
+
+
 ## Redirecting
 Any of the streams with a numeric identifier can be redirected with the `>` operator.
 
