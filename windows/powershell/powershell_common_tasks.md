@@ -224,6 +224,7 @@ Use the `Write-Progress` cmdlet to display a progress bar.
 * `-PercentComplete` - how full the bar should be, out of 100
 * `-Completed` - pass this switch to hide the bar; `-Activity` must be specified but will not be used
 * `-Id` - numeric identifier for bar; not necessary unless displaying multiple bars
+    - Recommended: Use `(New-Guid).GetHashCode()` to generate a nearly unique id
 
 ``` PowerShell
 $percentComplete = [Math]::Floor(($i / $totalThings) * 1000) / 10
