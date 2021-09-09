@@ -16,7 +16,7 @@
     - `git add . --all` stage everything within current directory, including deletions and moves (?)
 
 * `git commit` saves to local repo
-    - `git commit -m "<message>"` records <message> as commit message
+    - `git commit -m "<message>"` records `<message>` as commit message
 
 * `git reset` unstages all staged files
 * `git reset --hard` unstages all staged files **and** reverts any changes made. Does not delete newly created files.
@@ -24,11 +24,11 @@
 ## Pushing Changes to Repo
 
 * `git remote` manipulate the location of named remote source, e.g:
-    - `git remote add origin <url>` adds remote location at <url> with name 
+    - `git remote add origin <url>` adds remote location at `<url>` with name 
       "origin"
       
 * `git push` sends code to remote location, e.g:
-    - `git push -u <remote> <branch>` updates <remote> version of <branch> (-u
+    - `git push -u <remote> <branch>` updates `<remote>` version of `<branch>` (-u
       flag specifies that upstream references should be updated with successful
       changes and thus this version should be used by subsequent pulls)
 
@@ -59,4 +59,17 @@ Note that `git revert` cannot be restricted to a single file; it operates on the
 
 
 
+## Working with Branches
+(adapted from https://stackoverflow.com/a/6591218/2939139)
+
+Use `git branch` to list branches.
+
+### Renaming (Moving) Branches
+The `git branch -m` option renames (moves) branches.
+
+* rename current branch: `git branch -m <newname>`
+* rename a different branch: `git branch -m <oldname> <newname>`
+
+### Deleting Branches
+Delete a remote branch with `git push origin --delete <oldname>`.
 

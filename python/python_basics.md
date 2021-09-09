@@ -6,11 +6,16 @@ Statements are assumed to be single-line unless obviously otherwise. Use `\` as 
 
 Use `;` to separate multiple statements on a single line.
 
-Block statements are delineated with `:` to begin the block, and indentation of successive lines to indicate continuation of the block. Python is **sensitive to the level of indentation**, so do not use arbitrary formatting.
+Block statements are delineated with a block statement keyword followed by `:` to begin the block, and indentation of successive lines to indicate continuation of the block. Python is **sensitive to the level of indentation**, so do not use arbitrary formatting.
 
-Python identifier convention:
+The official Python style guide is available at https://www.python.org/dev/peps/pep-0008. The basics:
 * all-lowercase snake-case for user-defined identifiers, e.g. `my_var`, `is_in_usa()`
 * all-lowercase without a divider for built-in identifiers, e.g. `.startswith()`, `.endswith()` (built-in identifiers seem to prefer single-word when possible)
+* class names should use a capital first letter and further capital letters (in place of underscores) for differentiating subsequent words, with all caps for acronyms
+* identifiers starting with the "weak" internal-use indicator `_` are for internal use only (e.g. class internal properties/methods, module internal functions/variables). Module members prefixed with `_` will not be provided by a `import * from M` statement.
+* identifiers starting with `__` indicate strong internal-use; Python enforces that member `__my_var` from class `Clazz` can only be accessed from outside of `Clazz` as `_Clazz__my_var` (including by subclasses)
+* built-in 'magic' identifiers are prefixed and suffixed with `__`; do not do this with custom identifiers
+
 
 ## Data Types
 Python vars are flexibly typed. Primitive types are passed by value, while object types are passed by reference.
@@ -46,6 +51,7 @@ Python also overloads the following operators:
 * `*` - repetition (string * integer), (list * integer), (tuple * integer)
 * `+=` - varies by types:
     * `list += iterable` concatenates the characters of the iterable individually onto the list; note that strings get treated as an iterable of characters for this purpose
+* `==` - performs deep equals on the built-in data types
 * comparison operators
 * `[]` - is parameter sensitive:
     - `str[index]` - returns the character at `index`
@@ -90,33 +96,6 @@ Python also overloads the following operators:
 * `complex(num)` - returns the complex number representation of the specified number; note that `j` is used in place of `i` as the imaginary coefficient
 
 
-
-## String Formatting
-Strings can be wrapped in `'`, `"`, or `"""`; `"""` supports multi-line strings.
-
-There are multiple options for string formatting.
-
-`print()` supports C-style `%` annotated string formatting: 
-``` Python
-print("""
-intVal:%i;
-floatVal:%.2f;
-stringVal:%s;
-""" % (myInt, myFloat, myString))
-```
-
-The `format` method of the string object can be used to perform ordered or labelled replacements:
-
-``` Python
-print('myInt:{0}, myString:{1}'.format(myInt, myString))
-print('myInt:{intVal}, myString:{stringVal}'.format(intVal=myInt, stringVal=myString))
-```
-
-Python 3.6+ supports inline string interpolation by prefixing the string with `f`:
-
-``` Python
-print(f'myInt:{myInt}, myString:{myString}')
-```
 
 ## Lists
 Lists are a built-in data structure in Python, representing an ordered collection of objects.
@@ -216,28 +195,9 @@ You can assign a comma-separated series of values as equal to a list, and Python
 Note that the number of variables must be equal to the number of elements in the list. Specify a throwaway variable (`_` by convention) to ignore values from the list.
 
 
-## Working with Strings
-
-`.startswith(str)` returns whether a string starts with the specified string
-`.endswith(str)`
-`.count(str)` count occurrences of specified string within string
-`.upper()`
-`.lower()`
-
-`==` is overloaded to perform string equality checking. Comparison operators are also overloaded.
-
-`.find(str)` returns index of specified string - returns -1 if not found
-`.index(str)` returns index of specified string - throws Error if not found
-`.split(str)` splits a string into a list of strings using the specified separator
-`.join(list)` uses the calling string as a separator to join the specified list
-`.isdigit()` returns whether the string contains only digits
-`.isalpha()` returns whether the string contains only alphabet characters
-
-`.isupper()` returns whether string is completely uppercase
-
 
 ## Tuples
-Tuples are an ordred collection of items, initialized in `()`; to differentiate from other uses of `()`, there must be at least one `,`; e.g. `t = (1,)` initializes `t` as a tuple, while `t = (1)` initialize `t` as integer `1`.
+Tuples are an ordered collection of items, initialized in `()`; to differentiate from other uses of `()`, there must be at least one `,`; e.g. `t = (1,)` initializes `t` as a tuple, while `t = (1)` initialize `t` as integer `1`.
 
 `+` is overloaded to combine tuples
 `*` is overloaded to repeat a tuple an integer number of times
@@ -438,7 +398,7 @@ Additional `if` clauses can be added to filter further.
 
 `if` clauses can also be used within the transformation clause to allow for conditional logic.
 
-Sets, dictionaries, and tuples can also be created via Comprehension, by changing the wrapping characters.
+Sets, dictionaries, and tuples can also be created via Comprehension, by changing the wrapping characters; use `tuple()` to wrap the comprehension for a tuple, otherwise a generator will be created.
 
 
 
@@ -616,6 +576,7 @@ Python scoping / variable declaration has some quirks:
         global my_global
         # now assigning a value to my_global will modify the global variable instead of declaring a local variable
     ```
+    - Nested functions can use the `nonlocal` keyword to declare variables in their direct parent's scope
 
 ### Pass by Value vs Pass by Reference
 Primitive types are passed by value by default, while reference types are passed by reference by default.
@@ -699,17 +660,8 @@ Be aware that function signatures and invocations will need to be compatible thr
 
 
 
-## `raise`
-The `raise` keyword is used in combination with an Error type to raise an error. E.g.:
-
-``` Python
-raise ValueError(f"Illegal value specified: {val}")
-```
-
-* `ValueError` - raised to indicate an illegal value was specified
-
 ## `assert`
-An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not.
+An `assert` statement checks if an expression evalutes to True, and throws an Error if it does not. Note that `assert` statements are removed by certain compiler optimization settings, so you'll need to either use `assert` statements for testing only or ensure that compilation doesn't remove them.
 
 
 ## Commonly Used Modules
