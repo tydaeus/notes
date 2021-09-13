@@ -399,7 +399,7 @@ Additional `if` clauses can be added to filter further.
 
 `if` clauses can also be used within the transformation clause to allow for conditional logic.
 
-Sets, dictionaries, and tuples can also be created via Comprehension, by changing the wrapping characters.
+Sets, dictionaries, and tuples can also be created via Comprehension, by changing the wrapping characters; use `tuple()` to wrap the comprehension for a tuple, otherwise a generator will be created.
 
 
 
