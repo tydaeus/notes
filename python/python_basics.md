@@ -86,7 +86,8 @@ Python also overloads the following operators:
 ### Type Conversion Functions
 * `float(var)`
 * `int(var[, base])` - decimal values will be truncated, strings will be converted as base 10 unless base is specified; specify base 0 to convert based on string prefix
-* `str(var)`
+* `str(*var)` - converts `var` to user-friendly string based on its `__str__` method; used internally in `print()` for conversions; uses `__repr__` if `__str__` not defined
+* `repr(*var)` - converts `var` to representational string based on its `__repr__` method for troubleshooting purposes
 * `list(var)` - convert to a list (strings will be converted into a list of letters), non-iterables will result in error; does not apply recursively
 * `tuple(var)` - convert to a tuple (strings will be converted to a tuple of letters), non-iterables will result in error; does not apply recursively
 * `dict(var)` - convert to a dictionary; must be paired collections, and first item in pair must be hashable
