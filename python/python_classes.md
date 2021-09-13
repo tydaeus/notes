@@ -25,8 +25,13 @@ class MyClass(parentClass):
 
         # other statements
 
+    # Optional but recommended string representation for troubleshooting purposes.
+    def __repr__(self):
+        return f"({repr(super)}; x: {self.x}; y: {self.y}; val1: {self.val1}; val2: {self.val2}")
+
     # Optional string conversion method. Used to generate string representation for instances when they're referenced
-    # in a context where string is expected (`print()`, `str()`, format strings).
+    # in a context where string is expected (`print()`, `str()`, format strings). `__repr__` will be used if `__str__`
+    # is not defined.
     def __str__(self):
         return f'(x: {self.x}; y: {self.y}; val1: {self.val1}; val2: {self.val2})'
 
