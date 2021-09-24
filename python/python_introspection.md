@@ -12,6 +12,7 @@ Python provides fairly simple and robust functions for introspection.
 ## Behavior Checking
 * `callable(object)` - returns whether `object` can be called like a function
 * `isinstance(any, class)` - returns whether `any` is an instance of `class`
+* `issubclass(type1, type2)` - returns whether `type1` is a subclass of `type2`
 * `inspect.isclass(any)` - returns whether `any` is a class definition
 * `inspect.getsource(function)` - returns the definition for `function`, if source is available
     + `dill.source.getsource(function)` -  requires 3rd-party `dill` library, can potentially go a little deeper than `inspect.getsource`
