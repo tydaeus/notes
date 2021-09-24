@@ -91,6 +91,16 @@ class MyClass(parentClass):
 
 ```
 
+## Class dunder members
+
+### Class definition members
+* `__new__` - constructor function, called on new objects to create them, responsible for returning the resulting object. Should only be implemented for classes that need non-standard creation.
+
+### Instance members
+* `__init__` - initializer method, called on all new objects after construction and before they are provided to caller. Should generally be implemented.
+* `__repr__` - string representation method. Should return a meaningful string representation of the instance, i.e. for use during debugging. Is called when `repr(instance)` is invoked.
+* `__str__`  - 'pretty' string representation method. Should be reasonably formatted and omit any esoteric fields, for user-friendly representation. Is called when `str(instance)` is invoked.
+
 
 ## Interfaces
 (source: https://realpython.com/python-interface/)
