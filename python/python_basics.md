@@ -14,7 +14,7 @@ The official Python style guide is available at https://www.python.org/dev/peps/
 * class names should use a capital first letter and further capital letters (in place of underscores) for differentiating subsequent words, with all caps for acronyms
 * identifiers starting with the "weak" internal-use indicator `_` are for internal use only (e.g. class internal properties/methods, module internal functions/variables). Module members prefixed with `_` will not be provided by a `import * from M` statement.
 * identifiers starting with `__` indicate strong internal-use; Python enforces that member `__my_var` from class `Clazz` can only be accessed from outside of `Clazz` as `_Clazz__my_var` (including by subclasses)
-* built-in 'magic' identifiers are prefixed and suffixed with `__`; do not do this with custom identifiers
+* built-in 'magic' identifiers are prefixed and suffixed with `__`; do not do this with custom identifiers. These are sometimes called "dunder" identifiers (as in "double-underscore").
 
 
 ## Data Types
