@@ -90,3 +90,27 @@ class MyClass(parentClass):
 
 
 ```
+
+
+## Interfaces
+(source: https://realpython.com/python-interface/)
+
+Python doesn't support interfaces in the same way that C-family languages do, but it can still be useful to provide interface-analogs when developing larger projects.
+
+### Informal Interfaces
+The simplest option is to provide an informal interface for use as a superclass.
+
+``` Python
+class InformalInterface:
+    def do_something(self, arg1, *args):
+        "Do something useful"
+        pass
+
+class Implementation(InformalInterface):
+    def do_something(self, arg1, *args):
+        "Overrides InformalInterface.do_something"
+        # actually do something
+```
+
+This allows for defining some amount of structure, and allows for using `issubclass(Implementation, InformalInterface)` to check if a given implementation is a `InformalInterface`. However, this doesn't do anything to enforce that implementations actually implement the methods defined in the interface, it just checks that they're part of the hierarchy. It also doesn't play nicely with duck-typing.
+
