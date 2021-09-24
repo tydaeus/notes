@@ -95,11 +95,15 @@ class MyClass(parentClass):
 
 ### Class definition members
 * `__new__` - constructor function, called on new objects to create them, responsible for returning the resulting object. Should only be implemented for classes that need non-standard creation.
+* `__mro__` - method resolution order. Class property that indicates the class hierarchy order used for method call resolution.
+* `__instancecheck__` - function used to check whether an instance is a member of the class. Override for non-standard instance checking. This is used when `isinstance()` is invoked.
+* `__subclasscheck__` - function used to check whether a class is a subclass of this class. Override for non-standard subclass checking. This is used when `issubclass()` is invoked.
 
 ### Instance members
 * `__init__` - initializer method, called on all new objects after construction and before they are provided to caller. Should generally be implemented.
 * `__repr__` - string representation method. Should return a meaningful string representation of the instance, i.e. for use during debugging. Is called when `repr(instance)` is invoked.
 * `__str__`  - 'pretty' string representation method. Should be reasonably formatted and omit any esoteric fields, for user-friendly representation. Is called when `str(instance)` is invoked.
+* `__class__` - represents the instance's class. In Python3 this will be the same value as returned by `type(instance)`.
 
 
 ## Interfaces
