@@ -29,6 +29,6 @@ Note that this can result in custom libraries being loaded in place of standard 
 ## Writing Modules
 Any normal `.py` file can be used as a module; the module name will be the name of the file without the extension.
 
-Module statements will be run once, at the time the module is imported, allowing for initialization, class and function declarations, etc.
+Module statements will be run once, at the time the module is first imported, allowing for initialization, class and function declarations, etc.
 
 Within the module, automatic variable `__name__` will evaluate to the module's name, or to special value `'__main__'` if the module is run as a script. This can be used to allow a module to act as either a library or as a script, depending on whether it has been imported or invoked.
