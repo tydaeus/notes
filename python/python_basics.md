@@ -14,7 +14,7 @@ The official Python style guide is available at https://www.python.org/dev/peps/
 * class names should use a capital first letter and further capital letters (in place of underscores) for differentiating subsequent words, with all caps for acronyms
 * identifiers starting with the "weak" internal-use indicator `_` are for internal use only (e.g. class internal properties/methods, module internal functions/variables). Module members prefixed with `_` will not be provided by a `import * from M` statement.
 * identifiers starting with `__` indicate strong internal-use; Python enforces that member `__my_var` from class `Clazz` can only be accessed from outside of `Clazz` as `_Clazz__my_var` (including by subclasses)
-* built-in 'magic' identifiers are prefixed and suffixed with `__`; do not do this with custom identifiers
+* built-in 'magic' identifiers are prefixed and suffixed with `__`; do not do this with custom identifiers. These are sometimes called "dunder" identifiers (as in "double-underscore").
 
 
 ## Data Types
@@ -86,7 +86,8 @@ Python also overloads the following operators:
 ### Type Conversion Functions
 * `float(var)`
 * `int(var[, base])` - decimal values will be truncated, strings will be converted as base 10 unless base is specified; specify base 0 to convert based on string prefix
-* `str(var)`
+* `str(*var)` - converts `var` to user-friendly string based on its `__str__` method; used internally in `print()` for conversions; uses `__repr__` if `__str__` not defined
+* `repr(*var)` - converts `var` to representational string based on its `__repr__` method for troubleshooting purposes
 * `list(var)` - convert to a list (strings will be converted into a list of letters), non-iterables will result in error; does not apply recursively
 * `tuple(var)` - convert to a tuple (strings will be converted to a tuple of letters), non-iterables will result in error; does not apply recursively
 * `dict(var)` - convert to a dictionary; must be paired collections, and first item in pair must be hashable
