@@ -50,7 +50,7 @@ A name can be specified for a replacement group in format `?<Name>` at the begin
 ### Regex Type
 The `[regex]` object type can be used as an alternative to the `-match` operator. Use `[regex]::Matches($str, $regex)` to retrieve a collection of matches.
 
-### `Regex.Escape` method
+#### `Regex.Escape` method
 Use the `Escape` static method to escape all regex characters in a string. `[Regex]::Escape($string)`.
 
 
