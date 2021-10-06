@@ -391,4 +391,11 @@ Use `$()` to interpolate an expression, such as referencing a variable property 
 Use `${}` to escape a variable name to resolve any ambiguity: `$myString = "Prefix${Value}Suffix"`
 
 ### Multiline Strings - "Here-string"
-You can declare a multi-line string by wrapping it in either `@""@` or `@''@`; interpolation will be performed if enclosed with `@""@`. In either case, the closing `"@` must be the first character in the line. Note that quotation marks can be used inside either form.
+You can declare a multi-line string by wrapping it in either `@""@` or `@''@`; interpolation will be performed if enclosed with `@""@`. The opening characters must be the last characters on their line, and the closing characters must be the first characters on their line. Note that quotation marks (`"`) can be used without escaping inside either form.
+
+``` PowerShell
+$str = @"
+Some "Text"
+More text.
+@"
+```
