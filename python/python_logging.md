@@ -18,7 +18,7 @@ The `logging` module provides a 'root' logger allowing for rapid setup and confi
 ### `basicConfig`
 `logging.basicConfig` configures the 'root' logger, thereby modifying both any direct uses through `logging` or indirect uses through `Logger` instances.
 
-Use the `basicConfig` function before using this default logger if you wish to configure it, e.g: `logging.basicConfig(filename='myapp.log', level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')`.
+Use the `basicConfig` function before using this default logger if you wish to configure it, or to configure generated `Logger`s.
 
 ``` Python
 logging.basicConfig(
