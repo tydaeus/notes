@@ -110,6 +110,8 @@ Note that the `foreach` loop does not include direct support for HashTables, so 
 ### "Splatting" a Hashtable
 Referencing a hashtable variable with the `@` operator will convert it into a PowerShell parameter string.
 
+
+
 ## Custom Objects
 In PowerShell 3.0+, the `[PSCustomObject]` type adapter is the easiest way to quickly create an object:
 
@@ -125,10 +127,10 @@ Properties can be added subsequently via the `Add-Member` cmdlet: `$obj | Add-Me
 For more info, [gngrninja](https://www.gngrninja.com/script-ninja/2016/6/18/powershell-getting-started-part-12-creating-custom-objects) provides a variety of ways to define a PowerShell custom object.
 
 ### Adding Properties
-Pipe a custom object into the `Add-Member` cmdlet to add a property to it, e.g:
+Use the `Add-Member` cmdlet with `-Type 'NoteProperty'` to add a property to a custom object, e.g:
 
 ```powershell
-$obj | Add-Member -Name "propertyName" -Type NoteProperty -Value "propertyValue"
+$obj | Add-Member -Name 'propertyName' -Type 'NoteProperty' -Value 'propertyValue'
 ```
 
 ### Adding Methods
