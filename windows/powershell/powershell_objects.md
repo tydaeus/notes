@@ -131,6 +131,14 @@ Pipe a custom object into the `Add-Member` cmdlet to add a property to it, e.g:
 $obj | Add-Member -Name "propertyName" -Type NoteProperty -Value "propertyValue"
 ```
 
+### Adding Methods
+Use `Add-Member` with `-Type 'ScriptMethod'` to add a scriptblock as a method to the custom object, e.g.:
+
+``` PowerShell
+$obj | Add-Member -Name 'methodName' -Type 'ScriptMethod' -Value $methodDefinitionScriptBlock
+```
+
+
 ## Custom Classes
 Courtesy of https://4sysops.com/archives/powershell-classes-part-1-objects/.
 
