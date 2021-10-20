@@ -7,6 +7,7 @@ Use the `Import-Module` cmdlet to import a PowerShell module.
 ```PowerShell
 # Import module myModule from an explicit location:
 Import-Module "C:\myModules\myModule"
+# ensure that there is only `myModule.psm1` or `myModule.psd1` at this location
 
 # Import module myModule from $env:PSModulePath/myModule/:
 Import-Module myModule
@@ -34,3 +35,8 @@ Export-ModuleMember -Function Do-Something
 ```
 
 See https://docs.microsoft.com/en-us/powershell/developer/module/how-to-write-a-powershell-script-module and https://docs.microsoft.com/en-us/powershell/developer/module/how-to-write-a-powershell-module-manifest for more information.
+
+### With a Module Manifest
+More complex modules should include a module manifest. The manifest is a .psd1 document that declares metadata and setup configuration for the module.
+
+The manifest's name is the module name and must match the name of the containing folder (e.g. `MyModule\MyModule.psd1`). Do not include a .psm1 file with the same name within the subdirectory, because `Import-Module MyModule` will result in that file being imported directly as well and shadowing the manifest. 
