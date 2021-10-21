@@ -206,6 +206,13 @@ Superclass constructors can be accessed C#-style with the `base` keyword: `Class
 
 Constructor chaining is not permitted, but can be acheived with helper methods (e.g. having the constructors operate through one or more `hidden Init` methods).
 
+### Inheritance
+Custom classes can extend other custom classes defined within the same script by using C#-like `:` inheritance: `class ChildClass : ParentClass {...`; they can also implement .Net interfaces in the same manner.
+
+Custom interfaces cannot currently be defined in PowerShell.
+
+It appears to be impossible to officially extend a custom class from outside its declaring script/module, even with access to its type.
+
 ### Publishing Custom Classes
 PowerShell classes don't cooperate as one might expect with the PowerShell module system.
 
