@@ -202,6 +202,36 @@ Constructors are declared similar to methods, with no return type and their name
 
 Use `[ClassName]::new(params)` or `New-Object ClassName params` to invoke the constructor with the specified params. Parenthetical invocation appears to work better for multiple arguments.
 
+### Publishing Custom Classes
+PowerShell classes don't cooperate as one might expect with the PowerShell module system.
+
+#### By `New-` Function
+The simplest, most reliable means to provide access to a custom class seems to be to define a `New-` function to act as an accessor for the class's constructor. Doing this allows for object creation, and then all properties and methods on the created object can be used. However, this leaves the class Type only accessible within the module/script that defines it, so it cannot be used for parameter typing.
+
+#### By Running Script
+1. Define the class in a `.ps1` script
+2. Add the definition script to the `ScriptsToProcess` list in the module manifest (effectively ensuring that the script gets dot-sourced into scope)
+
+This allows the class Type to be accessible, but treats the class as being outside the module's scope (thereby only allowing it access to public members of the module).
+
+#### By `using` Directive
+1. Define the class in a module's `RootModule` file (as determined by its manifest)
+2. Include a `using` directive in scripts/modules that need to use the class.
+
+This allows the class Type to be accessible and treats the class as being within the module's scope.
+
+Unfortunately, `using` only works properly with modules imported from the `PSModulePath` or with their full path, allowing for scenarios where a module is visible through `Get-Module` but not available for `using`. `using` can also be inflexible due to its required invocation at the beginning of a script.
+
+#### By `.NewBoundScriptBlock`
+Using `.NewBoundScriptBlock()` to create the object against the module's scope appears to allow using the class from within the module and providing the result to the current script.
+
+``` PowerShell
+# more readable option
+& (Get-Module 'ModuleName').NewBoundScriptBlock({[c]::new()})
+# more pipeable option
+& (Get-Module 'ModuleName') {[c]::new()}}
+```
+
 
 
 ## Enums
