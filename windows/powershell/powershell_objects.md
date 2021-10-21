@@ -202,6 +202,10 @@ Constructors are declared similar to methods, with no return type and their name
 
 Use `[ClassName]::new(params)` or `New-Object ClassName params` to invoke the constructor with the specified params. Parenthetical invocation appears to work better for multiple arguments.
 
+Superclass constructors can be accessed C#-style with the `base` keyword: `ClassName ($param1) : base ($param1)`.
+
+Constructor chaining is not permitted, but can be acheived with helper methods (e.g. having the constructors operate through one or more `hidden Init` methods).
+
 ### Publishing Custom Classes
 PowerShell classes don't cooperate as one might expect with the PowerShell module system.
 
