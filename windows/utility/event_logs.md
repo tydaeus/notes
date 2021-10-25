@@ -16,8 +16,6 @@ $begin = [DateTime]'2021-10-25 00:00:00'
 $end = [DateTime]'2021-10-25 11:59:59'
 $timeFilteredEvents = $events |
      Where-Object { ($_.TimeCreated -ge $begin) -and ($_.TimeCreated -le $end) }
-
-
 ```
 
 ## Export via `wevtutil`
