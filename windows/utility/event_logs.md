@@ -10,4 +10,8 @@ Export the application log via `wevtutil`:
 
 ``` cmd
 WEVTUtil export-log Application C:\temp\application_events.evtx
+
+:: archive the event log to include display data; this appears to only work from within the local folder
+wevtutil al .\application_events.evtx
+:: be sure to include the generated LocaleMetaData folder; this must be in parent folder to be found
 ```
