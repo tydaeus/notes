@@ -18,6 +18,15 @@ $timeFilteredEvents = $events |
      Where-Object { ($_.TimeCreated -ge $begin) -and ($_.TimeCreated -le $end) }
 ```
 
+### Useful Object Properties
+The following event object properties can be useful for examining and/or filtering them
+* `.TimeCreated` - DateTime when the event was created
+* `.LevelDisplayName` - level at which event was logged
+* `.ProviderName` - indicates what app logged the event (corresponds to the "Source" field in event viewer)
+* `.Message` - description of the event
+
+
+
 ## Export via `wevtutil`
 Export the application log via `wevtutil`:
 
