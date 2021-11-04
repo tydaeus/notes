@@ -225,6 +225,8 @@ The simplest, most reliable means to provide access to a custom class seems to b
 
 This allows the class Type to be accessible, but treats the class as being outside the module's scope (thereby only allowing it access to public members of the module).
 
+**Warning**: I haven't figured out how to get this to work consistently for repeat imports. It appears that the Type becomes accessible after one import, and then if imported again (e.g. by invoking a script that imports the module again or a second script that imports the module) the Type becomes inaccessible. Skipping type declaration if it already exists doesn't appear to work.
+
 #### By `using` Directive
 1. Define the class in a module's `RootModule` file (as determined by its manifest)
 2. Include a `using` directive in scripts/modules that need to use the class.
