@@ -45,7 +45,10 @@ Remove-Item "Variable:VariableName"
 
 
 
-## Using .Net `Environment` to set an environment variable
+## Using .Net `Environment`
+
+### Setting an Environment Variable
+.Net `Environment::SetEnvironmentVariable` can be used to set an environment variable persistently.
 
 ``` PowerShell
 # set MY_ENV_VAR to "MyVal" for the current process
@@ -59,3 +62,9 @@ Remove-Item "Variable:VariableName"
 # set MY_ENV_VAR to "MyVal" for the current machine (persists across sessions, change visible to new processes only)
 [Environment]::SetEnvironmentVariable("MY_ENV_VAR", "MyVal", "Machine")
 ```
+
+As per environment variable conventions setting the environment variable for "User" or "Machine" will not apply to the current process, and no environment variable changes will be applied to other currently running processes.
+
+
+### Getting an Environment Variable
+.Net `Environment::GetEnvironmentVariable` can be used to get an environment variable's value as it is specifically defined for the User, Process, or Machine, with syntax `[Environment]::GetEnvironmentVariable(<VariableName>, [Qualifier])`.
