@@ -14,6 +14,15 @@ The resulting credential object can be passed to a number of different commandle
 
 The `Password` property of the credential represents the password as a `System.Security.SecureString`. If needed, this can be written to a file to store it, or separated and reconverted to plaintext for purposes of using it, e.g. in a web request.
 
+
+## Creating Credential
+Create a new `[PSCredential]` from an existing securestring and username:
+
+```PowerShell
+[PSCredential]$credential = [PSCredential]::new($userName, $securePassword)
+```
+
+
 ## Working With SecureStrings
 
 ### Store and Retrieve SecureString Securely
@@ -44,5 +53,5 @@ Do not do this unless you absolutely have to, because it isn't a very secure way
 Useful if working in an environment where the string has been injected as plaintext (avoid otherwise, and ensure that any logging is masked).
 
 ``` PowerShell
-[securestring]$securePassword = ConvertTo-SecureString $plaintextPassword -AsPlainText -Force
+[SecureString]$securePassword = ConvertTo-SecureString $plaintextPassword -AsPlainText -Force
 ```
