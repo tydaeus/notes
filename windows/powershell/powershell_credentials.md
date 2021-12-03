@@ -39,3 +39,10 @@ Do not do this unless you absolutely have to, because it isn't a very secure way
 ``` PowerShell
 [System.Net.NetworkCredential]::new('', $SecureString).Password
 ```
+
+### Create SecureString from Plaintext
+Useful if working in an environment where the string has been injected as plaintext (avoid otherwise, and ensure that any logging is masked).
+
+``` PowerShell
+[securestring]$securePassword = ConvertTo-SecureString $plaintextPassword -AsPlainText -Force
+```
