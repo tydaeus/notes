@@ -62,7 +62,13 @@ Note that `git revert` cannot be restricted to a single file; it operates on the
 ## Working with Branches
 (adapted from https://stackoverflow.com/a/6591218/2939139)
 
-Use `git branch` to list branches.
+Use `git branch` to list branches. The currently active branch will be indicated with an asterisk.
+
+### Creating Branches
+Use `git branch <branchname>` to create a new branch (locally). Push this branch to your remote with `git push -u <remote> <branchname>`.
+
+### Switching Branches
+`git checkout <branchname>` to switch to another branch.
 
 ### Renaming (Moving) Branches
 The `git branch -m` option renames (moves) branches.
