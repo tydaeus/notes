@@ -55,6 +55,11 @@ For example, `git reset HEAD FILEPATH` will remove any commits to FILEPATH that 
 ### git revert
 `git revert <commit>...` makes a commit that reverts prior commit(s). Note that `git revert` cannot be restricted to a single file; it operates on the entire tree.
 
+### git restore
+`git restore <path>...` restores working files from HEAD.
+
+`git restore --source=<tree> <path>...` restores working files based on specified source tree.
+
 
 
 ## Tags
