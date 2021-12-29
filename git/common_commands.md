@@ -57,6 +57,30 @@ Note that `git revert` cannot be restricted to a single file; it operates on the
 
 
 
+## Tags
+Tags provide a way to bookmark the state of the repository at a specific commit, allowing for easier reference and comparison.
+
+*Lightweight* tags simply mark a specific commit, while *annotated* tags include a name and a commit message. Annotated tags are generally preferable.
+
+### Creating a Tag
+On the latest commit: `git tag -a <tagname> -m <commit message>`
+
+On a specific commit: `git tag -a <tagname> -m <commit message> <commit hash>`
+
+### Publish Tag(s) to Repository
+Tags do not get published to the repository by default.
+
+Push one tag: `git push <remotename> <tagname>`
+
+Push all tags: `git push <remotename> --tags`
+
+### Deleting a Tag
+Locally: `git tag -d <tagname>`
+
+Remotely: `git push <remotename> --delete <tagname>`
+
+
+
 ## Working with Branches
 (adapted from https://stackoverflow.com/a/6591218/2939139)
 
