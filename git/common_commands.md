@@ -67,6 +67,11 @@ On the latest commit: `git tag -a <tagname> -m <commit message>`
 
 On a specific commit: `git tag -a <tagname> -m <commit message> <commit hash>`
 
+### Listing Tags
+`git tag [--list|-l]`
+
+With glob matching: `git tag --list "<glob>"`
+
 ### Publish Tag(s) to Repository
 Tags do not get published to the repository by default.
 
