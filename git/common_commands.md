@@ -53,7 +53,7 @@ Use `git checkout -- FILE` to replace FILE with the latest version from HEAD.
 For example, `git reset HEAD FILEPATH` will remove any commits to FILEPATH that are not part of HEAD. Note that this does not modify the file, just what changes to the file have been committed.
 
 ### git revert
-Note that `git revert` cannot be restricted to a single file; it operates on the entire tree.
+`git revert <commit>...` makes a commit that reverts prior commit(s). Note that `git revert` cannot be restricted to a single file; it operates on the entire tree.
 
 
 
