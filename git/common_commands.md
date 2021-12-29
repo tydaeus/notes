@@ -87,7 +87,7 @@ Remotely: `git push <remotename> --delete <tagname>`
 Use `git branch` to list branches. The currently active branch will be indicated with an asterisk.
 
 ### Creating Branches
-* `git branch <branchname>` to create a new local branch without switching to it (use `switch` or `checkout` to switch)
+* `git branch <branchname>` to create a new local branch without switching to it (use `switch -c` or `checkout` to switch)
 * `git switch -c <branchname>` to create a new local branch and switch to it
 * `git checkout -b <branchname>` to create a new local branch and switch to it
 
