@@ -35,6 +35,8 @@ Environment variables are under `Env:` instead of `Variable`:
 Get-Item "Env:Path"
 ```
 
+`Get-ChildItem` can be used on `Variable:` or `Env:` to list in-scope variables of the specified type.
+
 ### Setting a variable with `Set-Item`
 
 ``` PowerShell
