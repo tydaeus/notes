@@ -35,6 +35,18 @@ Environment variables are under `Env:` instead of `Variable`:
 Get-Item "Env:Path"
 ```
 
+### Setting a variable with `Set-Item`
+
+``` PowerShell
+Set-Item "Variable:MyVar $Value
+```
+
+Environment variables use the `Env:` provider:
+
+``` PowerShell
+Set-Item "Env:SomeVar" $Value
+```
+
 ### Deleting a Variable with `Remove-Item`
 
 ``` PowerShell
