@@ -2,8 +2,27 @@
 
 ## Error Checking/Handling
 
-### ErrorActionPreference
-Set `$ErrorActionPreference = "Stop"` to automatically exit after the first error encountered. Note that this does not cause non-script commands that resulted in an error to exit.
+### `$ErrorActionPreference` Config Variable
+Set the `$ErrorActionPreference` variable to control how PowerShell handles errors.
+
+* `Continue` (Default) - write the error to the error stream and continue running
+* `Inquire` - output error message and ask user whether to continue
+* `SilentlyContinue` - don't output message, continue execution
+* `Stop` (My general preference for scripts) - automatically exit after the first error
+
+Fatal errors and uncaught exceptions will result in exit regardless of preference. Output to `stderr` and non-zero exit statuses are treated as errors.
+
+Be sure to test how the commands in question report their status - error/non-error status varies widely by implementation, even within Microsoft's standard commands and cmdlets.
+
+`$ErrorActionPreference` is subject to standard scoping rules - functions/scriptblocks inherit its starting value from their parent environment, and changes made to `$ErrorActionPreference` within a function/scriptblock without a scope qualifier will not modify parent environment.
+
+### `ErrorAction` Parameter
+The `ErrorAction` standard parameter can be used to specify how errors should be handled while a function is executing.
+
+The `ErrorAction` parameter supports the following values in addition to those supported by `$ErrorActionPreference`:
+
+* `Ignore` - suppress error message and continue executing the command
+* `Suspend` - on error, suspend command for investigation, allowing resumption
 
 ### `$Error`
 When errors occur, they are stored in the `$Error` variable. This array is populated in LIFO order, so the most recent error is stored in `$Error[0]`. The size of this array is limited by `$MaximumErrorCount`, causing it to act like a buffer.
