@@ -21,7 +21,7 @@ The `ErrorAction` standard parameter can be used to specify how errors should be
 
 The `ErrorAction` parameter supports the following values in addition to those supported by `$ErrorActionPreference`:
 
-* `Ignore` - suppress error message and continue executing the command
+* `Ignore` - suppress error message and continue executing the command, *without adding the error to `$Error`*
 * `Suspend` - on error, suspend command for investigation, allowing resumption
 
 ### `$Error`
