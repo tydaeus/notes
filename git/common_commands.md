@@ -62,6 +62,11 @@ For example, `git reset HEAD FILEPATH` will remove any commits to FILEPATH that 
 
 
 
+## Merging
+`git merge <branchname>` merges the named branch onto the current working branch, committing the branch. (Fails if conflicts are found)
+
+`git merge <branchname> --no-commit --no-ff` applies the merge changes without committing them.
+
 ## Tags
 Tags provide a way to bookmark the state of the repository at a specific commit, allowing for easier reference and comparison.
 
