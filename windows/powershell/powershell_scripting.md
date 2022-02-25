@@ -24,7 +24,7 @@ Use `<#` and `#>` for block comments.
 
 
 ## Get-Help Documentation
-You should provide documentation viewable through Get-Help as part of your script. This is described in a specially formatted comment, such as:
+You should provide documentation viewable through Get-Help as part of your script. This is described in a specially formatted comment at the top of the script (or before each function), such as:
 
 ``` PowerShell
 <#
