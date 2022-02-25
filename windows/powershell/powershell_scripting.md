@@ -35,7 +35,7 @@ You should provide documentation viewable through Get-Help as part of your scrip
 .PARAMETER Parameter1
     A description of Parameter1
 .EXAMPLE
-    Example of using the script
+    Example of using the script. The first line is assumed to be the commandline invocation, and will be formatted as such when displayed.
 .NOTES
     Miscellaneous notes, such as versioning and authoring.
 #>
