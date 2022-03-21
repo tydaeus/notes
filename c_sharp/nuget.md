@@ -1,6 +1,6 @@
 # NuGet Notes
 
-NuGet is the default packagemanager for Visual Studio / .Net projects
+NuGet is the default packagemanager for Visual Studio / .Net projects. Official documentation at: https://docs.microsoft.com/en-us/nuget/.
 
 ## NuGet ConfigFiles
 NuGet is configured by a hierarchical series of `Nuget.Config` files, applied in order:
@@ -30,4 +30,5 @@ NuGet configuration commands modify the user-level Nuget.Config file by default.
 
 
 ## Sources
+* https://docs.microsoft.com/en-us/nuget/
 * https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior
