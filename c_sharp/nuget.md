@@ -29,6 +29,17 @@ NuGet configuration commands modify the user-level Nuget.Config file by default.
 
 
 
+## List Packages
+``` bat
+nuget list [search terms] [options]
+```
+
+Options:
+* `-ConfigFile` specify which nuget config file to use
+* `-Source` specify which source to list packages from
+
+
+
 ## Sources
 * https://docs.microsoft.com/en-us/nuget/
 * https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior
