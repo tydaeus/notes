@@ -40,6 +40,15 @@ Options:
 
 
 
+## Creating Legacy Nuget Packages
+In ideal circumstances, nupkgs should be created through Visual Studio as part of the development process. However, it may be necessary at times to package a legacy 3rd-party dll as a nupkg.
+
+1. Create a folder structure with the desired package name, ideally in nuget name.version format; this structure must have at minimum a `lib` subdir containing the dll(s) for the package
+2. Create a .nuspec file for the package; `nuget spec <assembly-name>.dll` will create a basic nuspec with the dll's name and version, everything else needs to be manually filled (`nuget spec` on its own within the dir is another option)
+3. `nuget pack <nuspec file>` will populate the remainder of the structure and output the resulting .nupkg to PWD
+
+
+
 ## Sources
 * https://docs.microsoft.com/en-us/nuget/
 * https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior
