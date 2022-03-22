@@ -47,6 +47,7 @@ In ideal circumstances, nupkgs should be created through Visual Studio as part o
 2. Create a .nuspec file for the package; `nuget spec <assembly-name>.dll` will create a basic nuspec with the dll's name and version, everything else needs to be manually filled (`nuget spec` on its own within the dir is another option)
 3. `nuget pack <nuspec file>` will populate the remainder of the structure and output the resulting .nupkg to PWD
 
+Visual Studio will not recognize nuget packages whose versioning doesn't match nuget standard version format -- e.g. version `1.2.1` will show up when browsing packages, but `1.2.1.1` will not.
 
 
 ## Sources
