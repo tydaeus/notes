@@ -120,3 +120,12 @@ The `git branch -m` option renames (moves) branches.
 ### Deleting Branches
 Delete a remote branch with `git push origin --delete <oldname>`.
 
+
+## Stashing Changes
+Stashing changes allows for setting aside in-progress changes and then retrieving them later, optionally to another branch.
+
+Use `git stash` (equiv to `git stash push`) to stash current changes and revert working state to HEAD.
+
+Use `git stash apply` to restore stashed changes to the current branch.
+
+Use `git stash list` to list stashed changes.
