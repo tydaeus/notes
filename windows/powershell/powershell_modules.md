@@ -20,6 +20,10 @@ if (-not $env:PSModulePath.Contains('C:\myModules')) {
 
 See https://docs.microsoft.com/en-us/powershell/developer/module/importing-a-powershell-module for more information.
 
+Modules are imported within global scope, instead of restricted to use within the importing script. Conflicting identifiers result in excessive fun as a result.
+
+Module statements are only run at the time of the first import. Subsequent import statements do not have any effect on the environment unless a `Remove-Module` is performed.
+
 ### Implicit Imports
 In PowerShell 3.0+, any module on a path within `$env:PSModulePath` will be automatically imported if one of its functions is called.
 
