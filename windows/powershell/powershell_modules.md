@@ -39,4 +39,10 @@ See https://docs.microsoft.com/en-us/powershell/developer/module/how-to-write-a-
 ### With a Module Manifest
 More complex modules should include a module manifest. The manifest is a .psd1 document that declares metadata and setup configuration for the module.
 
-The manifest's name is the module name and must match the name of the containing folder (e.g. `MyModule\MyModule.psd1`). Do not include a .psm1 file with the same name within the subdirectory, because `Import-Module MyModule` will result in that file being imported directly as well and shadowing the manifest. 
+The manifest's name is the module name and must match the name of the containing folder (e.g. `MyModule\MyModule.psd1`). Do not include a .psm1 file with the same name within the subdirectory, because `Import-Module MyModule` will result in that file being imported directly as well and shadowing the manifest.
+
+
+## Variable Scoping
+Variables declared within the module by default effectively act as being within their own module-specific scope. Functions defined in the module access and operate on these variables by default. These variables cannot be accesed from outside the module's scripting and function.
+
+If a variable is exported from the module by the `Export-ModuleMember` cmdlet, it becomes part of the `global` scope, allowing scripts to read and overwrite it (at which point internal functions will also reference the global version).
