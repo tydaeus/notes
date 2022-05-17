@@ -244,7 +244,7 @@ Using `.NewBoundScriptBlock()` to create the object against the module's scope a
 # more readable option
 & (Get-Module 'ModuleName').NewBoundScriptBlock({[c]::new()})
 # more pipeable option
-& (Get-Module 'ModuleName') {[c]::new()}}
+& (Get-Module 'ModuleName') {[c]::new()}
 ```
 
 
