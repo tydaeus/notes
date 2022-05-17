@@ -199,6 +199,30 @@ PowerShell methods can be overloaded by declaring additional methods of the same
 
 **Warning**: PowerShell method behavior differs significantly from PowerShell function behavior. Among other things, output is handled differently. The standard output stream can only be written to via the `return` operator. The standard error stream cannot be written to directly; this appears to be handled by an implicit stderr redirect resulting in any invoked functions' `Write-Error` also being redirected to `$null`.
 
+#### Dynamically Invoking Methods
+The methods available on a type can be retrieved by using the type's `GetMethods()` method.
+
+``` PowerShell
+# with the type available (i.e. within the declaring file)
+[MyType].GetMethods()
+
+# from an existing object
+$myObject.GetType().GetMethods()
+```
+
+If looking specifically for user-defined functions, the `DeclaringType` and `IsSpecialName` properties can be used for filtering.
+
+Once the method's name is assigned to a variable, it can then be invoked:
+
+``` PowerShell
+# Direct invocation - best if exact signature/arguments known
+$myObject.$methodName()
+
+# Indirect invocation - best for when signature/arguments are unknown/variable, allows passing arguments as an array
+$myObject.$methodName.Invoke($argArray)
+```
+
+
 ### Constructors
 Constructors are declared similar to methods, with no return type and their name being the same as the class name.
 
