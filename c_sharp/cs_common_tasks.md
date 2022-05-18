@@ -1,5 +1,20 @@
 # C# common tasks
 
+## Extend Class / Implement Interface
+Use the `:` operator to inherit from a class and/or implement interfaces.
+
+``` C#
+class ChildClass : ParentClass { ... }
+```
+
+### Call Superclass Constructor
+Use the `:` operator with the `base` in a constructor declaration to call the superclass's constructor:
+
+``` C#
+public ChildClass(type paramVar) : base (paramVar) { ... }
+```
+
+
 ## Add a NuGet Package
 1. Under `Tools > NuGet Package Manager` select `Manage NuGet Packages for Solution...`
 2. Browse for the desired package
