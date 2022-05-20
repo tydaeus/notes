@@ -197,7 +197,7 @@ Use the `static` modifier to declare a method as static to the class.
 
 PowerShell methods can be overloaded by declaring additional methods of the same name, with a different signature.
 
-**Warning**: PowerShell method behavior differs significantly from PowerShell function behavior. Among other things, output is handled differently. The standard output stream can only be written to via the `return` operator. The standard error stream cannot be written to directly; this appears to be handled by an implicit stderr redirect resulting in any invoked functions' `Write-Error` also being redirected to `$null`.
+**Warning**: PowerShell method behavior differs significantly from PowerShell function behavior. Among other things, output is handled differently. The standard output stream can only be written to via the `return` operator (in which case an appropriate return type must be declared). The standard error stream can only be written to or redirected if the method has a `[void]` return type (including implicit `[void]`); this appears to be handled by an implicit stderr redirect resulting in any invoked functions' `Write-Error` also being redirected to `$null`.
 
 #### Dynamically Invoking Methods
 The methods available on a type can be retrieved by using the type's `GetMethods()` method.
