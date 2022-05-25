@@ -27,6 +27,14 @@ Despite its finickiness, nuget.exe doesn't provide a facility for creating a new
 ### Editing Nuget ConfigFile
 NuGet configuration commands modify the user-level Nuget.Config file by default. Use the `-ConfigFile` parameter to specify a different config file to modify.
 
+``` bat
+:: retrieve a configuration key
+nuget config <KeyName>
+
+:: set a configuration key(s)
+nuget config -set <KeyName>=<KeyValue> [-set <KeyName>=<KeyValue>...]
+```
+
 
 
 ## List Packages
