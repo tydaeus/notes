@@ -35,6 +35,14 @@ nuget config <KeyName>
 nuget config -set <KeyName>=<KeyValue> [-set <KeyName>=<KeyValue>...]
 ```
 
+### Nuget Sources
+
+``` bat
+:: list configured sources
+nuget sources
+
+```
+
 
 
 ## List Packages
