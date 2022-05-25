@@ -39,6 +39,14 @@ Options:
 * `-Source` specify which source to list packages from
 
 
+## Install Package
+For testing purposes, packages can be installed arbitrarily outside of a configured project.
+
+``` bat
+nuget install <packagename>
+```
+
+
 
 ## Creating Legacy Nuget Packages
 In ideal circumstances, nupkgs should be created through Visual Studio as part of the development process. However, it may be necessary at times to package a legacy 3rd-party dll as a nupkg.
