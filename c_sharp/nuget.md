@@ -48,6 +48,9 @@ nuget sources
 ## List Packages
 ``` bat
 nuget list [search terms] [options]
+
+:: list all versions of package MyPackage
+nuget list MyPackage -AllVersions
 ```
 
 Options:
