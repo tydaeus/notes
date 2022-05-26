@@ -62,7 +62,7 @@ Options:
 For testing purposes, packages can be installed arbitrarily outside of a configured project.
 
 ``` bat
-nuget install <packagename>
+nuget install <packagename> [-version <versionNum>]
 ```
 
 
