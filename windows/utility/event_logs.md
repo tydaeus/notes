@@ -5,6 +5,8 @@ The `wevtutil` cmdline utility can be used to export or manipulate the event log
 
 The `Get-WinEvent` (or the deprecated `Get-EventLog`) PowerShell cmdlet can be used to retrieve event logs from the commandline or from within a script as PowerShell objects or text.
 
+When saving events from Event Viewer for viewing on another computer, you need to select the "Display information for these languages" option (and specify desired language(s)), and then keep the LocaleMetaData folder that will be generated in the parent folder alongside the event logs. Without this option selected, events may not include readable messages if viewed on a computer that doesn't have the software that generated the event installed.
+
 ## Export via Get-WinEvent
 ``` PowerShell
 # ErrorAction set to SilentlyContinue because some logs may be restricted due to privileges
