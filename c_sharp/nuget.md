@@ -70,7 +70,7 @@ nuget install <packagename> [-version <versionNum>]
 ## Creating Legacy Nuget Packages
 In ideal circumstances, nupkgs should be created through Visual Studio as part of the development process. However, it may be necessary at times to package a legacy 3rd-party dll as a nupkg.
 
-1. Create a folder structure with the desired package name, ideally in nuget name.version format; this structure must have at minimum a `lib` subdir containing the dll(s) for the package
+1. Create a folder structure with the desired package name, ideally in nuget name.version format; this structure must have at minimum a `lib` subdir containing the dll(s) for the package; if supported framework(s) is known, the dll(s) need to be nested in subirs indicating supported version (e.g. `net30`, `net45`)
 2. Create a .nuspec file for the package; `nuget spec <package-name>` will create a basic nuspec specified name, everything else needs to be manually filled (`nuget spec` on its own will create a generic .nuspec)
 3. `nuget pack <nuspec file>` will populate the remainder of the structure and output the resulting .nupkg to PWD
 
