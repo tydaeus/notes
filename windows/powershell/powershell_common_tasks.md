@@ -232,3 +232,6 @@ Write-Progress -Activity "Doing the thing: $percentComplete% Complete" -PercentC
 # after loop
 Write-Progress -Activity "Doing the thing: Complete" -Completed
 ```
+
+## Push and Pop Directory
+PowerShell provides the `Push-Location` and `Pop-Location` cmdlets to allow changing directory in a restorable way, similar to cmd's pushd and popd.
