@@ -14,6 +14,34 @@ Use the `:` operator with the `base` in a constructor declaration to call the su
 public ChildClass(type paramVar) : base (paramVar) { ... }
 ```
 
+## Getters and Setters
+C# supports property getters and setters; these operate on a private backing field. The backing field is compiler-generated if using default getter and setter definitions, but must be manually defined if using custom-defined getter/setter.
+
+``` C#
+// set and get both public
+public type MyProperty { get; set; }
+
+// public get private set
+public type MyProperty { get; private set; }
+
+// public get, no setter
+public type MyProperty { get; }
+
+// custom getter and setter require that backing field be defined manually; both must be custom if either is
+// backing field by convention is named same as property with underscore prefix and first name of property
+private type _myProperty;
+
+public type MyProperty {
+    get {
+        return _myProperty;
+    }
+
+    set {
+        _myProperty = value;
+    }
+}
+```
+
 
 ## Add a NuGet Package
 1. Under `Tools > NuGet Package Manager` select `Manage NuGet Packages for Solution...`
