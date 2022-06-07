@@ -109,7 +109,7 @@ Use `git branch` to list branches. The currently active branch will be indicated
 Push this branch to your remote with `git push -u <remote> <branchname>`.
 
 ### Switching Branches
-`git checkout <branchname>` to switch to another branch.
+`git switch <branchname>` to switch to another branch.
 
 ### Renaming (Moving) Branches
 The `git branch -m` option renames (moves) branches.
