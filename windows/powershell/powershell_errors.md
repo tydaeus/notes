@@ -27,6 +27,8 @@ The `ErrorAction` parameter supports the following values in addition to those s
 ### `$Error`
 When errors occur, they are stored in the `$Error` variable. This array is populated in LIFO order, so the most recent error is stored in `$Error[0]`. The size of this array is limited by `$MaximumErrorCount`, causing it to act like a buffer.
 
+This variable may need to be accessed as `$global:Error[$subscript]` from within scripted functions; the subscripting appears to result in using `script` scope as implicit scope.
+
 Useful fields:
 
 * `Exception` - stores a brief description of the error
