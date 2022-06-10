@@ -55,6 +55,8 @@ For example, `git reset HEAD FILEPATH` will remove any commits to FILEPATH that 
 ### git revert
 `git revert <commit>...` makes a commit that reverts prior commit(s). Note that `git revert` cannot be restricted to a single file; it operates on the entire tree.
 
+If reverting a merge, the mainline (parent to be reverted back to) must be specified. This is typically parent 1. `git revert <commit> --mainline 1`. Beware: GUI tools may make it unclear what the meaning of the selected parent is.
+
 ### git restore
 `git restore <path>...` restores working files from HEAD.
 
