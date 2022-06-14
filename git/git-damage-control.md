@@ -11,3 +11,9 @@ git cherry-pick c6ac2938f1fa83c7695729bf6affc6428bef7f4f
 ```
 
 **Danger**: this applies the change in isolation from all prerequisite changes, so you run the risk of skipping critical prereq changes.
+
+
+## `git reset`
+Use `git reset --hard HEAD` to get rid of all uncommitted changes.
+
+Use `git reset --hard <commit>` to get rid of all changes after `<commit>`.
