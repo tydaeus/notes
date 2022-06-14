@@ -36,13 +36,13 @@ This is now the default setting for Git for Windows installs, but the default do
 Cloning provides a local copy of the specified repository.
 
 ```
-git clone <repo url>
+git clone <repo url> [target dir]
 ```
 
 Clone a specific branch:
 
 ```
-git clone --single-branch --branch <branch name> <repo url>
+git clone --single-branch --branch <branch name> <repo url> [target dir]
 ```
 
 Note that if you omit `--single-branch`, the entire repo will be checked out and the specified branch will be activated.
