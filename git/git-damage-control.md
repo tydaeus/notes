@@ -17,3 +17,8 @@ git cherry-pick c6ac2938f1fa83c7695729bf6affc6428bef7f4f
 Use `git reset --hard HEAD` to get rid of all uncommitted changes.
 
 Use `git reset --hard <commit>` to get rid of all changes after `<commit>`.
+
+## `git rebase`
+The `git rebase` command is a very powerful and dangerous command that allows reconstructing a branch. It is one of the most powerful tools for correcting history issues, but also one of the most dangerous.
+
+https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history
