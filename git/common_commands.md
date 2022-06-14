@@ -122,6 +122,9 @@ The `git branch -m` option renames (moves) branches.
 ### Deleting Branches
 Delete a remote branch with `git push origin --delete <oldname>`.
 
+### Exploring Branches
+Use ` git branch --contains <commit> -r` to find all branches containing the specified commit. (drop the `-r` for local-only)
+
 
 ## Stashing Changes
 Stashing changes allows for setting aside in-progress changes and then retrieving them later, optionally to another branch.
