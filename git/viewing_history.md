@@ -8,6 +8,8 @@ Use `git log` to view the history of commits with their time, user id, hash, and
 
 #### Viewing Commit Details
 
+The `-p`, `-u`, or `--patch` flag causes `git log` to output patching data.
+
 Use `git log -p` to show the changes made in each commit in addition to the `git log` details.
 
 Use `git log -p --follow FILENAME` to restrict the detailed logs to a specific file.
