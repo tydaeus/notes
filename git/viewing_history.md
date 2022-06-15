@@ -4,7 +4,7 @@
 
 ### Viewing Commit Log
 
-Use `git log` to view the history of commits with their time, user id, hash, and commit message.
+Use `git log [commit]` to view the history of commits with their time, user id, hash, and commit message.
 
 #### Viewing Commit Details
 
