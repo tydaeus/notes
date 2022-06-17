@@ -4,7 +4,18 @@
 
 ### Viewing Commit Log
 
-Use `git log [commit]` to view the history of commits with their time, user id, hash, and commit message.
+Use `git log [commit1...]` to view the history of commits with their time, user id, hash, and commit message.
+
+`git log <commit1> <commit2> ^<commit3>` combines the commits that can be reached from commit1 and commit2, then subtracts those reachable from commit 3
+
+`git log <commit1>..<commit2>` is an alternative way to write `git log ^<commit1> <commit2>`.
+
+`git log <commit2>...<commit1>` displays "symmetrical difference" between commit1 and commit2 -- what commits are in either branch but not both.
+
+Use cases:
+
+* What's in branch1 that hasn't been merged to branch2? `git log branch1..branch2` or `git log ^branch1 branch2`.
+
 
 #### Viewing Commit Details
 
