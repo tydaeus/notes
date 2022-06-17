@@ -12,6 +12,9 @@ git cherry-pick c6ac2938f1fa83c7695729bf6affc6428bef7f4f
 
 **Danger**: this applies the change in isolation from all prerequisite changes, so you run the risk of skipping critical prereq changes.
 
+## Reverting a single file
+Use `git checkout <commit ID> -- <local filepath>` to restore the file at `<local filepath>` to the state it was at in `<commit ID>`.
+
 
 ## `git reset`
 Use `git reset --hard HEAD` to get rid of all uncommitted changes.
