@@ -12,3 +12,8 @@ The name of a branch can be used to identify the latest commit to that branch. W
 
 ## `~` Operator
 The `~` operator can be used to identify a commit prior to a specific commit; e.g. `HEAD~1` refers to the commit before head, `HEAD~2` refers to the commit before that, etc.
+
+## `git rev-parse`
+The `git rev-parse` command allows you to convert a non-SHA1 commit identifier to the unique SHA1 identifier for that commit. E.g. `git rev-parse HEAD~5` will give you the SHA1 for 5 commits prior to `HEAD`.
+
+Use the `--short` option to retrieve the truncated SHA1, e.g. `git rev-parse --short HEAD~5`.
