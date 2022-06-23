@@ -27,7 +27,7 @@ The `git rebase` command is a very powerful and dangerous command that allows re
 
 **Danger**: rebasing edits history, which can have unexpected effects, especially if the branch being rebased has already been merged onto another branch or is in use by other developers. Except in extreme cases, rebasing should be performed on a local branch -- either before it becomes available to others, or by creating a new local branch based on the problem branch. Once the rebase has been completed, the branch can then be published and used in place of the problem branch.
 
-See also: https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history
+See also: https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history, https://jwiegley.github.io/git-from-the-bottom-up/1-Repository/8-interactive-rebasing.html
 
 ### `rebase` current branch interactively
 Rebasing the current branch interactively is generally the simplest option, allowing you to edit the current branch's history. 
