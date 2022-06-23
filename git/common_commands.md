@@ -58,6 +58,12 @@ For example, `git reset HEAD FILEPATH` will remove any commits to FILEPATH that 
 #### Reverting merges
 If reverting a merge, the mainline (parent to be reverted back to) must be specified. This is typically parent 1. `git revert <commit> --mainline 1`. Beware: GUI tools may make it unclear what the meaning of the selected parent is. Additionally, reverting a merge may not behave as expected, because while the file changes will be reverted, the git history will show the changes as having been merged in.
 
+Best practices:
+* if reversion is desired because an erronoeous change was merged in, prefer fixing the change in the source branch and then merging the change onto the target branch
+* if you do revert a merge, you will then need to revert the revert if you desire the changes performed in the other branch to show up in the target branch
+* if wrong-way merges have occurred, and especially if multiple have occurred, a `rebase` may be preferable (otherwise, will need to revert the changes on the incorrectly targeted branch, then revert the revert when it gets merged downstream so that the changes remain on their original branch)
+
+For more detail than is likely helpful: https://github.com/git/git/blob/master/Documentation/howto/revert-a-faulty-merge.txt
 
 
 ### git restore
