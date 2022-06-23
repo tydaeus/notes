@@ -24,4 +24,7 @@ Use `git reset --hard <commit>` to get rid of all changes after `<commit>`.
 ## `git rebase`
 The `git rebase` command is a very powerful and dangerous command that allows reconstructing a branch. It is one of the most powerful tools for correcting history issues, but also one of the most dangerous.
 
-https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history
+
+**Danger**: rebasing edits history, which can have unexpected effects, especially if the branch being rebased has already been merged onto another branch or is in use by other developers. Except in extreme cases, rebasing should be performed on a local branch -- either before it becomes available to others, or by creating a new local branch based on the problem branch. Once the rebase has been completed, the branch can then be published and used in place of the problem branch.
+
+See also: https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history
