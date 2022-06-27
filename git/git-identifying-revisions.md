@@ -1,5 +1,5 @@
 # Git - Identifying Revisions
-Git allows identifying specific revisions in a variety of different ways.
+Git allows identifying specific revisions in a variety of different ways. The official reference is at: https://git-scm.com/docs/gitrevisions.
 
 ## SHA1
 The full SHA1 hash allows uniquely identifying a commit within the repository it occurred in. Commits can also be identified by a truncated version of their hash (conventionally 7 characters) as long as the truncated version remains unique.
