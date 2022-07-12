@@ -191,7 +191,7 @@ Declare a method on a class using:
 #...
 ```
 
-Use the `$this` variable to reference the calling instance.
+Use the `$this` variable to reference the calling instance. **Quirk Warning**: `$this` will get treated in a case-sensitive manner in some contexts and not others; it appears that if a given method contains only OO-style scripting (without any PowerShell operator or function invocations), `$This` will become a null reference instead of an alias to `$this`. **Only use `$this` with the lower-case 't'.**
 
 Use the `static` modifier to declare a method as static to the class.
 
