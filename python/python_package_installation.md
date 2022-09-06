@@ -19,6 +19,8 @@ Install from requirements.txt:
 python -m pip install -r requirements.txt
 ```
 
+This appears to be managed atomically -- either everything gets installed or nothing does.
+
 ### Capture Install Environment
 Capture the current package's install environment into requirements.txt (conventional name):
 
