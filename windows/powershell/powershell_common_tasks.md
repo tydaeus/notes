@@ -229,7 +229,7 @@ Use the `Write-Progress` cmdlet to display a progress bar.
 
 ``` PowerShell
 $percentComplete = [Math]::Floor(($i / $totalThings) * 1000) / 10
-Write-Progress -Activity "Doing the thing: $percentComplete% Complete" -PercentComplete $percentComplete
+Write-Progress -Activity "Doing the thing: $('{0,5:n1}' -f $percentComplete)% Complete" -PercentComplete $percentComplete
 
 # after loop
 Write-Progress -Activity "Doing the thing: Complete" -Completed
