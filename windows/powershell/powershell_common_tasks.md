@@ -40,6 +40,22 @@ The `$Matches` automatic Hashtable variable will be populated with the first mat
 
 The `-notmatch` operator performs the negation equivalent to `-not ($str -match $regex)`, and populates `$Matches` if matches were present.
 
+#### Named Capture Groups
+You can specify a name for each capture group by starting the capture with `?<GroupName>` (angle brackets are part of the naming), which then will allow you to retrieve the matched group from the `$Matches` hashtable. E.g.:
+
+``` PowerShell
+$addressLine = 'St. Somewhere, PA 12345'
+
+if ($addressLine -match '^(?<City>[^,]+), (?<State>[A-Z]{2}) (?<ZIP>\d{5}(-\d{4})?)') {
+    $city = $Matches['City']
+    $state = $Matches['State']
+    $zip = $Matches['ZIP']
+}
+
+```
+
+
+
 ### The `-replace` Operator
 (notes based on https://vexx32.github.io/2019/03/20/PowerShell-Replace-Operator/)
 
