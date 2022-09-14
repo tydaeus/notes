@@ -6,6 +6,8 @@ The `git cherry-pick` command allows you to select a single commit and apply the
 
 Use the `--no-commit` flag to skip the automatic commit so that you can review the change before committing.
 
+Use the `-x` flag to append the original commit's information (recommended if cherry-picking a publicly visible commit).
+
 ``` bat
 git cherry-pick c6ac2938f1fa83c7695729bf6affc6428bef7f4f
 ```
