@@ -35,3 +35,10 @@ git rev-list HEAD
 :: count commit objects that are reachable from HEAD by following parent links
 git rev-list --count HEAD
 ```
+
+## `git show`
+`git show` is a general-purpose command to show specific git objects. When referencing commits, it shows information about that commit.
+
+`git show <commit>` - shows information about a commit, including hash, time, and author. The documentation implies `-p` must be specified to show differences as a patch, but this appears to be the current default.
+
+Use `-m` if viewing a merge commit; otherwise only differences along the first parent will be shown.
