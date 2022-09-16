@@ -1,6 +1,8 @@
 # Python Strings
 Strings can be wrapped in `'`, `"`, or `"""`; `"""` supports multi-line strings.
 
+Prefixing a string literal with `r` designates it as a raw string, not subject to escape characters; e.g. `'\n'` is a newline, while `r'\n'` is '\' followed by 'n'.
+
 Strings are managed internally as an immutable collection (similar to a tuple), and the indexing and slicing operations can be used to reference their contents.
 
 The comparison operators are overloaded to perform string equality checking and comparison. 
