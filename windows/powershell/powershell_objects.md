@@ -133,6 +133,22 @@ Use the `Add-Member` cmdlet with `-Type 'NoteProperty'` to add a property to a c
 $obj | Add-Member -Name 'propertyName' -Type 'NoteProperty' -Value 'propertyValue'
 ```
 
+For note properties, the alternative note property specific parameters can be used instead:
+
+``` powershell
+$obj | Add-Member -NotePropertyName 'propertyName' -NotePropertyValue 'propertyValue'
+```
+
+Or add multiple note properties from a HashTable or Ordered Dictionary with `-NotePropertyMembers`:
+
+``` powershell
+$newProps = @{
+    'prop1' = $value1
+    'prop2' = $value2
+}
+$obj | Add-Member -NotePropertyMembers $newProps
+```
+
 ### Adding Methods
 Use `Add-Member` with `-Type 'ScriptMethod'` to add a scriptblock as a method to the custom object, e.g.:
 
