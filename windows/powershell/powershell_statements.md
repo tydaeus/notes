@@ -1,5 +1,19 @@
 # PowerShell Statements
 
+## `if` Statement
+
+``` PowerShell
+if (<condition>) {
+    [actions]
+} elseif (<condition>) {
+    [actions]
+} else {
+    [actions]
+}
+```
+
+Condition statements are coerced to booleans for evaluation purposes.
+
 ## `switch` Statement
 
 ``` PowerShell
