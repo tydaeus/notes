@@ -209,6 +209,8 @@ Declare a method on a class using:
 
 Use the `$this` variable to reference the calling instance. **Quirk Warning**: `$this` will get treated in a case-sensitive manner in some contexts and not others; it appears that if a given method contains only OO-style scripting (without any PowerShell operator or function invocations), `$This` will become a null reference instead of an alias to `$this`. **Only use `$this` with the lower-case 't'.**
 
+`$this` gets populated automatically within the scope of any called non-static method, and therefore exists within any inherited scope (except of course that of any method called on another object). As a result, ScriptBlocks and functions in inherited scopes will also have access to `$this`.
+
 Use the `static` modifier to declare a method as static to the class.
 
 PowerShell methods can be overloaded by declaring additional methods of the same name, with a different signature.
