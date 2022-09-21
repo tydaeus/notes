@@ -24,7 +24,7 @@ The `-p`, `-u`, or `--patch` flag causes `git log` to output patching data.
 Use `git log -p` to show the changes made in each commit in addition to the `git log` details.
 
 #### File History
-`git log -- FILEPATH` will display the active history for a given file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that are no longer active (e.g. discarded during a merge).
+`git log -- FILEPATH` will display the active history for a given file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that remain in the tree but longer active (e.g. discarded during a merge).
 
 #### Revision History
 The `rev-list` command lists revisions in the repository
