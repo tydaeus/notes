@@ -21,6 +21,8 @@ The `Out-File` cmdlet allows writing to files with some options. `$myString | Ou
 
 This can be used to change encoding to UTF-8: `$myString | Out-File -Encoding "UTF8" $MyPath`. However, the Byte-Order Mark (`ï»¿`) will be written as the first several characters, which may result in incompatibility.
 
+`Out-File` appears to be the option best for **outputting content read from a UTF8 with BOM file as-is**. Observed: when using Get-Content on a UTF-8 file with BOM, `Set-Content` dropped the BOM and mangled the special characters even with UTF8 set explicitly, while `Out-File` with UTF8 set explicitly properly preserved them.
+
 ### Set-Content and Add-Content
 These are probably the **best general-purpose** ways to modify a file.
 
