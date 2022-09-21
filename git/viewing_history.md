@@ -37,6 +37,11 @@ git rev-list HEAD
 git rev-list --count HEAD
 ```
 
+## `git diff`
+`git diff` shows the specific file changes from a commit, similar to using `git log -p`.
+
+**With merges**: By default, `git diff` will only display diffs against the first parent. This works fine with normal commits, but merges have 2 or more parents. You will need to use `git diff` against each parent (e.g. `git diff <Commit>^1` and `git diff <Commit>^2` for parent 1 and parent 2) to see the full list of changes. Note that the first parent is always the current branch for the developer who made the merge, while the second (and later) parents represent the branches being merged in.
+
 ## `git show`
 `git show` is a general-purpose command to show specific git objects. When referencing commits, it shows information about that commit.
 
