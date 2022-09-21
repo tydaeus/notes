@@ -23,12 +23,14 @@ This can be used to change encoding to UTF-8: `$myString | Out-File -Encoding "U
 
 `Out-File` appears to be the option best for **outputting content read from a UTF8 with BOM file as-is**. Observed: when using Get-Content on a UTF-8 file with BOM, `Set-Content` dropped the BOM and mangled the special characters even with UTF8 set explicitly, while `Out-File` with UTF8 set explicitly properly preserved them.
 
+`Out-File` **does not lock** files while writing to them.
+
 ### Set-Content and Add-Content
 These are probably the **best general-purpose** ways to modify a file.
 
-The `Set-Content` cmdlet replaces the content of one or more files with specified content, e.g. `Set-Content $Path $Value`.
+The `Set-Content` cmdlet replaces the content of one or more files with specified content, e.g. `Set-Content $Path $Value`. `Set-Content` **locks files** while writing to them.
 
-The `Add-Content` cmdlet appends content to one or more files. Note that this appears to provide little/no buffering, and so will operate very slowly if used repeatedly. Consider using .Net's `StreamWriter.WriteLine` method for better performance when writing large numbers of single lines.
+The `Add-Content` cmdlet appends content to one or more files. Note that this appears to provide little/no buffering, and so will operate very slowly if used repeatedly. Consider using .Net's `StreamWriter.WriteLine` method for better performance when writing large numbers of single lines. `Add-Content` **locks files** while writing to them.
 
 This appears to default to UTF8 encoding without a Byte-Order Mark.
 
