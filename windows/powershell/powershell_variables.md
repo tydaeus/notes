@@ -15,6 +15,18 @@ Variables are loosely typed. PowerShell coerces types based on the first variabl
 ### Get Type of Variable
 Use the `GetType` method to determine the type of a variable: `$myVar.GetType()`. This operation is not null safe, so perform a null check first.
 
+The `Name` property of a retrieved type provides a string representation, but this isn't necessarily the best way to check types. `FullName` provides a better-qualified option.
+
+Once retrieved, types can then be compared against type literals or each other: `$myVar.GetType() -eq [string]`, `$myVar.GetType() -eq $myOtherVar.GetType()`.
+
+The `-is` and `-isnot` operators can also be used to check typing match, without worrying about null checks: `$myVar -is [string]`.
+
+The `-as` operator will attempt to convert a variable to the specified type, returning `$Null` if unable to do so: `"5/7/07" -as [DateTime]`.
+
+Some caveats about types:
+* Arrays are typically `[Object[]]`
+* A custom type will not match itself if coming from different declarations, and will generally be unavailable outside its declaring file
+* Not all types appear to be automatically referenceable in PowerShell type notation.
 
 
 ## Using the PowerShell `Variable:` Provider
