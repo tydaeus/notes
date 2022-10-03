@@ -109,6 +109,10 @@ function Remove-ChildItems {
 }
 ```
 
+### Zip File
+`Compress-Archive -Path $SourcePath -DestinationPath $DestinationPath`
+
+Note that you will need to specify the output file name as well as containing dir.
 
 ### Unzip File
 In PowerShell 5+: `Expand-Archive $SourcePath -DestinationPath $DestinationPath`. If `-DestinationPath` is omitted, will extract to PWD.
