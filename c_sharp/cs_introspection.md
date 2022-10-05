@@ -67,3 +67,13 @@ foreach (PropertyInfo prop in type.GetProperties())
 result.Append("}");
 return result.ToString();
 ```
+
+
+## Information About Assemblies
+Load the assembly with `System.Reflection.Assembly.LoadFrom(<Name>)` or `.LoadFile(<FilePath>)`.
+
+Methods and properties on the resulting `RuntimeAssembly` object can be used to retrieve information about it, including:
+
+* `ExportedTypes` - list of visible types defined by the assembly
+* `GlobalAssemblyCache` - whether the assembly is registered in the GAC
+* `GetReferencedAssemblies()` - assemblies referenced by the assembly
