@@ -11,6 +11,9 @@ In PowerShell 5.0+, the `using` statement is available to allow C#-like easy ref
 ### File Paths
 When running .NET functions/methods, PowerShell's PWD does not get provided to .NET. The active user's home directory is used as PWD instead. This means scripts must convert relative paths to their full form before providing them as parameters to .NET.
 
+### Introspection
+See [cs_introspection](../../c_sharp/cs_introspection.md).
+
 
 ## Adding Types
 Everything under the .Net `System` namespace is generally available within PowerShell without any additional effort.
