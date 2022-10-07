@@ -14,7 +14,7 @@ Prefix the variable name with `+` to append to the variable's pre-existing conte
 
 Gotchas:
 * you must specify the (string) name of the variable, not the variable itself
-* the variable will be populated with an arraylist of the objects written; only some operations will coerce this as you may expect (in particularly, you can't just throw the error variable on its own)
+* the variable will be populated with an arraylist of the objects written; only some operations will coerce this as you may expect (in particular, you can't just throw the error variable on its own)
 * this occurs separate from stream output and redirection
 * output redirected within the called function instead of output by it will still end up in the output variable
 

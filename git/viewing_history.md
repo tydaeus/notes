@@ -24,7 +24,7 @@ The `-p`, `-u`, or `--patch` flag causes `git log` to output patching data.
 Use `git log -p` to show the changes made in each commit in addition to the `git log` details.
 
 #### File History
-`git log -- FILEPATH` will display the active history for a given file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that are no longer active (e.g. discarded during a merge).
+`git log -- FILEPATH` will display the active history for a given file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that remain in the tree but longer active (e.g. discarded during a merge).
 
 #### Revision History
 The `rev-list` command lists revisions in the repository
@@ -36,6 +36,11 @@ git rev-list HEAD
 :: count commit objects that are reachable from HEAD by following parent links
 git rev-list --count HEAD
 ```
+
+## `git diff`
+`git diff` shows the specific file changes from a commit, similar to using `git log -p`.
+
+**With merges**: By default, `git diff` will only display diffs against the first parent. This works fine with normal commits, but merges have 2 or more parents. You will need to use `git diff` against each parent (e.g. `git diff <Commit>^1` and `git diff <Commit>^2` for parent 1 and parent 2) to see the full list of changes. Note that the first parent is always the current branch for the developer who made the merge, while the second (and later) parents represent the branches being merged in.
 
 ## `git show`
 `git show` is a general-purpose command to show specific git objects. When referencing commits, it shows information about that commit.

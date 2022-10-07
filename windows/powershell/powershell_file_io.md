@@ -21,12 +21,18 @@ The `Out-File` cmdlet allows writing to files with some options. `$myString | Ou
 
 This can be used to change encoding to UTF-8: `$myString | Out-File -Encoding "UTF8" $MyPath`. However, the Byte-Order Mark (`ï»¿`) will be written as the first several characters, which may result in incompatibility.
 
+`Out-File` appears to be the option best for **outputting content read from a UTF8 with BOM file as-is**. `Out-File` in general **appears to be better at preserving existing formatting**, as long as the correct encoding is specified. Observed: when using Get-Content on a UTF-8 file with BOM, `Set-Content` dropped the BOM and mangled the special characters even with UTF8 set explicitly, while `Out-File` with UTF8 set explicitly properly preserved them.
+
+`Out-File` **does not lock** files while writing to them.
+
+This answer provides additional comparison between `Out-File` and `Set-Content`: https://stackoverflow.com/a/13544067
+
 ### Set-Content and Add-Content
 These are probably the **best general-purpose** ways to modify a file.
 
-The `Set-Content` cmdlet replaces the content of one or more files with specified content, e.g. `Set-Content $Path $Value`.
+The `Set-Content` cmdlet replaces the content of one or more files with specified content, e.g. `Set-Content $Path $Value`. `Set-Content` **locks files** while writing to them.
 
-The `Add-Content` cmdlet appends content to one or more files. Note that this appears to provide little/no buffering, and so will operate very slowly if used repeatedly. Consider using .Net's `StreamWriter.WriteLine` method for better performance when writing large numbers of single lines.
+The `Add-Content` cmdlet appends content to one or more files. Note that this appears to provide little/no buffering, and so will operate very slowly if used repeatedly. Consider using .Net's `StreamWriter.WriteLine` method for better performance when writing large numbers of single lines. `Add-Content` **locks files** while writing to them.
 
 This appears to default to UTF8 encoding without a Byte-Order Mark.
 

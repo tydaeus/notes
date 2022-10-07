@@ -133,6 +133,22 @@ Use the `Add-Member` cmdlet with `-Type 'NoteProperty'` to add a property to a c
 $obj | Add-Member -Name 'propertyName' -Type 'NoteProperty' -Value 'propertyValue'
 ```
 
+For note properties, the alternative note property specific parameters can be used instead:
+
+``` powershell
+$obj | Add-Member -NotePropertyName 'propertyName' -NotePropertyValue 'propertyValue'
+```
+
+Or add multiple note properties from a HashTable or Ordered Dictionary with `-NotePropertyMembers`:
+
+``` powershell
+$newProps = @{
+    'prop1' = $value1
+    'prop2' = $value2
+}
+$obj | Add-Member -NotePropertyMembers $newProps
+```
+
 ### Adding Methods
 Use `Add-Member` with `-Type 'ScriptMethod'` to add a scriptblock as a method to the custom object, e.g.:
 
@@ -192,6 +208,8 @@ Declare a method on a class using:
 ```
 
 Use the `$this` variable to reference the calling instance. **Quirk Warning**: `$this` will get treated in a case-sensitive manner in some contexts and not others; it appears that if a given method contains only OO-style scripting (without any PowerShell operator or function invocations), `$This` will become a null reference instead of an alias to `$this`. **Only use `$this` with the lower-case 't'.**
+
+`$this` gets populated automatically within the scope of any called non-static method, and therefore exists within any inherited scope (except of course that of any method called on another object). As a result, ScriptBlocks and functions in inherited scopes will also have access to `$this`.
 
 Use the `static` modifier to declare a method as static to the class.
 
