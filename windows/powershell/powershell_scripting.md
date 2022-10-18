@@ -80,6 +80,7 @@ Note that boolean `Parameter` attribute arguments typically default to `$True` i
 Other useful attributes:
 
 * `[AllowNull()]` - allows a null value to be passed to a parameter
+* `[ValidatePattern(regexString)]` - use passed regex string pattern to validate the string parameter (or all parameters within colleciton)
 * `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter
 * `[AllowEmptyString()]` - allows passing an empty string to a string parameter
 
