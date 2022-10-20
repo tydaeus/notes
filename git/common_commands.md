@@ -19,7 +19,7 @@
     - `git commit -m "<message>"` records `<message>` as commit message
 
 * `git reset` unstages all staged files
-* `git reset --hard` unstages all staged files **and** reverts any changes made. Does not delete newly created files.
+* `git reset --hard` unstages all staged files **and** discards any changes made. Does not delete newly created files.
     
 ## Pushing Changes to Repo
 
