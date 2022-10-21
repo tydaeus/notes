@@ -80,6 +80,7 @@ Note that boolean `Parameter` attribute arguments typically default to `$True` i
 Other useful attributes:
 
 * `[AllowNull()]` - allows a null value to be passed to a parameter
+* `[ValidatePattern(regexString)]` - use passed regex string pattern to validate the string parameter (or all parameters within colleciton)
 * `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter
 * `[AllowEmptyString()]` - allows passing an empty string to a string parameter
 
@@ -303,8 +304,8 @@ Invoke a ScriptBlock by using the `Invoke-Command` cmdlet: `Invoke-Command -Scri
 
 More simply, use the `call` operator: `&$ScriptBlock $Param1 $Param2`.
 
-### Delayed-Binding ScriptBlocks
-A PowerShell function that defines a **typed pipeline (by value or by PropertyName)** parameter that is not of type `[scriptblock]` or `[object]` can implicitly accept delayed-binding scriptblock parameters which can thereby utilize the `$PSItem`/`$_` automatic variable. E.g.:
+### Delay-Bind ScriptBlocks
+A PowerShell function that defines a **typed pipeline (by value or by PropertyName)** parameter that is not of type `[scriptblock]` or `[object]` can implicitly accept delay-bind scriptblock parameters which can thereby utilize the `$PSItem`/`$_` automatic variable. E.g.:
 
 ``` PowerShell
 function Test-DelayedBinding {
@@ -327,9 +328,11 @@ function Test-DelayedBinding {
 'foofoo'
 ```
 
-The delayed-binding scriptblock must used named parameters if any other parameters are desired; i.e. it cannot use `$args`.
+The delay-bind scriptblock must used named parameters if any other parameters are desired; i.e. it cannot use `$args`.
 
-Only delayed-binding scriptblocks can utilize the `$PSItem`/`$_` automatic variable. 
+Only delay-bind scriptblocks can utilize the `$PSItem`/`$_` automatic variable.
+
+Building these custom delay-bind invocation functions can be a little tricky, and they don't appear to have the scope inheritance applied to the built-in delay-bind invocation functions. **Where possible, use the built-in** delay-bind functions, e.g. `ForEach-Object` for transformations and `Where-Object` for filtering.
 
 ### Converting a Function to a ScriptBlock
 Access an in-scope function's definition (without its name) via `${function:Function-Name}`. This definition can then be passed in lieu of a ScriptBlock.
