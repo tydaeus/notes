@@ -41,12 +41,14 @@ Use the `Test-Path` cmdlet to inspect file structures. Throws an exception if th
 ## `System.IO.Path`
 You can also use the .Net class `System.IO.Path` static methods to work with paths. Common operations:
 
-* `Combine` - Combine up to four strings, or an array, into a path, more safely than basic string concatenation - *Warning*: if provided a relative path parameter, this will resolve relative to the user's home folder instead of PWD
-* `GetDirectoryName` - *Warning*: if provided a relative path parameter, this will resolve relative to the user's home folder instead of PWD
+* `Combine` - Combine up to four strings, or an array, into a path, more safely than basic string concatenation
+* `GetDirectoryName`
 * `GetExtension`
 * `GetFileName`
 * `GetFileNameWithoutExtension`
-* `GetFullPath` - *Warning*: if provided a relative path parameter, this will resolve relative to the user's home folder instead of PWD
+* `GetFullPath`
+
+*Warning*: the .NET runtime doesn't have access to the PowerShell PWD, so .NET methods will resolve relative to the user's home folder instead. Prefer full paths over relative paths.
 
 
 ## `System.Uri`
