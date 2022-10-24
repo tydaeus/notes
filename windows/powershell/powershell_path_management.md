@@ -53,3 +53,13 @@ You can also use the .Net class `System.IO.Path` static methods to work with pat
 Cast the string path to `System.Uri` (e.g. `$uri = [System.Uri]$path`) to check various properties.
 
 * `$uri.IsUnc` - whether the path is a UNC (network share) path
+
+
+## Known Issue: Long Paths
+PowerShell 5.1 and earlier have some issues with long filepaths.
+
+Enable long filepath support via `Set-ItemProperty 'HKLM:\System\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -value 1`. This will automatically allow some cmdlets (e.g. `Get-ChildItem`) to work correctly with long paths.
+
+Some cmdlets (e.g. `Remove-Item`) will require the path to be prefixed with `\\?\`.
+
+Some cmdlets (e.g. `Expand-Archive`) do not appear to support long paths in PowerShell 5.1. Install a newer PowerShell or use other utilities (e.g. 7zip).
