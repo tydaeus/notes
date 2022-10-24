@@ -47,3 +47,9 @@ You can also use the .Net class `System.IO.Path` static methods to work with pat
 * `GetFileName`
 * `GetFileNameWithoutExtension`
 * `GetFullPath` - *Warning*: if provided a relative path parameter, this will resolve relative to the user's home folder instead of PWD
+
+
+## `System.Uri`
+Cast the string path to `System.Uri` (e.g. `$uri = [System.Uri]$path`) to check various properties.
+
+* `$uri.IsUnc` - whether the path is a UNC (network share) path
