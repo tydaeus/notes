@@ -61,7 +61,20 @@ Displays selected properties of all input objects. Use the `-Property` to specif
 Useful for a detailed view.
 
 ### `Format-Table`
-Specify a comma-separated list of properties to display. Use the `-Autosize` parameter to make all data fit on a single screen.
+Displays objects in table format, with each object on its own row and each property in a column. This provides a concise way to view numerous objects, but in many cases some properties will need to be omitted or truncated.
+
+The `-Autosize` parameter will attempt to make the data fit within the screen width.
+
+The `-Property` parameter allows customizing what data gets displayed. This parameter takes a list of properties; each property can be specified as a string (naming the property to include), or a HashTable used for calculating the displayed property value. The HashTable format supports keys:
+* `Name` (aka `Label`) - mandatory `<string>` - this will head the column for the property
+* `Expression` - mandatory `<string>` or `<ScriptBlock>` - the value to display;
+    - if `<string>` identifies the object property to display
+    - if `<script block>`, the block will get run with `$PSItem` provided to process to generate the display value
+* `FormatString` - optional `<string>` - string to use to format the value, run as per the `-f` operator
+* `Width` - optional `<int32>` - must be greater than 0
+* `Alignment` - optional - value can be Left, Center, or Right
+
+
 
 ## Object Filtering
 Use the `Where-Object` cmdlet to filter objects out of the pipeline. `$_` represents the current object. E.g. `Get-Service | Where-Object {$_.Status -eq "Running"}`.
