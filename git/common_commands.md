@@ -138,8 +138,8 @@ Use ` git branch --contains <commit> -r` to find all branches containing the spe
 ## Stashing Changes
 Stashing changes allows for setting aside in-progress changes and then retrieving them later, optionally to another branch.
 
-Use `git stash` (equiv to `git stash push`) to stash current changes and revert working state to HEAD.
-
-Use `git stash apply` to restore stashed changes to the current branch.
-
-Use `git stash list` to list stashed changes.
+* `git stash` (equiv to `git stash push`) to stash current changes and revert working state to HEAD.
+* `git stash pop` to restore the latest stashed changes to the current branch and remove them from the stack.
+* `git stash list` to list stashed changes.
+* `git stash clear` - clear all stashed changes
+* `git stash apply` - apply all stashed changes without removing them from the stack
