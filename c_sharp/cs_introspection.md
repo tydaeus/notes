@@ -24,7 +24,7 @@ Type type = obj.GetType();
 ```
 
 ### `type.GetProperties()`
-`type.GetProperties()` returns a collection of `PropertyInfo` objects representing the object's properties. `propertyInfo.GetName()` returns the name of a property, and `propertyInfo.GetValue(object)` returns its value, e.g.:
+`type.GetProperties([BindingFlags])` returns a collection of `PropertyInfo` objects representing the object's properties (getter-setter style properties). `propertyInfo.GetName()` returns the name of a property, and `propertyInfo.GetValue(object)` returns its value, e.g.:
 
 ``` C#
 Type type = obj.GetType();
@@ -67,6 +67,10 @@ foreach (PropertyInfo prop in type.GetProperties())
 result.Append("}");
 return result.ToString();
 ```
+
+The corresponding `type.GetFields([BindingFlags])`, `fieldInfo.GetName()`, and `fieldInfo.GetValue(object)` can be used to retrieve field information (non getter-setter properties).
+
+In many cases, you'll need to use the optional `BindingFlags` parameter to specify what members to retrieve. Without this parameter, all public properties/fields will be retrieved. Once `BindingFlags` is specified, it becomes necessary to specify *all* flags necessary to identify the desired members; e.g. `BindingFlags.Instance` must be included for instance members.
 
 
 ## Information About Assemblies
