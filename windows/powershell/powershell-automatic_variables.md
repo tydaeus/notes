@@ -27,5 +27,25 @@ Notes on some of the more useful automatic vars:
 * `$PWD` - present working dir
 * `$StackTrace` - stack trace for the most recent error
 
-
 Source: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables
+
+## Extra fun automatic variables
+### `$Input`
+The `$Input` variable gets automatically populated in a variety of different ways per scenario.
+
+#### `Invoke-Command` ScriptBlocks and `$Input`
+Using `Invoke-Command` to run a ScriptBlock with the `-InputObject` parameter set will populate the `$Input` variable within the ScriptBlock. **However**, specific behavior differs depending on whether the ScriptBlock is being run remotely or locally.
+
+If the ScriptBlock is run locally, it appears that `$Input` acts as a direct reference to the object passed via `-InputObject`.
+
+If the ScriptBlock is run remotely, `$Input` gets cleared after the first time it gets referenced (apparently through getting handled as an enumerator). E.g. `$x = $Input.x; $y = $Input.y` will populate `$x`, then `$Input` is blank when attempting to populate `$y`. This can be worked around by piping `$Input` into another cmdlet, e.g. `Select-Object`:
+``` PowerShell
+Invoke-Command -ComputerName MYHOST {
+    $i = $Input | Select-Object 'x', 'y', 'z'
+} -InputObject ([PSCustomObject]@{
+    x = 1
+    y = 2
+    z = 3
+})
+```
+
