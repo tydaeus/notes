@@ -103,6 +103,10 @@ $params = @{
 Do-TheThing @params
 ```
 
+Parameters explicitly specified alongside splatted parameters override the splatted parameters.
+
+Parameters cannot be splatted inline.
+
 Splat `Args` (`@Args`) or `PSBoundParameters` (`@PSBoundParameters`) to forward all passed parameters to the invoked function.
 
 Note that only Arrays and HashTables can be splatted. Any other object must be converted to an Array or HashTable before it can be splatted; for a PsCustomObject the following function can be used:
