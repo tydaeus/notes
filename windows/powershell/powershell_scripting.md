@@ -83,6 +83,26 @@ Other useful attributes:
 * `[ValidatePattern(regexString)]` - use passed regex string pattern to validate the string parameter (or all parameters within colleciton)
 * `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter
 * `[AllowEmptyString()]` - allows passing an empty string to a string parameter
+* `[ArgumentCompleter($ScriptBlock)]` - define tab completion for the parameter
+
+### `ArgumentCompleter` Attribute
+A parameter with a `[ArgumentCompleter($scriptBlock)]` attribute will use the provided scriptblock for tab completion; this can be forwarded to another function via `[ArgumentCompleter({ Invoke-Completion @args })]`; forwarding becomes necessary if the completer needs to access dynamic variables.
+
+A typical `[string]` or `[string[]]` argument completer will look something like:
+
+``` PowerShell
+function MyArgumentCompleter {
+    param ( $commandName,
+            $parameterName,
+            $wordToComplete,
+            $commandAst,
+            $fakeBoundParameters )
+    
+    return $POSSIBLE_VALUES | Where-Object { $_ -like "$wordToComplete*"}
+}
+```
+
+Limitations: string completion, especially string array completion appears to be targeted toward CLI usage. Explicit array notation disables completion, quote-wrapping gets included in `$wordToComplete`; it's possible to work around quote-wrapping on the first word, but doesn't appear to be possible on subsequent words.
 
 ### Splatting Parameters
 Prefix a passed HashTable or Array variable with `@` instead of `$` to "splat" the contained values into multiple parameters.
