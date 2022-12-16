@@ -15,6 +15,7 @@ Notes on some of the more useful automatic vars:
 * `$MyInvocation` - populated for scripts, functions, and ScriptBlocks; holds information about how the currently running command was invoked
     - `$MyInvocation.MyCommand.Path` - path and filename for current script (if run from a file)
     - `$MyInvocation.MyCommand.Name` - name of current command (if named)
+    - `$MyInvocation.MyCommand.Parameters` - information about the parameters defined for the function
     - `$MyInvocation.PSScriptRoot` - only if caller is a script, full path to invoking script parent dir
     - `$MyInvocation.PSCommandPath` - only if caller is a script, full path and filename of invoking script
 * `$PROFILE` - full path to profile for current user and PowerShell host
