@@ -149,6 +149,18 @@ $newProps = @{
 $obj | Add-Member -NotePropertyMembers $newProps
 ```
 
+### Accessing Properties
+Use the reference operator, `.` to refer to properties when the name is known or held in a variable:
+
+* `$myObj.myProp`
+* `$myObj.$propName` - if the name of the property is stored in `$propName`
+* `$myObj."property name"` - useful for if the property includes spaces or other unusual characters
+* `$myObj."$($otherObj.propName)-modifier"` - using string interpolation to generate the property name
+
+The `Get-Member` cmdlet allows you to retrieve properties or other methods. Be aware that properties are divided into several types, which you may need to filter via the `-MemberType` parameter.
+
+Non-custom objects have a hidden `PSObject` property; use its `.Properties` to list the object's properties.
+
 ### Adding Methods
 Use `Add-Member` with `-Type 'ScriptMethod'` to add a scriptblock as a method to the custom object, e.g.:
 
