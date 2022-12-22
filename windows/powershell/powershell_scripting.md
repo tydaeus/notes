@@ -200,6 +200,8 @@ Specify which parameter set is used if multiple sets are applicable by specifyin
 
 Check which parameter set was used via the `$PsCmdlet.ParameterSetName` variable.
 
+Note that you can use null-checking instead of checking against `$PsCmdlet.ParameterSetName` if and only if the alternatives have no default value. Default values will be assigned to parameters defined for parameter sets other than the one in use.
+
 ### ValidateSet
 Use the `ValidateSet` parameter attribute to restrict potential values of a parameter:
 
