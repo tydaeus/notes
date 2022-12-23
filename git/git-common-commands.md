@@ -36,6 +36,7 @@
 
 * `git fetch` retrieve changes from remote repo without modifying local files (can be used to preview changes before merging)
 * `git pull` incorporate changes from remote repo into current branch  (defaults to git fetch followed by git merge MERGE_HEAD)
+* `git remote prune <remote name>` - perform a local cleanup to reflect changes to remote (e.g. after branches have been deleted on server)
 
 ## Detecting Changes
 
