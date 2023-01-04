@@ -53,6 +53,16 @@ public type MyProperty {
 7. Wait for installation to complete
 8. Ensure that `packages.config` gets committed to version control
 
+
+## Override ToString
+
+``` C#
+public override string ToString()
+{
+    // return string representation
+}
+```
+
 ## Working with JSON
 Install `Json.NET`, which is in package `Newtonsoft.Json`.
 
