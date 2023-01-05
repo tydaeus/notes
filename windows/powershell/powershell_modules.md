@@ -45,6 +45,21 @@ More complex modules should include a module manifest. The manifest is a .psd1 d
 
 The manifest's name is the module name and must match the name of the containing folder (e.g. `MyModule\MyModule.psd1`). Do not include a .psm1 file with the same name within the subdirectory, because `Import-Module MyModule` will result in that file being imported directly as well and shadowing the manifest.
 
+#### Creating a Module Manifest
+1. Use `New-ModuleManifest -Path $MyModulePath` to create the initial template (ensure the filename ends in `.psd1`)
+2. Modify the fields in the generated HashTable to describe the module. In particular:
+    - RootModule - this should be the `.psm1` (or binary) module file; cannot share name with manifest if in same dir
+    - ScriptsToProcess - list of scripts to run before importing the module
+        + this should be any one-time setup
+        + runs before any of the required modules are run
+        + operates within global scope, so functions and variables defined in these scripts end up in the global scope
+    - RequiredModules - list of modules to import into global scope before importing this module
+        + these must be available on `$env:PSModulePath`, cannot be referenced by file path
+    - FunctionsToExport - list of module-defined functions to make available in caller's scope
+    - VariablesToExport - list of module-defined variables to make available in caller's scope
+    - AliasesToExport - list of module-defined aliases to make available in caller's scope
+3. `Test-ModuleManifest $ManifestPath` can be used to verify that the paths referenced are accurate; for full testing you will need to import it and try it out
+
 
 ## Variable Scoping
 Variables declared within the module by default effectively act as being within their own module-specific scope. Functions defined in the module access and operate on these variables by default. These variables cannot be accesed from outside the module's scripting and function.
