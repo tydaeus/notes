@@ -38,7 +38,7 @@ By default, any functions defined within the script will be available to any scr
 Export-ModuleMember -Function Do-Something
 ```
 
-See https://docs.microsoft.com/en-us/powershell/developer/module/how-to-write-a-powershell-script-module and https://docs.microsoft.com/en-us/powershell/developer/module/how-to-write-a-powershell-module-manifest for more information.
+See https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module and https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest for more information.
 
 ### With a Module Manifest
 More complex modules should include a module manifest. The manifest is a .psd1 document that declares metadata and setup configuration for the module.
