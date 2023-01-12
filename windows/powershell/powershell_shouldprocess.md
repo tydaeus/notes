@@ -57,5 +57,5 @@ In many cases you will need to manually specify whether to inherit or override t
 
 Common inheritors to override:
 * `Set-Variable`
-* `ForEach-Object` with `-MemberName` specified
+* `ForEach-Object` when retrieving data or making non-persistent changes
 
