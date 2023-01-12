@@ -19,7 +19,9 @@ Check whether actual functionality should be performed using one of the followin
 
 `$operation` defaults to the name of the function or script.
 
-`$message` will replace the default message formatting with a custom string. Only the `-Confirm` message will use the `$target` and `$operation` params when `$message` has been specified; `-Confirm` appears to disregard `$message` and display a sparse message.
+`$message` will replace the default message output with a custom string.
+* `-WhatIf` processing disregards the `$target` and `$operation` when `$message` is specified, displaying only the contents of `$message`
+* `-Confirm` displays the `$target` and `$operation` params on separate lines when `$message` has been specified, appearing to discard the contents of `$message` while also discarding the standard confirm verbiage
 
 ### `ShouldProcess()` behavior with `-WhatIf`
 If the `-WhatIf` switch has been set, `ShouldProcess()` will return `$False`, and it will output with format `What if: Performing the operation "$operation" on target "$target"`. If the `-WhatIf` switch has not been set, it will return `$True`.
