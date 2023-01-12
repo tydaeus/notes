@@ -49,6 +49,10 @@ Commands are supposed to inherit `-WhatIf` behavior, but PowerShell doesn't appl
 
 If running a command that supports `-WhatIf` that you want performed even during `-WhatIf` operation (e.g. `Set-Variable`), invoke with parameter `-WhatIf:$False`.
 
+Common inheritors to override:
+* `Set-Variable`
+* `ForEach-Object` with `-MemberName` specified
+
 
 ## Inheriting `-Confirm` Behavior
 Some commands successfully inherit `-Confirm` behavior, but it's likely you'll want to suppress their confirmations in cases where you've already prompted for confirmation. Specify `-Confirm:$False` to override.
