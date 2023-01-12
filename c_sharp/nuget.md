@@ -35,7 +35,8 @@ nuget config <KeyName>
 nuget config -set <KeyName>=<KeyValue> [-set <KeyName>=<KeyValue>...]
 ```
 
-#### Nuget Sources
+### Nuget Sources
+Use the commandline to edit the sources configured within a config file.
 
 ``` bat
 :: list configured sources
