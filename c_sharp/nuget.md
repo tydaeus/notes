@@ -35,12 +35,29 @@ nuget config <KeyName>
 nuget config -set <KeyName>=<KeyValue> [-set <KeyName>=<KeyValue>...]
 ```
 
-### Nuget Sources
+#### Nuget Sources
 
 ``` bat
 :: list configured sources
 nuget sources
 
+:: add a source
+nuget sources Add -Name "MyServer" -Source \\myserver\packages
+:: -username and -password params allow specifying credentials during addition
+:: these get stored encrypted, but there doesn't appear to be a way to get a secure prompt
+:: some sources (e.g.) Artifactory provide a utility to generate encrypted passwords for this purpose
+
+:: update source config
+nuget sources Update -Name "MyServer" -Username 'myName' -Password pqoerwiuadfsqew
+
+:: disable a source
+nuget sources Disable -Name "MyServer"
+
+:: enable a source
+nuget sources Enable -Name "nuget.org"
+
+:: set api key for interacting with source
+nuget setapikey myName:pqoerwiuadfsqew -Source Artifactory
 ```
 
 
