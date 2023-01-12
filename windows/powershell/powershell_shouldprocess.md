@@ -44,15 +44,18 @@ If the `-Verbose` switch has been set, `ShouldProcess()` will print verbose outp
 
 
 
-## Inheriting `-WhatIf` Behavior
-Commands are supposed to inherit `-WhatIf` behavior, but PowerShell doesn't apply this reliably. So, downstream commands should get invoked with parameter `-WhatIf:$WhatIfPreference` to ensure that the currently configured `-WhatIf` behavior propagates.
+## Inheriting `ShouldProcess()` Behavior
+Commands are supposed to inherit `-WhatIf` and `-Confirm` behavior, but PowerShell's standard commands don't appear to apply this consistently or sensibly.
 
-If running a command that supports `-WhatIf` that you want performed even during `-WhatIf` operation (e.g. `Set-Variable`), invoke with parameter `-WhatIf:$False`.
+In many cases you will need to manually specify whether to inherit or override these behaviors. To do so, set the corresponding switch for the downstream command.
+* Set to the corresponding preference variable to inherit, e.g.:
+    - `-WhatIf:$WhatIfPreference`
+    - `-Confirm:$ConfirmPreference`
+* Set to desired value to override, e.g.:
+    - `-WhatIf:$False`
+    - `-Confirm:$False`
 
 Common inheritors to override:
 * `Set-Variable`
 * `ForEach-Object` with `-MemberName` specified
 
-
-## Inheriting `-Confirm` Behavior
-Some commands successfully inherit `-Confirm` behavior, but it's likely you'll want to suppress their confirmations in cases where you've already prompted for confirmation. Specify `-Confirm:$False` to override.
