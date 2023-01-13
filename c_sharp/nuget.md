@@ -83,6 +83,13 @@ For testing purposes, packages can be installed arbitrarily outside of a configu
 nuget install <packagename> [-version <versionNum>]
 ```
 
+## Update Package
+``` bat
+
+:: update specific package to specific version, prompt if conflict
+nuget update .\somedir\packages.config -Id MyPackage -Version 20.0.0
+:: solution file can be specified instead; either way, both the packages.config and .csproj files get updated
+```
 
 
 ## Creating Legacy Nuget Packages
