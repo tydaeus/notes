@@ -3,6 +3,11 @@
 Misc notes about windows scripting with .cmd/.bat files.
 Use https://ss64.com for a real reference; this is just a cheat sheet.
 
+## Startup Script
+Set registry key `HKCU\Software\Microsoft\Command Processor` value `Autorun` to point to a startup script if you want to trigger one (or indirectly multiple) script to run at the time your cmd prompt starts.
+
+Occasionally 3rd-party command-line utilities will mess with this in an unhygienic matter as well.
+
 ## Output
 Use `echo` to output to the console.
 
