@@ -63,11 +63,12 @@ Common inheritors to override:
 Custom functions defined outside of modules automatically inherit `ShouldProcess()`. However, custom functions imported from a module will not inherit ShouldProcess behavior automatically unless they manually retrieve the preference variables through `$PSCmdlet.GetVariableName`
 
 ``` PowerShell
+    # ensure WhatIf status is inherited
     if (-not $PSBoundParameters.ContainsKey('WhatIf'))
     {
         $WhatIfPreference= $PSCmdlet.GetVariableValue('WhatIfPreference')
     }
-
+    # ensure Confirm status is inherited
     if (-not $PSBoundParameters.ContainsKey('Confirm'))
     {
         $ConfirmPreference = $PSCmdlet.GetVariableValue('ConfirmPreference')
