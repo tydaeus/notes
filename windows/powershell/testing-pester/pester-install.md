@@ -13,7 +13,6 @@ Pester 3.4.0 comes pre-installed in Win10, complicating the install of newer ver
     ``` PowerShell
     Install-Module -Name Pester -Force -SkipPublisherCheck
     ```
-3. 
 
 ## To Import Explicitly
 
