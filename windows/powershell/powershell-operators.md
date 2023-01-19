@@ -10,7 +10,7 @@ Placeholders follow format `{<index>[,alignment][:format]}`, where:
 
 Common Format Strings
 * `c` - currency format
-* `d[N]` - numeric paddeded to 'N' length, with leading 0s added if needed
+* `d[N]` - numeric padded to 'N' length, with leading 0s added if needed
 * `e` - scientific notation
 * `f[N]` - fixed point with 'N' places
 * `g[N]` - compact format either fixed or scientific, with 'N' places
