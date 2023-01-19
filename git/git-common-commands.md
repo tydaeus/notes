@@ -144,3 +144,7 @@ Stashing changes allows for setting aside in-progress changes and then retrievin
 * `git stash list` to list stashed changes.
 * `git stash clear` - clear all stashed changes
 * `git stash apply` - apply all stashed changes without removing them from the stack
+* `git stash show` - show files in most recent stash
+    - `git stash show -p` - show changes in most recent stash
+    - `git stash show -p stash@{1}` - show changes in named stash
+    - `git stash show -p 1` - show changes in numbered stash
