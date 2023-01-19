@@ -59,3 +59,17 @@ Common inheritors to override:
 * `Set-Variable`
 * `ForEach-Object` when retrieving data or making non-persistent changes
 
+### Inheriting `ShouldProcess()` Behavior in Custom Module Functions
+Custom functions defined outside of modules automatically inherit `ShouldProcess()`. However, custom functions imported from a module will not inherit ShouldProcess behavior automatically unless they manually retrieve the preference variables through `$PSCmdlet.GetVariableName`
+
+``` PowerShell
+    if (-not $PSBoundParameters.ContainsKey('WhatIf'))
+    {
+        $WhatIfPreference= $PSCmdlet.GetVariableValue('WhatIfPreference')
+    }
+
+    if (-not $PSBoundParameters.ContainsKey('Confirm'))
+    {
+        $ConfirmPreference = $PSCmdlet.GetVariableValue('ConfirmPreference')
+    }
+```
