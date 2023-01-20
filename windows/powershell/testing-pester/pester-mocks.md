@@ -13,7 +13,9 @@ Parameters:
 * `-CommandName [string]` - the command to be mocked
 * `-MockWith [ScriptBlock]` - what to do when the mock is invoked
     - Use `$PesterBoundParameters` to access argument collection; `$PSBoundParameters` will not be available
-    - Use `cmd` to provide exit codes, e.g. `{ cmd /c "exit 1" }`
+    - Mocking exit codes:
+        + Use `cmd` to provide exit codes, e.g. `{ cmd /c "exit 1" }`
+        + ensure that `$global:LASTEXITCODE` gets reset to zero between tests or that "successful" mocks provide a 0 status
 * `-Verifiable [switch]` - if set, `Should -InvokeVerifiable` requires that the mock have been invoked
 * `-ParameterFilter [ScriptBlock]` - if provided, the mock will be used only when the filter (which is provided with the invocation paramters in-scope) returns true; otherwise the actual/another implementation will be used
 * `-ModuleName [string]` - name of the module to mock the function's usage within
