@@ -80,8 +80,12 @@ Options:
 For testing purposes, packages can be installed arbitrarily outside of a configured project.
 
 ``` bat
-nuget install <packagename> [-version <versionNum>]
+nuget install <packageID | configFilePath> [-version <versionNum>]
 ```
+
+If `configFilePath` is specified, behaves the same as nuget restore.
+
+Does not modify packages configuration - use Visual Studio GUI or manually modify the packages.config to do so.
 
 ## Restore Packages
 ``` bat
