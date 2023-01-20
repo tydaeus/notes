@@ -83,6 +83,13 @@ For testing purposes, packages can be installed arbitrarily outside of a configu
 nuget install <packagename> [-version <versionNum>]
 ```
 
+## Restore Packages
+``` bat
+nuget restore <projectname>
+```
+
+Where `<projectname>` can be a solution file or a packages.config file.
+
 ## Update Package
 ``` bat
 
