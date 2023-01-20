@@ -117,9 +117,11 @@ Use the `.append(<item>)` method to add one element to the end of a list.
 
 Use `.insert(<index>, <item>)` method to insert an element at the specified index of the list.
 
-Use `.extend(<list>)` to add another list onto the end of a list; `+=` is overloaded to support this
+Use `.extend(<list>)` to add another list onto the end of a list; `+=` is overloaded to support this.
 
 Use the `+` operator to combine two lists and return a new list comprised of the elements of both lists.
+
+**Strings and lists**: because strings are treated like immutable lists of characters, using `+` or `+=` to add a string to a list will add the string's characters instead of the intact string. Use `.append(<string>)` instead.
 
 Use `.index(<item>)` to get the index of the first element that is equal to `item`; note that Python is case-sensitive. An error will be thrown if the item is not found.
 
