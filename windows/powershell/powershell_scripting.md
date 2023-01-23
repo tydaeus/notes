@@ -81,7 +81,9 @@ Other useful attributes:
 
 * `[AllowNull()]` - allows a null value to be passed to a parameter
 * `[ValidatePattern(regexString)]` - use passed regex string pattern to validate the string parameter (or all parameters within colleciton)
-* `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter
+* `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter value (available as `$_`)
+    + boolean return value determines whether value is valid
+    + recommended: throw an exception on invalid value describing why invalid, because default exception thrown isn't very good
 * `[AllowEmptyString()]` - allows passing an empty string to a string parameter
 * `[ArgumentCompleter($ScriptBlock)]` - define tab completion for the parameter
 
