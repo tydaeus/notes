@@ -65,3 +65,14 @@ The manifest's name is the module name and must match the name of the containing
 Variables declared within the module by default effectively act as being within their own module-specific scope. Functions defined in the module access and operate on these variables by default. These variables cannot be accesed from outside the module's scripting and function.
 
 If a variable is exported from the module by the `Export-ModuleMember` cmdlet, it becomes part of the `global` scope, allowing scripts to read and overwrite it (at which point internal functions will also reference the global version).
+
+## In-Memory Module Creation
+Use `New-Module` to create a module in-memory (without needing a definition file); this takes a ScriptBlock as a parameter to perform the module definitions.
+
+``` PowerShell
+New-Module {
+    function MyFunction {
+        #...
+    }
+}
+```
