@@ -25,6 +25,14 @@ Parameters:
 
 You can combine `-MockWith` and `-ParameterFilter` to provide specific outputs corresponding to specific inputs.
 
+## Retaining the Original Command
+To reference the original command (e.g. to -MockWith a callthrough to replicate original behavior while allowing invocation testing), use `Get-Command` to retrieve the original command and store it in a variable before creating the mock, then use `&` to invoke the stored version:
+
+``` PowerShell
+$originalCommand = Get-Command 'MyCommand'
+Mock 'MyCommand' -MockWith { &$originalCommand @args }
+```
+
 
 ## Mocking for use by class methods in PowerShell 5.1 or earlier
 PowerShell 5.1 and earlier versions aggressively cache commands when used by methods. For this reason, Pester cannot use standard mocking when working with methods. Allegedly, running Pester as a separate job allows mocking of commands used by methods; this doesn't appear to be working in my tests.
