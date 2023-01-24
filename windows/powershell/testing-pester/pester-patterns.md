@@ -10,6 +10,7 @@ In most tests you should define common input parameters and expected output valu
     + Define default input parameters only within a `BeforeEach` block, so that they get reset between tests
     + Consider keeping the input values describing the test environment used to determine the script input parameters separate and deriving the script parameters from them
 - **Expected output parameters** can often be defined as primitive values within a `BeforeAll` block. *However*, in many cases expected output will depend directly on provided input. Consider providing an **expected output function/ScriptBlock** that operates on the input parameters to describe expected output in a way that documents the input to output relationship (e.g. if `-Name` gets combined with `-OutputPath` to generate the output file location)
+- Make sure that shared Mocks get defined in a `BeforeEach` block instead of a `BeforeAll` block, unless none of the tests using them redefine mocks. 
 
 By following these practices, nested testing levels can use or override the testing variables without colliding with tests outside their structure.
 
