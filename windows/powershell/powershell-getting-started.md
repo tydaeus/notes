@@ -1,8 +1,5 @@
 # Getting Started with Powershell
-Notes on first-time powershell. Sources:
-
-* [newtrix](https://blog.netwrix.com/2018/02/21/windows-powershell-scripting-tutorial-for-beginners/)
-* [howtogeek](https://www.howtogeek.com/141495/geek-school-writing-your-first-full-powershell-script/)
+Notes on first-time powershell. 
 
 ## Starting Powershell
 Start `powershell.exe`, or `powershell_ise.exe`. The second option is an interactive scripting environment, and thus more useful for script development.
@@ -120,3 +117,8 @@ As of PowerShell 3, cmdlets can be used from an external module without being ex
 Use the `Read-Host` cmdlet to get input from the user. E.g. `$MyVar = Read-Host -Prompt 'Enter value for myVar'`.
 
 Use the `Write-Output` cmdlet to display output to the user. E.g. `Write-Output "Hello World!"`.
+
+
+## Sources
+* [newtrix](https://blog.netwrix.com/2018/02/21/windows-powershell-scripting-tutorial-for-beginners/)
+* [howtogeek](https://www.howtogeek.com/141495/geek-school-writing-your-first-full-powershell-script/)
