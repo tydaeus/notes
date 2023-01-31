@@ -2,7 +2,12 @@
 Notes on first-time powershell. 
 
 ## Starting Powershell
-Start `powershell.exe`, or `powershell_ise.exe`. The second option is an interactive scripting environment, and thus more useful for script development.
+There are multiple ways to start an interactive PowerShell CLI:
+* run `powershell.exe`
+* from `cmd`, run `powershell`
+* run `powershell_ise.exe` - this is the PowerShell Interactive Scripting Environment, which was an early attempt by Microsoft to provide a PowerShell development environment. This was never particularly well optimized, and Microsoft has dropped support for it (but it remains pre-installed in many Windows environments).
+* Visual Studio Code provides an embedded PowerShell terminal client. This does provide some developer-type PowerShell features (as does the VSCode text editor), but it is good to remember that it runs with VSCode-specific configurations and plugins. I have also observed bugs occurring specific to this terminal, possibly as a result of conflicts with other features of the environment I was running it in.
+* Windows Terminal (`wt`) allows creating tabbed PowerShell sessions. This does not support dragging files into the terminal to enter their paths, unlike other terminals, and may have other irregularities.
 
 ## Running Scripts
 Scripts are conventionally stored in `.ps1` files. Run the script by right-clicking and selecting `Run with PowerShell`.
