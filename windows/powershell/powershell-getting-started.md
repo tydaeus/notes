@@ -14,7 +14,10 @@ Scripts are conventionally stored in `.ps1` files. Run the script by:
 * right-clicking and selecting `Run with PowerShell`
 * from within PowerShell, type the name of the script including relative path, e.g. `.\MyScript.ps1`; anything after the script name is taken as arguments for the script invocation
     - if there are spaces in the path, you will need to pass the path as a string and use the `&` invocation operator, e.g. `&'.\my spaced folder\MyScript.ps1'`
+    - use the `.` operator to run the script within the current scope (aka "dot-sourcing") instead of within a child scope, e.g. `. .\MyScript.ps1`; this will result in defined functions and/or variables
 * from `cmd` run `PowerShell <scriptpath>`; any further text after the script name is taken as an argument to the script
+
+`PowerShell.exe` can also be run from within a PowerShell session. `PowerShell -File <scriptpath>` will invoke the script to operate within the current environment, similar to PowerShell "dot-sourcing". `PowerShell -Command <scriptpath>` will invoke it within a child scope.
 
 ## Setting ExecutionPolicy
 Use `Get-ExecutionPolicy` to check what the current execution policy is. This should get set to RemoteSigned via `Set-ExecutionPolicy RemoteSigned` if it is not already set to RemoteSigned.
