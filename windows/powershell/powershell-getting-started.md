@@ -54,35 +54,6 @@ Use the `Get-Member` cmdlet to view all properties and methods of a given object
 ### Object Piping
 The powershell pipeline pipes objects, not text. This means that not all cmdlets can be linked with a pipeline. Read the available help for a given cmdlet to determine what kinds of objects it accepts.
 
-## Object Formatting
-PowerShell reads the default formatting for displaying objects from `C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml`. This entry may cause some fields not to display by default. If no entry is present for a given type, all properties will be output, in a list (if 5+ properties) or a table (if < 5 properties).
-
-Use the `Format-List`, `Format-Table`, or `Format-Wide` cmdlets to format objects for display.
-
-### `Format-Wide`
-`Format-Wide` takes a collection of objects and displays a single property (`name` by default) of each. Use the `-Property` parameter to specify which property to display. Use the `-Column` parameter to specify how many columns to display in (2 by default).
-
-Useful for a quick overview.
-
-### `Format-List`
-Displays selected properties of all input objects. Use the `-Property` to specify which properties get displayed, using a comma-separated list (`*` for all).
-
-Useful for a detailed view.
-
-### `Format-Table`
-Displays objects in table format, with each object on its own row and each property in a column. This provides a concise way to view numerous objects, but in many cases some properties will need to be omitted or truncated.
-
-The `-Autosize` parameter will attempt to make the data fit within the screen width.
-
-The `-Property` parameter allows customizing what data gets displayed. This parameter takes a list of properties; each property can be specified as a string (naming the property to include), or a HashTable used for calculating the displayed property value. The HashTable format supports keys:
-* `Name` (aka `Label`) - mandatory `<string>` - this will head the column for the property
-* `Expression` - mandatory `<string>` or `<ScriptBlock>` - the value to display;
-    - if `<string>` identifies the object property to display
-    - if `<script block>`, the block will get run with `$PSItem` provided to process to generate the display value
-* `FormatString` - optional `<string>` - string to use to format the value, run as per the `-f` operator
-* `Width` - optional `<int32>` - must be greater than 0
-* `Alignment` - optional - value can be Left, Center, or Right
-
 
 ## Pipeline Processing
 Conventional PowerShell usage often works by piping objects through a series of cmdlets. This isn't always the most efficient, but it does allow for easily putting together a series of commands to generate desired output.
@@ -123,6 +94,36 @@ $values | sort 'prop1', 'prop2'
 # sort by calculated value
 $values | sort { return $_.prop1 + $_.prop2 }
 ```
+
+### Formatting
+PowerShell reads the default formatting for displaying objects from `C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml`. This entry may cause some fields not to display by default. If no entry is present for a given type, all properties will be output, in a list (if 5+ properties) or a table (if < 5 properties).
+
+Use the `Format-List`, `Format-Table`, or `Format-Wide` cmdlets to format objects for display.
+
+#### `Format-Wide`
+`Format-Wide` takes a collection of objects and displays a single property (`name` by default) of each. Use the `-Property` parameter to specify which property to display. Use the `-Column` parameter to specify how many columns to display in (2 by default).
+
+Useful for a quick overview.
+
+#### `Format-List`
+Displays selected properties of all input objects. Use the `-Property` to specify which properties get displayed, using a comma-separated list (`*` for all).
+
+Useful for a detailed view.
+
+#### `Format-Table`
+Displays objects in table format, with each object on its own row and each property in a column. This provides a concise way to view numerous objects, but in many cases some properties will need to be omitted or truncated.
+
+The `-Autosize` parameter will attempt to make the data fit within the screen width.
+
+The `-Property` parameter allows customizing what data gets displayed. This parameter takes a list of properties; each property can be specified as a string (naming the property to include), or a HashTable used for calculating the displayed property value. The HashTable format supports keys:
+* `Name` (aka `Label`) - mandatory `<string>` - this will head the column for the property
+* `Expression` - mandatory `<string>` or `<ScriptBlock>` - the value to display;
+    - if `<string>` identifies the object property to display
+    - if `<script block>`, the block will get run with `$PSItem` provided to process to generate the display value
+* `FormatString` - optional `<string>` - string to use to format the value, run as per the `-f` operator
+* `Width` - optional `<int32>` - must be greater than 0
+* `Alignment` - optional - value can be Left, Center, or Right
+
 
 
 ## Snapins
