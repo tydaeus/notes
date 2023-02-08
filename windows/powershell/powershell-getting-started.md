@@ -84,21 +84,46 @@ The `-Property` parameter allows customizing what data gets displayed. This para
 * `Alignment` - optional - value can be Left, Center, or Right
 
 
+## Pipeline Processing
+Conventional PowerShell usage often works by piping objects through a series of cmdlets. This isn't always the most efficient, but it does allow for easily putting together a series of commands to generate desired output.
 
-## Object Filtering
-Use the `Where-Object` cmdlet to filter objects out of the pipeline. `$_` represents the current object. E.g. `Get-Service | Where-Object {$_.Status -eq "Running"}`.
+The following operations can help when generating a pipeline to create desired output.
 
-Comparison operators (`Get-Help about_comparison` for more info):
+### Iterating
+`ForEach-Object` (aliased to `%`) runs on each object in the pipeline. In common usage, the provided ScriptBlock will be called one each piped object (referenced as `$_` or `$PSItem`) and the returned value will be output along the pipeline.
 
-* `eq`
-* `neq`
-* `gt`
-* `ge`
-* `lt`
-* `le`
-* `like` (Wildcard string matching using `*`)
+``` PowerShell
+# multiply each value by 5
+$values | % { $_ * 5 }
+```
 
-Comparison is case-insensitive by default. Prefix operator with `c` to enable case sensitivity.
+This can be used to 
+
+### Filtering
+`Where-Object` (aliased to `where`) filters objects out of the pipeline based on a provided ScriptBlock. The ScriptBlock will be called on each piped object (referenced as `$_` or `$PSItem`) and only objects where the ScriptBlock returns a truthy value will continue through the pipeline.
+
+``` PowerShell
+# get only values greater than 3
+$values | where { $_ -gt 3 }
+```
+
+### Sorting
+`Sort-Object` (aliased to `sort`) sorts piped objects based on specified properties or even on a scriptblock.
+
+``` PowerShell
+# sort primitive values
+$values | sort
+
+# sort by a named property
+$values | sort 'prop1'
+
+# sort by multiple properties, in order
+$values | sort 'prop1', 'prop2'
+
+# sort by calculated value
+$values | sort { return $_.prop1 + $_.prop2 }
+```
+
 
 ## Snapins
 PowerShell snapins are compiled extensions to PowerShell, written via C# or another .NET language. Snapins are largely ignored in favor of modules.
