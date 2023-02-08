@@ -4,13 +4,17 @@ Notes on first-time powershell.
 ## Starting Powershell
 There are multiple ways to start an interactive PowerShell CLI:
 * run `powershell.exe`
-* from `cmd`, run `powershell`
+* from `cmd`, run `powershell` (use `start powershell` instead for a new window)
 * run `powershell_ise.exe` - this is the PowerShell Interactive Scripting Environment, which was an early attempt by Microsoft to provide a PowerShell development environment. This was never particularly well optimized, and Microsoft has dropped support for it (but it remains pre-installed in many Windows environments).
 * Visual Studio Code provides an embedded PowerShell terminal client. This does provide some developer-type PowerShell features (as does the VSCode text editor), but it is good to remember that it runs with VSCode-specific configurations and plugins. I have also observed bugs occurring specific to this terminal, possibly as a result of conflicts with other features of the environment I was running it in.
 * Windows Terminal (`wt`) allows creating tabbed PowerShell sessions. This does not support dragging files into the terminal to enter their paths, unlike other terminals, and may have other irregularities.
 
 ## Running Scripts
-Scripts are conventionally stored in `.ps1` files. Run the script by right-clicking and selecting `Run with PowerShell`.
+Scripts are conventionally stored in `.ps1` files. Run the script by:
+* right-clicking and selecting `Run with PowerShell`
+* from within PowerShell, type the name of the script including relative path, e.g. `.\MyScript.ps1`; anything after the script name is taken as arguments for the script invocation
+    - if there are spaces in the path, you will need to pass the path as a string and use the `&` invocation operator, e.g. `&'.\my spaced folder\MyScript.ps1'`
+* from `cmd` run `PowerShell <scriptpath>`; any further text after the script name is taken as an argument to the script
 
 ## Setting ExecutionPolicy
 Use `Get-ExecutionPolicy` to check what the current execution policy is. This should get set to RemoteSigned via `Set-ExecutionPolicy RemoteSigned` if it is not already set to RemoteSigned.
