@@ -128,7 +128,17 @@ As of PowerShell 3, cmdlets can be used from an external module without being ex
 ## Input/Output
 Use the `Read-Host` cmdlet to get input from the user. E.g. `$MyVar = Read-Host -Prompt 'Enter value for myVar'`.
 
-Use the `Write-Output` cmdlet to display output to the user. E.g. `Write-Output "Hello World!"`.
+Use the `Write-Output` cmdlet to write to stdout for display or consumption by another function. E.g. `Write-Output "Hello World!"`.
+
+Use the `Write-Host` cmdlet to write to PowerShell's Information stream (6) specifically for user consumption, e.g. `Write-Host "Doing the thing..."`. Some older documentation caution against this, because PowerShell versions prior to 5.1 did not allow redirection of `Write-Host` output; this is no longer a concern.
+
+`Write-Information` writes to the Information stream for user consumption only if the `$InformationPreference` variable or `-InformationAction` parameter has been set to a value that permits output.
+
+`Write-Verbose` writes to the Verbose stream for user consumption only if the `$VerbosePreference` variable has been set to a value that permtis output or the `-Verbose` switch has been set.
+
+`Write-Warning` writes to the Warning stream.
+
+`Write-Error` writes to the stderr stream; this should generally be used for non-terminating errors, and PowerShell will always display this message with a stack trace to where the `Write-Error` statement was invoked. `throw` terminating errors instead.
 
 
 ## Sources
