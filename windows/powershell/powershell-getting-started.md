@@ -52,7 +52,7 @@ Unlike traditional scripting shells, powershell outputs .Net objects, not plaint
 Use the `Get-Member` cmdlet to view all properties and methods of a given object.
 
 ### Object Piping
-The powershell pipeline pipes objects, not text. This means that not all cmdlets can be linked with a pipeline. The `InputObject` parameter is used when accepting objects through the pipeline, and its documentation describes the type(s) it can accept.
+The powershell pipeline pipes objects, not text. This means that not all cmdlets can be linked with a pipeline. Read the available help for a given cmdlet to determine what kinds of objects it accepts.
 
 ## Object Formatting
 PowerShell reads the default formatting for displaying objects from `C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml`. This entry may cause some fields not to display by default. If no entry is present for a given type, all properties will be output, in a list (if 5+ properties) or a table (if < 5 properties).
