@@ -363,7 +363,7 @@ my_collection = (
 )
 
 for i, (x, y) in enumerate(my_collection):
-    print(f"Pair {i} is: {x}, {y})
+    print(f"Pair {i} is: {x}, {y}")
 
 # Output:
 #   Pair 0 is: 1, 2
