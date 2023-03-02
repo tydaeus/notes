@@ -17,7 +17,7 @@ Custom in-game objects typically subclass `Sprite`, with their constructors invo
 
 `Sprite` built-in properties (populate these):
 * `rect` - a `Rect` representing the `Sprite`'s current position and dimensions
-* `image` - current image representation of sprite
+* `image` - current image (`Surface`) representation of sprite
 
 `Sprite` abstract method (override):
 * `update` - updates the `Sprite`'s current state
