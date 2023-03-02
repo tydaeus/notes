@@ -49,3 +49,21 @@ Modifying parameters:
 
 Other parameters:
 * `-Because [string]` - add optional message to assertion failure message explaining why test should pass
+
+## Common Workarounds
+
+### Redirecting Stream Output
+Due to the limitations when mocking OO methods in Pester on PowerShell 5.1, it may be necessary to instead redirect their stream output to a file and then assert against the redirected output.
+
+Streams are subject to output formatting, which is then subjected to line-breaking when redirected to a file. To bypass this:
+
+``` PowerShell
+BeforeAll {
+    # we use redirection to capture stream output; redirected output defaults to console width per line unless this is set, which makes it harder to match on
+    $PSDefaultParameterValues['out-file:width'] = 2000
+}
+
+AfterAll {
+    $PSDefaultParameterValues.Remove('out-file:width')
+}
+```
