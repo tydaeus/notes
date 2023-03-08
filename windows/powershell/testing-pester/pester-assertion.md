@@ -33,9 +33,9 @@ Primary parameters:
     + `-DefaultValue`
     + `-Mandatory`
 * `-Invoke` - verify that mocks have been called
-    * `-CommandName` - name of mocked command
-    * `-Times` - number of times it should have been called
-    * `-ParameterFilter` (optional) - filter parameters invoked with for counting purposes
+    * `-CommandName` - name of mocked command; can instead pass this value as parameter for `-Invoke`
+    * `-Times` - number of times it should have been called; defaults to 1, so use `-Times 0` in place of `-Not` when verifying mocks
+    * `-ParameterFilter` `[scriptblock]` (optional) - filter parameters invoked with for counting purposes; parameters will be accessible by name within the scriptblock
 * `-InvokeVerifiable` - verify that all mocks constructed with `-Verifiable` have been called
 * `-Match` - objects match via `-match`
 * `-MatchExactly` - objects match via `-cmatch`
