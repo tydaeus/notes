@@ -80,10 +80,16 @@ Note that boolean `Parameter` attribute arguments typically default to `$True` i
 Other useful attributes:
 
 * `[AllowNull()]` - allows a null value to be passed to a parameter
-* `[ValidatePattern(regexString)]` - use passed regex string pattern to validate the string parameter (or all parameters within colleciton)
+* `[ValidateSet(arrayLiteral)]` - validate that parameter is included within the array literal
+    + recommended: document validation rules in PARAMETER inline documentation
+* `[ValidatePattern(regexString)]` - use passed regex string pattern to validate the string parameter (or all parameters within collection)
+    + recommended: document validation rules in PARAMETER inline documentation
 * `[ValidateScript({ ScriptBlock })]` - use passed ScriptBlock to validate the parameter value (available as `$_`)
     + boolean return value determines whether value is valid
-    + recommended: throw an exception on invalid value describing why invalid, because default exception thrown isn't very good
+    + the ScriptBlock cannot be used directly from a variable, but you can forward it to a ScriptBlock contained in a variable like `[ValidateScript({ $_ | ForEach-Object $VALIDATOR_SB })]`
+    + recommended: throw an exception on invalid value describing why invalid, because default exception thrown isn't very good; this exception's message will be prefixed with "$FunctionName : Cannot validate argument on parameter '$ParameterName'."
+    + recommended: provide an argument completer as well when possible
+    + recommended: document validation rules in PARAMETER inline documentation
 * `[AllowEmptyString()]` - allows passing an empty string to a string parameter
 * `[ArgumentCompleter($ScriptBlock)]` - define tab completion for the parameter
 
