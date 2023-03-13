@@ -2,7 +2,7 @@
 
 
 Notes on some of the more useful automatic vars:
-* `$?` - success (`$true`) or failure (`$false`) of the last PowerShell command. Unfortunately gets obscured by running commands in `()` or through `Invoke-Command`.
+* `$?` - success (`$true`) or failure (`$false`) of the last PowerShell command. Unfortunately gets obscured by running commands in `()` or through `Invoke-Command`. Is set to false if the called function/script throws an error or calls `Write-Error`; this does not propagate (e.g. if the called function calls a another function that calls `Write-Error`, it will not affect the result of the directly called function)
 * `$_` aka `$PSItem` - contains the current item from the pipeline.
 * `$args` - array containing undeclared parameters.
 * `$Error` - array of errors that have occurred, in reverse-chronological order. Run commands with `-ErrorAction` or `$ErrorActionPreference` set to `Ignore` to avoid populating this array.
