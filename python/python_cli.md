@@ -1,7 +1,9 @@
 # Python Command Line Interface (cli)
 
 ## Processing CLI Arguments
-Use `sys.argv` to access the array of arguments passed on invocation of a Python script.
+Use `sys.argv` to access the list of arguments passed on invocation of a Python script. 
+
+The first (index 0) item in the list will be the name of the script (whether fullpath depends on OS), `-c` if Python interpreter was invoked with this option, null otherwise.
 
 Check `if __name__ == "__main__"` to determine whether the script was invoked as the main script (otherwise it probably shouldn't be doing `argv` processing).
 
