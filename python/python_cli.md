@@ -14,4 +14,8 @@ if __name__ == "__main__":
     print(f"Arg count: {len(sys.argv)}")
     for i, arg in enumerate(sys.argv):
         print(f"arg {i} = '{arg}'")
+
+    scriptname = sys.argv[0]
+    scriptargs = sys.argv[1:]
+
 ```
