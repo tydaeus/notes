@@ -17,5 +17,6 @@ if __name__ == "__main__":
 
     scriptname = sys.argv[0]
     scriptargs = sys.argv[1:]
-
 ```
+
+Note: `sys.argv` is a mutable global variable, so be careful of how you treat it. Consider copying or slicing a copy from it.
