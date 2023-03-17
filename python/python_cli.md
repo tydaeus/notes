@@ -20,3 +20,29 @@ if __name__ == "__main__":
 ```
 
 Note: `sys.argv` is a mutable global variable, so be careful of how you treat it. Consider copying or slicing a copy from it.
+
+### `argparse.ArgumentParser`
+The built-in `argparse.ArgumentParser` class allows you to build an ArgumentParser to define basic argument parsing.
+
+``` Python
+# specify usageMessage and description during construction
+parser = argparse.ArgumentParser(
+    usage=usageMessage, # consider including '%(prog)s' to indicate the program name
+    description=scriptDescription,
+)
+# use add_argument method to add each argument; good to include standard version info string
+parser.add_argument(
+    "-v", "--version", action="version",
+    version=f"{parser.prog} version 1.0.0"
+)
+# nargs='*' allows for variable number of items
+parser.add_argument("items", nargs="*")
+
+# call parse_args to get a representation of the arguments
+args = parser.parse_args()
+
+# found arguments end up as properties on the returned object
+if args.items:
+    ...
+
+```
