@@ -73,7 +73,7 @@ Python also overloads the following operators:
 * `exec()` - executes code contained in a string or in an object output by the `compile()` function
 * `len(<string String>)` - returns the length of a string
 * `type(<any Value>)` - returns the type of its argument
-* `print(<string Output>)` - outputs a string to the console
+* `print(<string Output>, file=sys.stdout)` - outputs a string, by default to stdout
 * `help(identifier)` - returns any inline documentation provided on the identified object
 * `id(identifier)` - returns the unique identity int for the specified object
 * `input(<string Prompt>)` - displays `Prompt` as a prompt for input, returns the resulting input (as a string)
