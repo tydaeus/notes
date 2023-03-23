@@ -79,8 +79,13 @@ Drop the `-f` to make the change local-only, without storing it in the submodule
 
 You will need to update submodule files after setting this, to reflect the changes.
 
-###
+
+## Removing a Submodule
+`git rm <submodulePath>` (followed by commit and push, etc.)
+
+This will remove the tracking data remove the working directory from the file system, but retain the git directory to make it possible to check out past commits without a fetch. To completely remove, delete `.git/modules/<submoduleName>`.
 
 
-## Source
+## Sources
 * https://git-scm.com/book/en/v2/Git-Tools-Submodules
+* https://git-scm.com/docs/gitsubmodules
