@@ -29,6 +29,9 @@ Populate the submodule structure by running one of the following:
 
 Use `git clone` with the `--recurse-submodules` command to automatically retrieve submodule files at clone time (recursing into nested submodules, etc.).
 
+## Submodule Status
+`git submodule` lists configured submodules and their current commit.
+
 ## Submodule Updating
 
 ### Updating Submodule Version and Files
