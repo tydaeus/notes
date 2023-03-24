@@ -34,7 +34,7 @@ See also: https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewrit
 ### `rebase` current branch interactively
 Rebasing the current branch interactively is generally the simplest option, allowing you to edit the current branch's history. 
 
-1. run `rebase -i <commit> -i`
+1. run `git rebase -i <commit>`
 2. your configured text editor will open a file, listing the operations `rebase` will perform
     * this starts with all commits being `pick`ed in their original order
 3. modify the text file to indicate the desired sequence of changes
