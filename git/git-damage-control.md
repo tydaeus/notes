@@ -32,11 +32,11 @@ The `git rebase` command is a very powerful and dangerous command that allows re
 See also: https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history, https://jwiegley.github.io/git-from-the-bottom-up/1-Repository/8-interactive-rebasing.html
 
 ### `rebase` current branch interactively
-Rebasing the current branch interactively is generally the simplest option, allowing you to edit the current branch's history. 
+Rebasing the current branch interactively is generally the simplest option, allowing you to edit the current branch's history. If the problem branch is already present on the server, this should be performed on a new local branch, and processes should be switched to using the new branch after fixes are complete (delete the old branch, after tagging for posterity if desired)
 
-1. run `git rebase -i <commit>`
+1. run `git rebase -i <commit>`, where `<commit>` is the last good commit
 2. your configured text editor will open a file, listing the operations `rebase` will perform
-    * this starts with all commits being `pick`ed in their original order
+    * this starts with all commits since `<commit>` being `pick`ed in their original order
 3. modify the text file to indicate the desired sequence of changes
     * operations will be performed in the order they're listed
     * `pick` will result in the commit being performed as-is
