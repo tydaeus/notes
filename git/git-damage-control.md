@@ -1,6 +1,11 @@
 # Git Damage Control
 Notes on fixing common errors (and the possible ramifications).
 
+## Tracing Issues
+`git log --graph` attempts to show the commit log graphically, but this becomes difficult to read as complexity increases.
+
+`git rev-list --parents`, ideally with a `-n` constraint or date constraint through `--since=`, `--after=`, `--until=`, `--before=`, `--max-age=`, `--min-age=` can be used to help with understanding the tree strucuture precisely. Add `--chery-mark` to mark equivalent commits (as per cherry-picking or manual transfer) with an `=`, or `--cherry-pick` to omit equivalent commits.
+
 ## `git cherry-pick` - Picking a single commit to apply
 The `git cherry-pick` command allows you to select a single commit and apply the changes from it to the working branch.
 
