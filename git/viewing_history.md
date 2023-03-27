@@ -37,6 +37,8 @@ git rev-list HEAD
 git rev-list --count HEAD
 ```
 
+`--parents` switch shows commit parents as well -- very useful for tracing history.
+
 ## `git diff`
 `git diff` shows the specific file changes from a commit, similar to using `git log -p`.
 
