@@ -66,6 +66,7 @@ Describe 'UnitName' {
         # -ForEach parameter acts as alias to -TestCases
         # if items are hashtables, their properties are directly accessible
         # current item can be referenced as $_ whether hashtable or not
+        # Test cases must be literals unless defined in BeforeDiscovery
         It 'does <y> given <x>' -TestCases @(
             @{ x = 5; y = 10 },
             @{ x = 3; y = 6 }
