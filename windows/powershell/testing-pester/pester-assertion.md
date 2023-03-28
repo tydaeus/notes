@@ -46,7 +46,7 @@ Primary parameters:
 
 Modifying parameters:
 * `-Not` - negation; sensitive on positioning (`Should -Not -HaveParameter 'Foo' -Mandatory` vs. `Should -HaveParameter 'Foo' -Not -Mandatory`)
-* `-ErrorActionPreference [string]` - defaults to 'Stop' unless configured otherwise; set to 'Continue' to allow testing to continue current test if this assertion fails
+* `-ErrorAction [string]` - defaults to 'Stop' unless configured otherwise; set to 'Continue' to allow testing to continue current test if this assertion fails
 
 Other parameters:
 * `-Because [string]` - add optional message to assertion failure message explaining why test should pass
