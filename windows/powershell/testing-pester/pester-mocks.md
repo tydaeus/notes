@@ -17,7 +17,9 @@ Parameters:
         + Use `cmd` to provide exit codes, e.g. `{ cmd /c "exit 1" }`
         + ensure that `$global:LASTEXITCODE` gets reset to zero between tests or that "successful" mocks provide a 0 status
 * `-Verifiable [switch]` - if set, `Should -InvokeVerifiable` requires that the mock have been invoked
-* `-ParameterFilter [ScriptBlock]` - if provided, the mock will be used only when the filter (which is provided with the invocation paramters in-scope) returns true; otherwise the actual/another implementation will be used
+* `-ParameterFilter [ScriptBlock]` - if provided, the mock will be used only when the filter returns true; otherwise the actual/another implementation will be used
+    - if mocking PowerShell function with named parameters, the filter block will be provided with the invocation paramters in-scope
+    - if mocking non-PowerShell or a function with unnamed parameters, the filter block will need to check `$args`
 * `-ModuleName [string]` - name of the module to mock the function's usage within
     - per the documentation, this isn't neccessary for global functions, but testing contradicts in 5.1
 * `-RemoveParameterType [string[]]` - list of parameters to skip type enforcement on, allowing looser invocation
