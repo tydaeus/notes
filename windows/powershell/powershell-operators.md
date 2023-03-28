@@ -24,3 +24,16 @@ If the value is a date type, it will be formatted using (case-sensitive) date fo
 **Common gotcha**: Be sure to wrap the formatting operation in parentheses if there's anything else on the right-hand side of the statement; otherwise, the `-f` may be taken for a parameter, or other exciting misinterprations may occur without error.
 
 Source: https://ss64.com/ps/syntax-f-operator.html
+
+## `-like` - String Wildcard Matching
+
+- `*` represents 0 or more of any character
+- `?` represents exactly one of any character
+- `[]` two functions:
+    - can match one character within a range (e.g. `[a-z]` matches letters a-z)
+    - can match one character within a set (e.g. `[abc]` matches a, b, or c)
+- backtick '`' escapes wildcard characters
+
+Use `-clike` for case-sensitive matching.
+
+PowerShell built-ins with `-Path` parameter generally use wildcard matching to process matched files.
