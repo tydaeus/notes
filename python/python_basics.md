@@ -200,7 +200,7 @@ Note that the number of variables must be equal to the number of elements in the
 
 
 ## Tuples
-Tuples are an ordered collection of items, initialized in `()`; to differentiate from other uses of `()`, there must be at least one `,`; e.g. `t = (1,)` initializes `t` as a tuple, while `t = (1)` initialize `t` as integer `1`.
+Tuples are an immutable ordered collection of items, initialized in `()`; to differentiate from other uses of `()`, there must be at least one `,`; e.g. `t = (1,)` initializes `t` as a tuple, while `t = (1)` initialize `t` as integer `1`.
 
 `+` is overloaded to combine tuples
 `*` is overloaded to repeat a tuple an integer number of times
