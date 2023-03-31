@@ -82,10 +82,10 @@ sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com/')
 * `archiveArtifacts artifacts: glob, fingerprint: bool` - archive built artifacts
 * `powershell` - run a PowerShell script; params:
     - `<script>` (string) - script to run, multiple lines supported
-    - `[label]` (string) - displays instead of step type
+    - `[label]` (string) - displays along with step type
     - `[returnStatus]` (bool) - if true, step return value will be the exit code, automatic fail based on exti code will not occur
     - `[returnStdout]` (bool) - if true, step return value will be the stdout as a string, stdout will not be printed to build log
-* `tool` - retrieves the location of specified tool installed through jenkins (map to a var or environment var)
+* `tool` - retrieves the location of specified tool installed through jenkins (map to a var or environment var and/or use in script via interpolation)
 
 Script steps support multi-line scripts through triple-quoting (single-quote recommended for most purposes).
 
