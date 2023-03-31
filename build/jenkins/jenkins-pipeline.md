@@ -14,6 +14,13 @@ pipeline {
     // agent directive is required; this ensures source repo is checked out and made available
     agent any // use any available type of agent/node as executor and workspace for the Pipeline
 
+    // optional `options` block allows setting certain configuration for entire pipeline
+    // this can also be declared within a stage for stage-specific options
+    options {
+        timeout(activity: true, time: 5, unit: 'MINUTES')
+        // ...
+    }
+
     stages { // stages directive required
 
         stage('Build') { // at least one stage required
@@ -141,6 +148,8 @@ timeout(activity: true, time: X, unit: 'SECONDS') {
 * activity - if set, timeout will be based on log inactivity; else will be absolute
 * time - number of units to time
 * unit - string from {'DAYS', 'HOURS', 'MINUTES', 'SECONDS', 'MILLISECONDS', 'MICROSECONDS', 'NANOSECONDS'}, default 'MINUTES'
+
+Declare within an `options` block (omitting the block wrapper) to set a timeout for the entire pipeline/stage.
 
 #### `withCredentials` - bind credentials to variables within a block
 Use the snippet generator for full options on this. Example:
