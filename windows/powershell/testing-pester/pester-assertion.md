@@ -49,7 +49,11 @@ Modifying parameters:
 * `-ErrorAction [string]` - defaults to 'Stop' unless configured otherwise; set to 'Continue' to allow testing to continue current test if this assertion fails
 
 Other parameters:
-* `-Because [string]` - add optional message to assertion failure message explaining why test should pass
+* `-Because [string]` - add optional message to assertion failure message explaining why test should pass; not supported for all assertion types
+    - Known to support:
+        + `-Be`
+    - Known not to support:
+        + `-Invoke`
 
 ## Common Workarounds
 
