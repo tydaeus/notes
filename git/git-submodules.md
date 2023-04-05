@@ -71,7 +71,7 @@ Ensure you include the `--recurse-submodule` option when changing branches, or e
 ### Git Utility Configurations
 As usual, the `--global` switch can be dropped from these commands to make the configuration specific to the current project.
 
-* `git config --global dif.submodule log` - show submodule differences in `git diff`
+* `git config --global diff.submodule log` - show submodule differences in `git diff`
 * `git config --global status.submodulesummary 1` - show submodule summary in `git status`
 * `git config --global submodule.recurse true` - use --recurse-submodules flag for all commands that support it, except for `clone`
 
