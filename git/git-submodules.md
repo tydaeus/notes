@@ -82,6 +82,13 @@ Drop the `-f` to make the change local-only, without storing it in the submodule
 
 You will need to update submodule files after setting this, to reflect the changes.
 
+**Warning**: on its own, this only updates the configured branch that is pointed to, without updating the corresponding commit. You will also need to:
+1. `cd` into the branch dir
+2. `git switch` to the desired branch
+3. `git fetch`
+4. `git merge`
+5. commit and push the resulting changes
+
 
 ## Removing a Submodule
 `git rm <submodulePath>` (followed by commit and push, etc.)
