@@ -107,6 +107,10 @@ Locally: `git tag -d <tagname>`
 Remotely: `git push <remotename> --delete <tagname>`
 
 
+## Comparing Files
+
+* `git diff branch1 branch2 -- filepath` changes in specified file between specified branches
+
 
 ## Working with Branches
 (adapted from https://stackoverflow.com/a/6591218/2939139)
