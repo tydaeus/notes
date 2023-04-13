@@ -41,6 +41,17 @@ pipeline {
             }
         }
     }
+
+    // operations to perform after stages
+    post {
+        always {
+            // operations to always perform
+        }
+        failure {
+            // operations to perform only if build failed
+        }
+        // also supports `unstable`, `success`, and `changed` blocks, and others
+    }
 }
 
 ```
@@ -135,6 +146,11 @@ Sets CREDS_VAR based on the credentials content of the specified identifier. Beh
     + `CREDS_VAR_USR` - the username
     + `CREDS_VAR_PSW` - the password
 * secret file - the path to a temporary copy of the secret file
+
+#### `post` 
+Run after pipeline or stage is finished (depending on where declared).
+
+Supports `always`, `failure`, `unstable`, `success`, `changed` and other inner blocks to run depending on the pipeline/stage outcome.
 
 
 #### `timeout` - set a timeout
