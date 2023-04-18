@@ -147,7 +147,7 @@ Sets CREDS_VAR based on the credentials content of the specified identifier. Beh
     + `CREDS_VAR_PSW` - the password
 * secret file - the path to a temporary copy of the secret file
 
-#### `post` 
+#### `post`
 Run after pipeline or stage is finished (depending on where declared).
 
 Supports `always`, `failure`, `unstable`, `success`, `changed` and other inner blocks to run depending on the pipeline/stage outcome.
