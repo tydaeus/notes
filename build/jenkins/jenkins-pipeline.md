@@ -96,6 +96,7 @@ sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com/')
     - `[label]` (string) - displays along with step type
     - `[returnStatus]` (bool) - if true, step return value will be the exit code, automatic fail based on exti code will not occur
     - `[returnStdout]` (bool) - if true, step return value will be the stdout as a string, stdout will not be printed to build log
+* `script` - enclose arbitrary Groovey script; required for some versions of Jenkins which require any Groovy to be associated with a step
 * `tool` - retrieves the location of specified tool installed through jenkins (map to a var or environment var and/or use in script via interpolation)
 
 Script steps support multi-line scripts through triple-quoting (single-quote recommended for most purposes).
