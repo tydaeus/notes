@@ -151,6 +151,8 @@ Sets CREDS_VAR based on the credentials content of the specified identifier. Beh
 #### `parameters` - access job parameters
 The `parameters` block must declare parameters matching those declared in the Jenkins job config to make them accessible to the pipeline. With both declarations present, parameters can be accessed in Groovy script as properties of the `params` object, e.g. `params.myParameter`.
 
+Best practice: transfer parameters into environment variables so that they can be accessed in scripts as well as in Groovy.
+
 Use of parameters in environment variables or within scripts (as opposed to directly from Groovy) will generally rely on string interpolation, so e.g. boolean checks will have to check for "true" or "false" string values.
 
 #### `post`
