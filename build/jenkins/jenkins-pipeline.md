@@ -94,8 +94,28 @@ sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com/')
 * `powershell` - run a PowerShell script; params:
     - `<script>` (string) - script to run, multiple lines supported
     - `[label]` (string) - displays along with step type
-    - `[returnStatus]` (bool) - if true, step return value will be the exit code, automatic fail based on exti code will not occur
+    - `[returnStatus]` (bool) - if true, step return value will be the exit code, automatic fail based on exit code will not occur
     - `[returnStdout]` (bool) - if true, step return value will be the stdout as a string, stdout will not be printed to build log
+        - this typically needs to be assigned to a variable (which may require wrapping in a `script` block), and typically requires running the script inside of string interpolation so that it gets converted to a Groovy string:
+        ``` Groovy
+            script {
+                // multi-line string preserves spacing, so we can't indent within it
+                mailBody = """
+        See <$currentBuild.absoluteUrl>
+
+        ${ powershell(
+            label: "read email content",
+            returnStdout: true,
+            script: '''
+            if (Test-Path ".\\email.txt") {
+                Get-Content ".\\email.txt"
+            }
+            '''
+        )}"""
+            // do stuff with the variable within the script block's scope
+            }
+
+        ```
 * `script` - enclose arbitrary Groovey script; required for some versions of Jenkins which require any Groovy to be associated with a step
 * `tool` - retrieves the location of specified tool installed through jenkins (map to a var or environment var and/or use in script via interpolation)
 
