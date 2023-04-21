@@ -169,7 +169,7 @@ Sets CREDS_VAR based on the credentials content of the specified identifier. Beh
 * secret file - the path to a temporary copy of the secret file
 
 #### `parameters` - access job parameters
-The `parameters` block must declare parameters matching those declared in the Jenkins job config to make them accessible to the pipeline. With both declarations present, parameters can be accessed in Groovy script as properties of the `params` object, e.g. `params.myParameter`.
+Parameters declared in the `parameters` block are accessible to the pipeline. Declared parameters can be accessed in Groovy script as properties of the `params` object, e.g. `params.myParameter`. The webapp parameter prompts are updated to reflect the parameters in the Jenkinsfile as part of running it.
 
 Best practice: transfer parameters into environment variables so that they can be accessed in scripts as well as in Groovy.
 
