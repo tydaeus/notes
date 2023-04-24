@@ -91,6 +91,7 @@ sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com/')
 * `sh` - run *nix shell commands
 * `bat` - run Windows batch commands
 * `archiveArtifacts artifacts: glob, fingerprint: bool` - archive built artifacts
+* `error [messageString]` - stop the pipeline with a failure
 * `powershell` - run a PowerShell script; params:
     - `<script>` (string) - script to run, multiple lines supported
     - `[label]` (string) - displays along with step type
