@@ -72,7 +72,9 @@ Literal strings can be enclosed in single-quotes, double-quotes, or tripled quot
 The `\` character is used to indicate special characters regardless of quote type, so use `\\` for a literal backslash.
 
 #### String Interpolation
-Strings enclosed in double-quotes or tripled double-quotes are subject to interpolation; any statements within the `${}` operator will be executed and their string value will be placed within the resulting string.
+Strings enclosed in double-quotes or tripled double-quotes are subject to interpolation:
+* `$` operator performs variable interpolation (dot-walking allowed)
+* `${}` operator performs statement interpolation; blocks are not allowed but ternary operator is
 
 **Do not use interpolation on sensitive values**: this can expose sensitive variables in the process listings and may potentially mangle them if they contain special characters. Remember that shell statements will have access to the environment. **Guideline**: only use single-quotes around credential values.
 
