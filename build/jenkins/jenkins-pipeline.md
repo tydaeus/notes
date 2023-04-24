@@ -165,6 +165,8 @@ environment {
 }
 ```
 
+Although it appears that the Groovy for defaulting a string value works (along with the ternary operator), the value restrictions applied to environment variables do not allow for either case to hold a null/empty value.
+
 
 ##### `credentials()` - add credentials to environment
 
