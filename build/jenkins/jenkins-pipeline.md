@@ -153,6 +153,8 @@ Access within Jenkinsfile via `env.SOME_VARIABLE`.
 
 Jenkins Groovy (or plain Groovy?) requires that environment variables be interpolated prior to string concatenation, e.g. `"${env.SOME_VARIABLE}\\SomePath"` is allowed, while `env.SOME_VARIABLE + "\\SomePath"` is not.
 
+All environment variables are strings due to the constraints of Windows/*nix environment config.
+
 
 ##### `credentials()` - add credentials to environment
 
