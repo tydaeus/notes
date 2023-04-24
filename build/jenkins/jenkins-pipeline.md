@@ -155,6 +155,16 @@ Jenkins Groovy (or plain Groovy?) requires that environment variables be interpo
 
 All environment variables are strings due to the constraints of Windows/*nix environment config.
 
+Environment prep configured in the webapp occurs prior to the Jenkinsfile environment setup, so webapp-configured environment can be checked and used as a control on the Jenkinsfile environment.
+
+E.g. for a boolean that defaults to false:
+
+``` Groovy
+environment {
+    MY_BOOL = "${'true'.equalsIgnoreCase(env.MY_BOOL)}"
+}
+```
+
 
 ##### `credentials()` - add credentials to environment
 
