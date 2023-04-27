@@ -58,3 +58,29 @@ Start-Process 'msiexec' "/qn /norestart /x $IdentifyingNumber" -Wait -NoNewWindo
 ```
 
 Add the `-PassThru` param and assign to a variable if you want to check the exit status (recommended).
+
+
+## Extracting MSP Files from InstallShield exe Installer
+Microsoft Patch files may be distributed within an InstallShield-generated standalone exe installer. These files can then be extracted from the exe for use by msiexec.
+
+First extract the files:
+
+``` bat
+:: With:
+::   UPDATER as path to executable
+::   TARGETDIR as path to (nonexistent) dir to contain extracted files
+%UPDATER% /s /e /f %TARGETDIR%
+```
+
+The MSP file will be in TARGETDIR, within a MSP subdir.
+
+Then install:
+
+``` bat
+:: With:
+::  MSPFILE as path to the .msp file
+::  LOGPATH as filepath to write log to
+msiexec /update %MSPFILE% /qb /l*xv %LOGPATH%
+```
+
+Some instructions indicate that you may need to be operating from within same dir as the .msp file; I have not tested this.
