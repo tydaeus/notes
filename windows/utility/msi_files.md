@@ -8,7 +8,7 @@ Note that operations can be performed by either running `msiexec` and targeting 
 ## Viewing/Extracting MSI Files
 (See https://www.raymond.cc/blog/how-to-view-and-extract-contents-from-a-msi-file/).
 
-Using msiexec: `msiexec /a <msiSourcePath> /qb TARGETDIR=<outputPath>`. Use `/qn` instead of `/qb` for silent unpacking.
+Using msiexec: `msiexec /a <msiSourcePath> /qb TARGETDIR=<outputPath>`. Use `/qn` (silent UI) instead of `/qb` (basic UI) for silent unpacking.
 
 Some general archiving tools can read and extract msi contents, including 7-zip and HaoZip.
 
