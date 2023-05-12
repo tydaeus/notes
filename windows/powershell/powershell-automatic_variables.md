@@ -12,7 +12,7 @@ Notes on some of the more useful automatic vars:
     - Always set by PowerShell script if script used `exit` command to exit
     - Not set by PowerShell script if run normally and terminated without `exit` command; beware that in this case it will still hold the last value it was set with
     - If PowerShell script was run through the `PowerShell` command, will be set to 0 if the script exited normally, 1 if the script exited by throwing an error
-* `$MyInvocation` - populated for scripts, functions, and ScriptBlocks; holds information about how the currently running command was invoked
+* `$MyInvocation` - populated for scripts, functions, and ScriptBlocks; holds information about how the currently running command was invoked (alias to `$PSCmdlet.MyInvocation` for advanced)
     - `$MyInvocation.MyCommand.Path` - path and filename for current script (if run from a file)
     - `$MyInvocation.MyCommand.Name` - name of current command (if named)
     - `$MyInvocation.MyCommand.Parameters` - information about the parameters defined for the function
@@ -21,6 +21,18 @@ Notes on some of the more useful automatic vars:
 * `$PROFILE` - full path to profile for current user and PowerShell host
 * `$PSBoundParameters` - dictionary of parameter values; present only if parameters are declared; only contains explicitly set parameters, not default values
 * `$PSCmdlet` - represents the cmdlet or advanced function that is running
+    - `.GetVariableValue(<string variablename>, [object default])` - get the value of the specified variable as defined in the current or caller's scope
+    - `.ShouldProcess(...)` - used with `-Confirm` and `-WhatIf` to check whether an action should be performed; see the [shouldprocess notes](./powershell_shouldprocess.md)
+    - `.MyInvocation` - see `$MyInvocation`
+    - `.ParameterSetName` - name of the in-use parameter set
+    - `.SessionState` - information about the current session
+        + `.PSVariable`
+            * `.Get(<string variablename>)`
+            * `.GetValue(<string variablename>, [object default])`
+            * `.Remove(<string variablename>)`
+            * `.Remove(<PsVariable variable>)`
+            * `.Set(<PsVariable variable>)`
+            * `.Set(<string variablename>, <object value>)`
 * `$PSCommandPath` - full path (including name) of the script being run
 * `$PSDebugContext` - tracks debugging environment
 * `$PSHOME` - path to the PowerShell install dir
