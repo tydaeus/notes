@@ -17,6 +17,9 @@ function Get-CallerVar {
     )
 
     return $PSCmdlet.SessionState.PSVariable.Get($VarName).Value
+    # alternatives:
+    #   - $PSCmdlet.GetVariableValue($VarName)
+    #   - $PSCmdlet.SessionState.PSVariable.GetValue($VarName)
 }
 ```
 
