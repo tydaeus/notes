@@ -99,6 +99,7 @@ sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com/')
     - `[label]` (string) - displays along with step type
     - `[returnStatus]` (bool) - if true, step return value will be the exit code, automatic fail based on exit code will not occur
     - `[returnStdout]` (bool) - if true, step return value will be the stdout as a string, stdout will not be printed to build log
+        - there will always be a trailing space, so .trim() should get called on the output
         - this typically needs to be assigned to a variable (which may require wrapping in a `script` block), and typically requires running the script inside of string interpolation so that it gets converted to a Groovy string:
         ``` Groovy
             script {
