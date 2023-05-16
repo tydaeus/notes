@@ -94,7 +94,7 @@ Other useful attributes:
 * `[ArgumentCompleter($ScriptBlock)]` - define tab completion for the parameter
 
 ### `ArgumentCompleter` Attribute
-A parameter with a `[ArgumentCompleter($scriptBlock)]` attribute will use the provided scriptblock for tab completion; this can be forwarded to another function via `[ArgumentCompleter({ Invoke-Completion @args })]`; forwarding becomes necessary if the completer needs to access dynamic variables.
+A parameter with a `[ArgumentCompleter($scriptBlock)]` attribute will use the provided scriptblock for tab completion; this can be forwarded to another function via `[ArgumentCompleter({ Invoke-Completion @args })]`; forwarding becomes necessary if the completer needs to access dynamic variables. The completion function must be exported.
 
 A typical `[string]` or `[string[]]` argument completer will look something like:
 
