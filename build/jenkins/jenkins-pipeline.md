@@ -210,7 +210,7 @@ timeout(activity: true, time: X, unit: 'SECONDS') {
 * time - number of units to time
 * unit - string from {'DAYS', 'HOURS', 'MINUTES', 'SECONDS', 'MILLISECONDS', 'MICROSECONDS', 'NANOSECONDS'}, default 'MINUTES'
 
-Declare within an `options` block (omitting the block wrapper) to set a timeout for the entire pipeline/stage.
+Declare within an `options` block (omitting the block wrapper) to set a timeout for the entire pipeline/stage. Pipeline options timeout appears to have a sporadic issue where it gets treated as absolute for whole job regardless of settings, so this may be more reliable per-stage.
 
 #### `withCredentials` - bind credentials to variables within a block
 Use the snippet generator for full options on this. Example:
