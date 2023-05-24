@@ -153,3 +153,13 @@ Stashing changes allows for setting aside in-progress changes and then retrievin
     - `git stash show -p` - show changes in most recent stash
     - `git stash show -p stash@{1}` - show changes in named stash
     - `git stash show -p 1` - show changes in numbered stash
+
+
+## Listing Files - `git ls-files`
+
+* `git ls-files`
+    * `-c|--cached` - (default) list all tracked files
+    * `-m|--modified` - files with an unstaged modification (deletions inluded)
+    * `-o|--others` - untracked files
+    * `-d|--deleted` - unstaged deletions
+    * `-i|--ignored` - ignored files; must also specify -c or -o
