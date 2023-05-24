@@ -80,6 +80,17 @@ For more detail than is likely helpful: https://github.com/git/git/blob/master/D
 
 `git merge <branchname> --no-commit --no-ff` applies the merge changes without committing them.
 
+
+## Applying Changes without Commit aka Patching - `git apply`
+`git apply` can be used to apply the output from `git diff` or `git show` to the working copy of file(s) within the local, without a commit.
+
+Per documentation, this can be done by either recording the show/diff output to a file, then running `git apply <filepath>` or by piping the show/diff output directly into `git apply`.
+
+Per documentation, if run within a subdir only changes within that subdir will be applied.
+
+Personal experience has shown some difficulty applying `git diff` output (piped or from file) within PowerShell, with best luck piping `git show` output.
+
+
 ## Tags
 Tags provide a way to bookmark the state of the repository at a specific commit, allowing for easier reference and comparison.
 
