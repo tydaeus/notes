@@ -42,6 +42,7 @@
 
 * `git status` shows what changes have been made since last commit, and which have been staged
 * `git diff --cached|--staged` shows the staged changes against the HEAD
+* `git show <commit>` shows the changes made by the specified commit
 
 ## Reverting Changes
 
