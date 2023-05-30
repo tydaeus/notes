@@ -51,3 +51,29 @@ Rebasing the current branch interactively is generally the simplest option, allo
     * `drop` or deleting (or commenting) the commit from the listing results in the commit being removed from the branch
 4. save and close the file when done editing to perform the commands (*warning*: 'Save As' will register the same as close)
 5. if there are any merge conflicts resulting from the revised operations, you will need to address them, then run `rebase --continue`
+
+
+## .gitattributes and Line Endings
+After a .gitattributes file has been added or files have been merged from a repo without .gitattributes to one with, git will sporadically report unmodified files as having changes made to their line endings. This is because .gitattributes processing changes the way files' line endings are stored internally, so all files stored prior to the change will need to be re-stored, but git only notices the difference during certain operations.
+
+Files flagged as changed this way cannot be restored through the standard `git restore` or `git reset` operations.
+
+### Removing the Changes
+Once all desired changes have been committed, run the following commands to clear out the local status.
+
+```
+git rm --cached -r .
+git reset --hard
+```
+
+Note that this does not resolve the issue, just hides it until the next time git notices the line ending issue.
+
+### Renormalize Line Endings
+To correct all line endings per the .gitattributes configuration:
+
+``` sh
+# from the repository root
+git add --renormalize .
+```
+
+The resulting changes will need to be committed and pushed.
