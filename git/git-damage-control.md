@@ -77,3 +77,12 @@ git add --renormalize .
 ```
 
 The resulting changes will need to be committed and pushed.
+
+
+
+## Is this file ignored? Why?
+`git check-ignore FILEPATH` will output the filepath if the file is ignored.
+
+`git check-ignore -v FILEPATH` will output the first ignore rule matched causing the file to be ignored.
+
+Files already in the index don't normally count as ignored even if they match a rule, use `git check-ignore -v --no-index FILEPATH` to ignore the index when checking.
