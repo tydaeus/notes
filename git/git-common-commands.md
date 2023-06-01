@@ -173,5 +173,6 @@ Stashing changes allows for setting aside in-progress changes and then retrievin
     * `-c|--cached` - (default) list all tracked files
     * `-m|--modified` - files with an unstaged modification (deletions inluded)
     * `-o|--others` - untracked files
+        - `-o --exclude-standard` to list untracked non-ignored files
     * `-d|--deleted` - unstaged deletions
-    * `-i|--ignored` - ignored files; must also specify -c or -o
+    * `-i|--ignored` - ignored files; must also specify -c or -o and must specify one of the exclude flags to control the exclusion rule followed (typically `--exclude-standard`)
