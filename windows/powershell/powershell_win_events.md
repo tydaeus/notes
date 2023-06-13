@@ -17,8 +17,9 @@ The `-FilterHashTable` parameter allows you to provide a HashTable defining spec
 
 This HashTable supports keys:
 * LogName=<String[]>
+    - asterisk wild-carding supported
 * ProviderName=<String[]>
-    - must be providers defined on the system
+    - must be providers defined on the system or an error will be thrown
     - if the array is longer than supported by Get-WinEvent (22 is max length found in testing), Get-WinEvent will throw an error indicating that no matching events were found
     - asterisk wild-carding supported
 * Path=<String[]>
