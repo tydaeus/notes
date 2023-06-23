@@ -55,6 +55,8 @@ In many cases you will need to manually specify whether to inherit or override t
     - `-WhatIf:$False`
     - `-Confirm:$False`
 
+Set `$WhatIfPreference` or `$ConfirmPreference` to `$true` or `$false` to modify behavior of all internally called commands. `$PSCmdlet.ShouldContinue()` within the current function will return based on invocation instead of the preference set internally.
+
 Common inheritors to override:
 * `Set-Variable`
 * `ForEach-Object` when retrieving data or making non-persistent changes
