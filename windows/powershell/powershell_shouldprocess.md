@@ -45,7 +45,7 @@ If the `-Verbose` switch has been set, `ShouldProcess()` will print verbose outp
 
 
 ## Inheriting `ShouldProcess()` Behavior
-Commands are supposed to inherit `-WhatIf` and `-Confirm` behavior, but PowerShell's standard commands don't appear to apply this consistently or sensibly.
+Commands are supposed to inherit `-WhatIf` and `-Confirm` behavior, but PowerShell's standard commands don't appear to apply this consistently or sensibly. From https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-shouldprocess?view=powershell-5.1#scope-issues it sounds like this is an inconsistency in how the function is defined: functions defined in binary modules automatically inherit including in cross-module calls, while functions defined in script modules do not inherit in cross-module calls.
 
 In many cases you will need to manually specify whether to inherit or override these behaviors. To do so, set the corresponding switch for the downstream command.
 * Set to the corresponding preference variable to inherit, e.g.:
@@ -55,7 +55,7 @@ In many cases you will need to manually specify whether to inherit or override t
     - `-WhatIf:$False`
     - `-Confirm:$False`
 
-Set `$WhatIfPreference` or `$ConfirmPreference` to `$true` or `$false` to modify behavior of all internally called commands. `$PSCmdlet.ShouldContinue()` within the current function will return based on invocation instead of the preference set internally.
+Set `$WhatIfPreference` or `$ConfirmPreference` to `$true` or `$false` to modify behavior of all internally called commands. `$PSCmdlet.ShouldContinue()` within the current function appears to return based on invocation instead of the preference set internally.
 
 Common inheritors to override:
 * `Set-Variable`
