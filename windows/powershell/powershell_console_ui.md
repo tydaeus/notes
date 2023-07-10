@@ -40,6 +40,7 @@ WindowTitle           : Administrator: Windows PowerShell
 
 Note that changes to background color will require a `Clear-Host` (aka `cls`) before displaying properly. All changes to these properties persist only for the current session, unless added to the user's PowerShell profile.
 
+Set console window title by modifying the WindowTitle property.
 
 
 ## Working with Console Colors
