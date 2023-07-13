@@ -110,6 +110,14 @@ function MyArgumentCompleter {
 }
 ```
 
+* `$commandName` is the name of the command being invoked
+* `$parameterName` is the name of the parameter where completion is being attempted
+* `$wordToComplete` is the partial parameter value to suggest completion for
+* `$commandAst` is the full command as typed
+* `$fakeBoundParameters` is a HashTable of all parameters that have been specified thus far, including the one being completed
+
+Return is expected to be a list of values.
+
 Limitations: string completion, especially string array completion appears to be targeted toward CLI usage. Explicit array notation disables completion, quote-wrapping gets included in `$wordToComplete`; it's possible to work around quote-wrapping on the first word, but doesn't appear to be possible on subsequent words.
 
 ### Splatting Parameters
