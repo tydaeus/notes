@@ -342,10 +342,17 @@ result = true_result if bool_condtion else false_result
 
 ``` Python
 for elem in my_iterable:
-    do_something()
+    do_something(elem)
 ```
 
-Iterating through a dictionary iterates through its keys; use the `.values()` or `.items()` method to iterate through values or ittems respectively. You can unpack the items to have access to both key and value:
+Iterate with an index by using `len()` and `range()`:
+
+``` Python
+for i in range(len(my_list)):
+    do_something(i, my_list[i])
+```
+
+Iterating through a dictionary iterates through its keys; use the `.values()` or `.items()` method to iterate through values or items respectively. You can unpack the items to have access to both key and value:
 
 ``` Python
 for key, value in my_dict.items():
