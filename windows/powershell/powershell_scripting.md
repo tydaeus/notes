@@ -374,7 +374,45 @@ The delay-bind scriptblock must used named parameters if any other parameters ar
 
 Only delay-bind scriptblocks can utilize the `$PSItem`/`$_` automatic variable.
 
-Building these custom delay-bind invocation functions can be a little tricky, and they don't appear to have the scope inheritance applied to the built-in delay-bind invocation functions. **Where possible, use the built-in** delay-bind functions, e.g. `ForEach-Object` for transformations and `Where-Object` for filtering.
+Building these custom delay-bind invocation functions can be a little tricky, and they don't appear to have the scope inheritance applied to the built-in delay-bind invocation functions. **Where possible, use the built-in** delay-bind functions, e.g. `ForEach-Object` for transformations and `Where-Object` for filtering:
+
+``` PowerShell
+function Test-WhereBasedFilter {
+    param(
+        [Parameter(ValueFromPipeline)]
+        [object[]]
+        $Object,
+
+        [Parameter(Mandatory,Position=0)]
+        [scriptblock]
+        $Filter
+    )
+
+    process {
+        foreach ($o in $object) {
+            $o | Where-Object $Filter | Write-Output
+        }
+    }
+}
+
+function Test-ForBasedIterator {
+    param(
+        [Parameter(ValueFromPipeline)]
+        [object[]]
+        $Object,
+
+        [Parameter(Mandatory,Position=0)]
+        [scriptblock]
+        $ScriptBlock
+    )
+
+    process {
+        foreach ($o in $object) {
+            $o | ForEach-Object $ScriptBlock | Write-Output
+        }
+    }
+}
+```
 
 ### Converting a Function to a ScriptBlock
 Access an in-scope function's definition (without its name) via `${function:Function-Name}`. This definition can then be passed in lieu of a ScriptBlock.
