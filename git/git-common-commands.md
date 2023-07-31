@@ -50,9 +50,11 @@
 Use `git checkout -- FILE` to replace FILE with the latest version from HEAD.
 
 ### git reset
-`git reset` allows you to remove commits from the current branch. Recommended for use on private branches only.
+`git reset` allows you to restore the current branch to the state it was in during a specified commit. Without any other specifiers, this results in a restore to HEAD state (unstaging all staged but uncommitted files). Recommended for use on private/local branches only.
 
-For example, `git reset HEAD FILEPATH` will remove any commits to FILEPATH that are not part of HEAD. Note that this does not modify the file, just what changes to the file have been committed.
+`git reset <commit>` will reset the commit tree (by moving the HEAD pointer) to the state it was in at `<commit>` without making any file modification. This allows you to make additional revisions or change how you make the commit(s).
+
+Adding the `--hard` switch specifies that the files should also be restored to the specified state (discarding any changes). Off-tree commits will persist until pruned.
 
 ### git revert
 `git revert <commit>...` makes a commit that reverts prior commit(s). Note that `git revert` cannot be restricted to a single file; it operates on the entire tree.
