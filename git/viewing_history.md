@@ -19,9 +19,10 @@ Use cases:
 
 #### Viewing Commit Details
 
-The `-p`, `-u`, or `--patch` flag causes `git log` to output patching data.
-
-Use `git log -p` to show the changes made in each commit in addition to the `git log` details.
+* `--patch`, `-p`, or `-u` - show patching data (specific changes made)
+* `--name-only` - show the names of the files changed
+* `--name-status` - filename and status of files changed
+* `--stat` - abbreviated pathname and status
 
 #### File History
 `git log -- FILEPATH` will display the active history for a given file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that remain in the tree but longer active (e.g. discarded during a merge).
