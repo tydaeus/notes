@@ -38,6 +38,29 @@ Use the `Test-Path` cmdlet to inspect file structures. Throws an exception if th
 * Check if Path is Dir: `Test-Path -Path $fullPath -PathType Container`
 * Check if Path is File: `Test-Path -Path $fullPath -PathType leaf`
 
+### `New-PSDrive`
+`New-PSDrive` allows you to map a location as a "drive" within PowerShell for easier access. This can be used to map a UNC path (with `-Credential` specification if needed).
+
+* create drive: `New-PSDrive -Name $driveName -Root $pathToDir -PSProvider FileSystem`
+* use drive: `Get-ChildItem "${driveName}:\`
+
+By default, the mapped drive is only available within the session where it was created, but it appears that credential submission is shared (e.g. once one session has provided credentials for a network resource, other sessions created by the same user can access the resource without specifying credentials).
+
+#### `New-PSDrive` failure
+Failure to access the specified path results in an error message (no exception): `New-PSDrive : The specified drive root "\\salsmosxf03\shr_IBSSC_St_Louis_IBSSC\Team_9241\RSS" either does not exist, or it is not a folder.`. `$?` will be `$false` and `Get-Item` will return nothing (and also print an error message).
+
+Best practice for detection if using within a function is likely to be to use `$?` and either bury the error message or convert it to an exception, e.g.:
+
+``` PowerShell
+New-PSDrive -Name $driveName -Root $pathToDir -PSProvider FileSystem 2>$null -ErrorVariable 'err'
+
+if (-not $?) {
+    throw $err
+}
+```
+
+
+
 ## `System.IO.Path`
 You can also use the .Net class `System.IO.Path` static methods to work with paths. Common operations:
 
