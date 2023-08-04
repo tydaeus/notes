@@ -1,6 +1,6 @@
 # Manipulate Paths
 
-## PowerShell Operators
+## PowerShell Cmdlets
 
 ### `Join-Path`
 `Join-Path $path $childPath...` will join a path with one or more child path fragments. Adding the `-Resolve` operator will either return all paths that match a wildcarded path, or will produce an error if a non-wildcard path does not exist.
