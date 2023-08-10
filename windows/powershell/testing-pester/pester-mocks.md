@@ -35,6 +35,14 @@ $originalCommand = Get-Command 'MyCommand'
 Mock 'MyCommand' -MockWith { &$originalCommand @args }
 ```
 
+## Mocking Objects
+Use `New-MockObject` to generate a mocked object to match a specific .NET type.
+
+E.g. `$mockSession = New-mockObject -Type 'System.Management.Automation.Runspaces.PSSession'` to mock a PSSession.
+
+* `-Properties` - specify a HashTable of properties for the mocked object
+* `-Methods` - specify a HashTable of methods for the mocked object (values are expected to be scriptblocks)
+
 
 ## Mocking for use by class methods in PowerShell 5.1 or earlier
 PowerShell 5.1 and earlier versions aggressively cache commands when used by methods. For this reason, Pester cannot use standard mocking when working with methods. Allegedly, running Pester as a separate job allows mocking of commands used by methods; this doesn't appear to be working in my tests.
