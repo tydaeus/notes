@@ -1,5 +1,8 @@
 # Working with the PowerShell Console UI
 
+## Prompting for User Input
+Use `Read-Host` to prompt the user for string input via console, e.g. `$MyVar = Read-Host -Prompt 'Enter value for myVar'`. If you provide the `-AsSecureString` switch, the input display will be masked and the return value will be as a secure string.
+
 ## Working with `$Host`
 (sourced from https://www.pdq.com/blog/change-powershell-colors/)
 
