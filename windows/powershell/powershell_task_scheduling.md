@@ -38,8 +38,12 @@ $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MyTask" -Description "My task that does stuff" -Settings $settings
 
 ```
-**Recommended**: most tasks should probably have settings created with `-StartWhenAvailable` specified, otherwise high system activity may result in your task being skipped.
-
+**Recommended**
+* most tasks should probably have settings created with `-StartWhenAvailable` specified, otherwise high system activity may result in your task being skipped.
+* most tasks that trigger PowerShell scripts should:
+    - specify `-WindowStyle` as `Hidden` or `Minimized` to prevent a window from displaying in front of the user
+        - limitation: the PowerShell client renders the window before minimizing or hiding it, so it will display briefly regardless of WindowStyle; length of display depends on system performance
+    - specify `-NonInteractive` to trigger failure if the script attempts user interaction (through standard PowerShell cmdlets)
 
 
 
