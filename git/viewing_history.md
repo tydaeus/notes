@@ -21,6 +21,7 @@ Use cases:
 
 * `--patch`, `-p`, or `-u` - show patching data (specific changes made)
 * `--name-only` - show the names of the files changed
+    - **Warning**: this switch may negate other switches without warning; e.g. the `--patch` switch will not show patch diffs when combined
 * `--name-status` - filename and status of files changed
 * `--stat` - abbreviated pathname and status
 
