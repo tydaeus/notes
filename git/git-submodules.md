@@ -27,6 +27,8 @@ Populate the submodule structure by running one of the following:
 * `git submodule update --init`
 * `git submodule update --init --recursive` - will also recursively retrieve files for nested submodules
 
+Submodule **configuration cannot be updated** until submodules have been populated.
+
 Use `git clone` with the `--recurse-submodules` command to automatically retrieve submodule files at clone time (recursing into nested submodules, etc.).
 
 ## Submodule Status
