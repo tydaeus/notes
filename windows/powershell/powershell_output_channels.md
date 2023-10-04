@@ -8,7 +8,7 @@ PowerShell script output gets divided into different output streams, theoretical
 
 The streams are:
 
-* 1 - Success
+* 1 - Success aka Out
 * 2 - Error
 * 3 - Warning
 * 4 - Verbose
@@ -46,7 +46,27 @@ Use `>>` to append to the file instead of overwriting it.
 ### Redirecting to `$Null`
 Put `$Null` on the right-hand side of the redirection operator to discard the stream's output, e.g. `6>$Null`.
 
-Note that this acts as redirecting to a nameless file, not an example of redirecting to a variable (which is not directly allowed).
+Note that this acts as redirecting to a nameless file, not an example of redirecting to a variable (which is not directly allowed; see Stream Capture Variables).
+
+### Methods and Stream Output
+OO methods from PowerShell classes (and possibly others) can only write to output via their `return` statement (`Write-Output` statements are ignored). If they include a `return` statement, attempts to write to stderr are ignored. This appears to be intended to encourage a `return` or `throw` convention.
+
+Other `Write-` methods for stream output appear to be unaffected.
 
 
 
+## Stream Capture Variables
+"Advanced functions" (any written with `[CmdletBinding()]` or any `[Parameter]`-described parameter) support standard parameters that allow you to capture output to a variable in addition to writing it to the corresponding stream:
+
+* `-OutVariable`
+* `-ErrorVariable`
+* `-WarningVariable`
+* `-InformationVariable`
+
+Always specify a string as the name of the variable to capture to (specifying a variable will attempt capture to the string value of the variable); the variable with corresponding name will be updated within caller's scope to contain a list of the output messages.
+
+Streamed output will also be written to the corresponding stream, unless the stream is otherwise redirected.
+
+Streams redirected and captured at a lower level will still get captured in higher-level capture variables (unsure about specifics).
+
+**Method stream output** will not be captured in the variable, even if the method is used from within non-OO scripting. Method streams are subject to redirection.
