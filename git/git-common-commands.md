@@ -90,7 +90,25 @@ Per documentation, this can be done by either recording the show/diff output to 
 
 Per documentation, if run within a subdir only changes within that subdir will be applied.
 
-Personal experience has shown some difficulty applying `git diff` output (piped or from file) within PowerShell, with best luck piping `git show` output.
+Personal experience has shown some difficulty applying `git diff` output (piped or from file) within PowerShell, with best luck piping `git show` output or using git bash to generate the patch instead.
+
+**Example: Generate a Patch - Changes from current branch to apply to target branch:**
+
+``` bash
+git diff $targetBranch > $patchDestination
+```
+
+**Example: Generate a Patch - Changes from target branch to apply to current branch:**
+
+``` bash
+git diff HEAD..$targetBranch > $patchDestination
+```
+
+**Example: Apply patch to current branch**
+
+``` bash
+git apply $patchDestination
+```
 
 
 ## Tags
