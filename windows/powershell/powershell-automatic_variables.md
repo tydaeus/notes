@@ -21,14 +21,14 @@ Notes on some of the more useful automatic vars:
 * `$PROFILE` - full path to profile for current user and PowerShell host
 * `$PSBoundParameters` - dictionary of parameter values; present only if parameters are declared; only contains explicitly set parameters, not default values
 * `$PSCmdlet` - represents the cmdlet or advanced function that is running
-    - `.GetVariableValue(<string variablename>, [object default])` - get the value of the specified variable as defined in the current or caller's scope
+    - `.GetVariableValue(<string variablename>, [object default])` - get the value of the specified variable as defined in the current or caller's scope (equivalent to `$PSCmdlet.SessionState.PSVariable.GetValue`)
     - `.ShouldProcess(...)` - used with `-Confirm` and `-WhatIf` to check whether an action should be performed; see the [shouldprocess notes](./powershell_shouldprocess.md)
     - `.MyInvocation` - see `$MyInvocation`
     - `.ParameterSetName` - name of the in-use parameter set
     - `.SessionState` - information about the current session
         + `.PSVariable`
-            * `.Get(<string variablename>)`
-            * `.GetValue(<string variablename>, [object default])`
+            * `.Get(<string variablename>)` - retrieves the named variable as a PsVariable object
+            * `.GetValue(<string variablename>, [object default])` - retrieve the value of the named variable
             * `.Remove(<string variablename>)`
             * `.Remove(<PsVariable variable>)`
             * `.Set(<PsVariable variable>)`
