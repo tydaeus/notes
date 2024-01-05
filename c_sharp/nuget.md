@@ -2,6 +2,8 @@
 
 NuGet is the default packagemanager for Visual Studio / .Net projects. Official documentation at: https://docs.microsoft.com/en-us/nuget/.
 
+Download NuGet from https://dist.nuget.org; https://dist.nuget.org/win-x86-commandline/v${NUGET_VERSION}/NuGet.exe for direct download of a specific version.
+
 ## NuGet ConfigFiles
 NuGet is configured by a hierarchical series of `Nuget.Config` files, applied in order:
 
