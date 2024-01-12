@@ -37,6 +37,7 @@ Primary parameters:
     * `-Times` - minimum number of times it should have been called; defaults to 1, so use `-Times 0` in place of `-Not` when verifying mocks
         + Add `-Exactly` to treat extra calls as a failure
     * `-ParameterFilter` `[scriptblock]` (optional) - filter parameters invoked with for counting purposes; parameters will be accessible by name within the scriptblock
+        + access parameter hashtable via `PesterBoundParameters`
 * `-InvokeVerifiable` - verify that all mocks constructed with `-Verifiable` have been called
 * `-Match` - objects match via `-match`
 * `-MatchExactly` - objects match via `-cmatch`
