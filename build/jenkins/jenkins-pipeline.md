@@ -56,6 +56,24 @@ pipeline {
 
 ```
 
+### Jenkinsfile - Scripted
+
+``` groovy
+node { // can optionally pass a designator to determine node being run on, e.g. node(labelName)
+    stage('Build') {
+
+    }
+
+    stage('Test') {
+
+    }
+
+    stage('Deploy') {
+
+    }
+}
+```
+
 ### Groovy Statements and Syntax available in Jenkinsfile
 
 #### Variable Definition
