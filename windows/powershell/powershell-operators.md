@@ -17,7 +17,7 @@ Common Format Strings
 * `n[N]` - numeric with thousands separator, 'N' decimal places
 * `p[N]` - percentage (e.g. .5 becomes "50%), 'N' decimal places
 * `x` - hex format
-* `#` per digit - free-form numeric digit placement, e.g. `{0:###-####} -f 1234567` yields `123-4567`. Numeric values only, doesn't populate missing digits, appears to fill from right to left without any padding (above string on `12` yields `-12`).
+* `#` per digit - free-form numeric digit placement, e.g. `'{0:###-####}' -f 1234567` yields `123-4567`. Numeric values only, doesn't populate missing digits, appears to fill from right to left without any padding (above string on `12` yields `-12`).
 
 If the value is a date type, it will be formatted using (case-sensitive) date format string rules instead of the standard format strings.
 
