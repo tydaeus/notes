@@ -25,8 +25,10 @@ Use cases:
 * `--name-status` - filename and status of files changed
 * `--stat` - abbreviated pathname and status
 
-#### File History
-`git log -- FILEPATH` will display the active history for a given file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that remain in the tree but longer active (e.g. discarded during a merge).
+#### Filtering
+
+* `--author=AUTHOR_NAME` - show only commits by author containing AUTHOR_NAME (use quotes if including spaces)
+* `git log -- FILEPATH` - show commits including the specified file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that remain in the tree but longer active (e.g. discarded during a merge).
 
 
 
