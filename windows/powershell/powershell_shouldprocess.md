@@ -68,7 +68,7 @@ Custom functions defined outside of modules automatically inherit `ShouldProcess
     # ensure WhatIf status is inherited
     if (-not $PSBoundParameters.ContainsKey('WhatIf'))
     {
-        $WhatIfPreference= $PSCmdlet.GetVariableValue('WhatIfPreference')
+        $WhatIfPreference = $PSCmdlet.GetVariableValue('WhatIfPreference')
     }
     # ensure Confirm status is inherited
     if (-not $PSBoundParameters.ContainsKey('Confirm'))
