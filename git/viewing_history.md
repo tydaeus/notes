@@ -30,6 +30,24 @@ Use cases:
 * `--author=AUTHOR_NAME` - show only commits by author containing AUTHOR_NAME (use quotes if including spaces)
 * `git log -- FILEPATH` - show commits including the specified file. Use `git log --follow FILEPATH` to show the full logs for the file, including those that remain in the tree but longer active (e.g. discarded during a merge).
 
+### Formatting
+The `--format=` parameter allows for specifying how log output should be formatted, to provide more or less detail, format for a report, or extract info.
+
+Format options are documented at https://git-scm.com/docs/pretty-formats.
+
+Prebuilt format names can be used, including: `oneline`, `short`, `medium`, `full`, `fuller`...
+
+Custom formats can also be built by wrapping the format value in quotes and specifying one or more symbols alongside plaintext. Useful symbols:
+* `%h` or `%H` - abbreviated commit hash or full commit hash
+* `%t` or `%T` - abbreviated tree hash or full tree hash
+* `%p` or `%P` - abbreviated or full parent hashes
+* `%d` or `%D` - ref names or ref names without wrapper
+* info about author or committer starts with `%a` or `%c` respectively, followed by:
+    - `i` - date in ISO 8601-like format
+    - `I` - date in strict ISO 8601 format
+    - `n` -  name
+    - `e` -  email
+
 
 
 ## `git rev-list` - revision history
