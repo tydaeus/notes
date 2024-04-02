@@ -62,6 +62,24 @@ function Test-CustomPreferenceVariables {
 
 
 
+## Customizing ScriptBlock Scope
+Use the `scriptblock`'s `InvokeWithContext()` methods to invoke the ScriptBlock with specific values overlaying its closure-provided functions and/or variables.
+
+* first parameter is either a strongly typed dictionary or a hashtable specifying functions to add to scope
+* second parameter is a `List` of `PSVariable`s to provide named variables
+* third paramter is an `Object[]` providing the parameters for the scriptblock
+
+E.g. to inject `$foo` as the `$_`/`$PSItem` variable and to inject the caller's `$ErrorActionPreference` into invoking sb (without params):
+
+``` powershell
+$injectedScope = [System.Collections.Generic.List[psvariable]]::new()
+$injectedScope.Add([psvariable]::new('_', $foo))
+$injectedScope.Add((Get-Variable 'ErrorActionPreference'))
+
+$sb.InvokeWithContext($null, $injectedScope, $null)
+```
+
+
 ## Scoping and the `-Scope` Parameter
 Several cmdlets, including `Get-Var`, `Set-Var`, and `Remove-Var` include a `-Scope` parameter that allows you to operate on a specific scope.
 
