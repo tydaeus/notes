@@ -60,6 +60,7 @@ The manifest's name is the module name and must match the name of the containing
     - AliasesToExport - list of module-defined aliases to make available in caller's scope
 3. `Test-ModuleManifest $ManifestPath` can be used to verify that the paths referenced are accurate; for full testing you will need to import it and try it out
 
+Only members exported by the psm1 file(s) are eligible for export by the module manifest, so you will need to call `Export-ModuleMember` in the module definition if any variable export is desired (due to the default behavior of exporting all functions and no vars).
 
 ## Variable Scoping
 Variables declared within the module by default effectively act as being within their own module-specific scope. Functions defined in the module access and operate on these variables by default. These variables cannot be accesed from outside the module's scripting and function.
