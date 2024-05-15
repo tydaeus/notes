@@ -170,6 +170,9 @@ The `git branch -m` option renames (moves) branches.
 * delete a local branch with `git branch --delete <branchname>`; must be switched to a different branch first
 * delete a remote branch with `git push <remote> --delete <branchname>`; does not delete other users' local references
 
+#### Remote Branches and Pruning
+Remote branches may remain visible locally for some time after deletion. Initiate pruning of all remote branches with `git remote prune origin` or delete the reference to a specific one with `git branch -d -r origin/BRANCH`.
+
 ### Exploring Branches
 Use ` git branch --contains <commit> -r` to find all branches containing the specified commit. (drop the `-r` for local-only)
 
