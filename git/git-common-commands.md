@@ -148,7 +148,7 @@ Remotely: `git push <remotename> --delete <tagname>`
 ## Working with Branches
 (adapted from https://stackoverflow.com/a/6591218/2939139)
 
-Use `git branch` to list branches. The currently active branch will be indicated with an asterisk.
+Use `git branch` to list branches. The currently active branch will be indicated with an asterisk. `git branch -vv` to show tracking branches (i.e. which remote branch corresponds to the named local branch).
 
 ### Creating Branches
 * `git branch <branchname> [start-point]` to create a new local branch without switching to it (use `switch` subsequently to switch)
