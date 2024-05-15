@@ -45,7 +45,7 @@ Rebasing the current branch interactively is generally the simplest option, allo
 3. modify the text file to indicate the desired sequence of changes
     * operations will be performed in the order they're listed
     * `pick` will result in the commit being performed as-is
-    * `reword` allows modifying the commit message before performing the commit as-is
+    * `reword` allows modifying the commit message before performing the commit as-is (a fresh editor window will be opened for each needed commit message)
     * `squash` combines the commit with the previous commit
     * `edit` allows editing the content of the commit
     * `drop` or deleting (or commenting) the commit from the listing results in the commit being removed from the branch
