@@ -122,7 +122,8 @@ On the latest commit: `git tag -a <tagname> -m <commit message>`
 On a specific commit: `git tag -a <tagname> -m <commit message> <commit hash>`
 
 ### Listing Tags
-`git tag [--list|-l]`
+* `git tag [--list|-l]` - all local
+* `git ls-remote --tags <remotename>` - all remote (note that the normally-hidden tag data for the reference will be shown)
 
 With glob matching: `git tag --list "<glob>"`
 
