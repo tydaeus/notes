@@ -38,3 +38,9 @@ public void SomeMethod_WhenCalled_DoesSomething(params string[] args) {...}
 
 ## Accessing Internals
 To allow internal members to be accessed by the tests, you can add the `[assembly: InternalsVisibleTo("AssemblyName")]` attribute to the class under test, where `AssemblyName` is the name of the assembly that can access internal members.
+
+## Testing for Exceptions
+``` c#
+Assert.Throws<ExceptionType>(() => unit.ExceptionThrowingMethod());
+```
+
