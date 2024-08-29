@@ -44,3 +44,20 @@ To allow internal members to be accessed by the tests, you can add the `[assembl
 Assert.Throws<ExceptionType>(() => unit.ExceptionThrowingMethod());
 ```
 
+## Running from Commandline
+
+Running using nunit3-console (note that test project must be built first):
+
+``` PowerShell
+# run all tests in dll
+nunit3-console <dllPath>
+
+# run only tests whose name matches TestMethodName (use nUnit-generated method name for exact test, e.g. `TestMethod(5)` for the )
+nunit3-console <dllPath> --where="name == <TestMethodName>"
+
+# dotnet equivalent (will find solution automatically if unique in PWD, otherwise solution or project must be specified)
+# will build before running
+dotnet test [solutionPath] -- NUnit.Where="name == <TestMethodName>"
+```
+
+See https://docs.nunit.org/articles/nunit/running-tests/Test-Selection-Language.html for full documentation on test selection.
